@@ -13,6 +13,7 @@
 \usepackage[T1]{fontenc}
 \usepackage{titlesec}
 \usepackage{sectsty}
+\usepackage{verbatim}
 
 \chapternumberfont{\tiny} 
 \chaptertitlefont{\Huge}
@@ -39,6 +40,7 @@
 \newtheorem{example}{Παράδειγμα}
 \newtheorem*{defn}{Ορισμός}
 \newtheorem{prop}{Πρόταση}
+\newtheorem{cor}{Πόρισμα}
 
 \newcommand {\tl}{\textlatin}
 %%%%%%%%%αριθμηση%%%%%%%%%%%%%%
@@ -81,6 +83,100 @@
 
 \pagebreak
 \section{Κλασική θεωρία \tl{Galois}}
+\vspace{1cm}
+% proposition 3.28!
+
+\begin{defn}
+	Έστω $F\subseteq K$ εγκλεισμός σωμάτων. Το $K$ θα λέγεται επέκταση του $F$ και θα συμβολίζεται με $K/F$.
+\end{defn}
+
+Παρατηρούμε ότι με τις πράξεις:
+$$K\times K \longrightarrow K \quad\quad F \times K \longrightarrow K$$
+$$(x,y) \longmapsto x+y \quad\quad (\lambda, x) \longmapsto \lambda x$$
+
+To $K$ είναι διανυσματικός χώρος υπεράνω του $F$ και συμβολίζουμε την διάσταση του με $[K:F]$. Αν $[K:F]<\infty$ θα λέμε ότι η επέκταση $K/F$ είναι πεπερασμένη.
+
+$ $\newline
+Για παράδειγμα, έχουμε $[\mathbb C : \mathbb R] = 2$ και αν $K = \Z_2 [x]/(x^2 + x + 1)$ τότε $[K:\Z_2] = 2$.
+
+\begin{defn}
+	Έστω $K/F$ και $a \in K$. Το $a$ θα λέγεται αλγεβρικό υπεράνω του $F$ αν υπάρχει $f(x) \in F[x]$ τέτοιο ώστε $f(a)=0$. Αν αυτό ισχύει για κάθε $a \in K$ τότε λέμε ότι η επέκταση είναι αλγεβρική.
+\end{defn}
+
+\begin{prop}
+	Έστω $K/F$ με $[K:F]<\infty$. Τότε $K/F$ αλγεβρική.
+\end{prop}
+
+\begin{proof}
+\end{proof}
+
+\begin{theorem}[Κανόνας Πύργων]
+	Άν $K/E$ και $E/F$ πεπερασμένες επεκτάσεις τότε $K/F$ πεπερασμένη και επιπλέον:
+	$$[K:F]=[K:E][E:F]$$
+\end{theorem}
+\begin{proof}
+\end{proof}
+
+\begin{defn} Έστω $K/F$. Ονομάζουμε αλγεβρική κλειστότητα του $F$ στο $K$ το σώμα:
+	$$\overline F = \{a \in K: \text{ το } a \text{ είναι αλγεβρικό υπεράνω του } F\}$$ 
+\end{defn} %υπαρξη
+
+\begin{defn} $F(a)$
+\end{defn}
+
+Έστω $a$ αλγεβρικό στοιχέιο υπεράνω κάποιου σώματος $F$. Θεωρούμε το πολυώνυμο $p(x) \in F[x]$ ελαχίστου βαθμού που έχει ρίζα το $a$. Εφόσον το $F$ είναι σώμα μπορούμε να υποθέσουμε ότι το $p$ είναι μονικό καθώς μπορούμε να το πολλαπλασιάσουμε με τον αντίστροφο του μεγιστοβάθμιου συντελεστή. Επιπλέον, αυτό το πολυώνυμο είναι μοναδικό. Αν δεν είναι και έχουμε $p(x), g(x)$ με αυτές τις ιδιότητες, τότε το $p(x)-g(x) \in F[x]$ θα έχει ρίζα το $a$ και θα είναι βαθμού μικρότερου του $p(x)$ δηλαδή θα είναι βαθμού 0 από την υπόθεσή μας.
+\begin{defn} Για ένα $a$ που ανήκει σε κάποια επέκταση και είναι αλγεβρικό στοιχέιο υπεράνω ενός σώματος $F$ λέμε το παραπάνω πολυώνυμο $p(x)$ ως ελάχιστο πολυώνυμο του $a$ υπεράνω του $F$ και το συμβολίζουμε με $Irr(a,F)$. 
+\end{defn}
+
+\begin{prop}
+	%prop 1.15
+	Έστω $K/F$ με $a$ αλγεβρικό στοιχείο υπεράνω του $F$. Τότε:
+	\begin{enumerate}
+		\item $Irr(a,F)$ είναι ανάγωγο στο $F[x]$.
+		\item Αν $g(x) \in F[x]$ τότε $g(a) = 0 \iff Irr(a,F) | g(x)$.
+		\item Αν $n = deg(Irr(a,F))$ τότε τα $1,a,a^2,\ldots,a^{n-1}$ αποτελούν βάση του $F(a)$ υπεράνω του $F$.
+	\end{enumerate}
+\end{prop}
+\begin{proof}
+\end{proof}
+
+\begin{cor}  $[F(a): F] < \infty$ αν και μόνο αν το $a$ είναι αλγεβρικό υπεράνω του $F$.
+\end{cor}
+
+
+\begin{theorem}Αν $K/E$ και $E/F$ είναι αλγεβρικές επεκτάσεις τότε και η επέκταση $K/F$ είναι αλγεβρική.
+\end{theorem}
+
+\begin{proof}
+\end{proof}
+
+\subsection{Αυτομορφισμοί}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 \pagebreak
 \section{Γενική Τοπολογία}
 \pagebreak
@@ -96,7 +192,9 @@ $$G=Gal(K/F)$$
 $$\mathcal{I} = \{ E: K/E/F , \quad [E:F]<\infty , \quad E/F \quad\text{ \tl{Galois} } \}$$
 $$\mathcal{N} = \{N \subseteq G: N = Gal(K/E) \quad\text{ για κάποιo } E \in \mathcal{I} \}$$
 
-υπενθύμιση: proposition 3.28! αν $K/F$ κανονική και $N/K/L/F$ σώματα με $\tau :L \mapsto N$ ένας $F-$ ομομορφισμός, τότε $\tau(L) \subseteq K$ και υπάρχει $\sigma \in Gal(K/F)$ με $\sigma|_L = \tau$ (θα χρησιμοποείται αρκετά.)
+Υπενθύμιση: Aν $K/F$ κανονική επέκταση και $N/K/L/F$ σώματα με $\tau :L \mapsto N$ ένας $F-$ ομομορφισμός, τότε $\tau(L) \subseteq K$ και υπάρχει $\sigma \in Gal(K/F)$ με $\sigma|_L = \tau$ (θα χρησιμοποείται αρκετά.)
+% proposition 3.28!
+
 
 \begin{lemma} \label{17.1} Aν $a_1 , \ldots a_n \in K$ τότε υπάρχει $E \in \mathcal{I}$ με $a_i \in E$ για κάθε $i \in \{1,\dots, n\}$ .
 \end{lemma}
@@ -105,16 +203,16 @@ $$\mathcal{N} = \{N \subseteq G: N = Gal(K/E) \quad\text{ για κάποιo } E
 
 %(Σχόλια: μεταβατικότητα κανονικότητας? μπορώ να θεωρήσω κατευθείαν το F(a_1,... a_n) ???)
 $ $\newline
-Έστω $E\subseteq K$ το σώμα ριζών των ελαχίστων πολυωνύμων των $a_i$ υπεράνω του $F$ , δηλαδή το σώμα ριζών του γινομένου τους (!!!). Εφόσον κάθε $a_i$ είναι διαχωρίσιμο (!!!) υπεράνω του $F$ τότε το $E$ είναι κανονική επέκταση του $F$ και διαχωιρίσιμη, επομένως η επέκταση $E/F$ είναι Galois. Καθώς έχουμε πεπερασμένα $a_i$ τότε $[E:F]< \infty$ , επομένως $E \in \mathcal{I}$ .
+Έστω $E\subseteq K$ το σώμα ριζών των ελαχίστων πολυωνύμων των $a_i$ υπεράνω του $F$ , δηλαδή το σώμα ριζών του γινομένου τους. Εφόσον κάθε $a_i$ είναι διαχωρίσιμο (!!!) υπεράνω του $F$ τότε το $E$ είναι κανονική επέκταση του $F$ και διαχωρίσιμη, επομένως η επέκταση $E/F$ είναι \tl{Galois}. Καθώς έχουμε πεπερασμένα $a_i$ τότε $[E:F]< \infty$ , επομένως $E \in \mathcal{I}$ .
 
 \end{proof}
 
-\begin{lemma} \label{17.2} Αν $N \in \mathcal{N}$ με $N = Gal(K/E)$ , $E \in \mathcal{I}$ τότε $E=F^N$ και $N\unlhd G$ . Επιπλέον $G/N \cong Gal(E/F)$ . Επιπλέον $|G/N| = |Gal(E/F)| = [E:F] < \infty$ .
+\begin{lemma} \label{17.2} Αν $N \in \mathcal{N}$ με $N = Gal(K/E)$ , $E \in \mathcal{I}$ τότε $E=F^N$ και $N\unlhd G$ . Τότε έχουμε τον ισομορφισμό $G/N \cong Gal(E/F)$ και επιπλέον $|G/N| = |Gal(E/F)| = [E:F] < \infty$ .
 \end{lemma}  
 \begin{proof} $ $
  
 $ $\newline
-$K$ είναι κανονική και διαχωρίσιμη επέκταση υπεράνω του $F$ το οποίο συνεπάγεται ότι είναι και υπεράνω του $E$ . Δηλαδή $K/E$ Galois και συνεπώς $E = F^N$ , όπως στην απόδειξη του θθθG, η απεικόνιση $\theta : G \mapsto Gal(E/F)$ με κανόνα $\sigma \mapsto \sigma|_E$ είναι ένας ομομορφισμός ομάδων με πυρήνα $Gal(K/E) = N$ Proposition 3.28!!! λέει ότι $\theta$ επιμορφισμός. Τα υπόλοιπα έπονται από το 1ο θεώρημα ισομορφισμών ομάδων.
+Το σώμα $K$ είναι κανονική και διαχωρίσιμη επέκταση υπεράνω του $F$ το οποίο συνεπάγεται ότι είναι και υπεράνω του $E$ . Δηλαδή $K/E$ \tl{Galois} και συνεπώς $E = F^N$. Όπως στην απόδειξη του θεμελιώδους θεωρήματος της θεωρίας \tl{Galois}, η απεικόνιση $\theta : G \mapsto Gal(E/F)$ με κανόνα $\sigma \mapsto \sigma|_E$ είναι ένας ομομορφισμός ομάδων με πυρήνα $Gal(K/E) = N$. Proposition 3.28!!! λέει ότι $\theta$ επιμορφισμός. Τα υπόλοιπα έπονται από το 1ο θεώρημα ισομορφισμών ομάδων.
 \end{proof}
 
 \begin{lemma} \label{17.3}  $\bigcap_{N \in \mathcal{N}} N= \{1_G \} = \{ id: K \mapsto K \}$ . Επιπλέον, $\bigcap_{N \in \mathcal{N}} \sigma N = \{\sigma \}$ για κάθε $\sigma \in G$.
@@ -122,20 +220,19 @@ $K$ είναι κανονική και διαχωρίσιμη επέκταση �
 \begin{proof} $ $
 
 $ $\newline	
-Έστω $\tau \in \bigcap_{N \in \mathcal{N}} N$ και $a \in K$ . Από το παραπάνω λήμμα (17.1) υπάρχει  $E \in \mathcal{I}$ με $a \in E$ . Έχουμε $N := Gal(K/E) \in \mathcal{N}$ εφόσον $E \in \mathcal{I}$ . Ο αυτομορφισμός $\tau$ κρατάει σταθερό το $E$ καθώς $\tau \in N$ , επομένως $\tau (a) = a$ για το τυχόν $a \in K$ . Συνεπώς $\tau = id_K$ και άρα αυτό είναι το μοναδικό στοιχείο της τομής. Για το δεύτερο επιχείρημα, αν $\tau \in \sigma N$ για κάθε $N$ τότε $\sigma^{-1} \tau \in N$ για κάθε $N$, επομένως $\sigma^{-1} \tau = id_K$ και άρα $\tau = \sigma$ για το τυχόν $\tau \in \bigcap_{N \in \mathcal{N}} \sigma N$.
+Έστω $\tau \in \bigcap_{N \in \mathcal{N}} N$ και $a \in K$ . Από το λήμμα \ref{17.1} υπάρχει  $E \in \mathcal{I}$ με $a \in E$. Έχουμε $N := Gal(K/E) \in \mathcal{N}$ εφόσον $E \in \mathcal{I}$. Ο αυτομορφισμός $\tau$ κρατάει σταθερό το $E$ καθώς $\tau \in N$, επομένως $\tau (a) = a$ για το τυχόν $a \in K$. Συνεπώς $\tau = id_K$ και άρα αυτό είναι το μοναδικό στοιχείο της τομής. Για το δεύτερο επιχείρημα, αν $\tau \in \sigma N$ για κάθε $N$ τότε $\sigma^{-1} \tau \in N$ για κάθε $N$, επομένως $\sigma^{-1} \tau = id_K$ και άρα $\tau = \sigma$ για το τυχόν $\tau \in \bigcap_{N \in \mathcal{N}} \sigma N$.
 \end{proof}
 
-\begin{lemma} \label{17.4} Αν $N_1 , N_2 \in \mathcal{N}$ τότε $N_1 \cap N_2 \in \mathcal{N}$ .
-(Κλειστότητα σε πεπ τομές)
+\begin{lemma} \label{17.4} Αν $N_1 , N_2 \in \mathcal{N}$ τότε $N_1 \cap N_2 \in \mathcal{N}$.
 \end{lemma}
 \begin{proof} $ $
 
 
 $ $\newline
-Έστω $N_i = Gal(K/E_i)$ με $E_i \in \mathcal{I}$ . Κάθε $E_i$ είναι πεπερασμένη επέκταση Galois του $F$ , επομένως $E_1 E_2$ είναι επιπλέον πεπερασμένη επέκταση Galois του $F$ , άρα $E_1 E_2 \in \mathcal{I}$ . Ωστόσο, έχουμε ότι $Gal(K/E_1 E_2) = N_1 \cap N_2$ Πράγματι,
+Έστω $N_i = Gal(K/E_i)$ με $E_i \in \mathcal{I}$ . Κάθε $E_i$ είναι πεπερασμένη επέκταση \tl{Galois} του $F$, επομένως το σώμα $E_1 E_2$ είναι και αυτό πεπερασμένη επέκταση \tl{Galois} του $F$ , άρα $E_1 E_2 \in \mathcal{I}$. Ωστόσο, έχουμε ότι $Gal(K/E_1 E_2) = N_1 \cap N_2$. Πράγματι,
 $$\sigma \in N_1 \cap N_2 \iff \sigma|_{E_1} = id \text{ και } \sigma|_{E_2}=id \iff E_1 \subseteq F^{(\sigma)} \text{ και } E_2 \subseteq F^{(\sigma)}$$
 $$\iff E_1 E_2 \subseteq F^{(\sigma)}$$
-Επομένως $N_1 \cap N_2 = Gal(K/E_1 E_2) \in \mathcal{N}$ .
+Επομένως $N_1 \cap N_2 = Gal(K/E_1 E_2) \in \mathcal{N}$.
 \end{proof}
 
 \noindent Τώρα θα ορίσουμε την τοπολογία στην ομάδα \tl{Galois} $G$.
@@ -385,8 +482,30 @@ $$\theta^{-1} (\rho Gal(L/E)) = \tau N$$
 έστω $K/F$ πεπερασμένη Galois επέκταση. Τότε η Krull τοπολογία στο $Gal(K/F)$ είναι η διακριτή. Πράγματι αν $\sigma \in G$ , έχουμε $K\in \mathcal I$ αφού $[K:F]<\infty$ και άρα το $\sigma N = \sigma Gal(K/K) = \sigma \{1_K\} = \{ \sigma\}$ είναι ανοιχτή περιοχή του $\sigma$ . Ετσι, κάθε υποομάδα $H\leq G$ είναι κλειστή και βρισκόμαστε ξανά στο αρχικό θεμελιώδες θεώρημα της θεωρίας Galois.
 \end{example}
 
+
 \begin{example}
+	Έστω $K = \mathbb{Q}(\zeta_{2^{\infty}}) = \cup_n \mathbb{Q} (\zeta_{2^n})$ και $K_n = \mathbb{Q}(\zeta_{2^n})$. Έχουμε ότι: 
+	$$Gal(K_n,\Q ) \cong (\Z / 2^n \Z )$$
+	$$\sigma_a (\zeta_{2^n}) = \zeta^a_{2^n}$$
+	για τα αντιστρέψιμα $a$  $(mod2^n)$.
+
+	$ $\newline %να αλλάξω ίσως το σημείο με το άτοπο, ίσως 13^k = 5 mod2^n για fixed k?
+	\noindent Θεωρούμε τις κυκλικές υποομάδες $H = (\sigma_5)$ και $H^{\prime} = (\sigma_{13})$ της $Gal(K/ \Q)$. Έχουμε ότι $H \neq H^{\prime}$, διαφορετικά αν απεικονίζαμε έναν γεννήτορα της μιας ομάδας σε έναν γεννήτορα της άλλης θα είχαμε $\zeta^5_{2^n} = \zeta^{13^k}_{2^n}$ το οποίο είναι ισοδύναμο με το άτοπο $5 = 13^k \quad (mod2^n)$ για κάθε φυσικό $n$ και σταθερό $k$.
+	Ωστόσο, θα δείξουμε ότι ισχύει $K^H = K^{H^{\prime}}$! Θεωρούμε επίσης $H_n, H^{\prime}_n$ τις κυκλικές υποομάδες $(\sigma_5|_{K_n} )$ και $(\sigma_{13}|_{K_n})$ της $Gal(K_n / \Q)$. Αυτές είναι ισόμορφες καθώς $<5 \quad mod2^n> = < 13 \quad mod2^n>$ για κάθε $n\geq 2$. Καθώς $13,5 = 1\quad (mod4)$ έχουμε ότι τα $\sigma_5, \sigma_{13}$ κρατάνε σταθερό το $i$, δηλαδή $\Q (i) \subseteq K^{H_n}_n , K^{H^{\prime}_n}_n $. Από πεπερασμένη αντιστοιχία \tl{Galois} έχουμε ότι $K^{H_n}_n = \Q (i) = K^{H^{\prime}_n}_n$. Αυτό είναι για τυχόν $n \in \mathbb N$. Συνεπώς,  παρόλο που $H \neq H^{\prime}$ ισχύει ότι:
+	
+		$$K^H = \{a \in K : \quad \sigma (a) = a \quad\forall \sigma \in H\} = \cup_n \{a\in K: \sigma|_{K_n} (a) = a \quad\forall \sigma \in H_n\} = $$
+		$$\cup_n K^{H_n}_n = \cup_n \Q (i) = \cup_n K^{H^{\prime}_n}_n = K^{H^{\prime}}$$
+%μπορώ νδο ότι δεν είναι κλειστή?	
 \end{example}
+
+$ $\newline
+\begin{example}
+	Αν θεωρήσουμε την \tl{Galois} επέκταση $\Q (i, \sqrt 2 , \sqrt 3 , \sqrt 5 , \sqrt 7 , \ldots)$ του $\Q$ τότε επειδή οι αυτομορφισμοί του θα απεικονίζουν κάθε $\sqrt p$ (ή το $i$) στα $ \pm \sqrt p$ (ή $\pm i$) έχουμε ότι:
+	$$G \cong \prod\limits_{i=1}^{\infty} \Z / 2 \Z$$
+	Αυτή η ομάδα έχει υπεραριθμήσιμες υποομάδες με δείκτη 2, ενώ οι επεκτάσεις διάστασης 2 του $\Q$ είναι αριθμήσιμες. Ουσιαστικά, οι υποομάδες της ομάδας \tl{Galois} μιας άπειρης επέκτασης είναι "πάρα πολλές" σε σχέση με τις ενδιάμεσες πεπερασμένες επεκτάσεις. Για αυτό και αποτυγχάνει η αντιστοιχία \tl{Galois} χωρίς τον περιορισμό της κλειστότητας των υποομάδων.
+\end{example}
+
+
 
 
 \pagebreak
