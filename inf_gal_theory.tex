@@ -14,7 +14,7 @@
 \usepackage{titlesec}
 \usepackage{sectsty}
 \usepackage{verbatim}
-
+\usepackage{multirow}
 \chapternumberfont{\tiny} 
 \chaptertitlefont{\Huge}
 %ελληνικοι χαρακτηρες σε μαθ pdf utf-8
@@ -82,7 +82,7 @@
 \vspace{1cm}
 
 \pagebreak
-\section{Κλασική θεωρία \tl{Galois}}
+\section{Κλασική Θεωρία \tl{Galois}}
 \vspace{1cm}
 % proposition 3.28!
 
@@ -121,8 +121,16 @@ $ $\newline
 	$$\overline F = \{a \in K: \text{ το } a \text{ είναι αλγεβρικό υπεράνω του } F\}$$ 
 \end{defn} %υπαρξη
 
-\begin{defn} $F(a)$
+\begin{defn} Έστω $K/F$ και $S\subseteq K$ με $F(S)$ συμβολίζουμε την τομή όλων των υποσωμάτων του $K$ που περιέχουν το $F$ και το $S$. To $F(S)$ είναι σώμα και $F\subseteq F(S) \subseteq K$. Αν $S=\{a_1, \ldots, a_n\}$ τότε γράφουμε $F(a_1, \ldots, a_n)$.
+
 \end{defn}
+
+\begin{prop} Έστω $K/F$ και $a_1,\ldots a_n \in K$. Έχουμε ότι το $F(a_1, \ldots , a_n)$  είναι ίσο με:
+	$$ \left\{\frac{f(a_1,\ldots,a_n)}{g(a_1,\ldots, a_n)} \in K: \quad f(x_1,\ldots,x_n), g(x_1,\ldots,x_n) \in F[x_1,\ldots,x_n] , g(a_1,\ldots,a_n)\neq 0\right\}$$
+\end{prop}
+
+\begin{proof}
+\end{proof}
 
 Έστω $a$ αλγεβρικό στοιχέιο υπεράνω κάποιου σώματος $F$. Θεωρούμε το πολυώνυμο $p(x) \in F[x]$ ελαχίστου βαθμού που έχει ρίζα το $a$. Εφόσον το $F$ είναι σώμα μπορούμε να υποθέσουμε ότι το $p$ είναι μονικό καθώς μπορούμε να το πολλαπλασιάσουμε με τον αντίστροφο του μεγιστοβάθμιου συντελεστή. Επιπλέον, αυτό το πολυώνυμο είναι μοναδικό. Αν δεν είναι και έχουμε $p(x), g(x)$ με αυτές τις ιδιότητες, τότε το $p(x)-g(x) \in F[x]$ θα έχει ρίζα το $a$ και θα είναι βαθμού μικρότερου του $p(x)$ δηλαδή θα είναι βαθμού 0 από την υπόθεσή μας.
 \begin{defn} Για ένα $a$ που ανήκει σε κάποια επέκταση και είναι αλγεβρικό στοιχέιο υπεράνω ενός σώματος $F$ λέμε το παραπάνω πολυώνυμο $p(x)$ ως ελάχιστο πολυώνυμο του $a$ υπεράνω του $F$ και το συμβολίζουμε με $Irr(a,F)$. 
@@ -143,6 +151,9 @@ $ $\newline
 \begin{cor}  $[F(a): F] < \infty$ αν και μόνο αν το $a$ είναι αλγεβρικό υπεράνω του $F$.
 \end{cor}
 
+\begin{proof}
+\end{proof}
+
 
 \begin{theorem}Αν $K/E$ και $E/F$ είναι αλγεβρικές επεκτάσεις τότε και η επέκταση $K/F$ είναι αλγεβρική.
 \end{theorem}
@@ -151,28 +162,252 @@ $ $\newline
 \end{proof}
 
 \subsection{Αυτομορφισμοί}
+\vspace{1cm}
+
+Έστω $K$ ένα σώμα. Ένας ισομορφισμός δακτυλιών $K \rightarrow K$ ονομάζεται αυτομορφισμός του $K$ και η ομάδα των αυτομορφισμών με πράξη την σύνθεση συμβολίζεται με $Aut(K)$. Καθώς ασχολούμαστε με επεκτάσεις πρέπει να θεωρήσουμε απεικονίσεις επεκτάσεων. Έστω $K,L$ επεκτάσεις ενός σώματος $F$. Ένας $F$-ομομορφισμός $\tau : K \rightarrow L$ είναι ένας ομομορφισμός δακτυλίων τέτοιος ώστε $\tau (a) = a$ για κάθε $a \in F$. Δηλαδή, $\tau |_F = id_F$. Αν o $\tau$ είναι 1-1 και επί τότε λέγεται $F$-ισομορφισμός. Αν επιπλέον $K=L$, τότε λέγεται $F$-αυτομορφισμός του $K$.
+
+\begin{defn}[Ομάδα \tl{Galois}]
+	Έστω $K/F$. Ορίζουμε $Gal(K/F)$ να είναι οι $F$-αυτομορφισμοί του $K$ με πράξη την σύνθεση.
+\end{defn}
+
+\begin{lemma}
+	%lemma 2.2
+	Έστω $K=F(X)$ με $X \subseteq K$. Αν $\sigma , \tau \in Gal(K/F)$ με $\sigma|_X = \tau|_X $ τότε $\sigma = \tau$. Συνεπώς, οι $F$-αυτομορφισμοί του $K$ καθορίζονται πλήρως από τις εικόνες τους στο σύνολο $X$ που επισυνάπτουμε.
+\end{lemma}
+
+\begin{proof}
+	%σελ 16
+\end{proof}
 
 
 
+\begin{lemma}
+	%2.3 lemma
+	Έστω $\tau : K \rightarrow L$ ένας $F$-ομομορφισμός και $a \in K$ αλγεβρικό υπεράνω του $F$. Αν $f(x) \in F[x]$ με $f(a)=0$ τότε $f(\tau(a)) = 0$. Δηλαδή το $\tau$ μεταθέτει τις ρίζες του $Irr(a,F)$. Συνεπώς $Irr(a,F) = Irr(\tau(a),F)$.
+\end{lemma}
+
+\begin{cor}
+	Αν $K/F$ επέκταση με $[K:F]<\infty$ τότε $|Gal(K/F)| <\infty$.
+\end{cor}
+\begin{proof}
+\end{proof}
+
+\begin{defn}[Σταθερό σώμα]
+	Έστω $K/F$ και $S \subseteq Aut(K)$. Τότε το σύνολο:
+	$$F^S = \{a \in K: \quad \tau(a) = a \quad\forall \tau \in S\}$$
+	λέγεται σταθερό σώμα του $S$ και είναι πράγματι σώμα και μάλιστα υπόσωμα του $K$.
+\end{defn}
+
+Λέμε ένα σώμα $L$ τέτοιο ώστε $F \subseteq L \subseteq K$ ενδιάμεση επέκταση της $K/F$ ή αλλιώς $K/L/F$. Αν $S\subseteq Gal(K/F)$ τότε $F^S$ είναι ενδιάμεση επέκταση της $K/F$.
+
+\begin{lemma}
+	%2.9 sel 18
+	Έστω $K$ ένα σώμα. Τότε:
+	\begin{enumerate}
+		\item Αν $L_1 \subseteq L_2$ υποσώματα του $K$ τότε $Gal(K/L_2) \subseteq Gal(K/L_1)$.
+		\item Αν $L\subseteq K$ τότε $L \subseteq F^{Gal(K/L)}$.
+		\item Αν $S_1 \subseteq S_2$ υποσύνολα του $Aut(K)$ τότε $F^{S_2} \subseteq F^{S_1}$.
+		\item Αν $S \subseteq Aut(K)$ τότε $S\subseteq Gal(K/F^S)$.
+		\item Αν $L = F^S$ για κάποιο $S\subseteq Aut(K)$ τότε $L = F^{Gal(K/F)}$.
+		\item Αν $H = Gal(K/L)$ για κάποιο σώμα $L \subseteq K$ τότε $H = Gal(K/F^H)$.
+	\end{enumerate}
+\end{lemma}
+\begin{proof}
+\end{proof}
 
 
+\begin{cor} Αν $K/F$ τότε υπάρχει 1-1 αντιστοιχία που αλλάζει την φορά μεταξύ των υποομάδων της $Gal(K/F)$ της μορφής $Gal(K/L)$ για κάποιο υπόσωμα $L$ του $K$ που περιέχει το $F$ και των υποσωμάτων του $K$ που περιέχουν το $F$ και είναι της μορφής $F^S$ για κάποιο $S \subseteq Aut(K)$. Η αντιστοιχία δίνεται από την απεικόνιση $L \mapsto Gal(K/L)$ και την αντίστροφή της $H \mapsto F^H$
+\end{cor}
+\begin{proof}
+	%sel 19
+\end{proof}
+
+\begin{prop}
+	%2.13 apodeiksh apo maliaka
+	Εστω $K/F$ πεπερασμένη επέκταση. Τότε $|Gal(K/F)| \leq [K:F]$
+\end{prop}
+
+\begin{proof}
+\end{proof}
+
+\begin{prop}
+	%prop 2.14 apodeikhs apo maliaka
+	Έστω $G$ πεπερασμένη ομάδα αυτομορφισμών του $K$ με $F^G$. Τότε $|G| = [K:F]$ και $G = Gal(K/F)$.
+\end{prop}
+
+\begin{defn}[Επέκταση \tl{Galois}]
+	Έστω $K/F$ αλγεβρική επέκταση. Τότε λέμε ότι η $K/F$ είναι \tl{Galois} αν $F = F^{Gal(K/F)}$.
+\end{defn}
+
+\begin{cor}
+	Έστω $K/F$ πεπερασμένη επέκταση. Τότε $K/F$ είναι \tl{Galois} αν και μόνο αν $|Gal(K/F)| = [K:F]$.
+\end{cor}
+\begin{proof}
+	%sel 22
+\end{proof}
+
+\begin{cor} Έστω $K/F$ και $a\in K$ αλγεβρικό υπεράνω του $F$. Τότε $|Gal(F(a)/F)|$ είναι ο αριθμός των διακεκριμένων ριζών του $Irr(a,F)$ στο $F(a)$. Συνεπώς, $F(a)/F$ είναι \tl{Galois} αν και μόνο αν $Irr(a,F)$ έχει διακεκριμένες ρίζες όσες είναι ο βαθμός του.
+\end{cor}
+\begin{proof}
+\end{proof}
+
+\begin{example} Η επέκταση $\Q (\sqrt[3]{2}) / \Q$ δεν είναι \tl{Galois}. To $Irr(\sqrt[3]{2} , \Q ) = x^3 -2$ έχει 3 διακεκριμένες ρίζες και $[\Q (\sqrt[3]{2}) : \Q] = 3$ αλλά μόνο μια ανήκει στο πραγματικό σώμα $\Q (\sqrt[3]{2})$, δηλαδή $|Gal(\Q (\sqrt[3]{2}) / \Q)| = 1$.
+	
+	Αν επισυνάψουμε και την $\omega = e^{2\pi i /3}$, έχουμε $x^3 - 2 = (x-\sqrt[3]{2})(x-\sqrt[3]{2}\omega ) (x-\sqrt[3]{2} \omega^2)$. Όλες οι ρίζες ανήκουν στο $\Q (\sqrt[3]{2}, \omega)$ και εφόσον $Irr(\sqrt[3]{2}, \Q) = x^3 - 2$ και $Irr(\omega , \Q) = x^2 + x + 1$ έχουμε από κανόνα των πύργων ότι $[\Q (\sqrt[3]{2} , \omega) : \Q] = 6$.
+	Ταυτόχρονα έχουμε τους 6 ισομορφισμούς:
+
+	\begin{center}
+		\begin{tabular}{|c|c|c |} 
+		\hline
+		  & $\sqrt[3]{2}$ & $\omega$  \\ 
+		\hline
+		$\sigma_1=id$ & $\sqrt[3]{2}$ & $\omega$ \\ 
+		
+		$\sigma_2$ & $\omega\sqrt[3]{2}$ & $\omega$  \\
+		
+		$\sigma_3$ & $\sqrt[3]{2}$ & $\omega^2$  \\
+		
+		$\sigma_4$ & $\omega\sqrt[3]{2}$ & $\omega^2$  \\
+		
+		$\sigma_5$ &$\omega^2\sqrt[3]{2}$ & $\omega$  \\
+		
+		$\sigma_6$ &$\omega^2\sqrt[3]{2}$ & $\omega^2$ \\
+		\hline
+	   \end{tabular}
+	   \end{center}
+
+	επομένως $|Gal(\Q (\sqrt[3]{2}, \omega)/ \Q )| = [\Q (\sqrt[3]{2} , \omega): \Q]$
+	και άρα αυτή η επέκταση είναι \tl{Galois}.
+\end{example}
+
+\subsection{Κανονικές Επεκτάσεις}
+
+Υπενθυμίζουμε εδώ ότι, με βάση τον αλγόριθμο διαίρεσης, $a \in F$ είναι ρίζα του $f(x) \in F[x]$ αν και μόνο αν $x-a | f(x)$.
+
+\begin{lemma}
+	%3.1
+	Έστω $f(x) \in F[x]$. Τότε το πολυώνυμο $f$ έχει το πολύ $deg(f)$ ρίζες σε οποιαδήποτε επέκταση του $F$.
+\end{lemma}
+
+\begin{proof}
+\end{proof}
+
+\begin{defn} Έστω $K/F$ και $f(x) \in F[x]$. Λέμε ότι το $f$ διασπάται πλήρως στο $K$ αν υπάρχουν $a_1 , \ldots a_n \in K$ και $a \in F$ τέτοια ώστε:
+	$$f(x) = a (x-a_1)\cdots (x-a_n) \in K[x]$$
+\end{defn}
+
+\begin{defn}[Σώμα ριζών]
+	Έστω $K/F$ και $f(x) \in F[x]$. Λέμε ότι το $K$ είναι σώμα ριζών του $f(x) \in F[x]$ αν το $f$ διασπάται πλήρως στο $K$ και $K=F(a_1 , \ldots, a_n)$ όπου $a_1 ,\ldots ,a_n$ είναι οι ρίζες του $f$. Μπορούμε να λέμε ότι το $K$ είναι και σώμα ριζών ενός συνόλου πολυωνύμων αν καθένα από αυτά διασπάται πλήρως στο $K$ και $K=F(X)$ όπου $X$ οι ρίζες των πολυωνύμων.
+\end{defn}
+
+Aν $X = \{f_1 , \ldots f_n\}$ ουσιαστικά μιλάμε για το σώμα ριζών του πολυωνύμου $f = f_1 \cdots f_n$.
+
+\begin{theorem} [Ύπαρξη ρίζας σε επέκταση]
+\end{theorem}
+
+\begin{proof}
+	%θεώρημα 3.3 σελ 28
+\end{proof}
+
+\begin{theorem}[Ύπαρξη σώματος ριζών για πεπερασμένα πολυώνυμα]
+\end{theorem}
+
+\begin{proof}
+\end{proof}
+
+\begin{lemma} \label{3.10}
+	Αν $K$ είναι σώμα τότε τα επόμενα είναι ισοδύναμα:
+	\begin{enumerate}
+		\item Δεν υπάρχουν αλγεβρικές επεκτάσεις του $K$ εκτός από το ίδιο το $K$.
+		\item Δεν υπάρχουν πεπερασμένες επεκτάσεις του $K$ εκτός από το ίδιο το $K$.
+		\item Αν $L$ είναι επέκταση του $K$, τότε $K = \{a \in L: a \text{ αλγεβρικό υπεράνω του } K \}$.
+		\item Κάθε $f(x) \in K[x]$ διασπάται πλήρως στο $K$.
+		\item Κάθε $f(x) \in K[x]$ έχει ρίζα στο $K$. 
+	\end{enumerate}
+\end{lemma}
+
+\begin{proof}
+\end{proof}
+
+\begin{defn} Αν κάποιο $K$ ικανοποιεί κάποια από τις συνθήκες του λήμματος \ref{3.10} τότε λέμε ότι το $K$ είναι αλγεβρικά κλειστό. Αν $K/F$ είναι αλγεβρική επέκταση και το $K$ είναι αλγεβρικά κλειστό, λέμε ότι το $K$ είναι αλγεβρική κλειστότητα του $F$.
+\end{defn}
+
+\begin{lemma}
+	Αν $K/F$ αλγεβρική επέκταση, τότε $|K| \leq max\{|F| , |\mathbb N|\}$.
+\end{lemma}
+\begin{proof}
+\end{proof}
 
 
+\begin{theorem}[Ύπαρξη αλγεβρικής κλειστότητας]
+	Έστω $F$ ένα σώμα. Τότε υπάρχει αλγεβρική κλειστότητα του $F$
+\end{theorem}
+\begin{proof}
+\end{proof}
 
 
+\begin{cor}[Υπαρξη σώματος ριζών]
+\end{cor}
 
 
+\begin{lemma} Έστω $\sigma : F \rightarrow F^{\prime}$ ένας ισομορφισμός σωμάτων. Έστω $f(x) \in F[x]$ ανάγωγο και $a$ μια ρίζα του σε κάποια επέκταση $K/F$. Επιπλέον, έστω $a^{\prime}$ μια ρίζα του $\sigma(f)$ σε μια επέκταση $K^{\prime} / F^{\prime}$. Τότε, υπάρχει ισομορφισμός $\tau : F(a) \rightarrow F^{\prime} ( a ^{\prime})$ με $\tau (a) = a^{\prime}$ και $\tau|_F = \sigma$.
+\end{lemma}
+
+\begin{proof}% 3.17
+\end{proof}
+
+\begin{lemma} Έστω $\sigma : F \rightarrow F^{\prime}$ ένας ισομορφισμός σωμάτων και οι επεκτάσεις $K/F$ και $K^{\prime} / F^{\prime}$. Υποθέτουμε ότι το $K$ είναι σώμα ριζών μιας οικογένειας $\{f_i\}$ υπεράνω του $F$ και ότι $\tau : K \rightarrow K^{\prime}$ είναι ένας ομομορφισμός με $\tau|_F = \sigma$. Τότε το $\tau(K)$ είναι σώμα ριζών της οικογένειας $\{\sigma(f_i) \}$ υπεράνω του $F^{\prime}$.
+\end{lemma}
+
+\begin{proof}
+\end{proof}
+
+\begin{theorem} %3.19
+	Έστω $\sigma : F \rightarrow F^{\prime}$ ενας ισομορφισμός σωμάτων και θεωρούμε τα πολυώνυμα $f(x) \in F[x] , \sigma(f) \in F^{\prime}[x]$. Έστω $K$ το σώμα ριζών του $f$ υπεράνω του $F$ και $K^{\prime}$ το σώμα ριζών του $\sigma (f)$ υπεράνω του $F^{\prime}$. Τότε υπάρχει ισομορφισμός $\tau: K \rightarrow K^{\prime}$ με $\tau|_F = \sigma$. Επιπλέον, αν $a \in K$ και το $a^{\prime} \in K^{\prime}$ είναι ρίζα του $\sigma (Irr(a,F))$ στο $K^{\prime}$ τότε ο ισομορφισμός $\tau$ μπορεί να επιλεχθεί έτσι ώστε $\tau(a) = a^{\prime}$. 
+\end{theorem}
+
+\begin{proof}
+\end{proof}
 
 
+\begin{theorem} [Θεώρημα Επέκτασης Ισομορφισμών]
+	Έστω $\sigma : F \rightarrow F^{\prime}$ ένας ισομορφισμός σωμάτων. Έστω $S = \{f_i (x)\}$ ένα σύνολο πολυωνύμων με συντελεστές από το $F$ και $S^{\prime} = \{\sigma (f_i)\}$. Έστω $K$ ένα σώμα ριζών του $S$ υπεράνω του $F$ και $K^{\prime}$ ένα σώμα ριζών του $S^{\prime}$ υπεράνω του $F^{\prime}$. Τότε υπάρχει ισομορφισμός $\tau : K \rightarrow K^{\prime}$ με $\tau|_F = \sigma$. Επιπλέον, αν $a \in K$ και το $a^{\prime}$ είναι οποιαδήποτε ρίζα του $\sigma(Irr(a,F))$ στο $K^{\prime}$ τότε ο ισομορφισμός $\tau$ μπορεί να επιλεγεί έτσι ώστε $\tau(a) = a^{\prime}$.
+\end{theorem}
+
+\begin{proof}
+\end{proof}
+
+\begin{cor} Έστω $F$ ένα σώμα και $S\subseteq F[x]$. Τότε οποιαδήποτε δύο σώματα ριζών του $S$ είναι ισόμορφα μέσω ενός $F$-ισομορφισμού. Ειδικότερα το ίδιο ισχύει για αλγεβρικές κλειστότητες.
+\end{cor}
+
+\begin{proof}
+\end{proof}
+
+\begin{cor}Έστω $F$ ένα σώμα και $N$ μια αλγεβρική κλειστότητα του $F$. Αν $K$ είναι αλγεβρική επέκταση του $F$ τότε το $K$ είναι ισόμορφο με ένα υπόσωμα του $N$.
+\end{cor}
 
 
+\begin{proof}
+\end{proof}
 
 
+\begin{defn}[Κανονική Επέκταση] Έστω $K/F$. Τότε λέμε ότι η επέκταση $K/F$ είναι κανονική αν το $K$ είναι σώμα ριζών για κάποιο σύνολο πολυωνύμων υπεράνω του $F$.
+\end{defn}
 
+\begin{prop}% 3.28
+	Έστω $K/F$ αλγεβρική. Τότε τα ακόλουθα είνα ισοδύναμα:
+	\begin{enumerate}
+		\item $K/F$ κανονική επέκταση.
+		\item Αν $M$ είναι αλγεβρική κλειστότητα του $K$ και αν $\tau : K \rightarrow M$ είναι ένας $F$-ισομορφισμός, τότε $\tau(K) = K$. %!!!!!
+		\item Αν $N/K/L/F$ και $\sigma : L \rightarrow N$ είναι ένας $F$-ομομορφισμός, τότε $\sigma(L) \subseteq K$ και υπάρχει $\tau \in Gal(K/F)$ με $\tau|_L = \sigma$.
+		\item Για κάθε ανάγωγο $f(x) \in F[x]$, αν $f$ έχει ρίζα στο $K$ τότε διασπάται πλήρως στο $K$.
+	\end{enumerate}
+\end{prop}
 
+\begin{proof}
+\end{proof}
 
-
-
+\subsection{Διαχωρίσιμες Επεκτάσεις}
 
 
 
@@ -595,7 +830,7 @@ $ $\newline
 	\bibitem{jsmilne}
 	\tl{James S. Milne.}
 	\textit{\tl{Fields and Galois Theory.}}
-	\tl{Available at www.jmilne.org/math/, 2020}
+	\tl{Available at www.jmilne.org/math/, 2020.}
 \end{thebibliography}
 
 %
