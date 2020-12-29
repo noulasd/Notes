@@ -75,8 +75,8 @@
 		\vspace{0.3truecm}
 		\begin{center}
 			Ονομ/νο: Νούλας Δημήτριος\\
-			ΑΜ: 1112201800377\\
-			\tl{email}: \tl{dimitriosnoulas@gmail.com}
+			ΑΜ: \\
+			\tl{email}: \tl{}
 		\end{center}
 		\vspace{0.3truecm}
 	\end{framed}
@@ -615,19 +615,7 @@ $ $\newline Επιπλέον, $\tau\sigma ((1-i)\rho) = \tau ( \sigma (1-i) \sig
 
 %https://eclass.uoa.gr/modules/document/?course=MATH491
 
-%βάση
-%συνεχεια
-%κλειστή θήκη
-%omoiomorfismos
-%συνεκτικός
-%Hausdorff
-%totally disconnected
-%compact
-%topologia periorismos
-%topologia ginomeno
-%sumpageia
-%topologia phliko
-%hausdorff se ginomeno, tychonoff
+
 $ $\newline
 Θα υπενθυμίσουμε όρους της τοπολογίας χωρίς να εμβαθύνουμε ιδιαίτερα, τους οποίους θα χρειαστούμε στο επόμενο κεφάλαιο.
 
@@ -639,8 +627,10 @@ $ $\newline
 	\end{enumerate}
 \end{defn}
 
+$ $\newline
 \noindent Το ζεύγος $(X,\mathcal T)$ ονομάζεται τοπολογικός χώρος και τα μέλη της $\mathcal T$ ονομάζονται ανοικτά υποσύνολα του $X$. Επιπλέον, ονομάζουμε ένα υποσύνολο $F\subseteq X$ κλειστό αν $F^C$ ανοικτό.
 
+$ $\newline
 \noindent Αν $\mathcal P (x) = \mathcal T$ ονομάζουμε αυτήν την τοπολογία διακριτή, καθώς όλα τα υποσύνολα είναι ανοικτά και αυτό προέρχεται από την διακριτή μετρική.
 
 
@@ -648,46 +638,130 @@ $ $\newline
 	Έστω $(X,\mathcal T)$ τοπολογικός χώρος και $A \subseteq X$. Η κλειστή θήκη ή κλειστότητα του $A$ είναι το σύνολο:
 	$$\overline{A} = \cap \{B: B \text{ κλειστό και } A\subseteq B\}$$
 \end{defn}
-
+\vspace{0.1cm}
 \begin{prop}
 	Έστω $(X,\mathcal T)$ και $A \subseteq X$. Τότε $x\in \overline A \iff$ για κάθε ανοικτό $U \subseteq X$ με $x \in U$ ισχύει $U\cap A \neq \varnothing$.
 \end{prop}
 
+\vspace{0.1cm}
+
 \begin{defn}[Εσωτερικό]
 	Έστω $(X,\mathcal T)$ τ.χ. και $A \subseteq X$. Τότε ορίζουμε ως εσωτερικό του $A$ το:
 	$$A^{\circ} = \cup \{B: B\subseteq A \text{ και } B \in \mathcal T\}$$
-	το οποίο είναι ανοικτό και τα σημεία του λέγονται εσωτερικά σημεία του $A$
+	το οποίο είναι ανοικτό και τα σημεία του λέγονται εσωτερικά σημεία του $A$.
 \end{defn}
 
+$ $\newline
 \noindent Επιπλέον, λέμε ότι το $A$ είναι περιοχή του $x \in X$ αν $x \in A^{\circ}$. Όμοια λέμε ανοικτή περιοχή αν $A=A^{\circ}$ δηλαδή αν $A \in \mathcal T$.
 
 \begin{defn}[Βάση]
 	Έστω $(X,\mathcal T)$ τοπολογικός χώρος. Μια οικογένεια $\mathcal B \subseteq \mathcal T$ λέμε ότι έιναι βάση για την $\mathcal T$ αν κάθε ανοικτό μη κενό σύνολο είναι ένωση στοιχείων της $\mathcal B$.
 \end{defn}
 
+\vspace{0.1cm}
+
+\begin{defn}[Τοπολογία περιορισμός]
+	Έστω $(X,\mathcal T)$ τ.χ. και $A \subseteq X$. Τότε η οικογένεια
+	$$\mathcal{T}_A = \{A\cap U: \quad U \in \mathcal{T} \}$$
+	ονομάζεται τοπολογία περιορισμός στο $A$ ή σχετική τοπολογία του $A$. Ο χώρος $(A, \mathcal T_A)$ είναι τοπολογικός υπόχωρος του $X$.
+\end{defn}
+
+\vspace{0.1cm}
+
+\begin{defn}[Συνέχεια]
+	Εστω $X,Y$ τοπολογικοί χώροι και $f: X \rightarrow Y$ συνάρτηση και $a \in X$. Λέμε ότι η $f$ είναι συνεχής στο $a$ αν για κάθε περιοχή $V$ του $f(a)$ υπάρχει περιοχή $U$ του $a$ στον $X$ ώστε $f(U) \subseteq V$.
+\end{defn}
+
+\vspace{0.1cm}
+
+\begin{prop}[Χαρακτηρισμός συνέχειας] Έστω $X,Y$ τ.χ. και $f:X \rightarrow Y$ συνάρτηση. Τα ακόλουθα είναι ισοδύναμα:
+	\begin{enumerate}
+		\item Η $f$ είναι συνεχής.
+		\item Για κάθε ανοικτό $V \subseteq Y$, το $f^{-1} (V) $ είναι ανοικτό στον $X$.
+		\item Για κάθε κλειστό $F \subseteq Y$, το $f^{-1}(F)$ είναι κλειστό στον $X$.
+		\item Για κάθε $A \subseteq X$ ισχύει ότι $f(\overline{A}) \subseteq \overline{f(A)}$.
+	\end{enumerate}
+\end{prop}
+
+\vspace{0.1cm}
+
+\begin{defn}[Ομοιομορφισμός] Μια συνάρτηση $f$ μεταξύ δύο τοπολογικών χώρων $X,Y$ λέγεται ομοιομορφισμός αν είναι 1-1, επί και αν οι $f, f^{-1}$ είναι συνεχείς. Τότε οι χώροι $X,Y$ λέγονται ομοιομορφικοί και στην ουσία ταυτίζονται ως τοπολογικοί χώροι.
+\end{defn}
+
+\vspace{0.1cm}
+
+\begin{defn}[Καρτεσιανό Γινόμενο]
+	Έστω $\{X_i: i \in I\}$ οικογένεια συνόλων. Το καρτεσιανό γινόμενο $\prod\limits_{i \in I} X_i$ είναι το σύνολο όλων των συναρτήσεων $f: I \rightarrow \cup_{i \in I} X_i$ με $f(i) \in X_i$ για κάθε $i \in I$. Αν $X_i = X$ για κάθε $i \in I$ τότε συμβολίζεται το καρτεσιανό γινόμενο και ως $X^I$. Ένα στοιχείο $f \in \prod\limits_{i \in I} X_i$ γράφεται ως $(x_i)_{i \in I}$ ή $(x_i)$, δηλαδή $f(i) = x_i$ για κάθε $i \in I$. Με αυτόν τον συμβολισμό το $x_j \in X_j$ ονομάζεται $j$-συντεταγμένη του $(x_i)$ και το $X_j$ είναι ο $j$-παράγοντας του $\prod\limits_{i \in I} X_i$. Επιπλέον, για κάθε $j \in I$ η απεικόνιση $\pi_j : \prod\limits_{i \in I} X_i \rightarrow X_j$ με κανόνα $\pi_j ( (xi)) = x_j$ ονομάζεται η προβολή στην $j$-συντεταγμένη.
+\end{defn}
 
 
+$ $\newline
+\noindent Υπενθυμίζουμε και το αξιώμα επιλογής, στο οποίο βασιζόμαστε για να ορίσουμε την τοπολογία γινόμενο.
 
+\begin{prop}[Αξίωμα Επιλογής]
+	Έστω $\{X_i: i \in I\}$ μη κενή οικογένεια μη κενών συνόλων, τότε $\prod\limits_{i \in I} X_i \neq \varnothing$. Δηλαδή, $I\neq \varnothing$ και $X_i \neq \varnothing$ για κάθε $i \in I \implies \prod\limits_{i \in I} X_i \neq \varnothing$.
+\end{prop}
 
+\vspace{0.1cm}
 
+\begin{defn}[Τοπολογία γινόμενο]
+	Έστω $(X_i, \mathcal{T}_i)$ οικογένεια τοπολογικών χώρων, η τοπολογία γινόμενο ή καρτεσιανή τοπολογία επί του $X = \prod\limits_{i \in I} X_i$ είναι εκείνη η (μοναδική) τοπολογία η οποία έχει σαν βάση την οικογένεια:
+	$$B = \big\{\prod\limits_{i \in I} U_i: \quad U_i \in \mathcal{T}_i \text{ και } \{i \in I: U_i \neq X_i\} \text{ πεπερασμένο } \big\}$$
+\end{defn}
 
+\vspace{0.1cm}
 
+\begin{prop}
+	Η προβολή $\pi_j : \prod\limits_{i \in I} X_i \rightarrow X_j$ είναι συνεχής απεικόνιση και επιπλέον στέλνει τα ανοικτά σε ανοικτά, για κάθε $j \in I$. 
+\end{prop}
 
+\vspace{0.1cm}
 
+\begin{defn}[Τοπολογία πηλίκο]
+	Έστω $Y \neq \varnothing$ σύνολο, $X$ τοπολογικός χώρος και $f : X \rightarrow Y$ μια απεικόνιση του $X$ στο $Y$. Η τοπολογία πηλίκο στο $Y$ η οποία ορίζεται από την $f$ είναι η
+	$$\mathcal T(f) = \{ U \subseteq Y: f^{-1} (U) \text{ ανοικτό στον } X\}$$
+	μπορούμε και να ερμηνεύσουμε την $f$ ως την κανονική απεικόνιση $ x\in X \mapsto [x] \in X/ \sim$ της σχέσης ισοδυναμίας του $X$: $x \sim y \iff f(x) = f(y)$ ταυτίζοντας το $Y$ με τον χώρο των κλάσεων ισοδυναμίας $X/\sim$. Οι κλάσεις έχουν μορφή $[x] = f^{-1}( f(x))$ και ένα ανοικτο υποσύνολο του $X/ \sim$ είναι μια οικογένεια κλάσεων ισοδυναμίας των οποίων η ένωση είναι ανοικτό υποσύνολο του $X$.
+\end{defn}
 
+\vspace{0.1cm}
 
+\begin{defn}[\tl{Hausdorff}]
+	Έστω $X$ τοπολογικός χώρος. Ο $X$ λέγεται \tl{Hausdorff} ή $T_2$ αν για κάθε ζεύγος $x\neq y$ του $X$ υπάρχουν ξένα ανοικτά σύνολα $U,V$ τέτοια ώστε $x \in U$ και $y \in V$.
+\end{defn}
 
+\vspace{0.1cm}
 
+\begin{defn}[Συμπάγεια]
+	Εστω $X$ τ.χ. και $K \subseteq X$. Ο $X$ λέγεται συμπαγής, αν κάθε ανοικτό κάλυμμα $\{U_i: i \in I\}$ του $X$ έχει πεπερασμένο υποκάλλυμα. Δηλαδή αν
+	$$X = \bigcup\limits_{i \in I} U_i \implies \exists F \subseteq I \text{ πεπερασμένο: } X = \bigcup\limits_{i \in F} U_i$$
 
+	Το $K$ λέγεται συμπαγές υποσύνολο του $X$ αν είναι συμπαγής υπόχωρος του $X$ με την σχετική τοπολογία.
+\end{defn}
 
+\vspace{0.1cm}
 
+\begin{prop} Έστω $\{X_i : i \in I\}$ οικογένεια τοπολογικών χώρων. Τότε  ο $X = \prod\limits_{i \in I} X_i$ είναι \tl{Hausdorff} αν και μόνο αν κάθε $X_i$ είναι \tl{Hausdorff}.
+\end{prop}
 
+\vspace{0.1cm}
 
+\begin{prop}[Θ. \tl{Tychonoff}] Έστω $\{X_i : i \in I\}$ οικογένεια τοπολογικών χώρων. Τότε  ο $X = \prod\limits_{i \in I} X_i$ είναι συμπαγής αν και μόνο αν κάθε $X_i$ είναι συμπαγής.
+\end{prop}
 
+\vspace{0.1cm}
 
+\begin{defn}[Συνεκτικότητα]
+	Ένας τοπολογικός χώρος $X$ λέγεται συνεκτικός αν δεν είναι ένωση δύο ξένων ανοικτών μη κενών υποσυνόλων του. Δηλαδή, δεν υπάρχουν ανοικτά $U,V \neq \varnothing$ ώστε $U\cap V = \varnothing$ και $X = U\cup V$.
 
+	$ $\newline
+	Ένα υποσύνολο $A\subseteq X$ λέγεται συνεκτικό υποσύνολο αν είναι συνεκτικό ως υπόχωρος του $X$ με την σχετική τοπολογία.
+\end{defn}
 
+\vspace{0.1cm}
 
+\begin{defn}[\tl{Totally Disconnected}]
+	Ένας τοπολογικός χώρος $X$ λέγεται \tl{totally disconnected} αν τα μόνα συνεκτικά υποσύνολα του $X$ είναι τα μονοσύνολα.
+\end{defn}
 
 
 
@@ -1108,7 +1182,7 @@ $ $\newline Πριν δώσουμε δύο ακόμα παραδείγματα, 
 	$$x = \sum\limits_{n=1}^{\infty} \lambda_n e_n$$
 	με $\lambda_n \in \Z / 2\Z$. Αν θεωρήσουμε και μια απεικόνιση $\phi \in G^*$ τότε:
 	$$\phi (x) = \sum\limits_{n=0}^{\infty} \lambda_n \phi (e_n)$$
-	δηλαδή η $\phi$ καθορίζεται πλήρως σαν απεικόνιση από τις επιλογές $\phi (e_n) \in \Z / 2 \Z$. Με άλλα λόγια ο χώρος $G^*$ έχει την ίδια πληθικότητα με $\{0,1\}^{\mathbb N}$, δηλαδή άπειρη υπεραριθμήσιμη.
+	δηλαδή η $\phi$ καθορίζεται πλήρως σαν απεικόνιση από τις επιλογές $\phi (e_n) \in \Z / 2 \Z$. Με άλλα λόγια ο χώρος $G^*$ έχει την ίδια πληθικότητα με το σύνολο $\{0,1\}^{\mathbb N}$, δηλαδή άπειρη υπεραριθμήσιμη.
 	
 	$ $\newline
 	Από αυτό έπεται ότι και ο υπόχωρος $\{ ker\phi : \phi \in G^*\}$ θα είναι υπεραριθμήσιμος. Πράγματι, για κάθε $x \in G, \phi \in G^*$ έχουμε $\phi (x) = 0$ ή $1$ και άρα ο πυρήνας $ker\phi$ μας ορίζει μονοσήμαντα την $\phi$ για κάθε $x \in G$. Δηλαδή, αν ξέρουμε ποια $x$ πάει η $\phi$ στο $0$, ξέρουμε ακριβώς ότι τα $x \in G-ker\phi$ τα πάει στο $1$. Με άλλα λόγια, μια επιλογή ενός συνόλου $ker\phi$ είναι μια επιλογή μιας $\phi$ και αντίστροφα. Έτσι καταλήγουμε στην υπεραριθμησιμότητα του υπόχωρου.
