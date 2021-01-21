@@ -1,0 +1,323 @@
+\documentclass[oneside,a4paper]{article}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{amssymb}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage[greek,english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{alphabeta}
+
+\usepackage{blindtext}
+\usepackage[T1]{fontenc}
+\usepackage{titlesec}
+\usepackage{sectsty}
+\usepackage{verbatim}
+\usepackage{multirow}
+\chapternumberfont{\tiny} 
+\chaptertitlefont{\Huge}
+%ελληνικοι χαρακτηρες σε μαθ pdf utf-8
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{tikz-cd}
+
+\usepackage{xcolor}
+\usepackage{framed}%frames
+
+\usepackage{array}
+\usepackage{pbox}
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{tikz}
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%% code$$$$$$$$$$$$$$$$$$$
+\usepackage{listings}
+
+%%%%%%%%περιθώρια%%%%%%%%%%%%
+\usepackage[a4paper,margin=3.5cm]{geometry}
+
+
+%%%%%%%%συντομευσεις%%%%%%%%%%
+\newtheorem{theorem}{Θεώρημα}
+\newtheorem{lemma}{Λήμμα}
+\newtheorem{example}{Παράδειγμα}
+\newtheorem*{defn}{Ορισμός}
+\newtheorem{prop}{Πρόταση}
+\newtheorem{cor}{Πόρισμα}
+
+\newcommand {\tl}{\textlatin}
+%%%%%%%%%αριθμηση%%%%%%%%%%%%%%
+\renewcommand{\theenumi}{\arabic{enumi}}
+\renewcommand{\labelenumi}{{\rm(\theenumi)}}
+\renewcommand{\labelenumii}{\roman{enumii}) }
+%%%%%%%%%%%% New theorems %%%%%%%%%%%%%%%%%%%%%%%%
+\lstset{
+numbers=left, 
+numberstyle=\small, 
+numbersep=8pt, 
+frame = single, 
+language=R, 
+framexleftmargin=15pt}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\Co}{\mathbb{C}}
+%%%%%%%%%%%%%%%%%%%%% Document starts %%%%%%%%%%%%
+\begin{document}
+	
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\selectlanguage{greek}
+	%%%%%%%%%%%%%%%%%%%%%%% Start Roman numbering %%%% vbbnn
+	%\pagenumbering{roman}
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	
+	\begin{framed}	
+		%\vspace{0.3truecm}
+		\begin{center}
+			\huge Μαθηματική Στατιστική
+		\end{center}
+		%\vspace{0.3truecm}
+		\begin{center}
+			\huge Εργασία 12
+		\end{center}
+		\vspace{0.3truecm}
+		\begin{center}
+			Ονομ/νο: Νούλας Δημήτριος\\
+			ΑΜ: 1112201800377\\
+			\tl{email}: \tl{dimitriosnoulas@gmail.com}
+		\end{center}
+		\vspace{0.3truecm}
+	\end{framed}
+	\vspace*{\fill}
+	\begin{center}
+	\includegraphics[width=0.5\textwidth]{C:/Users/dimit/Desktop/TeX/uoa_logo}
+	\end{center}
+\vspace{1cm}
+\pagebreak
+{\huge Εκφώνηση:}
+\vspace{1cm}
+\begin{enumerate}
+    \item Αναφέρετε και ερμηνεύστε τα αποτελέσματα του ελέγχου \tl{Shapiro-Wilk} με την χρήση της \tl{p-value} (και για τους δύο ελέγχους). Η μηδενική υπόθεση αντιστοιχεί στην υπόθεση ότι τα δεδομένα $(night - day)$ προέρχονται από κανονική κατανομή και η εναλλακτική ότι δεν προέρχονται για κάθε μία από τις 2 ομάδες ξεχωριστά.
+    \item Στο μέρος αυτό της εργασίας θα ανακαλύψετε τον έλεγχο \tl{Shapiro-Wilk}. Ανοίξτε τις σημειώσεις της Μη-παραμετρικής Στατιστικής (σελ. 135) και περιγράψτε σύντομα τα βασικά στοιχεία του ελέγχου \tl{Shapiro-Wilk}.
+    \item Προσομοιώστε 50 δεδομένα από $\mathcal{N} (0,1), t_3$ και $t_{10}$ και πραγματοποιήστε τους ελέγχους κανονικότητας. Σχολιάστε τα αποτελέσματα που πήρατε με την βοήθεια της \tl{p-value}. Τι θα απαντούσατε αν πρέπει να απαντήσετε σε επίπεδο στατιστικής σημαντικότητας $a = 0.05$?
+    \item Πραγματοποιήστε ένα κατάλληλο \tl{t-test} για να ελέγξετε αν η μέση αύξηση στην περίοδο των καρδιακών χτύπων είναι διαφορετική μεταξύ των 2 ομάδων και ένα \tl{t-test} για να ελέγξετε αν η μέση αύξηση στην περίοδο των καρδιακών χτύπων είναι μεγαλύτερη για τα άτομα της ομάδας 2 σε σχέση με αυτή της ομάδας 1. Να ελεγχθούν αυτά με ε.σ.σ. $a=0.05$ με την βοήθεια του λογισμικού της \tl{R}. Οι διασπορές των αντίστοιχων κατανομών θεωρούνται άγνωστες και όχι κατ`ανάγκη ίσες [υπόδειξη: δείτε \tl{Welch t-test} και πώς εφαρμόζεται στην \tl{R}].
+    \item Ας υποθέσουμε τώρα ότι κάνουμε το μετασχηματισμό δεδομένων $\log (night/day)$. Θέτουμε $Z_i$ και $W_i$ τα δεδομένα που προκύπτουν με αυτό το μετασχηματισμό για τα μέλη της ομάδας 1 και 2 αντίστοιχα. Επαναλάβετε τους ελέγχους κανονικότητας για τα δεδομένα αυτά. Επαναλάβετε επίσης τα \tl{t-test}.
+    \item (προαιρετικό) Ποιό από τα 2 μοντέλα (με ή χωρίς μετασχηματισμό) σας φαίνεται καλύτερο για να μπορέσουμε να φτάσουμε σε πιο ασφαλή συμπεράσματα ως προς την ύπαρξη στατιστικά σημαντικής διαφοράς μεταξύ των δύο ομάδων? Μπορείτε εδώ να κάνετε οποιαδήποτε διερεύνηση σας φαίνεται σχετική.
+\end{enumerate}
+
+\pagebreak
+{\huge Λύση:}
+\vspace{1cm}
+\begin{enumerate}
+    \item Αρχικά κάνουμε την επιλογή \tl{set.seed(625)} για όλες τις εντολές που θα ακολουθήσουν στην εργασία. Με τις εντολές:
+        \begin{center}
+            {\selectlanguage{english}
+            \begin{lstlisting}
+            shapiro.test(g1diff)
+            shapiro.test(g2diff)
+        \end{lstlisting} }
+        \end{center}
+        παίρνουμε τα αποτελέσματα:
+        \begin{center}
+        \includegraphics[width=8cm,height=\textheight,keepaspectratio]{C:/Users/dimit/Pictures/stat}
+        \end{center}
+
+        Βλέπουμε ότι η ελεγχοσυνάρτηση $W$ δίνει τιμή αρκετά κοντά στο 1, δηλαδή οι κατανομές από τις οποίες προέρχονται τα δείγματα $"$ταιριάζουν$"$ αρκετά με την κανονική. Αυτό συμφωνεί με τα υψηλά \tl{p-value} που προκύπτουν από τον έλεγχο. Καθώς είναι υψηλά, δεν απορρίπτουμε την μηδενική υπόθεση για κανέναν από τους 2 ελέγχους, δηλαδή δεχόμαστε ότι τα δείγματα προέρχονται από κανονική κατανομή.
+       
+    \vspace{1cm}    
+    \item Για ένα τυχαίο δείγμα $X$ μεγέθους $n$ θέλουμε να ελέγξουμε κατά πόσο η κατανομή του ταιριάζει με την κανονική με άγνωστα $\mu , \sigma^2$. Αφού διατάξουμε τις παρατηρήσεις προσομοιώνουμε ένα δείγμα ίδιου μεγέθους $(Z_1 , \ldots Z_n )$ από τυπική κανονική κατανομή και επιπλέον το διατάσσουμε. Ορίζουμε:
+
+    $$m = (\mu_{(1)} , \ldots, \mu_{(n)})^T$$ 
+    όπου $\mu_{(i)} = E(Z_{(i)})$ και θεωρούμε τον συμμετρικό πίνακα συνδιακύμανσης $V$ διάστασης $n\times n$ όπου το $ij$-στοιχείο του είναι το $Cov(Z_{(i)}, Z_{(j)})$.
+    
+    $ $\newline
+    Θεωρώντας την Ευκλείδεια 2-νόρμα $\vert\vert \cdot \vert\vert_2$, θέτουμε το διάνυσμα $a$ με νόρμα $1$ ως εξής:
+    $$a = ( a_1 ,\ldots, a_n )^T = \frac{V^{-1} \cdot m}{\vert\vert V^{-1} \cdot m \vert\vert}$$
+     
+    
+    Εδώ ο πίνακας $V$ είναι αντιστρέψιμος καθώς αν είχε ιδιοτιμή $0$ και παίρναμε ένα μη μηδενικό διάνυσμα $b \in \mathbb{R}^n$ του ιδιοχώρου που αντιστοιχεί στο 0, έτσι ώστε $Vb = 0$, τότε θα είχαμε:
+    
+    $$ 0 = b^T V b = \sum\limits_{ij} b_j Cov(Z_{(i)}, Z_{(j)})b_i = Var(\sum\limits_i b_i Z_{(i)}) = |b_1| + |b_2| + \ldots |b_n|$$
+    εφόσον $Z_{(i)}$ ανεξάρτητες και ισόνομες. Αυτό έιναι άτοπο, καθώς το $b\neq 0$.
+    
+    $ $\newline
+    Ορίζουμε την ελεγχοσυνάρτηση $W$, με $0 < W < 1$ ως εξής:
+    $$W(X) = \frac{\left( \sum\limits_i^n a_i X_{(i)}\right)^2}{\sum\limits_i^n \left(X_i - \overline{X} \right)^2} $$
+    
+    και ο έλεγχος είναι ο εξής: Όσο πιο κοντά στο 1 είναι το $W$ τόσο πιο πολύ $"$ταιριάζει$"$ η κατανομή με κανονική και όσο πιο μακριά από το 1 τόσο πιο πολύ $"$απέχει$"$.
+
+    \vspace{1cm}
+    \item Γνωρίζουμε ότι η κατανομή \tl{student} με $\nu$ βαθμούς ελευθερίας τείνει στην κανονική όσο το $\nu$ μεγαλώνει. Οι περισσότερες προσομοιώσεις των εντολών έχουν ένα αποτέλεσμα σαν το ακόλουθο:
+    \begin{center}
+        \includegraphics[width=13cm,height=\textheight,keepaspectratio]{C:/Users/dimit/Pictures/stat1}
+        \end{center}
+
+        Η ελεγχοσυνάρτηση $W$ είναι πολύ κοντά στο 1 σε όλες τις περιπτώσεις, πιο πολύ στην ίδια την κανονική κατανομή και ακολουθεί η $t_{10}$ η οποία $"$ταιριάζει$"$ περισσότερο με την κανονική από ότι η $t_3$.
+        
+        $ $\newline
+        Όπως είναι αναμενόμενο για το δείγμα από την κανονική κατανομή, το \tl{p-value} είναι και αυτό αρκετά υψηλό. Ωστόσο, στο δείγμα από $t_{10}$ το $W$ παραμένει υψηλό, ενώ το \tl{p-value} είναι πολύ χαμηλότερο. Βεβαια, στην συγκεκριμένη προσομείωση δεν είναι αρκετά χαμηλό για να απορρίψουμε την μηδενική υπόθεση αν έχουμε θεωρήσει επίπεδο στατιστικής σημαντικότητας $a=0.05$. Παρόλα αυτά, το $W$ της $t_3$ που ταιρίαζει λιγότερο με την κανονική παραμένει αρκετά υψηλό. Αυτό έρχεται σε αντίθεση με το χαμηλό \tl{p-value} με βάση το οποίο στην περίπτωση του $t_3$ απορρίπτουμε την μηδενική υπόθεση.
+
+    \vspace{1cm}
+    \item 
+    Για να απαντήσουμε στο αν η μέση αύξηση των καρδιακών ρυθμών είναι διαφορετική μεταξύ των δύο ομάδων, με ε.σ.σ. $a=0.05$ χρησιμοποιούμε την εντολή:
+    \vspace{0.1cm}
+    {\selectlanguage{english}
+    \begin{lstlisting}
+    t.test(g1diff,g2diff,var.equal=FALSE,conf.level = 0.95)
+    \end{lstlisting}}
+    \vspace{0.1cm}
+    Μπορούμε στο τελευταίο όρισμα να αλλάξουμε το $(1-a)$-διάστημα εμπιστοσύνης καθώς και να δώσουμε σαν πληροφορία ότι οι διασπορές των αντίστοιχων κατανομών είναι ίσες. 
+    
+    $ $\newline
+    Το \tl{Welch t-test} το οποίο χρησιμοποιεί το \tl{var.equal=FALSE} και χωρίς να το προσδιορίσουμε, κάνει εκτίμηση για τις διασπορές και προσαρμόζει τους βαθμούς ελευθερίας που θα χρησιμοποιηθούν στον έλεγχο. Διαφορετικά, αν γνωρίζουμε ότι οι διασπορές είναι ίσες χρησιμοποιούμε το απλό \tl{t-test} εφόσον προσδιορίσουμε \tl{var.equal=TRUE}.
+     
+
+    \begin{center}
+    \includegraphics[width=12cm,height=\textheight,keepaspectratio]{C:/Users/dimit/Pictures/ttest1}
+    \end{center} 
+
+    Βλέπουμε ότι έχουμε \tl{p-value} $= 0.0117$ για την μηδενική υπόθεση ότι οι μέσες είναι ίσες και άρα την απορρίπτουμε. Δηλαδή δεχόμαστε την εναλλακτική υπόθεση η οποία εκτυπώνεται και παραπάνω.
+
+    $ $\newline
+Για δεύτερο μέρος του ερωτήματος θεωρούμε ως μηδενική υπόθεση ότι η μέση αύξηση των καρδιακών χτύπων είναι μεγαλύτερη για την ομάδα 2 από την ομάδα 1. Αυτό το προσδιορίζουμε στην \tl{R} με το να αναφέρουμε την εναλλακτική υπόθεση σαν όρισμα \tl{alternative="greater"}.
+
+$ $\newline
+Με το λογισμικό \tl{R} για την εντολή \tl{t.test(x,y,alternative="greater")} έχουμε ότι η μηδενική υπόθεση είναι ότι $x \leq y$ (για τις μέσες τιμές των δειγμάτων) και η εναλλακτική είναι $x>y$.
+
+$ $\newline
+Άρα χρησιμοποιούμε την εντολή:
+\vspace{0.1cm}
+    {\selectlanguage{english}
+    \begin{lstlisting}
+t.test(g1diff,g2diff,var.equal=FALSE,conf.level = 0.95,
+alternative="greater")
+\end{lstlisting}}
+\vspace{0.1cm}
+
+και παίρνουμε αρκετά υψηλή \tl{p-value}. Άρα δεχόμαστε την μηδενική μας υπόθεση.
+
+$ $\newline
+Μπορούμε φυσικά να θεωρήσουμε τις υποθέσεις αντίστροφα, προσδιορίζοντας \tl{alternative="less"} και να πάρουμε πάρα πολύ μικρό \tl{p-value} για να μην απορρίψουμε την νέα μηδενική υπόθεση, δηλαδή την προηγούμενη εναλλακτική. 
+
+\begin{center}
+    \includegraphics[width=12cm,height=\textheight,keepaspectratio]{C:/Users/dimit/Pictures/ttest2}
+    \end{center}
+
+
+
+    \vspace{1cm}
+    \item  Επαναλαμβάνουμε τους ελέγχους εφόσον έχουμε εφαρμόσει τον μετασχηματισμό: 
+    \begin{center}
+        \includegraphics[width=13cm,height=\textheight,keepaspectratio]{C:/Users/dimit/Pictures/ttest3}
+        \end{center}
+
+        
+Καθώς η εργασία αναφέρεται σε καρδιακούς χτύπους και δεν υπάρχει διπλάσια αύξηση της περιόδου από μέρα σε νύχτα, έχουμε $1<\frac{night}{day} < 2 < e$ και έτσι ο μετασχηματισμός του λογαρίθμου μας μεταφέρει τις μετρήσεις στο $(0,1)$. Μάλιστα, σε αυτήν την περίπτωση πιο κοντά στο $0$. Υπάρχει και άτομο που η εγγραφή του στο \tl{g1diff} να έχει αρνητική τιμή και έτσι εφόσον $\frac{night}{day}<1$, ο μετασχηματισμός θα δώσει αρνητική τιμή. Φυσικά, δεν μας αφορούν τέτοιες μεμονωμένες παρατηρήσεις, καθώς μπορεί να έχει συμβεί λάθος στην καταχώρηση των δεδομένων ή οτιδήποτε άλλο.
+
+$ $\newline
+Οπότε μπορούμε να θεωρήσουμε ότι έχουμε μετρήσεις στο $(0,1)$ τις οποίες έτσι μπορούμε να χειριστούμε καλύτερα.
+Τα \tl{test} δίνουν όμοια αποτελέσματα εκτός από την περίπτωση του \tl{t-test} για το αν οι μέσες τιμές ταυτίζονται. Καθώς με αυτόν τον μετασχηματισμό έχουμε τις παρατηρήσεις μας στο $(0,1)$, οι μέσες τιμές θα είναι αρκετά κοντά. Επειδή αλλάζουμε την $"$κλίμακα$"$ με αυτόν τον μετασχηματισμό, η μεγαλύτερη διαφορά θα παραμείνει μεγαλύτερη και έτσι θα εξάγουμε το ίδιο αποτέλεσμα από το δεύτερο \tl{t-test}. Ωστόσο, στο πρώτο \tl{test} καθώς οι παρατηρήσεις έχουν μεταφερθεί στο $(0,1)$ η διαφορά των νέων μέσων τιμών θα είναι πολύ μικρή. Έτσι παίρνουμε \tl{p-value} $= 0.1269$ το οποίο δεν είναι αρκετά μικρό για να απορρίψουμε την μηδενική υπόθεση, πράγμα που δεν συμβαίνει χωρίς τον μετασχηματισμό.
+    
+
+
+
+\vspace{1cm}
+\item Καθώς βολεύει να είναι οι παρατηρήσεις μας στο διάστημα $(0,1)$, αν έχουμε για παράδειγμα δύο τυχαία δείγματα από λογαριθμικές κανονικές κατανομές, δηλαδή: 
+$$X \sim Lognormal(\mu_1 , \sigma^2_1),\quad  Y \sim Lognormal(\mu_2 , \sigma^2_2)$$
+
+    ισοδύναμα
+    $$ln(X) \sim \mathcal{N} (\mu_1 , \sigma^2_1),\quad ln(Y) \sim \mathcal{N} (\mu_2 , \sigma^2_2)$$
+    
+    και χρησιμοποιήσουμε \tl{Welch t-test} στα $X,Y$ θα έχουμε:
+    $$H_0: \quad \exp\left(\mu_1 + \frac{\sigma^2_1}{2}\right) = \exp\left(\mu_2 + \frac{\sigma^2_2}{2}\right)$$
+    ενάντια στην εναλλακτική $H_1$: να μην είναι ίσα.
+    
+    $ $\newline
+    Αν εφαρμόσουμε τον μετασχηματισμό και μετά κάνουμε το ίδιο \tl{t-test} στα $ln(X),ln(Y)$ θα εξετάζουμε την μηδενική υπόθεση:
+    $$H_0 : \quad \mu_1 =  \mu_2$$
+    
+    η οποία δεν είναι ισοδύναμη με την προηγούμενη μηδενική υπόθεση. Επιπλέον, αν δεχτούμε την μηδενική υπόθεση για τα δείγματα $ln(X),ln(Y)$, δηλαδή $\mu_1 = \mu_2$ δεν είναι σωστό να συμπεράνουμε ότι και οι μέσες τιμές των $X,Y$ θα είναι ίσες αφού εξαρτώνται από τις άγνωστες διασπορές. Χωρίς να γνωρίζουμε αν τα δεδομένα μας προέρχονται από λογαριθμική κανονική κατανομή, αυτό το φαινόμενο πράγματι το συναντήσαμε στο προηγούμενο ερώτημα. Με βάση αυτά τα συμπεράσματα μπορούμε να θεωρήσουμε ότι είναι δυσκολότερο να κάνουμε ελέγχους υποθέσεων με τον μετασχηματισμό του λογαρίθμου.
+\end{enumerate}
+\pagebreak
+
+\noindent Κώδικας \tl{R} που χρησιμοποιήθηκε:
+
+\vspace{0.1cm}
+{\selectlanguage{english}
+\begin{lstlisting}
+install.packages("readxl")
+library("readxl")
+setwd("C:/Users/dimit/Desktop/Ergasia_Statistikis")
+data1 <- read_excel("ergasia_12/ergasia_12.xls")
+head(data1)
+
+
+g1diff <- data1$night[data1$group==1] - data1$day[data1$group==1]
+g2diff <- data1$night[data1$group==2] - data1$day[data1$group==2]
+
+shapiro.test(g1diff)
+shapiro.test(g2diff)
+
+num <- 625
+set.seed(num)
+
+xsim <- rnorm(50)
+ysim <- rt(50, df=3)
+zsim <- rt(50, df=10)
+
+
+shapiro.test(xsim)
+shapiro.test(ysim)
+shapiro.test(zsim)
+
+
+
+t.test(g1diff,g2diff,var.equal=FALSE,conf.level = 0.95)
+
+t.test(g1diff,g2diff,var.equal=FALSE,conf.level = 0.95,
+alternative="greater")
+t.test(g1diff,g2diff,var.equal=FALSE,conf.level = 0.95,
+alternative="less")
+
+
+logx <- log(data1$night[data1$group==1] / 
+data1$day[data1$group==1])
+
+logy <- log(data1$night[data1$group==2] /
+data1$day[data1$group==2])
+
+
+shapiro.test(logx)
+shapiro.test(logy)
+
+
+t.test(logx,logy,var.equal=FALSE,conf.level = 0.95)
+
+t.test(logx,logy,var.equal=FALSE,conf.level = 0.95,
+alternative="greater")
+\end{lstlisting}}
+\pagebreak
+\begin{thebibliography}{9}
+    \vspace{1cm}
+	\bibitem{strevezas}
+	Σάμης Τρέβεζας.
+	\textit{Μη Παραμετρική Στατιστική.}
+	Σημειώσεις Διαλέξεων, Αθήνα, 2020.
+
+	\bibitem{rstudio}
+	\tl{RStudio Team (2020).}
+	\textit{\tl{RStudio: Integrated Development for R. RStudio.}}
+	\tl{PBC, Boston, MA, URL: http://www.rstudio.com/}
+
+	\bibitem{feng}
+	\tl{ Changyong Feng, Hongyue Wang et al. .}
+    \textit{\tl{Log-transformation and its implications for data analysis.}}
+    \tl{Shanghai Arch Psychiatry. (2014) 26:105–9. 10.3969/j.issn.1002-0829.2014.02.009}
+    \tl{URL: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4120293/}
+\end{thebibliography}
+
+\end{document}
