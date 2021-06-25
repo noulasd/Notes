@@ -1,0 +1,273 @@
+\documentclass[oneside,a4paper]{article}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{amssymb}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage[greek]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{mathtools}
+\usepackage{blindtext}
+\usepackage[T1]{fontenc}
+\usepackage{titlesec}
+\usepackage{sectsty}
+\usepackage{verbatim}
+\usepackage{multirow}
+\chapternumberfont{\tiny} 
+\chaptertitlefont{\Huge}
+%ελληνικοι χαρακτηρες σε μαθ pdf utf-8
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{tikz-cd}
+
+\usepackage{xcolor}
+\usepackage{framed}%frames
+
+\usepackage{array}
+\usepackage{pbox}
+\usepackage{ytableau}
+%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{tikz}
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%περιθώρια%%%%%%%%%%%%
+\usepackage[a4paper,margin=3.5cm]{geometry}
+
+
+%%%%%%%%συντομευσεις%%%%%%%%%%
+\newtheorem{theorem}{Θεώρημα}
+\newtheorem{lemma}{Λήμμα}
+\newtheorem{example}{Παράδειγμα}
+\newtheorem*{defn}{Ορισμός}
+\newtheorem{prop}{Πρόταση}
+\newtheorem{cor}{Πόρισμα}
+
+\newcommand {\tl}{\textlatin}
+%%%%%%%%%αριθμηση%%%%%%%%%%%%%%
+\renewcommand{\theenumi}{\arabic{enumi}}
+\renewcommand{\labelenumi}{{\rm(\theenumi)}}
+\renewcommand{\labelenumii}{\roman{enumii}) }
+%%%%%%%%%%%% New theorems %%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\Co}{\mathbb{C}}
+%%%%%%%%%%%%%%%%%%%%% Document starts %%%%%%%%%%%%
+\begin{document}
+	
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\selectlanguage{greek}
+	%%%%%%%%%%%%%%%%%%%%%%% Start Roman numbering %%%% vbbnn
+	%\pagenumbering{roman}
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	
+	\begin{framed}	
+		%\vspace{0.3truecm}
+		\begin{center}
+			\huge Αλγεβρική Συνδυαστική
+		\end{center}
+		%\vspace{0.3truecm}
+		\begin{center}
+			\huge Εργασία 5
+		\end{center}
+		\vspace{0.3truecm}
+		\begin{center}
+			Ονομ/νο: Νούλας Δημήτριος\\
+			ΑΜ: 1112201800377\\
+			\tl{email}: \tl{dimitriosnoulas@gmail.com} \\
+			\vspace{0.1cm}
+			\textbf{Με συνεργασία με τον φοιτητή Άλκη Ιωαννίδη}
+		\end{center}
+		\vspace{0.3truecm}
+	\end{framed}
+	\vspace*{\fill}
+	\begin{center}
+	\includegraphics[width=0.5\textwidth]{C:/Users/dimit/Desktop/TeX/uoa_logo}
+	\end{center}
+\vspace{1cm}
+\pagebreak
+
+
+\noindent \textbf{1. } Βρείτε (με απόδειξη) όλες τις διαμερίσεις $\lambda$ για τις οποίες $f^{\lambda} = 5$.
+
+
+\vspace*{1cm}
+\begin{proof} $ $
+    
+    $ $\newline
+    Έχουμε $f^{\lambda} = 5$ και από διαιρετότητα στον τύπο \tl{hook length formula} έχουμε αναγκαστικά $n\geq 5$. Για $n=5$, οι διαμερίσεις που θέλουμε είναι οι $(2,2,1)$ και $(3,2)$. Για $n=6$, αντίστοιχα είναι οι $(2,1,1,1,1),(2,2,2),(3,3)$ και $(5,1)$. Αυτά τα βρίσκουμε σχετικά γρήγορα με βάση το \tl{hook length formula} καθώς π.χ. αν ένα ταμπλώ έχει τετράγωνο με γάντζο 5 το απορρίπτουμε, εφόσον το $5$ για να ξαναβρεθεί στον αριθμητή θα θέλουμε τουλάχιστον $n=2\cdot 5$.
+
+    $ $\newline
+    Δηλαδή, έχουμε τα σχήματα τα οποία θα αποκαλούμε αρχικά:
+
+    \vspace*{1cm}\begin{center}
+    \ytableausetup{centertableaux}
+    \ydiagram{2,2,1} \quad  \ydiagram{3,2} \quad \ydiagram{2,1,1,1,1} \quad \ydiagram{2,2,2} \quad \ydiagram{3,3} \quad \ydiagram{5,1}
+    \end{center}
+
+    $ $\newline
+    Θα δείξουμε ότι δεν υπάρχουν άλλες διαμερίσεις $\lambda \vdash n$ με $f^{\lambda}=5$ για $n>6$. Έστω ότι υπάρχει μια τέτοια διαμέριση. Εφόσον το $n$ είναι μεγαλύτερο του $6$, τότε το $n!$ θα διαιρείται από τον πρώτο αριθμό $7$. Συνεπώς, από \tl{hook length formula} θα υπάρχει τετράγωνο του οποίου ο γάντζος είναι $7$ αφού δεν μπορούμε να το παράξουμε διαφορετικά στον παρονομαστή ως γινόμενο. Αν ένας γάντζος ενός τετραγώνου $x$ έχει $i$ τετράγωνα οριζόντια (μετρώντας και το $x$) και $j$ κάθετα (χωρίς το $x$) θα το γράφουμε με $[i,j]$. Δηλαδή για τους γάντζους με $7$ τετράγωνα, έχουμε τις περιπτώσεις:
+
+    $$[7,0], \quad [1,6],  \quad [6,1],  \quad [5,2],  \quad [2,5],  \quad [4,3],  \quad [3,4]$$
+
+    $ $\newline
+    Θα λέμε και ότι ένα σχήμα $A$ περιέχει γνήσια ένα σχήμα $B$ όταν το $A$ είναι το $B$ με κάποια έξτρα τετράγωνα και ταυτόχρονα ο αριθμός των \tl{Young} ταμπλώ που αντιστοιχούν στο $A$ είναι μεγαλύτερος από του $B$. Για παράδειγμα:
+    
+    \vspace*{0.5cm}
+    \begin{center}\ydiagram{3,1} \quad περιέχει γνήσια το \quad \ydiagram{2,1}\end{center}
+    \begin{center} \ydiagram{3,3} \quad δεν περιέχει γνήσια το \quad \ydiagram{3,2} \end{center}
+
+    $ $\newline
+    Για τον γάντζο $[3,4]$ αν ξεχάσουμε τα τετράγωνα που μπορεί να βρίσκονται βόρεια ή νοτιοανατολικά από τα $7$ τετράγωνα που μετράμε και τον θεωρήσουμε ως σχήμα ταμπλώ της διαμέρισης $(3,1,1,1,1) \vdash 7$ τότε αυτό το σχήμα θα περιέχει γνήσια το τρίτο αρχικό σχήμα, δηλαδή αυτό της διαμέρισης $(2,1,1,1,1) \vdash 6$. Άρα μια ζητούμενη διαμέριση δεν μπορεί να έχει γάντζο $[3,4]$.
+    
+    $ $\newline
+    Όμοια, το σχήμα του γάντζου $[2,5]$ θα περιέχει γνήσια το τρίτο αρχικό σχήμα καθώς και τα σχήματα των γάντζων $[5,2], [6,1]$ θα περιέχουν γνήσια το έκτο αρχικό σχήμα.
+
+    $ $\newline
+    Το σχήμα του γάντζου $[4,3]$, δηλαδή το 
+    \vspace*{0.1cm}
+    \begin{center}\ydiagram{4,1,1,1} \end{center}
+    έχει περισσότερα \tl{Young} ταμπλώ από το σχήμα 
+    \vspace*{0.1cm}
+    \begin{center}\ydiagram{4,3} \quad που περιέχει γνήσια το \quad \ydiagram{3,3} \end{center}
+
+    $ $\newline
+    δηλαδή το πέμπτο αρχικό σχήμα.
+
+    $ $\newline
+    Για τους γάντζους $[7,0]$ και $[1,6]$ αρκεί να θεωρήσουμε τα τετράγωνα που θα υπάρχουν από πάνω τους σε ένα πιθανό σχήμα που περιέχει τον καθένα. Αν δεν υπάρχει τετράγωνο από πάνω τους δηλαδή $n=7$ απορρίπτονται και οι δύο αφού θα ισχύει $f^{\lambda} = 1$. Για τον γάντζο $[7,0]$, η από πάνω γραμμή τετραγώνων του γάντζου θα έχει και αυτή τουλάχιστον $7$ τετράγωνα. Όλο αυτό σαν σχήμα, ο γάντζος μαζί με την από πάνω γραμμή, θα περιέχει γνήσια το πέμπτο αρχικό σχήμα. Για τον γάντζο $[1,6]$, τα τετράγωνα από πάνω του μαζί με τον ίδιο είτε θα αντιστοιχούν σε κάποια διαμέριση $\lambda  = (1,1,\ldots,1)$ του $n$, δηλαδή η κάθε γραμμή θα έχει μόνο ένα τετράγωνο και έτσι $f^{\lambda} = 1$ ή θα υπάρχει γραμμή πάνω από τον γάντζο με τουλάχιστον $2$ τετράγωνα. Το σχήμα αυτής της γραμμής των τουλάχιστον $2$ τετραγώνων μαζί με όλο το νοτιότερο τμήμα και τον γάντζο φυσικά θα περιέχει γνήσια το τρίτο αρχικό σχήμα.
+    
+    
+    $ $\newline
+    Άρα σε κάθε περίπτωση δεν μπορεί να υπάρχει διαμέριση $\lambda$ με τετράγωνο $x$ με $h(x)= 7$ και $f^{\lambda} = 5$.
+\end{proof}
+\pagebreak
+\noindent \textbf{2. } Βρείτε (με απόδειξη) όλες τις μεταθέσεις $w \in \mathcal{S}_6$ για τις οποίες $P(w) = \begin{matrix} 1 & 3 & 5 \\ 2 & 4 & 6 \end{matrix}$. 
+
+\vspace*{1cm}
+\begin{proof} $ $
+
+    $ $\newline
+    Θα χρησιμοποιήσουμε την αντίστροφη απεικόνιση της $RS_6$ όπως στην απόδειξη του θεωρήματος 10.6 των σημειώσεων. Καθώς ζητάμε όλες τις μεταθέσεις με το συγκεκριμένο $P$-ταμπλώ θα διακλαδώνουμε για το κάθε πιθανό $Q$-ταμπλώ, δηλαδή για τα στοιχεία που είναι υποψήφια να εισήχθησαν τελευταία στο εκάστοτε σχήμα. Αυτά είναι τα στοιχεία που είναι τα τελευταία σε κάθε γραμμή και ταυτόχρονα η από κάτω γραμμή έχει μικρότερο μήκος. 
+
+    $ $\newline
+    Η διαδικασία συνοψίζεται στο παρακάτω διάγραμμα ροής:
+    \vspace*{1cm}
+    \begin{center}
+        \begin{tikzcd}
+            &                                                                                         & \begin{matrix} 1 & 3 & 5 \\ 2 & 4 & 6 \end{matrix} \arrow[d, "w_6 = 5"]                     &                                                                   \\
+            &                                                                                         & \begin{matrix} 1 & 3 & 6 \\ 2 & 4 \end{matrix} \arrow[rd, "w_5 = 6"] \arrow[ld, "w_5 = 3"'] &                                                                   \\
+            & \begin{matrix} 1 & 4 & 6 \\ 2 \end{matrix} \arrow[rd, "w_4 = 6"] \arrow[ld, "w_4 = 1"'] &                                                                                             & \begin{matrix} 1 & 3 \\ 2 & 4 \end{matrix} \arrow[ld, "w_4 = 3"'] \\
+\begin{matrix} 2 & 4 & 6 \end{matrix} \arrow[d]           &                                                                                         & \begin{matrix} 1 & 4 \\ 2 \end{matrix} \arrow[ld, "w_3 =4"'] \arrow[rd, "w_3=1"]            &                                                                   \\
+\begin{matrix} w_3 = 6 \\ w_2 = 4 \\ w_1 = 2 \end{matrix} & \begin{matrix} 1 \\ 2 \end{matrix} \arrow[d]                                            &                                                                                             & \begin{matrix} 2 & 4 \end{matrix} \arrow[d]                       \\
+            & \begin{matrix} w_2 =1 \\ w_1 = 2 \end{matrix}                                           &                                                                                             & \begin{matrix} w_2 = 4 \\ w_1 = 2 \end{matrix}                   
+\end{tikzcd}
+    \end{center}
+
+    $ $\newline
+    Έτσι, παίρνουμε τις $5$ μεταθέσεις $w = (w_1, w_2, w_3 ,w_4 ,w_5 , w_6)$:
+
+    \[\begin{matrix} (2,4,6,1,3,5) \\ (2,1,4,6,3,5) \\ (2,1,4,3,6,5) \\ (2,4,1,6,3,5) \\ (2,4,1,3,6,5)\end{matrix}\]
+\end{proof}
+
+
+
+\pagebreak
+
+\noindent \textbf{3. } Για $k \in \{1,2,\ldots,n\}$, συμβολίζουμε με $a(n,k)$ το πλήθος των μεταθέσεων $w \in \mathfrak{G}_n$ για τις οποίες τα $1,2,\ldots,k$ βρίσκονται στην πρώτη γραμμή του $P(w)$ και με $b(n,k)$ το πλήθος των μεταθέσεων $w \in \mathcal{G}_n$ για τις οποίες τα $1,2,\ldots,k$ βρίσκονται στην πρώτη γραμμή του $Q(w)$.
+
+$ $\newline
+$(\text{α} )$ Δείξτε ότι $a(n,k) = b(n,k)$ για κάθε $k \in \{1,2,\ldots,n\}$.
+
+$ $\newline
+$(\text{β} )$ Βρείτε έναν απλό τύπο για το $a(n,k)$.
+
+$ $\newline
+$(\text{γ} )$ Έστω $f(w)$ ο μεγαλύτερος ακέραιος $k$ για τον οποίο τα $1,2,\ldots,k$ βρίσκονται στην πρώτη γραμμή του $P(w)$. Υπολογίστε το όριο $$\lim_{n \to \infty} \frac{1}{n!} \sum\limits_{w\in \mathfrak{G}_n} f(w) $$
+
+
+\vspace*{1cm}
+\begin{proof} $ $
+
+    $ $\newline
+    $(\text{α} )$ Συμβολίζουμε με $A(n,k), B(n,k)$ τα αντίστοιχα σύνολα των μεταθέσεων με $|A(n,k)|=a(n,k)$ και $|B(n,k)| = b(n,k)$. Έχουμε ότι η απεικόνιση
+    $$\phi : A(n,k) \longrightarrow B(n,k)$$
+    $$w \longmapsto w^{-1}$$
+    
+    $ $\newline
+    Είναι καλά ορισμένη εφόσον το $P(w)$ έχει τα $1,2,\ldots,k$ στην πρώτη γραμμή και $P(w) = Q(w^{-1})$. Επιπλέον, είναι προφανώς 1-1 και είναι και επί εφόσον για $\sigma \in B(n,k)$ το $\sigma^{-1}$ ανήκει στο $A(n,k)$ αφού $P(\sigma^{-1}) = Q(\sigma)$ και $\phi (\sigma^{-1}) = \left(\sigma^{-1}\right)^{-1} = \sigma$. Έπεται ότι $a(n,k) = b(n,k)$.
+
+    $ $\newline
+    $(\text{β} )$ Θα μετρήσουμε τα στοιχεία του $B(n,k)$. Από την αντιστοιχία \tl{Robinson-Schensted} κάθε μετάθεση που δεν έχει κάθοδο στις πρώτες $k$ θέσεις θα αντιστοιχεί σε μια δυάδα $(P,Q)$ και το $Q$-ταμπλώ θα περιέχει τα $1,2,\ldots,k$ στην πρώτη γραμμή. Αντίστροφα, μια δυάδα $(P,Q)$ όπου το $Q$ περιέχει τα $1,2,\ldots,k$ στην πρώτη γραμμή θα αντιστοιχεί σε μια τέτοια μετάθεση. Πράγματι, μετά από $n-k$ βήματα θα έχουμε τα $w_{n-k + 1}, \ldots , w_n$ στοιχεία της μετάθεσης και θα έχουν μείνει τα ταμπλώ: $$\left( \begin{matrix} p_1 & p_2 & \ldots & p_k \end{matrix}, \quad \begin{matrix} 1 & 2 & \ldots & k \end{matrix}\right)$$ και από τον τρόπο που συνεχίζεται η διαγραφή παίρνουμε $p_1 < p_2 < \ldots < p_k$, τα πρώτα $k$ στοιχεία της μετάθεσης.
+
+    $ $\newline Για τις μεταθέσεις χωρίς κάθοδο στις πρώτες $k$ θέσεις έχουμε να διαλέξουμε $k$ στοιχεία από το $[n]$ και να τα βάλουμε σε αύξουσα σειρά. Στην συνέχεια μεταθέτουμε τα υπόλοιπα $n-k$ στοιχεία χωρίς περιορισμό. Άρα έχουμε: $$a(n,k) = b(n,k) = \binom{n}{k} (n-k)! = \frac{n!}{k!}$$
+
+    $ $\newline
+    $(\text{γ} )$ Έχουμε ότι 
+    $$\sum\limits_{w \in \mathfrak{G}_n} f(w) = \sum\limits_{\substack{w \in \mathfrak{G}_n \\ f(w) = k}} k = \sum\limits_{k=1}^n k \cdot  \# \{ w\in \mathfrak{G}_n: \quad f(w) = k \}$$ εφόσον στο δεύτερο άθροισμα αθροίζουμε το $k$ για όλες τις μεταθέσεις με $f(w)=k$ και το $k$ παίρνει τις τιμές $1,2,\ldots,n$. Επιπλέον, για $k=1,\ldots,n-1$ έχουμε ότι
+
+    $$A(n,k)\setminus A(n,k+1)  = $$
+    $$ = \{ w \in \mathfrak{G}_n: \quad 1,2,\ldots,k \text{ είναι στην πρώτη γραμμή του } P(w) \text{ και το } k+1 \text{ όχι }\}  = $$
+    $$ = \{ w\in \mathfrak{G}_n: \quad f(w) = k \}$$ και άρα $$\# \{ w\in \mathfrak{G}_n: \quad f(w) = k \} = \frac{n!}{k!} - \frac{n!}{(k+1)!} $$ για τα $k=1,2,\ldots,n-1$. Επιπλέον για $k=n$ έχουμε $$\# \{w \in \mathfrak{G}_n: \quad f(w) = n\} = a(n,n) = 1$$ Συνεπώς
+
+    $$\frac{1}{n!} \sum\limits_{w \in \mathfrak{G}_n} f(w) = \frac{1}{n!} \left( + na(n,n) + \sum\limits_{k=1}^{n-1} k\left(\frac{n!}{k!} - \frac{n!}{(k+1)!} \right)\right) = $$
+    $$= \frac{n}{n!} + \sum\limits_{k=1}^{n-1} \left(\frac{k}{k!} - \frac{k}{(k+1)!} \right)= $$
+    
+    $$ = \frac{n}{n!} + \left(\frac{1}{1!} - \frac{1}{2!} \right) + \left(\frac{2}{2!} - \frac{2}{3!}\right) + \left(\frac{3}{3!} - \frac{3}{4!}\right) + \ldots + \left(\frac{n-1}{(n-1)!} - \frac{n-1}{n!}\right) = $$
+    $$ = \frac{n}{n!} + \frac{1}{1!} + \left(- \frac{1}{2!} + \frac{2}{2!}\right) + \left(- \frac{2}{3!} + \frac{3}{3!} \right)  + \ldots + \left(-\frac{n-2}{(n-1)!} + \frac{n-1}{(n-1)!}\right) - \frac{n-1}{n!} = $$
+    $$ = \frac{n}{n!} - \frac{n-1}{n!} + \sum\limits_{k=1}^{n-1} \frac{1}{k!} = \frac{1}{n!} + \sum\limits_{k=1}^{n-1} \frac{1}{k!} = \frac{1}{n!} -1 + \sum\limits_{k=0}^{n-1} \frac{1}{k!} $$
+
+    $ $\newline
+    Συνεπώς
+
+    $$\lim_{n\to \infty } \frac{1}{n!} \sum\limits_{w\in \mathfrak{G}_n}f(w) = e-1$$
+\end{proof}
+\pagebreak
+
+
+\noindent \textbf{4. } Για τους ενδομορφισμούς $U,D : \mathbb{C}\Lambda \rightarrow \mathbb{C}\Lambda$ της παραγράφου $12$ και για $m,n \in \mathbb{N}$, δείξτε ότι
+
+$ $\newline
+$(\text{α} )$ $D^n U^{m+n} = U^m (UD + (m+1)I)(UD + (m+2)I)\cdots(UD + (m+n)I)$,
+
+$ $\newline
+$(\text{β} )$ $U^n D^n = (UD - (n-1)I)(UD - (n-2)I) \cdots (UD-I)UD$ για $n\geq 1$,
+
+$ $\newline
+όπου $I : \mathbb{C}\Lambda \rightarrow \mathbb{C}\Lambda$ είναι η ταυτοτική απεικόνιση.
+
+\begin{proof} $ $
+    
+    $ $\newline
+    $(\text{α} )$ Αν το ζητούμενο είναι η πρόταση $P(n,m)$ τότε θα αποδείξουμε ότι ισχύει η $P(0,0)$ καθώς και αν ισχύει η $P(n,m)$ θα ισχύουν οι $P(n+1,m),P(n,m+1)$ και έτσι θα ισχύει η πρόταση $P(n,m)$ επαγωγικά για όλα τα $m,n \in \mathbb{N}$.
+
+    $ $\newline 
+    Για $n=0$ έχουμε $U^m = U^m$ και άρα ισχύει και για $m=0$, δηλαδή ισχύει η $P(0,0)$.
+
+    $ $\newline
+    Έστω ότι ισχύει η $P(n,m)$. Τότε έχουμε:
+
+    $$(i) \quad D^n U^{m+1+n} = D^n U^{m+n} \cdot U = U^m (UD + (m+1)I)\cdots (UD + (m+n)I) \cdot U = $$
+    $$U^{m+1} (DU + (m+1)I) \cdots (DU + (m+n)I) = U^{m+1} (UD+(m+2)I) \cdots (UD+(m+n+1)I)$$ 
+    
+    $ $\newline
+    Δηλαδή ισχύει η $P(n,m+1)$. Χρησιμοποιήσαμε στην δεύερη ισότητα την επαγωγική υπόθεση και πολλές φορές διαδοχικά την πράξη $(UD+xI)U = (UDU+xU) = U(DU+xI)$ καθώς και την σχέση $DU-UD=I$.
+
+
+    $$(ii) \quad D^{n+1}U^{m+n+1} = D^{n+1}U^{n+1} \cdot U^{m} = (UD+I)\cdots (UD+(n+1)I) \cdot U^m $$ και σε αυτό το σημείο στέλνουμε διαδοχικά ένα ένα τα $U$ από δεξιά στα αριστερά με την πράξη που αναφέραμε εφόσον ενδιάμεσα αλλάξουμε τα $DU$ σε $UD$ προσθέτοντας ένα $I$ κάθε φορά σε κάθε όρο του γινομένου $m$ φορές. Δηλαδή:
+
+    $$(UD+I)\cdots (UD+(n+1)I) \cdot U^m = U(DU+I)\cdots(DU+(n+1)I)U^{m-1} = $$
+    $$ = U (UD+2I) \cdots (UD + (n+2)I) U^{m-1} = U^2 (DU+2I) \cdots (DU+(n+2)I) U^{m-2} =  $$
+    $$ = U^2 (UD+3I) \cdots (UD + (n+3)I)U^{m-2} = \ldots = U^m (UD + (m+1)I) \cdots (UD + (m+n+1)I)$$
+
+    $ $\newline
+    Όπου αρχικά χρησιμοποιήσαμε το λήμμα $12.5$ των σημειώσεων για το $D^{n+1}U^{n+1}$. Δηλαδή, ισχύει και η $P(n+1,k)$.
+
+    $ $\newline
+    $(\text{β} )$ Θα χρησιμοποιήσουμε επαγωγή στο $n$ και τις ίδιες πράξεις με παραπάνω. Για $n=1$ είναι $UD = UD$. Έστω ότι ισχύει για $n=k$, τότε 
+    $$U^{k+1}D^{k+1} = U \cdot U^k D^k \cdot D = U ( UD - (k-1)I) \cdots (UD-I)UD \cdot D $$
+    $$ = U (DU -kI)\cdots (DU-2I)(DU-I)\cdot D = $$ και εδώ στέλνουμε το $U$ από αριστερά στα δεξιά αμέσως πριν το μονό $D$, δηλαδή
+    $$U(DU-kI)\cdots(DU-2I)(DU-I)\cdot D = (UD-kI)\cdots( UD-2I)(UD-I) \cdot U \cdot D$$ και άρα ισχύει η σχέση για $n=k+1$.
+\end{proof}
+\end{document}

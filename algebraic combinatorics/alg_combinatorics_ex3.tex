@@ -1,0 +1,471 @@
+\documentclass[oneside,a4paper]{article}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{amssymb}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage[greek]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{mathtools}
+\usepackage{blindtext}
+\usepackage[T1]{fontenc}
+\usepackage{titlesec}
+\usepackage{sectsty}
+\usepackage{verbatim}
+\usepackage{multirow}
+\chapternumberfont{\tiny} 
+\chaptertitlefont{\Huge}
+%ελληνικοι χαρακτηρες σε μαθ pdf utf-8
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{tikz-cd}
+
+\usepackage{xcolor}
+\usepackage{framed}%frames
+
+\usepackage{array}
+\usepackage{pbox}
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{tikz}
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%περιθώρια%%%%%%%%%%%%
+\usepackage[a4paper,margin=3.5cm]{geometry}
+
+
+%%%%%%%%συντομευσεις%%%%%%%%%%
+\newtheorem{theorem}{Θεώρημα}
+\newtheorem{lemma}{Λήμμα}
+\newtheorem{example}{Παράδειγμα}
+\newtheorem*{defn}{Ορισμός}
+\newtheorem{prop}{Πρόταση}
+\newtheorem{cor}{Πόρισμα}
+
+\newcommand {\tl}{\textlatin}
+%%%%%%%%%αριθμηση%%%%%%%%%%%%%%
+\renewcommand{\theenumi}{\arabic{enumi}}
+\renewcommand{\labelenumi}{{\rm(\theenumi)}}
+\renewcommand{\labelenumii}{\roman{enumii}) }
+%%%%%%%%%%%% New theorems %%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\Co}{\mathbb{C}}
+%%%%%%%%%%%%%%%%%%%%% Document starts %%%%%%%%%%%%
+\begin{document}
+	
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\selectlanguage{greek}
+	%%%%%%%%%%%%%%%%%%%%%%% Start Roman numbering %%%% vbbnn
+	%\pagenumbering{roman}
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	
+	\begin{framed}	
+		%\vspace{0.3truecm}
+		\begin{center}
+			\huge Αλγεβρική Συνδυαστική
+		\end{center}
+		%\vspace{0.3truecm}
+		\begin{center}
+			\huge Εργασία 3
+		\end{center}
+		\vspace{0.3truecm}
+		\begin{center}
+			Ονομ/νο: Νούλας Δημήτριος\\
+			ΑΜ: 1112201800377\\
+			\tl{email}: \tl{dimitriosnoulas@gmail.com} \\
+			\vspace{0.1cm}
+			\textbf{Με συνεργασία με τον φοιτητή Άλκη Ιωαννίδη}
+		\end{center}
+		\vspace{0.3truecm}
+	\end{framed}
+	\vspace*{\fill}
+	\begin{center}
+	\includegraphics[width=0.5\textwidth]{C:/Users/dimit/Desktop/TeX/uoa_logo}
+	\end{center}
+\vspace{1cm}
+\pagebreak
+
+
+\noindent \textbf{1.} Εφαρμόζοντας το Θεώρημα Πίνακα-Δένδρου, ή με άλλο τρόπο, υπολογίστε το πλήθος των παραγόντων δένδρων του γραφήματος που προκύπτει προσθέτοντας μια ακμή με διαφορετικά άκρα στο πλήρες απλό γράφημα με $n$ κορυφές.
+
+\vspace*{1cm}
+\begin{proof} $ $
+
+	$ $\newline
+	Αν θεωρήσουμε ότι προσθέτουμε μια ακμή μεταξύ των δύο πρώτων κορυφών, τότε έχουμε τον $n \times n$ πίνακα:
+	$$L(G)= \begin{pmatrix}
+		n & -2 & -1 & \cdots & -1 \\
+		-2 & n & -1 & \cdots & -1 \\
+		-1 & -1 & n-1 & & \vdots \\
+		\vdots & & & \ddots & -1\\
+		-1 & \cdots & -1 & & n-1
+	\end{pmatrix}$$
+
+	$ $\newline Από το Θεώρημα Πίνακα-Δένδρου, το ζητούμενο αποτέλεσμα είναι η παρακάτω ορίζουσα
+	$$detL_0(G) = det\begin{pmatrix}
+		n & -1 & -1 & \cdots & -1 \\
+		-1 & n-1 & -1 &  \cdots & -1 \\
+		-1 &  -1 & n-1  &  & \vdots \\
+		\vdots & \vdots & & \ddots & -1 \\
+		-1 & -1 & \cdots & -1 & n-1
+	\end{pmatrix}_{(n-1)\times(n-1)} = $$
+	$$= \quad \quad \quad \quad \quad det \begin{pmatrix}
+		n+1 & -1 & -1 & \cdots & -1 \\
+		0& n-1 & -1 &  \cdots & -1 \\
+		\vdots &  -1 & n-1  &  & \vdots \\
+		0 & \vdots & & \ddots & -1 \\
+		-n & -1 & \cdots & -1 & n-1
+	\end{pmatrix}_{(n-1)\times(n-1)} =  $$
+	$$ = (n+1)det(nI_{n-2} - J_{n-2}) + (-1)^{n+1} n \cdot det \begin{pmatrix}
+		-1 & -1 & -1 & \cdots & -1 \\
+		n-1& -1 & -1 &  \cdots & -1 \\
+		-1 &  n-1 & -1  &  & \vdots \\
+		 \vdots &  & \ddots & \ddots & -1 \\
+		-1 & \cdots  & -1 & n-1 & -1
+	\end{pmatrix}_{(n-2)\times(n-2)}$$
+
+
+	$ $\newline Χρησιμοποιώντας την σχέση $det(x I_{n-1} - J_{n-1}) = x^{n-2}(x-n+1)$ από την πέμπτη διάλεξη, παίρνουμε την σχέση
+	$$det(nI_{n-2}-J_{n-2}) = 2n^{n-3}$$
+
+	$ $\newline Υπολογίζουμε και την δεύτερη ορίζουσα ξεχωριστά
+	$$det \begin{pmatrix}
+		-1 & -1 & -1 & \cdots & -1 \\
+		n-1& -1 & -1 &  \cdots & -1 \\
+		-1 &  n-1 & -1  &  & \vdots \\
+		 \vdots &  & \ddots & \ddots & -1 \\
+		-1 & \cdots  & -1 & n-1 & -1
+	\end{pmatrix}_{(n-2)\times(n-2)} = $$
+	$$ = det\begin{pmatrix}
+		0 & -1 & -1 & \cdots & -1 \\
+		n& -1 & -1 &  \cdots & -1 \\
+		0 &  n-1 & -1  &  & \vdots \\
+		 \vdots &  & \ddots & \ddots & -1 \\
+		0 & -1\cdots  & -1 & n-1 & -1
+	\end{pmatrix}_{(n-2)\times(n-2)} = $$
+	$$ = (-1)^{n-3} \cdot det\begin{pmatrix}
+		n & -1 & -1 & \cdots & -1 \\
+		0& n-1 & -1 &  \cdots & -1 \\
+		0 &  -1 & \ddots  &  & \vdots \\
+		 \vdots &  \vdots &  & n-1 & -1 \\
+		0 & -1  & \cdots & -1 & -1
+	\end{pmatrix}_{(n-2)\times(n-2)} = $$
+	$$ = n (-1)^{n-3} \cdot det\begin{pmatrix}
+		 n-1 & -1 &  \cdots & -1 \\
+		  -1 & \ddots  &  & \vdots \\
+		  \vdots &  & n-1 & -1 \\
+		-1  & \cdots & -1 & -1
+	\end{pmatrix}_{(n-3)\times(n-3)} = $$
+	$$ = n (-1)^{n-3} \cdot det\begin{pmatrix}
+		n & -1 & -1 & \cdots & -1 \\
+		0& n-1 & -1 &  \cdots & -1 \\
+		0 &  -1 & \ddots  &  & \vdots \\
+		 \vdots &  \vdots &  & n-1 & -1 \\
+		0 & -1  & \cdots & -1 & -1
+	\end{pmatrix}_{(n-3)\times(n-3)} = $$
+	$$ = \ldots = (-1)^{n-3} n^{n-4} \cdot det\begin{pmatrix}
+		n-1 & -1 \\
+		-1 & -1
+	\end{pmatrix} = $$
+	$$ = (-1)^n n^{n-3}$$
+
+	$ $\newline
+	Όπου ο όρος $(-1)^{n-3}$ προέκυψε από τις $n-3$ το πλήθος εναλλαγές γραμμών στην ορίζουσα. Η πρώτη με την δεύτερη, η δεύτερη με την τρίτη και ούτω καθεξής. Άρα όλο μαζί είναι:
+
+	$$detL_0(G) = (n+2)n^{n-3}$$
+\end{proof}
+\pagebreak
+
+
+\noindent \textbf{2.} Θεωρούμε το απλό γράφημα $C_n$ στο σύνολο κορυφών $\{v_0,v_1,\ldots,v_n\}$ με ακμές τις $\{v_i, v_{i+1}\}$ για $1\leq i \leq n-1$ και $\{v_0,v_i\}$ για $1\leq i \leq n$. Εφαρμόζοντας το Θεώρημα Πίνακα-Δένδρου, ή με άλλο τρόπο, δείξτε ότι τα ακόλουθα έιναι ίσα:
+
+$ $\newline
+$(\text{α})$ το πλήθος των παραγόντων δένδρων του $C_n$,
+
+$ $\newline
+$(\text{β})$ ο αριθμός \tl{Fibonacci} $F_{2n}$, όπου $F_1 = F_2 = 1$ και $F_m = F_{m-1} + F_{m-2}$ για $m\geq 3$,
+
+$ $\newline
+$(\text{γ})$ το άθροισμα $\sum r_1 r_2 \cdots r_k$, όταν αυτό διατρέχει όλες τις συνθέσεις $(r_1,r_2,\ldots, r_k)$ του $n$ με τυχαίο πλήθος μερών.
+
+\vspace*{1cm}
+
+\begin{proof} $ $
+
+	$ $\newline
+	Αρχικά, από τις σχέσεις 
+	$$F_{2n-2} = F_{2n-3} + F_{2n-4}$$
+	$$F_{2n-3} = F_{2n-2} - F_{2n-4}$$
+	
+	
+	\noindent παίρνουμε την αναδρομική σχέση για το $F_{2n}$
+	$$F_{2n} = F_{2n-1} + F_{2n-2} = 2F_{2n-2} + F_{2n-3} = 3F_{2n-2} - F_{2n-4}$$
+	$$F_{2n} = 3F_{2(n-1)} - F_{2(n-2)}$$
+
+	\noindent Έπειτα ορίζουμε τον πίνακα
+	$$M_n = \begin{pmatrix}
+		3 & -1 &  &  & \\
+		-1 & 3 & -1 &  &  \\
+		& -1 & 3 & -1 &  \\
+		& & -1 & \ddots & -1\\
+		& & & -1& 3
+	\end{pmatrix}_{n\times n}$$
+
+	$$det(M_n) = 3 det(M_{n-1}) + (-1)^4 \cdot det \begin{pmatrix}
+		-1 & 0 & 0 & \ldots & 0 \\
+		-1 & & & & \\
+		0 & & M_{n-2} & & \\
+		\vdots & & & & \\
+		0 & & & & \\
+	\end{pmatrix}_{(n-1)\times (n-1)}$$
+
+	$$det(M_n) = 3det(M_{n-1}) - det(M_{n-2})$$
+
+	$ $\newline
+	Δηλαδή οι $F_{2n}, det(M_n)$ έχουν την ίδια αναδρομική σχέση. Άρα από τις αρχικές συνθήκες $det(M_1) = 3 = F_4, det(M_2) = 8 = F_6, det(M_3) = 21 = F_8$  και ούτω καθεξής έχουμε
+	$$det(M_{n-1}) = F_{2n}$$
+
+
+	$ $\newline
+	Από το Θεώρημα Πίνακα-Δένδρου, το πλήθος των παραγόντων δένδρων του $C_n$ είναι ίσο με 
+
+	$$det(L_0(C_n)) = det\begin{pmatrix}
+		2 & -1 & \\
+		-1 & M_{n-2} & -1 \\
+		 & -1 & 2
+	\end{pmatrix}_{n\times n} = $$
+	$$= 2 \cdot det \begin{pmatrix}
+		M_{n-2} & -1 & \\
+		-1 & 2
+	\end{pmatrix}_{(n-1)\times (n-1)} + (-1)^4 \cdot det \begin{pmatrix}
+		-1 & 0 & \cdots & 0\\
+		-1 &  \\
+		 0 & & M_{n-3} \\
+		 \vdots & & & -1\\
+		 0 & & -1 & 2
+	\end{pmatrix}_{(n-1)\times (n-1)} = $$
+	$$= 4 det(M_{n-2}) + 2 (-1)^{(n-1) + (n-1-1) }(-1) \cdot det \begin{pmatrix}
+		& & & 0 \\
+		& M_{n-3}& & \vdots \\ 
+		& & & 0 \\
+		& & & -1 \\
+		0 & \cdots & 0 & -1
+	\end{pmatrix}_{(n-2)\times(n-2)} + $$
+	$$ + (-1) det\begin{pmatrix}
+		M_{n-3} & -1 \\
+		-1 & 2 
+	\end{pmatrix}_{(n-2)\times(n-2)} = $$
+
+	$$ = 4det(M_{n-2}) - 2det(M_{n-3}) + $$
+	$$ + (-1)\left( 2  det(M_{n-3}) + (-1)^{(n-2)+(n-2-1)}(-1) \begin{pmatrix}
+		& & & 0 \\
+		& M_{n-4}& & \vdots \\
+		& & & 0 \\
+		& & & -1 \\
+		0 & \cdots & 0 & -1
+	\end{pmatrix}_{(n-3)\times(n-3)} \right) = $$
+
+	$$ = 4det(M_{n-2}) - 4det(M_{n-3}) + det(M_{n-4})  = $$
+	$$ = det(M_{n-1}) + det(M_{n-2}) - 3 det(M_{n-3}) + det(M_{n-4}) = $$
+	$$ = det(M_{n-1}) = F_{2n}$$
+
+
+	$ $\newline
+	Δείξαμε ότι $(\text{α}) = (\text{β})$ και θα δείξουμε ότι $(\text{α}) = (\text{γ})$. Ορίζουμε δύο παράγοντα δένδρα του $C_n$ να είναι ισοδύναμα ανν προκύπει το ίδιο γράφημα (διατηρώντας την αρίθμηση των κορυφών) αν αφαιρέσουμε την κορυφή $0$ και τις ακμές που συνδέονται με αυτή.
+
+	$ $\newline
+	Έστω ότι το γράφημα μιας κλάσης έχει $k$ συνεκτικές συνιστώσες, δηλαδή η πρώτη που ενώνει την κορυφή $1$ με την κορυφή $r_1$, η δεύτερη που ενώνει την κορυφή $r_1 + 1$ με την κορυφή $r_1 + r_2$ και ούτω καθεξής, μέχρι την $k$-οστή συνιστώσα που ενώνει την $r_1 + r_2 + \ldots + r_{k-1} + 1$ κορυφή με την $n = r_1 + r_2 + \ldots + r_k$ κορυφή. Έτσι από μια κλάση με $k$ συνεκτικές συνιστώσες παίρνουμε μια σύνθεση του $n$ με $k$ μέρη και αντίστροφα.
+	
+	$ $\newline
+	Για παράδειγμα, η κλάση των παραγόντων δένδρων του $C_6$ που αντιστοιχεί στην σύνθεση $3+1+2$
+	\begin{figure}[ht]
+		\centering
+		\begin{tikzcd}
+			&                                                   & 0                             &                                &                                                    &                                  \\
+			&                                                   &                               &                                &                                                    &                                  \\
+1 \arrow[r, no head] \arrow[rruu, no head, dotted] & 2 \arrow[r, no head] \arrow[ruu, no head, dotted] & 3 \arrow[uu, no head, dotted] & 4 \arrow[luu, no head, dotted] & 5 \arrow[r, no head] \arrow[lluu, no head, dotted] & 6 \arrow[llluu, no head, dotted]
+\end{tikzcd}
+	\end{figure}
+
+	$ $\newline
+	Από την κάθε συνιστώσα έχουμε $r_i$ τρόπους, δηλαδή ποια κορυφή να διαλέξουμε, για να ανέβουμε στο $0$ ώστε να έχουμε παράγον δένδρο. Άρα κάθε κλάση που αντιστοιχεί σε σύνθεση $r_1 + r_2 + \ldots + r_k$ περιέχει $r_1 r_2 \cdots r_k$ παράγοντα δένδρα. Αθροίζοντας για όλες τις συνθέσεις παίρνουμε το ζητούμενο. 
+
+\end{proof}
+\pagebreak
+
+
+
+
+
+
+
+
+\noindent \textbf{3.} Θεωρούμε το κατευθυνόμενο γράφημα $\mathcal{D}$ στο σύνολο κορυφών $\{v_1,v_2 ,\ldots, v_n\}$ με $a_1 + a_2 + \cdots + a_n$ ακμές, από τις οποίες $a_i$ έχουν αρχή $v_i$ και πέρας $v_{i+1}$ για $1\leq i \leq n$ (όπου $a_1, a_2, \ldots, a_n$ είναι θετικοί ακέραιοι και $v_{n+1} = v_1$).
+
+$ $\newline
+$(\text{α})$ Υπολογίστε το πλήθος των παραγόντων προσανατολισμένων δένδρων του $\mathcal{D}$ με ρίζα $v_i$ για $1\leq i \leq n$. Για ποιες τιμές των $a_1,a_2,\ldots,a_n$ είναι το $\mathcal{D}$ ισορροπημένο? \\
+
+Έστω ότι το $\mathcal{D}$ είναι ισορροπημένο και έστω $d = (a_1 + a_2 + \ldots + a_n)/n$. Εκφράστε τις απαντήσεις σας στα ακόλουθα ερωτήματα ως συναρτήσεις των $n,d$ και $\ell$.
+
+$ $\newline
+$(\text{β})$ Ποιο είναι το πλήθος των κλειστών περιπάτων δοσμένου μήκους $\ell$ του $\mathcal{D}$?
+
+$ $\newline
+$(\text{γ})$ Ποιες είναι οι ιδιοτιμές των πινάκων $A(\mathcal{D})$ και $L(\mathcal{D})$? Ποιο είναι το γινόμενο των μη μηδενικών ιδιοτιμών του $L(\mathcal{D})$?
+
+$ $\newline
+$(\text{δ})$ Ποιο είναι το πλήθος των κλειστών περιπάτων \tl{Euler} του $\mathcal{D}$?
+
+\vspace*{1cm}
+\begin{proof} $ $
+
+	
+	$ $\newline
+	Έχουμε τους πίνακες:
+	$$A(\mathcal{D}) = \begin{pmatrix}
+		0 & a_1 &  &  &  \\
+		 & 0 & a_2 &  &  \\
+		 &  & 0 & \ddots &  \\
+		 &  &  & \ddots & a_{n-1} \\
+		a_n &  &  &  & 0 \\
+	\end{pmatrix} \quad L(\mathcal{D}) = \begin{pmatrix}
+		a_1 & -a_1 &  &  &  \\
+		 & a_2 & -a_2 &  &  \\
+		 &  & a_3 & \ddots &  \\
+		 &  &  & \ddots & -a_{n-1} \\
+		-a_n &  &  &  & a_n \\
+	\end{pmatrix}$$
+
+$ $\newline
+$(\text{α})$ οι πίνακες $L_1(\mathcal{D}), L_n(\mathcal{D})$ είναι άνω τριγωνικοί, συνεπώς
+$$detL_1(\mathcal{D}) = a_2 a_3 \cdots a_n$$
+$$detL_n(\mathcal{D}) = a_1 a_2 \cdots a_{n-1}$$
+
+$ $\newline
+Για $1<i<n$ ο πίνακας $L_i(\mathcal{D})$ θα έχει την στήλη $  x = (0,0,\ldots, a_{i+1}, 0,\ldots, 0)^T$. Σε κάθε στήλη εκτός από την πρώτη και την $x$ διαδοχικά προσθέτουμε την αριστερή της, ξεκινώντας από την δεύτερη προσθέτοντας της την πρώτη και συνεχίζοντας προσθέτοντας την δεύτερη στην τρίτη και ούτω καθεξής. Οι πράξεις αυτές δεν αλλοιώνουν την ορίζουσα και προκύπτει κάτω τριγωνικός πίνακας με στοιχεία στη διαγώνιο $a_1,\ldots, a_{i-1}, a_{i+1},\ldots,a_n$.
+
+$ $\newline
+Άρα από το θεώρημα $6.4$ για κάθε $i$ έχουμε ότι το πλήθος των παραγόντων προσανατολισμένων δένδρων του $\mathcal{D}$ με ρίζα $v_i$ είναι το γινόμενο των $a_j$ για όλα τα $j\neq i$.
+
+$ $\newline
+Κάθε κορυφή $v_i$ είναι πέρας $a_{i-1}$ ακμών και αρχή $a_i$ ακμών, άρα για να είναι ισορροπημένο το γράφημα πρέπει
+$$a_1 = a_2 = \cdots = a_n$$ 
+
+$ $\newline
+$(\text{β})$ Μπορούμε να έχουμε έναν κλειστό περίπατο μόνο αν κάνουμε κύκλο από όλες τις κορυφές αφού από την κάθε κορυφή μπορούμε να πάμε μόνο στην επόμενη, άρα αναγκαστικά το $\ell$ θα είναι πολλαπλάσιο του $n$. Από κάθε κορυφή έχουμε $d$ επιλογές για να πάμε στην επόμενη, συνεπώς θα έχουμε $d^{\ell}$ κλειστούς περίπατους για συγκεκριμένη κορυφή. Άρα το πλήθος των κλειστών περιπάτων είναι $n \cdot d^{\ell}$ για $\ell$ πολλαπλάσιο του $n$ και $0$ διαφορετικά.
+
+
+$ $\newline
+$(\text{γ})$
+
+$$x_A(x) = det \begin{pmatrix}
+	-x & a_1 &  &  &  \\
+	 & -x & a_2 &  &  \\
+	 &  & -x & \ddots &  \\
+	 &  &  & \ddots & a_{n-1} \\
+	a_n &  &  &  & -x \\
+\end{pmatrix}=$$
+$$=  (-x) \cdot det \begin{pmatrix}
+	 -x & a_2 &  &  \\
+	   & -x & \ddots &  \\
+	   &  & \ddots & a_{n-1} \\
+	   &  &  & -x \\
+\end{pmatrix} + (-1)^{n+1} \cdot det \begin{pmatrix}
+	a_1 &  &  &  \\
+	  - x& a_2 &  &  \\
+	  &  -x & \ddots &  \\
+	  &  &  -x & a_n \\
+\end{pmatrix}  = $$
+$$ = (-1)^{n}x^n + (-1)^{n+1} a_1 a_2 \cdots a_n$$
+
+$ $\newline 
+Επειδή το $\mathcal{D}$ είναι ισορροπημένο έχουμε $d = a_1 = a_2 = \ldots = a_n$ και άρα $$x_A(x) = (-1)^n x^n + (-1)^{n+1} d^n$$ δηλαδή για τις ιδιοτιμές έχουμε $$x^n - d^n = 0$$
+και άρα αν $\zeta$ είναι μια πρωταρχική $n$-οστή ρίζα της μονάδας, τότε οι ιδιοτιμές είναι οι $d\zeta^k$ για $k=0,1,\ldots, n-1$.
+
+
+$$x_L(x) = det \begin{pmatrix}
+	a_1-x & -a_1 &  &  &  \\
+	 & a_2 -x & -a_2 &  &  \\
+	 &  & a_3 -x & \ddots &  \\
+	 &  &  & \ddots & -a_{n-1} \\
+	-a_n &  &  &  & a_n -x \\
+\end{pmatrix}=$$
+$$ = (a_1 - x) \cdot det \begin{pmatrix}
+	 a_2 -x & -a_2 &  &  \\
+	   & a_3 -x & \ddots &  \\
+	   &  & \ddots & -a_{n-1} \\
+	  &  &  & a_n -x \\
+\end{pmatrix} $$
+$$ + (-1)^{n+1} (-a_n) \cdot det\begin{pmatrix}
+	 -a_1  & &  &  \\
+	 a_2 - x& -a_2 &  &  \\
+	   &  a_3 - x& \ddots &  \\
+	  &  &   & -a_{n-1} \\
+\end{pmatrix} = $$
+$$ = (d-x)^n + (-1)^{n+1}(-1)^n d^n = (d-x)^n - d^n$$
+
+δηλαδή $d-x = d\zeta^k$ και άρα οι ιδιοτιμές του $L(\mathcal{D})$ είναι οι $d(1-\zeta^k)$ για $k=0,1,\ldots,n-1$. 
+
+$ $\newline
+Για $k=0$ έχουμε την ιδιοτιμή $0$, άρα το γινόμενο των μη μηδενικών ιδιοτιμών του $d$ είναι το $$\prod\limits_{k=1}^{n-1} d (1-\zeta^k) = n d^{n-1} $$
+εφόσον είναι γνωστό ότι $$x^n - 1 =  (x-1)(x^{n-1} + x^{n-2} + \ldots + x + 1) = (x-1)(x-\zeta)(x-\zeta^2)\cdots(x-\zeta^{n-1})$$
+
+$ $\newline
+Μπορούμε βέβαια να δώσουμε την ίδια απάντηση και χρησιμοποιώντας την πρόταση $6.8$, εφόσον δείξαμε στο $(\text{α})$ ότι $\tau (v_i, \mathcal{D})  = d^{n-1}$ αν θεωρήσουμε ότι και εκεί είναι το $\mathcal{D}$ ισορροπημένο.
+
+$ $\newline
+$(\text{δ})$ Το γράφημα $\mathcal{D}$ είναι συνεκτικό και ισορροπημένο και επιπλέον για κάθε $v \in N$ έχουμε $out^*(v) = out(v) = d$. Συνεπώς, για μια τυχαία ακμή $e \in E$ έχουμε από το θεώρημα $6.9$ των \tl{BEST} ότι το πλήθος των κλειστών περιπάτων του \tl{Euler} στο $\mathcal{D}$ με αρχική ακμή το $e$ είναι ίσο με
+$$d^{n-1} \prod\limits_{i=1}^{n}(d-1)!$$
+
+$ $\newline
+Άρα αθροίζοντας για όλες τις $n\cdot d$ ακμές έχουμε πλήθος:
+$$n (d!)^n$$
+\end{proof}
+
+\pagebreak
+
+
+
+
+\noindent \textbf{4.} Χρωματίζουμε κάθε ακμή ενός τετραέδρου $T$ με ένα από $n$ χρώματα. Θεωρούμε δύο χρωματισμούς ισοδύναμους αν ο ένας προκύπτει από τον άλλο με μια άρτια μετάθεση του συνόλου των κορυφών του $T$. Πόσες κλάσεις ισοδυναμίας χρωματισμών υπάρχουν?
+
+\vspace*{1cm}
+\begin{proof} $ $
+
+	$ $\newline
+	Θεωρούμε $G=(N,E,\phi)$ το γράφημα του τετραέδρου με $$N = \{v_1,v_2,v_3,v_4\}, \quad E = \{e_1,e_2,e_3,e_4,e_5,e_6\}$$ $$\phi(e_1) = (v_1,v_2)$$ $$\phi(e_2) = (v_1,v_3)$$ $$\phi(e_3) = (v_1,v_4)$$ $$\phi(e_4) = (v_2,v_3)$$ $$\phi(e_5) = (v_2,v_4)$$ $$\phi(e_5) = (v_2,v_4)$$ $$\phi(e_6) = (v_3,v_4)$$ και $X$ το σύνολο των χρωματισμών 
+	$$f:E \longrightarrow \{k_1,k_2,\ldots,k_n\}$$
+
+	$ $\newline
+	Αν έχουμε μια μετάθεση κορυφών $\sigma^{\prime} \in S_N \cong S_4$, μέσω της $\phi$ επάγεται μια μετάθεση ακμών $\sigma \in S_E \cong S_6$ ως εξής:
+
+	$$\text{Αν } \phi(e) = \{v_i,v_j\}, \quad\text{ τότε } \quad \sigma(e) = e^{\prime} \iff \phi(e^{\prime}) = \{\sigma^{\prime}(v_i),\sigma^{\prime} (v_j)\}  $$
+
+	$ $\newline
+	Δηλαδή, όπως μεταθέτουμε τις δύο άκρες της ακμής μεταθέτουμε και την ίδια την ακμή. Η $A_4$ έχει $\frac{4!}2 = 12$, το ταυτοτικό και τα 
+	
+	$$(12)(34) \quad (13)(24) \quad (14)(23)$$
+	$$(123) \quad (132) \quad (142) \quad (234)$$
+	$$(124) \quad (134) \quad (143) \quad (243)$$
+	
+	$ $\newline
+	Η ομάδα των άρτιων μεταθέσεων των κορυφών που είναι ισόμορφη με την $A_4$ (και μέσω της απεικόνισης $i\mapsto v_i$ για  $i=1,2,3,4$ την ταυτίζουμε με αυτή) με βάση τα παραπάνω επάγει υποομάδα $H$ της συμμετρικής ομάδας των ακμών με τάξη $12$.
+
+	$$H = \{\sigma \in S_E: \quad \sigma \text{ επάγεται από } \sigma^{\prime} \in A_4\}$$
+
+	$ $\newline
+	Έτσι, με βάση το παράδειγμα $7.5$ των διαλέξεων, η $H$ δρα στο σύνολο $X$ των χρωματισμών του $E$. Το ζητούμενο αποτέλεσμα λοιπόν, από το πόρισμα $7.14$ είναι ίσο με
+	$$\frac{1}{|H|} \cdot \sum\limits_{\sigma \in H} n^{c(\sigma)}$$
+
+	$ $\newline
+	Άρα αρκεί να υπολογίσουμε τους κύκλους της κάθε μετάθεσης ακμών. Η μετάθεση που επάγεται από την $(12)(34)$ κρατάει σταθερές τις ακμές $e_1,e_6$ και κάνει τους κύκλους $(e_2 e_5),(e_3 e_4)$. Δηλαδή αποτελείται από $4$ κύκλους μαζί με τα σταθερά στοιχεία. Ομοίως αποτελούνται από $4$ κύκλους και οι άλλες δύο μεταθέσεις που προκύπτουν από τις $(13)(24),(14)(23)$.
+
+	$ $\newline
+	Η μετάθεση που προκύπτει από την $(123)$ αποτελείται από τους κύκλους $(e_1 e_2 e_4)(e_3 e_5 e_6)$ και όμοια κάθε άλλη μετάθεση που προκύπτει από τους υπόλοιπους κύκλους μήκους $3$ της $A_4$ θα αποτελείται από $2$ κύκλους ακμών. Μαζί με το γεγονός ότι $c(id) = 6$, παίρνουμε το αποτέλεσμα
+	$$\frac{1}{12}\left(n^6 + 3n^4 + 8n^2\right)$$
+
+\end{proof}
+\end{document}

@@ -1,0 +1,213 @@
+\documentclass[oneside,a4paper]{article}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{amssymb}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage[greek]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{mathtools}
+\usepackage{blindtext}
+\usepackage[T1]{fontenc}
+\usepackage{titlesec}
+\usepackage{sectsty}
+\usepackage{verbatim}
+\usepackage{multirow}
+\chapternumberfont{\tiny} 
+\chaptertitlefont{\Huge}
+%ελληνικοι χαρακτηρες σε μαθ pdf utf-8
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{tikz-cd}
+
+\usepackage{xcolor}
+\usepackage{framed}%frames
+
+\usepackage{array}
+\usepackage{pbox}
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{tikz}
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%περιθώρια%%%%%%%%%%%%
+\usepackage[a4paper,margin=3.5cm]{geometry}
+
+
+%%%%%%%%συντομευσεις%%%%%%%%%%
+\newtheorem{theorem}{Θεώρημα}
+\newtheorem{lemma}{Λήμμα}
+\newtheorem{example}{Παράδειγμα}
+\newtheorem*{defn}{Ορισμός}
+\newtheorem{prop}{Πρόταση}
+\newtheorem{cor}{Πόρισμα}
+
+\newcommand {\tl}{\textlatin}
+%%%%%%%%%αριθμηση%%%%%%%%%%%%%%
+\renewcommand{\theenumi}{\arabic{enumi}}
+\renewcommand{\labelenumi}{{\rm(\theenumi)}}
+\renewcommand{\labelenumii}{\roman{enumii}) }
+%%%%%%%%%%%% New theorems %%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\Co}{\mathbb{C}}
+%%%%%%%%%%%%%%%%%%%%% Document starts %%%%%%%%%%%%
+\begin{document}
+	
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\selectlanguage{greek}
+	%%%%%%%%%%%%%%%%%%%%%%% Start Roman numbering %%%% vbbnn
+	%\pagenumbering{roman}
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	
+	\begin{framed}	
+		%\vspace{0.3truecm}
+		\begin{center}
+			\huge Αλγεβρική Συνδυαστική
+		\end{center}
+		%\vspace{0.3truecm}
+		\begin{center}
+			\huge Εργασία 1
+		\end{center}
+		\vspace{0.3truecm}
+		\begin{center}
+			Ονομ/νο: Νούλας Δημήτριος\\
+			ΑΜ: 1112201800377\\
+			\tl{email}: \tl{dimitriosnoulas@gmail.com} \\
+			\textbf{Με συνεργασία με τον φοιτητή Άλκη Ιωαννίδη}
+		\end{center}
+		\vspace{0.3truecm}
+	\end{framed}
+	\vspace*{\fill}
+	\begin{center}
+	\includegraphics[width=0.5\textwidth]{C:/Users/dimit/Desktop/TeX/uoa_logo}
+	\end{center}
+\vspace{1cm}
+\pagebreak
+
+
+
+\textbf{1.} Έστω $a(n,k)$ το πλήθος των υποσυνόλων του $\{1,2,\ldots,n\}$ με $k$ στοιχεία τα οποία δεν περιέχουν δύο διαδοχικούς ακεραίους.
+
+\begin{enumerate}
+	\item Δείξτε ότι το $a(n,k)$ είναι ίσο με το πλήθος των συνθέσεων $(r_1, r_2 ,\ldots, r_{k+1})$ του $n+1$ για τις οποίες $r_i \geq 2$ για $1<i\leq k$.
+	\item Υπολογίστε τη γεννήτρια συνάρτηση $\sum\limits_{n\geq 0} a(n,k)x^n$ ως ρητή συνάρτηση του $x$.
+	\item Βρείτε έναν όσο το δυνατόν απλούστερο τύπο για το $a(n,k)$.
+\end{enumerate}
+
+\begin{proof}$ $
+	$ $\newline
+	\begin{enumerate}
+
+		\item Έστω $\{a_1, \ldots a_k\}$ ένα υποσύνολο του $[n]$ το οποίο δεν περιέχει δυο διαδοχικούς ακεραίους. Ορίζουμε:
+		$r_1 = a_1 \geq 1$ και $r_i = a_i - a_{i-1} \geq 2$ για κάθε $2\leq i \leq k$. Επιπλέον, ορίζουμε $r_{k+1} = n+1 - a_k \geq 1$. Έτσι έχουμε μια σύνθεση:
+		$$a_1 + (a_2 - a_1) + (a_3 - a_2) + \ldots (a_k - a_{k-1}) + (n+1 - a_k) = n+1$$
+		$$r_1 + r_2 +\ldots r_k + r_{k+1} = n+1$$
+		με $r_1,r_{k+1} \geq 1$ και τα υπόλοιπα $r_i \geq 2$. Αντίστροφα, αν έχουμε μια τέτοια σύνθεση ορίζουμε $a_1 = r_1 \geq 1$ και αναδρομικά $a_i = r_i + a_{i-1}$ για $2\leq i \leq k$. Έτσι, κανένα από τα $a_i$ δεν είναι διαδοχικός ακέραιος με τον προηγούμενό του και $a_i < a_j$ για $i < j$. Επιπλέον, από την σύνθεση έχουμε την σχέση $a_k + r_k = n+1$ και $r_k \leq 1$, δηλαδή $a_k \leq n$. Άρα το $\{a_1, \ldots,a_k\}$ είναι πράγματι ένα υποσύνολο του $[n]$.  
+		
+	
+		\item Έστω $A_{n,k}$ το σύνολο των συνθέσεων του ερωτήματος $(1)$, τότε:
+		$$\sum\limits_{n\geq 0 }a(n,k)x^n = x^{-1}\sum\limits_{n\geq 0 }a(n,k)x^{n+1}  = x^{-1 } \sum\limits_{(r_1, \ldots, r_{k+1}) \in A_{n,k}} x^{r_1 + r_2 + \ldots + r_{k+1}} = $$ 
+		$$= x^{-1} \left(\sum\limits_{r_1 \geq 1} x^{r_1} \right) \left(\sum\limits_{r_{k+1} \geq 1} x^{r_{k+1}} \right) \left(\sum\limits_{r_2 \geq 2} x^{r_2} \right) \cdots \left(\sum\limits_{r_k \geq 2} x^{r_k} \right) = $$
+		$$= x^{-1} \left( \frac{x}{1-x} \right)^2 \left( \frac1{1-x} -1 -x \right)^{k-1} = $$
+		$$= x^{-1} \left( \frac{x}{1-x} \right)^2  \left( \frac{x^2}{1-x}\right)^{k-1} = \frac{x^{2k-1}}{(1-x)^{k+1}} $$
+
+		\item $$\sum\limits_{n\geq 0} a(n,k) x^n = x^{2k-1}(1-x)^{-k-1} = x^{2k-1}\sum\limits_{n\geq 0} \binom{-k-1}{n} (-x)^n = $$
+		$$ \sum\limits_{n\geq 0} \frac{(k+1)(k+2) \cdots (k+n)}{n!} x^{n+2k-1} = $$
+		$$ \sum\limits_{n\geq 0} \frac{(n+k)!}{n! k!} x^{n+2k-1} = \sum\limits_{n\geq 0 } \binom{n+k}{k} x^{n + 2k -1} = $$
+		$$\sum\limits_{n\geq 2k-1} \binom{n-k+1}{k} x^n$$
+
+		άρα $a(n,k) = \binom{n-k+1}{k}$.
+	\end{enumerate}
+\end{proof}
+\pagebreak
+
+\textbf{2. }
+\begin{enumerate}
+	\item 
+\end{enumerate}
+\begin{proof}$ $
+\end{proof}
+\pagebreak
+
+\textbf{3. } Δίνεται η τυπική δυναμοσειρά $F(x) = \sum\limits_{n\geq 0} \left(\frac{x}{1-x^3}\right)^n \in \mathbb{C}[[x]]$.
+\begin{enumerate}
+	\item Υπολογίστε την $F(x)$ ως ρητή συνάρτηση του $x$.
+	\item Δείξτε ότι για $n\geq 2$, ο συντελεστής του $x^n$ στην $F(x)$ είναι ίσος με το πλήθος των συνθέσεων του $n-1$ με μέρη ίσα με $1$ ή $3$.
+	\item Υπολογίστε το συντελεστή του $x^n$ στην $(F(x))^{-1}$ για κάθε $n \in \mathbb{N}$.
+\end{enumerate}
+\begin{proof}$ $
+
+	$ $\newline
+	\begin{enumerate}
+		\item Θέτουμε $G(x) = \frac{x}{1-x^3}$, τότε $G(0) = 0$ και άρα από πρόταση $2.6$ έχουμε
+		$$F(x) = \sum\limits_{n\geq 0} (G(x))^n = \frac1{1-G(x)} = \frac1{1-\frac{x}{1-x^3}} = \frac{1-x^3}{1-x-x^3} = 1 + \frac{x}{1-x-x^3}$$
+
+		\item Έστω $c_n$ το πλήθος των συνθέσεων του $n$ με μέρη ίσα με 1 ή 3. Τότε:
+		$$\sum\limits_{n\geq 0 } c_n x^n = \sum\limits_{(r_1,\ldots,r_k) \in \{1,3\}^k} x^{r1+r_2 + \ldots + r_k} = \sum\limits_{k \geq 0} \sum\limits_{r_i \in \{1,3\}} x^{r_1} x^{r_2} \cdots x^{r_k} = $$
+		$$ = \sum\limits_{k\geq 0 } \left(\sum\limits_{r_1 \in \{1,3\}} x^{r_1}\right) \left(\sum\limits_{r_2 \in \{1,3\}} x^{r_2}\right) \cdots \left(\sum\limits_{r_k \in \{1,3\}} x^{r_k}\right) = \sum\limits_{k\geq 0} (x+x^3)^k = $$
+		$$= \frac1{1-x-x^3}$$
+		όπου η τελευταία ισότητα προκύπτει πάλι από την πρόταση $2.6$ εφόσον $H(x) = x+x^3, H(0)=0$.
+		
+		$ $\newline
+		Για $n\geq 2$ παίρνουμε ότι:
+		$$[x^n] F(x) = [x^n] \left( 1 - \frac{x}{1-x-x^3} \right) = [x^n] \frac{x}{1-x-x^3} = [x^{n-1}] \frac1{1-x-x^3} = c_{n-1}$$
+
+		\item 
+		$$[x^n] (F(x))^{-1} = [x^n] \frac{1-x^3 - x}{1-x^3} = [x^n] \left(1 - \frac{x}{1-x^3}\right)$$
+		Αν $G(x) = \frac{x}{1-x^3}$ τότε $G(0)=0$. Συνεπώς, για $n=0$ ο ζητούμενος συντελεστής είναι $1$. Για $n>1$:
+		$$[x^n] (F(x))^{-1} = [x^n] - \frac{x}{1-x^3} = [x^{n-1}] - \frac1{1-x^3} = [x^{n-1}] \sum\limits_{n\geq 0 } - x^{3n} = $$
+		$$= [x^{n-1}] -\left( 1 + x^3 + x^6 + x^9 + \ldots \right)$$
+		δηλαδή:  
+		$$[x^n] (F(x))^{-1} = 
+		\begin{cases}
+			-1, \quad n = 1 \text{\tl{ mod}}3, n\neq 1 \\
+			0, \quad n = 0,2 \text{\tl{ mod}}3 \\
+			1, \quad n=1
+		\end{cases}$$
+		
+	\end{enumerate}
+\end{proof}
+\pagebreak
+
+\textbf{4. } Δείξτε ότι υπάρχει μοναδική τυπική δυναμοσειρά $F(x) \in \mathbb{C}[[x]]$ τέτοια ώστε $F(0)=1$ και $F(x)^{-1} = (1-x^2) F(x)$ και υπολογίστε το συντελεστή του $x^n$ στην $F(x)$ για κάθε $n \in \mathbb{N}$.
+
+
+\begin{proof} $ $
+	$ $\newline
+
+	Η $(1-x^2)$ είναι αντιστρέψιμη στον δακτύλιο $\mathbb{C}[[x]]$ με μοναδική αντίστροφο:
+	$$(1-x^2)^{-1} = \frac1{1-x^2} = \sum\limits_{n\geq 0} x^{2n} = \sum\limits_{n\geq 0} a_n x^n$$
+	με $a_n = 1$ αν $n = 0$ \tl{mod}$2$ και $a_n = 0$ διαφορετικά.
+
+	$ $\newline
+	Ορίζουμε ακολουθία $(b_n)_{n \in \mathbb{N}}$ με $b_0 = 1$ και αναδρομικά: 
+	$$b_n = \frac12 \left( a_n - \sum\limits_{i\geq 1}^{n-1} b_i b_{n-i} \right)$$
+	για τα $n\geq 1$.
+	
+	$ $\newline
+	Έτσι έχουμε την σχέση:
+	$$a_n = \sum\limits_{k\geq 0}^n b_k b_{n-k}$$
+	για κάθε $n\in \mathbb{N}$. Δηλαδή ορίζοντας την αντιστρέψιμη τυπική δυναμοσειρά $F(x) = \sum\limits_{n\geq 0} b_n x^n$, έχουμε:
+	$$ 1 = (1-x^2) (1-x^2)^{-1} = (1-x^2) \sum\limits_{n\geq 0} a_n x^n = (1-x^2) (F(x))^2$$
+	$$ 1 = (1-x^2) (F(x))^2$$
+	$$ F(x)^{-1} = (1-x^2) F(x)$$
+	και η μοναδικότητα έπεται από τον μονοσήμαντο τρόπο που ορίζεται η ακολουθία $(b_n)$.
+
+	$ $\newline
+	Γράφοντας την $F(x)$ ως $F(x) = 1 + G(x)$ με $G(0) = 0$ μπορούμε να εφαρμόσουμε την πρόταση $2.15$ έτσι ώστε:
+	$$F(x) = (1+G(x)) = \left(\left(1+G(x)\right)^{2}\right)^{\frac12} = (F(x)^2)^{\frac12} = \left((1-x^2)^{-1}\right)^{\frac12} = (1-x^2)^{-\frac12}$$
+	το οποίο είναι ίσο με την διωνυμική σειρά για $a=-\frac12$ για την οποία έχουμε υπολογίσει το ανάπτυγμα στο παράδειγμα $2.14$. Άρα έχουμε
+	$$F(x) = \sum\limits_{n\geq 0} \binom{-\frac12}{n} (-x^2)^n = \sum\limits_{n\geq 0} \frac1{4^n} \binom{2n}{n} x^{2n}$$
+
+	Συνεπώς:
+	$$[x^n]F(x) = 
+	\begin{cases}
+		\frac1{4^n} \binom{2n}{n}, \quad n = 0 \text{ \tl{mod}}2 \\
+		0, \quad n = 1 \text{ \tl{mod}}2
+	\end{cases}$$
+\end{proof}
+
+\end{document}

@@ -1,0 +1,257 @@
+\documentclass[oneside,a4paper]{article}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{amssymb}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage[greek]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{mathtools}
+\usepackage{blindtext}
+\usepackage[T1]{fontenc}
+\usepackage{titlesec}
+\usepackage{sectsty}
+\usepackage{verbatim}
+\usepackage{multirow}
+\chapternumberfont{\tiny} 
+\chaptertitlefont{\Huge}
+%ελληνικοι χαρακτηρες σε μαθ pdf utf-8
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{tikz-cd}
+
+\usepackage{xcolor}
+\usepackage{framed}%frames
+
+\usepackage{array}
+\usepackage{pbox}
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{tikz}
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%περιθώρια%%%%%%%%%%%%
+\usepackage[a4paper,margin=3.5cm]{geometry}
+
+
+%%%%%%%%συντομευσεις%%%%%%%%%%
+\newtheorem{theorem}{Θεώρημα}
+\newtheorem{lemma}{Λήμμα}
+\newtheorem{example}{Παράδειγμα}
+\newtheorem*{defn}{Ορισμός}
+\newtheorem{prop}{Πρόταση}
+\newtheorem{cor}{Πόρισμα}
+
+\newcommand {\tl}{\textlatin}
+%%%%%%%%%αριθμηση%%%%%%%%%%%%%%
+\renewcommand{\theenumi}{\arabic{enumi}}
+\renewcommand{\labelenumi}{{\rm(\theenumi)}}
+\renewcommand{\labelenumii}{\roman{enumii}) }
+%%%%%%%%%%%% New theorems %%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\Co}{\mathbb{C}}
+%%%%%%%%%%%%%%%%%%%%% Document starts %%%%%%%%%%%%
+\begin{document}
+	
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\selectlanguage{greek}
+	%%%%%%%%%%%%%%%%%%%%%%% Start Roman numbering %%%% vbbnn
+	%\pagenumbering{roman}
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	
+	\begin{framed}	
+		%\vspace{0.3truecm}
+		\begin{center}
+			\huge Αλγεβρική Συνδυαστική
+		\end{center}
+		%\vspace{0.3truecm}
+		\begin{center}
+			\huge Εργασία 4
+		\end{center}
+		\vspace{0.3truecm}
+		\begin{center}
+			Ονομ/νο: Νούλας Δημήτριος\\
+			ΑΜ: 1112201800377\\
+			\tl{email}: \tl{dimitriosnoulas@gmail.com} \\
+			\vspace{0.1cm}
+			\textbf{Με συνεργασία με τον φοιτητή Άλκη Ιωαννίδη}
+		\end{center}
+		\vspace{0.3truecm}
+	\end{framed}
+	\vspace*{\fill}
+	\begin{center}
+	\includegraphics[width=0.5\textwidth]{C:/Users/dimit/Desktop/TeX/uoa_logo}
+	\end{center}
+\vspace{1cm}
+\pagebreak
+
+
+\noindent \textbf{1. } Μια πεπερασμένη ομάδα $G$ δρα επί πεπερασμένου συνόλου $X$. Για $g \in G$, έστω $fix(g)$ το πλήθος των $x \in X$ με $g\cdot x = x$.
+
+$ $\newline
+$(\text{α})$ Δείξτε ότι η $G$ δρα επί του συνόλου $X \times X$ αν θέσουμε $g \cdot (x,x^{\prime}) = (g \cdot x, g\cdot x^{\prime})$ για $x,x^{\prime} \in X$.
+
+$ $\newline
+$(\text{β})$ Υποθέτοντας ότι $|X|\geq 2$ και ότι η δράση της $G$ επί του $X$ έχει μόνο μια τροχιά, δείξτε ότι $$\sum\limits_{g \in G} (fix(g))^2 = 2 |G|$$ αν και μόνο αν για όλα τα $a,a^{\prime}$ με $a\neq a^{\prime}$ και για όλα τα $x,x^{\prime}$ με $x \neq x^{\prime}$ υπάρχει $g \in G$ τέτοιο ώστε $g \cdot x = a$ και $g \cdot x^{\prime} = a^{\prime}$.
+
+$ $\newline
+$(\text{γ})$ Υπολογίστε τα αθροίσματα $\sum\limits_{k=0}^n kf(n,k)$ και $\sum\limits_{k=0}^n k^2 f(n,k)$, όπου $f(n,k)$ είναι το πλήθος των μεταθέσεων $w \in \mathfrak{G}_n$ με ακριβώς $k$ σταθερά σημεία.
+
+\vspace*{1cm}
+\begin{proof} $ $
+
+	$ $\newline
+	$(\text{α})$ Για να ξεχωρίζουν οι πράξεις θα γράφουμε την δράση της $G$ στο σύνολο $X \times X$ με $*$. Έχουμε $$e*(x,x^{\prime}) = (e \cdot x, e \cdot x^{\prime} ) = (x, x^{\prime})$$ $$g*(h * (x,x^{\prime})) = g*(h\cdot x, h \cdot x^{\prime}) = (g\cdot (h\cdot x),g \cdot (h \cdot x^{\prime})) = ((gh)\cdot x , (gh)\cdot x^{\prime}) = (gh) * (x,x^{\prime})$$ άρα ικανοποιούνται οι δύο ιδιότητες της δράσης.
+	
+	\vspace*{0.1cm}
+	$ $\newline
+	$(\text{β})$ Έχουμε ότι $$fix_{X^2}(g) = \# \{(x,x^{\prime}): \quad g*(x,x^{\prime}) = (x,x^{\prime})\} = $$
+	$$ = \#\{(x,x^{\prime}): \quad (g\cdot x,g\cdot x^{\prime}) = (x,x^{\prime})\} = $$
+	$$=(fix (g))^2$$
+
+	$ $\newline
+	Άρα από το λήμμα \tl{Burnside} έχουμε ότι ο αριθμός $X^2/G$ των τροχιών της δράσης του $G$ στο $X\times X$ είναι ίσος με $$\frac{1}{|G|}\sum\limits_{g \in G} (fix(g))^2 = X^2/G$$ Άρα έχουμε $$\sum\limits_{g \in G} (fix(g))^2 = 2|G| \iff \text{ η δράση έχει μόνο δύο τροχιές }$$ και έχουμε την μια τροχιά για τα στοιχεία $(x,x)$ του $X\times X$ εφόσον η $G$ δρα μεταβατικά στο $X$. Δηλαδή για κάθε $(x,x),(y,y) \in X\times X$ υπάρχει $g \in G$ τέτοιο ώστε $g\cdot x = y$ αφού η τροχιά του $x \in X$ είναι όλο το $X$ και άρα $g*(x,x) = (y,y)$. Άρα το ζητούμενο απλοποιείται στην εξής πρόταση.
+	
+	$ $\newline
+	Τα στοιχεία $(x,x^{\prime}) \in X\times X, x\neq x^{\prime}$ βρίσκονται σε μια τροχιά $\iff$ για κάθε $a,a^{\prime}$ με $a\neq a^{\prime}$ και για όλα τα $x,x^{\prime}$ με $x \neq x^{\prime}$ υπάρχει $g \in G$ τέτοιο ώστε $g \cdot x = a$ και $g \cdot x^{\prime} = a^{\prime}$.
+
+	$ $\newline
+	Θέτουμε $A = X\times X\setminus \{(y,y): y \in X\}$ και για την πρώτη κατεύθυνση έχουμε ότι αν $(x,x^{\prime}) \in A$ τότε $G\cdot (x,x^{\prime}) = \{g*(x,x^{\prime}): \quad g \in G\} = A$. Δηλαδή, αν $(a,a^{\prime}) \in A$ υπάρχει $g \in G$ τέτοιο ώστε $g*(x,x^\prime) = (a,a^{\prime})$.
+
+	$ $\newline
+	Αντίστροφα, για τυχόν $(x,x^{\prime}) \in A$ θέλουμε να δείξουμε ότι η τροχιά του είναι όλο το $A$. Έστω $(x,x^{\prime}),(a,a^{\prime}) \in A$. Από την υπόθεση έχουμε ότι υπάρχει $g \in G$ τέτοιο ώστε $g *(x,x^{\prime}) = (a,a^\prime)$ και άρα $A \subseteq G \cdot (x,x^{\prime})$. Έστω τώρα ένα στοιχείο της τροχιάς, δηλαδή ένα $g*(x,x^{\prime}) = (g\cdot x, g \cdot x^{\prime})$. 
+	
+	$ $\newline
+	Θέλουμε να ισχύει ότι $(g\cdot x, g \cdot x^{\prime}) \in A$. Αν υποθέσουμε το αντίθετο, τότε θα υπάρχει $y \in X$ τέτοιο ώστε $(g\cdot x, g \cdot x^{\prime}) = (y,y)$. Αν πάρουμε την δράση του $g^{-1}$ και στα δύο μέλη παίρνουμε ότι $x = x^{\prime} = g^{-1}\cdot y$ το οποίο είναι άτοπο αφού $(x,x^{\prime}) \in A$. Άρα $G\cdot (x,x^{\prime}) = A$.
+
+	\vspace*{0.1cm}
+	$ $\newline
+	$(\text{γ})$ Θεωρούμε με βάση τα παραπάνω την δράση της $\mathfrak{G}_n$ στα σύνολα $[n]$ και $[n]\times [n]$. Έχουμε ότι $$\sum\limits_{w \in \mathfrak{G}_n} fix(w) = \sum\limits_{k=0}^n \sum\limits_{\substack{w \in \mathfrak{G}_n \\ fix(w) = k}} fix(w) = \sum\limits_{k=0}^n \sum\limits_{\substack{w \in \mathfrak{G}_n \\ fix(w) = k}} k = \sum\limits_{k=0}^n k f(n,k)$$ Δηλαδή, αρχικά μετράμε ξεχωριστά για κάθε $k \in [n]$ πόσες μεταθέσεις έχουν $k$ ακριβώς σταθερά σημεία και στην τελευταία ισότητα αθροίζουμε το $k$ για κάθε μετάθεση με $k$ σταθερά σημεία, δηλαδή παίρνουμε το $k f(n,k)$. Επιπλέον, έχουμε $$fix_{[n]^2} (w) = \{(i,j) \in [n]\times [n]: \quad w*(i,j) = (i,j)\} $$
+	$$= \{(i,j) \in [n]\times [n]: \quad (w(i),w(j)) = (i,j)\} = (fix(w))^2$$
+
+	$ $\newline
+	Άρα όμοια με πριν έχουμε ότι $$\sum\limits_{w \in \mathfrak{G}_n} fix_{[n]^2}(w) = \sum\limits_{w \in \mathfrak{G}_n} (fix(w))^2 = \sum\limits_{k=0}^n \sum\limits_{\substack{w \in \mathfrak{G}_n \\ fix(w) = k}} (fix(w))^2 = \sum\limits_{k=0}^n \sum\limits_{\substack{w \in \mathfrak{G}_n \\ fix(w) = k}} k^2 = $$ $$=  \sum\limits_{k=0}^n k^2 f(n,k)$$
+	
+	
+	
+	$ $\newline
+	Επιπλέον, η δράση της $\mathfrak{G}_n$ στο $[n]$ είναι μεταβατική εφόσον για κάθε $i,j \in [n]$ υπάρχει μετάθεση $w$ με $w(i)=j$. Όμοια για κάθε $i_1,i_2,j_1,j_2$ με $i_1 \neq i_2$ και $ j_1 \neq j_2$ υπάρχει μετάθεση ώστε $w(i_1) = j_1$ και $w(i_2) = j_2$. Δηλαδή, με βάση τα προηγούμενα, η δράση της $\mathfrak{G}_n$ στο $[n]\times [n]$ έχει δύο τροχιές, η πρώτη αποτελείται από τα στοιχεία $(i,i) \in [n]\times[n]$ και η δεύτερη από τα $(i,j) \in [n]\times[n], i\neq j$. Άρα από το λήμμα \tl{Burnside} για τις δύο δράσεις, το πρώτο άθροισμα είναι ίσο με $|\mathfrak{G}_n|= n!$ και το δεύτερο είναι ίσο με $2|\mathfrak{G}_n| = 2n!$.
+
+\end{proof}
+\pagebreak
+
+\noindent \textbf{2. } Δέκα όμοιες μπάλλες είναι τοποθετημένες σε σχηματισμό μπιλιάρδου (μία βρίσκεται πάνω από άλλες δύο, που βρίσκονται πάνω από άλλες τρεις, που βρίσκονται πάνω από άλλες τέσσερις). Χρωματίζουμε κάθε μπάλα με ένα από $n$ χρώματα και θεωρούμε δύο χρωματισμούς ισοδύναμους αν ο ένας προκύπτει από τον άλλο με κάποια στροφή γύρω από το κέντρο του σχηματισμού.
+
+$ $\newline
+$(\text{α})$ Πόσες κλάσεις ισοδυναμίας χρωματισμών υπάρχουν?
+
+$ $\newline
+$(\text{β})$ Πόσοι από αυτούς έχουν τρεις πράσινες, τρεις μπλε και τέσσερις κόκκινες μπάλες?
+
+\vspace*{1cm}
+\begin{proof} $ $
+
+	$ $\newline
+	$(\text{α})$ Βάζουμε έναν αριθμό σε κάθε μπάλα και θεωρούμε την δράση της κυκλικής ομάδας $\{e,g,g^2\}$ τάξης $3$ στην $\mathfrak{G}_{10}$ που δρα με την στροφή γωνίας $\frac{2\pi}{3}$ και δίνει νέα μετάθεση. Δηλαδή έχουμε
+	$$1$$
+	$$2 \quad 3$$
+	$$4 \quad 5 \quad 6$$
+	$$7 \quad 8 \quad 9 \quad 10$$
+
+	και με την δράση των $g$ και $g^2$ παίρνουμε αντίστοιχα
+	
+	$$7$$
+	$$8 \quad 4$$
+	$$9 \quad 5 \quad 2$$
+	$$10 \quad 6 \quad 3 \quad 1$$
+	
+	και
+	
+	$$10$$
+	$$6 \quad 9$$
+	$$3 \quad 5 \quad 8$$
+	$$1 \quad 2 \quad 4 \quad 7$$
+
+	$ $\newline
+	Δηλαδή αν θεωρούμε ως σημείο αναφοράς την θέση της μπάλας στον σχηματισμό του μπιλιάρδου έχουμε τις ακόλουθες μεταθέσεις του $\mathfrak{G}_{10}$:
+
+	$$e$$
+	$$\sigma = (1,7,10)(5)(286)(349)$$
+	$$\tau = (1,10,7)(5)(268)(394)$$
+
+	$ $\newline
+	Έχουμε $10$ σταθερά σημεία για την ταυτοτική και ένα σταθερό σημείο μαζί με τρεις κύκλους για τις άλλες δύο μεταθέσεις. Από το λήμμα \tl{Burnside} παίρνουμε την απάντηση
+	$$\frac{1}{3}\left(n^{10} + 2n^4\right)$$
+
+
+	$ $\newline
+	$(\text{β})$ Θέτουμε τις μεταβλητές $x_1, x_2 ,x_3$ να σχετίζονται με τις πράσινες, μπλε και κόκκινες μπάλες αντίστοιχα. Αν πούμε ότι $A = \{e,\sigma,\tau\}$ είναι η υποομάδα της $\mathfrak{G}_{10}$ στην οποία δουλεύουμε, τότε με βάση τα προηγούμενα έχουμε 
+	$$z_A = \frac{1}{3}\left(z_e + z_{\sigma} + z_{\tau}\right) = \frac13 \left(z^{10}_1 + 2 z_1 z^3_3\right)$$
+
+	$ $\newline
+	Από θεώρημα \tl{Polya} έχουμε ότι $$F_A(x_1,x_2,x_3) = \frac13\left(\left(x_1 + x_2 + x_3\right)^{10} + 2\left(x_1 + x_2 + x_3\right)\left(x^3_1 + x^3_2 + x^3_3\right)^3\right)$$ και το ζητούμενο είναι ο συντελεστής του $x^3_1 x^3_2 x^4_3$. Στο $\left(x^3_1 + x^3_2 + x^3_3\right)^3$ εμφανίζονται δυνάμεις μεγαλύτερες του $3$ και το $6 x^3_1 x^3_2 x^3_3$ οπότε $$[x^3_1 x^3_2 x^4_3]\left(\frac23 (x_1 + x_2 + x_3)(x^3_1 + x^3_2 + x^3_3)^3 \right)= 4$$
+
+	$ $\newline
+	Επιπλέον, από το πολυωνυμικό θεώρημα έχουμε $$[x^3_1 x^3_2 x^4_3] \frac13 \left(x_1 + x_2 + x_3\right)^{10}=  \frac13 \binom{10}{3,3,4} = 1400$$
+
+	$ $\newline
+	Άρα σύνολο $1404$ χρωματισμοί.
+\end{proof}
+\pagebreak
+
+\noindent \textbf{3. } Για ακεραίους $n,k$ με $0\leq k \leq n$ ορίζουμε τα πολυώνυμα $$p_{n,k}(x) = \sum\limits_{j=0}^n p(n,k,j)x^j$$ όπου $p(n,k,j)$ είναι το πλήθος των μεταθέσεων $w \in \mathfrak{G}_{n+1}$ με $w(1) = k+1$ και $des(w) = j$. Δείξτε ότι $$\sum\limits_{m\geq 0} m^k (m+1)^{n-k}x^m = \frac{p_{n,k}(x)}{(1-x)^{n+1}}$$
+
+\vspace*{1cm}
+\begin{proof} $ $
+
+	$ $\newline
+	Θεωρούμε σταθερό $k \in [n]$ και τις αναδιατάξεις του $[n+1]$ μαζί με $m$ φορές το σύμβολο $\mathcal{O}$. Τοποθετούμε τα $m$ σύμβολα $\mathcal{O}$ σε μια σειρά και βάζουμε αριστερά από το πρώτο $\mathcal{O}$ το $k+1$. Έστω ότι το σύνολο αυτών των αναδιατάξεων χωρίς καθόδους είναι $\Gamma(m,n,k)$. Έχουμε ότι τα $1,2,\ldots,k$ δεν μπορούν να τοποθετηθούν τέρμα αριστερά αφού θέλουμε για την μετάθεση $w$ που θα προκύπτει ότι $w(1)=k+1$. Για αυτά συνεπώς έχουμε κάθε άλλη επιλογή δίπλα από τα $m$ σύμβολα $\mathcal{O}$ εκτός από αριστερά του πρώτου συμβόλου. Επιπλέον αν διαλέξουμε δύο αριθμούς να μπουν ανάμεσα από τα ίδια σύμβολα (ή δεξιά του τελευταίου), αυτοί θα μπουν αναγκαστικά σε αύξουσα σειρά εφόσον δεν έχουμε καθόδους. Άρα έχουμε μονοσήματα $m$ θέσεις, ανάμεσα στα $m$ σύμβολα $\mathcal{O}$ και δεξιά του τελευταίου, για τα $1,2,\ldots,k$. Δηλαδή $m^k$ επιλογές.    
+
+	$ $\newline
+	Για τα $k+2,k+3,\ldots,n+1$ που είναι $n-k$ το πλήθος, αυτά μπορούν να μπουν μονοσήμαντα ανάμεσα σε όποια δύο σύμβολα $\mathcal{O}$ θέλουμε (με βάση την αύξουσα σειρά), ακόμα και αριστερά του πρώτου συμβόλου $\mathcal{O}$ αφού είναι όλα μεγαλύτερα του $k+1$ και θα μπουν δεξιά του. Άρα έχουμε $m+1$ θέσεις για αυτά, δηλαδή $(m+1)^{n-k}$ επιλογές και άρα 
+	$$\# \Gamma(m,n,k)= m^{k} (m+1)^{n-k}$$
+
+	$ $\newline
+	Αν διαγράψουμε τα $\mathcal{O}$ από μια αναδιάταξη του $\Gamma(m,n,k)$ προκύπτει μια αναδιάταξη $(k+1,w(2),w(3),\ldots,w(n+1))$ του $\{1,2,\ldots,n+1\}$. Το πλήθος των αναδιατάξεων που αντιστοιχούν σε αυτήν την μετάθεση $w \in \mathfrak{G}_{n+1}$ ισούται με το πλήθος λύσεων της $$(k+1)\underbrace{\mathcal{O}\cdots\mathcal{O}}_{a_1 \text{ φορές }} w(2) \underbrace{\mathcal{O}\cdots\mathcal{O}}_{a_2 \text{ φορές }} \quad \cdots \quad w(n+1)\underbrace{\mathcal{O}\cdots\mathcal{O}}_{a_{n+1} \text{ φορές }}$$
+
+	$$a_1 + a_2 + \ldots + a_{n+1} = m$$ με $$a_i = \begin{cases}
+		\Z_{>0}, & \text{ αν } w(i) > w(i+1) \\
+		\mathbb{N}, & \text{ διαφορετικά }
+	\end{cases}$$ εφόσον αν έχουμε κάθοδο στην μετάθεση θα υπάρχει αναγκαστικά κάποιο σύμβολο $\mathcal{O}$ ανάμεσα, διαφορετικά μπορεί και να μην υπάρχει.
+
+	$ $\newline
+	Έχουμε την ακόλουθη ισότητα $$\sum\limits_{m\geq 0}\#\Gamma(m,n,k) x^m = \sum\limits_{\substack{w \in \mathfrak{G}_{n+1} \\ w(1)=k+1}} \sum x^{a_1 + \ldots + a_n}$$ ακριβώς γιατί για να επιλέξουμε ένα στοιχείο του $\Gamma(m,n,k)$ πρέπει να διαλέξουμε μια μετάθεση $w$ του $\mathfrak{G}_{n+1}$ και έπειτα το πως θα παρεμβάλλουμε τα $a_i$. Έχουμε στην συνέχεια ότι $$\sum\limits_{\substack{w \in \mathfrak{G}_{n+1} \\ w(1)=k+1}} \sum x^{a_1 + \ldots + a_n} = \sum\limits_{\substack{w \in \mathfrak{G}_{n+1} \\ w(1)=k+1}} (x+x^2 + \ldots)^{des(w)}(1+x+\ldots)^{n+1-des(w)} = $$
+	$$ = \sum\limits_{\substack{w \in \mathfrak{G}_{n+1} \\ w(1)=k+1}} \frac{x^{des(w)}}{(1-x)^{n+1}} = \frac{1}{(1-x)^{n+1}} \sum\limits_{\substack{w \in \mathfrak{G}_{n+1} \\ w(1)=k+1}} x^{des(w)} = \frac{p_{n,k}(x)}{(1-x)^{n+1}}$$
+
+	$ $\newline
+	Όπου η τελευταία ισότητα ισχύει γιατί από τους ορισμούς έχουμε ότι $$[x^j] \sum\limits_{\substack{w \in \mathfrak{G}_{n+1} \\ w(1)=k+1}} x^{des(w)} = \#\{w \in \mathfrak{G}_{n+1}, w(1)=k+1, des(w) = j\} = p(n,k,j)$$ και το $des(w)$ παίρνει τις τιμές από $0$ έως και $n$ για τις μεταθέσεις του $\mathfrak{G}_{n+1}$ και άρα $$\sum\limits_{\substack{w \in \mathfrak{G}_{n+1} \\ w(1)=k+1}} x^{des(w)} = \sum\limits_{j\geq 0}^n p(n,k,j)x^j$$
+
+	$ $\newline
+	Άρα με όλα τα παραπάνω έχουμε ότι $$\sum\limits_{m\geq 0} \# \Gamma(m,n,k) x^m = \sum\limits_{m\geq 0} m^k (m+1)^{n-k} x^m = \frac{p_{n,k}(x)}{(1-x)^{n+1}}$$
+\end{proof}
+\pagebreak
+
+
+\noindent \textbf{4. } Υπολογίστε το άθροισμα $\sum\limits_{w \in \mathfrak{G}_n} exc(w)$, όπου $exc(w)$ είναι το πλήθος των υπερβάσεων της μετάθεσης $w \in \mathfrak{G}_n$.
+
+\vspace*{1cm}
+\begin{proof} $ $
+
+	$ $\newline
+	Έστω $A_i = \# \{w \in \mathfrak{G}_n: \quad w(i) > i\}$, δηλαδή το πλήθος των μεταθέσεων που έχουν υπέρβαση στο δοσμένο $i \in [n]$. Ισχύει ότι $$A_i = (n-1)! (n-i)$$ από την πολλαπλασιαστική αρχή, εφόσον για να έχουμε υπέρβαση στο $i$ έχουμε $n-i$ επιλογές για το $w(i)$ και κανέναν περιορισμο στο που θα μεταθέσουμε τα υπόλοιπα $n-1$ στοιχεία του $[n]$.
+
+	$ $\newline
+	Επιπλέον, αν μετρήσουμε την κάθε μετάθεση $w$ για $exc(w)$ φορές έχουμε την ισότητα των αθροισμάτων: $$\sum\limits_{i=1}^n A_i = \sum\limits_{ w \in \mathfrak{G}_n} exc(w)$$ αυτό μπορούμε να το δούμε και ως εξής. Θέτουμε $[w(i)>i]$ ως σύμβολο να παίρνει τις τιμές $0$ ή $1$ όταν δεν ισχύει η ανισότητα και όταν ισχύει αντίστοιχα. Τότε έχουμε για τα πεπερασμένα αθροίσματα ότι: $$\sum\limits_{i=1}^n A_i = \sum\limits_{i=1}^n \sum\limits_{\substack{w \in \mathfrak{G}_n \\ w(i) > i}} 1 = \sum\limits_{i=1}^n \sum\limits_{w\in \mathfrak{G}_n} [w(i)>1] = \sum\limits_{w \in \mathfrak{G}_n} \sum\limits_{i = 1}^n [w(i)>1] = \sum\limits_{w \in \mathfrak{G}_n} exc(w)$$
+
+	$ $\newline
+	Άρα το ζητούμενο αποτέλεσμα είναι το άθροισμα των $A_i$ που είναι ίσο με $$\sum\limits_{i=1}^n (n-1)! (n-i) = \frac{ n! (n-1)}{2}$$ και την ισότητα την δείχνουμε με επαγωγή. Για $n=1$ δεν έχουμε κάτι να δείξουμε. Αν ισχύει για $n=k$ τότε για $n=k+1$ έχουμε 
+	$$\sum\limits_{i=1}^{k+1} k! (k-i +1) = \sum\limits_{i=1}^k k! (k-i+1) + k!\cdot 0= k!k + \sum\limits_{i=2}^k k!(k-i+1) = $$
+	$$ = k!k + k \sum\limits_{i=2}^k (k-1)!(k-i+1) = k!k + k \sum\limits_{i=1}^{k-1} (k-1)!(k-i) = $$
+	$$ = k!k + k \sum\limits_{i=1}^{k} (k-1)!(k-i) = k!k + k \cdot \frac12 k!(k-1) = k!k \left(1 + \frac12 (k-1)\right) =$$
+	$$ = \frac{k! k (k+1)}2 = \frac{(k+1)!k}2$$ και άρα ισχύει η επαγωγή.
+
+\end{proof}
+\end{document}

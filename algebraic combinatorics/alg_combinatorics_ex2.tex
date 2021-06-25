@@ -1,0 +1,618 @@
+\documentclass[oneside,a4paper]{article}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{amssymb}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage[greek]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{mathtools}
+\usepackage{blindtext}
+\usepackage[T1]{fontenc}
+\usepackage{titlesec}
+\usepackage{sectsty}
+\usepackage{verbatim}
+\usepackage{multirow}
+\chapternumberfont{\tiny} 
+\chaptertitlefont{\Huge}
+%ελληνικοι χαρακτηρες σε μαθ pdf utf-8
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{tikz-cd}
+
+\usepackage{xcolor}
+\usepackage{framed}%frames
+
+\usepackage{array}
+\usepackage{pbox}
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{tikz}
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%περιθώρια%%%%%%%%%%%%
+\usepackage[a4paper,margin=3.5cm]{geometry}
+
+
+%%%%%%%%συντομευσεις%%%%%%%%%%
+\newtheorem{theorem}{Θεώρημα}
+\newtheorem{lemma}{Λήμμα}
+\newtheorem{example}{Παράδειγμα}
+\newtheorem*{defn}{Ορισμός}
+\newtheorem{prop}{Πρόταση}
+\newtheorem{cor}{Πόρισμα}
+
+\newcommand {\tl}{\textlatin}
+%%%%%%%%%αριθμηση%%%%%%%%%%%%%%
+\renewcommand{\theenumi}{\arabic{enumi}}
+\renewcommand{\labelenumi}{{\rm(\theenumi)}}
+\renewcommand{\labelenumii}{\roman{enumii}) }
+%%%%%%%%%%%% New theorems %%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\Co}{\mathbb{C}}
+%%%%%%%%%%%%%%%%%%%%% Document starts %%%%%%%%%%%%
+\begin{document}
+	
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\selectlanguage{greek}
+	%%%%%%%%%%%%%%%%%%%%%%% Start Roman numbering %%%% vbbnn
+	%\pagenumbering{roman}
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	
+	\begin{framed}	
+		%\vspace{0.3truecm}
+		\begin{center}
+			\huge Αλγεβρική Συνδυαστική
+		\end{center}
+		%\vspace{0.3truecm}
+		\begin{center}
+			\huge Εργασία 2
+		\end{center}
+		\vspace{0.3truecm}
+		\begin{center}
+			Ονομ/νο: Νούλας Δημήτριος\\
+			ΑΜ: 1112201800377\\
+			\tl{email}: \tl{dimitriosnoulas@gmail.com} \\
+			\vspace{0.1cm}
+			\textbf{Με συνεργασία με τον φοιτητή Άλκη Ιωαννίδη}
+		\end{center}
+		\vspace{0.3truecm}
+	\end{framed}
+	\vspace*{\fill}
+	\begin{center}
+	\includegraphics[width=0.5\textwidth]{C:/Users/dimit/Desktop/TeX/uoa_logo}
+	\end{center}
+\vspace{1cm}
+\pagebreak
+
+\noindent \textbf{1.} Έστω $G$ το γράφημα που προκύπτει από το πλήρες απλό γράφημα $K_4$ με τέσσερις κορυφές, διαγράφοντας μια από τις ακμές του.
+
+$ $\newline
+$(\text{α})$ Καταγράψτε τον πίνακα γειτνίασης του $G$ για κάποια γραμμική διάταξη των κορυφών της επιλογής σας και υπολογίστε τις ιδιοτιμές του.
+
+$ $\newline
+$(\text{β})$ Αν $a = (1+\sqrt{17})/2$ και $w_{\ell}(G)$ είναι το πλήθος όλων των περιπάτων μήκους $\ell$ στο $G$, δείξτε ότι υπάρχει το όριο $\lim_{\ell \rightarrow \infty } w_{\ell}(G)/a^{\ell}$ και ότι είναι μεγαλύτερο ή ίσο του $1$.
+
+\begin{proof} $ $
+
+	$ $\newline
+	$(\text{α})$ Αν αφαιρέσουμε την ακμή από την κορυφή $3$ στην κορυφή $4$ τότε έχουμε τον πίνακα γειτνίασης
+	$$A = A(G) = \begin{pmatrix}
+		0 & 1 & 1 & 1 \\
+		1 & 0 & 1 & 1 \\
+		1 & 1 & 0 & 0 \\
+		1 & 1 & 0 & 0
+	\end{pmatrix}$$
+	$$x_A (x) = det \begin{pmatrix}
+		-x & 1 & 1 & 1 \\
+		1 & -x & 1 & 1 \\
+		1 & 1 & -x & 0 \\
+		1 & 1 & 0 & -x
+	\end{pmatrix} = det \begin{pmatrix}
+		-x & 1 & 1 & 1 \\
+		1 & -x & 1 & 1 \\
+		1 & 1 & -x & 0 \\
+		0 & 0 & x & -x
+	\end{pmatrix} = $$
+	$$ = det \begin{pmatrix}
+		-x & 1 & 2 & 1 \\
+		1 & -x & 2 & 1 \\
+		1 & 1 & -x & 0 \\
+		0 & 0 & 0 & -x
+	\end{pmatrix} = (-1)^{4+4} (-x) \cdot det \begin{pmatrix}
+		-x & 1 & 2\\
+		1 &-x & 2 \\
+		1 & 1 & -x
+	\end{pmatrix}$$
+
+	και 
+	
+	$$det \begin{pmatrix}
+		-x & 1 & 2\\
+		1 &-x & 2 \\
+		1 & 1 & -x
+	\end{pmatrix} = det \begin{pmatrix}
+		-x & 1 & 2\\
+		1 &-x & 2 \\
+		0 & 1+x & -x-2
+	\end{pmatrix} = det \begin{pmatrix}
+		-x & 3 & 2\\
+		1 &-x+2 & 2 \\
+		0 & -1 & -x-2
+	\end{pmatrix}$$
+	$$=(-1)^{3+2}(-1) det\begin{pmatrix}
+		-x & 2\\
+		1 & 2
+	\end{pmatrix} + (-1)^{3+3} (-x-2) \begin{pmatrix}
+		-x & 3\\
+		1 & -x+2
+	\end{pmatrix} $$
+	$$= -2x-2 + (-x-2)(-x(-x+2)-3) = \ldots = -x^3 +5x +4 = -(x+1)(x^2-x-4)$$
+
+	$ $\newline
+	Άρα έχουμε
+	
+	$$x_A (x) = (-1)^4 x(x+1)(x^2-x-4)$$
+	
+	$ $\newline
+	με ιδιοτιμές $0,-1,\frac{(1+\sqrt{17})}2, \frac{(1-\sqrt{17})}2$.
+
+	$ $\newline
+	$(\text{β})$ Αν υποθέσουμε ότι το όριο υπάρχει και δεν αποκλίνει τότε συμβολίζοντας με $w^{\prime}_{\ell}(G)$ το πλήθος των κλειστών περιπάτων μήκους $\ell$ στο $G$ έχουμε
+	$$w_{\ell}(G) > w^{\prime}_{\ell}(G) \implies \frac{w_{\ell}(G)}{a^{\ell}} > \frac{w^{\prime}_{\ell}(G)}{a^{\ell}}$$
+	δηλαδή 
+	$$\lim_{\ell \rightarrow \infty} \frac{w_{\ell}(G)}{a^{\ell}} \geq \lim_{\ell \rightarrow \infty} \frac{w^{\prime}_{\ell}(G)}{a^{\ell}} = 1 $$
+
+	$ $\newline
+	και καθώς το πλήθος των κλειστών περιπάτων μήκους $\ell$ είναι $a^{\ell} + \overline{a}^{\ell} + (-1)^{\ell}$ όπου $\overline{a} = \frac{(1-\sqrt{17})}2$, το δεύτερο όριο είναι ίσο με $1$ από απειροστικό λογισμό εφόσον $0 < |\frac{\overline{a}}a|,|\frac{-1}a| <1$.
+
+	$ $\newline
+	Για την ύπαρξη, συμβολίζουμε με $w^{\ell}_i$ τους περίπατους μήκους $\ell$ που τελειώνουν στην $i$-κορυφή. Λόγω συμμετρίας έχουμε τις σχέσεις
+	$$w^{\ell}_1 = w^{\ell}_2 \quad \text{ και } \quad w^{\ell}_3 = w^{\ell}_4$$
+
+	$ $\newline
+	Επιπλέον, για να τελειώσει ένας περίπατος μήκους $\ell$ στην κορυφή $1$ πρέπει σε μήκος $\ell-1$ να έχει φτάσει σε κάποια από τις άλλες τρεις κορυφές. Δηλαδή:
+	$$w^{\ell}_1 = w^{\ell -1}_2 + w^{\ell -1}_3 + w^{\ell -1}_4 = w^{\ell -1}_1 + 2 w^{\ell-1}_3$$
+
+	ομοίως
+	$$w^{\ell}_3 = w^{\ell-1}_1 + w^{\ell-1}_2 = 2 w^{\ell-1}_1$$
+
+	$ $\newline
+	Συνδιάζοντας αυτές τις σχέσεις έχουμε την αναδρομή:
+	$$w^{\ell}_1 = 4 w^{\ell-2}_1 + w^{\ell - 1}_1$$
+	δηλαδή μια ακολουθία $b(\ell)$ της μορφής
+	$$b(\ell +2) -4 b(\ell) - b(\ell +1) = 0 \implies \lambda^2 - \lambda - 4 = 0 $$
+	$$\lambda = a,\overline{a}$$
+	και έτσι $w^{\ell}_1 = b(\ell) = c_1 \overline{a}^{\ell} + c_2 a^{\ell}$ με $c_1,c_2$ σταθερές.
+
+	$ $\newline
+	Καθώς το $\ell$ τείνει στο άπειρο θα έχουμε $b(\ell) > 2 b(\ell - 1) = w^{\ell}_3 $ και έτσι μπορούμε να φράξουμε το πλήθος των περιπάτων μήκους $\ell$ από το $4b(\ell)$, για τις τέσσερις κορυφές.
+
+	$$\lim_{\ell \rightarrow \infty} \frac{4b(\ell)}{a^{\ell}} = 4c_2 < \infty $$
+
+	$ $\newline
+	Άρα το όριο της ακολουθίας $w_{\ell}(G)$ υπάρχει, εφόσον αυτή είναι αύξουσα και φραγμένη.
+\end{proof}
+
+\pagebreak
+
+\noindent \textbf{2.} Δίνεται γράφημα $G$ στο οποίο το πλήθος των κλειστών περιπάτων μήκους $\ell$ είναι ίσο με $6^{\ell} + 3^{\ell} + 2^{\ell} + 4\cdot(-2)^{\ell} + 4$ για κάθε ${\ell} \in \{0,1,2,\ldots\}$.
+
+$ $\newline
+$(\text{α})$ Πόσες κορυφές έχει το $G$? Πόσες θηλιές έχει?
+
+$ $\newline
+$(\text{β})$ Ποιες είναι οι ιδιοτιμές του πίνακα γειτνίασης του $G$?
+
+$ $\newline
+$(\text{γ})$ Πόσοι κλειστοί περίπατοι μήκους $\ell$ υπάρχουν στο γράφημα που προκύπτει από το $G$ προσθέτοντας μια θηλιά σε κάθε κορυφή?
+
+$ $\newline
+$(\text{δ})$ Δείξτε ότι το πλήθος των ακμών του $G$ είναι μικρότερο του $39$.
+
+$ $\newline
+$(\text{ε})$ Δώστε παράδειγμα γραφήματος με τις ιδιότητες της υπόθεσης.
+
+\begin{proof} $ $
+
+	$ $\newline
+	$(\text{α})$ Οι κορυφές είναι οι κλειστοί περίπατοι μήκους $0$, δηλαδή για $\ell = 0$ έχουμε $11$ κορυφές. Αντίστοιχα, οι θηλιές είναι οι κλειστοί περίπατοι μήκους $1$ που είναι $7$ το πλήθος.
+
+	$ $\newline
+	$(\text{β})$ Από την πρόταση $3.6$ σε συνδυασμό με το λήμμα $3.10$ για την μοναδικότητα, έχουμε ότι οι ιδιοτιμές είναι $6,3,2,-2,1$ με πολλαπλότητες $1,1,1,4,4$ αντίστοιχα.
+
+	$ $\newline
+	$(\text{γ})$ Έχουμε $A(G^{\prime}) = A(G) + I_n$ εφόσον προσθέτουμε μια θηλιά σε κάθε κορυφή. Αν έχουμε μια διαγωνιοποίηση του $A(G) = U \Delta U^{-1}$ τότε
+	$$\Delta + I_n = U^{-1} A(G) U + I_n = U^{-1} A(G) U + U^{-1}U = U^{-1}\left(A(G) + I_n \right)U = U^{-1} A(G^{\prime})U$$
+	άρα οι ιδιοτιμές του νέου πίνακα γειτνίασης είναι οι $7,4,3,-1,2$ με πολλαπλότητες $1,1,1,4,4$ αντίστοιχα. Συνεπώς οι κλειστοί περίπατοι μήκους $\ell$ στο $G^{\prime}$ είναι $7^{\ell} +4^{\ell} + 3^{\ell} + 4\cdot (-1)^{\ell} + 4\cdot 2^{\ell}$ το πλήθος.
+
+	$ $\newline
+	$(\text{δ})$ Θέτουμε $E^{\prime}$ το σύνολο των μονών ακμών μεταξύ δύο κορυφών και $L$ το σύνολο των θηλιών. Αν $l_1, l_2 ,\ldots, l_{11}$ είναι το πόσες θηλιές έχει η κάθε κορυφή, έχουμε τις σχέσεις:
+	$$l_1 + l_2 + \ldots + l_{11} = 7,$$
+	$$l_i \geq 0,$$
+	από όπου παίρνουμε
+	$$l^2_1 + l^2_2 + \ldots +l^2_{11} \geq 7$$
+
+	$ $\newline
+	Αν τώρα έχουμε $e_1 ,\ldots, e_k$ τα στοιχεία του πίνακα γειτνίασης που βρίσκονται πάνω και δεξία από την κύρια διαγώνιο και είναι $>1$ μετράμε έτσι τις θηλιές που είναι παραπάνω από μια μεταξύ δύο συγκεκριμένων κορυφών. Έχουμε δηλαδή
+	$$|E| = |E^{\prime}| + |L| + e_1 + \ldots + e_k = |E^{\prime}| + 7 + e_1 + \ldots +  e_k $$
+
+	αν υποθέσουμε ότι $|E|\geq 39$, τότε $|E^{\prime}| + e_1 + \ldots + e_k \geq 32$.
+
+	$ $\newline
+	Χρησιμοποιούμε ότι $tr(A^2) = \sum\limits_{i=1}^{11} \lambda^2_i = 69$. Επιπλέον, το άθροισμα των στοιχείων της διαγωνίου του $A^2$ από τον πολλαπλασισμό πινάκων και τον ορισμό του πίνακα γειτνίασης είναι ίσο με 
+	$$2|E^{\prime}| + l^2_1 + \ldots + l^2_{11} + 2e^2_1 + 2e^2_2 + \ldots + 2e^2_k$$
+
+	$ $\newline
+	Άρα έχουμε
+	$$69 = 2|E^{\prime}| + l^2_1 + \ldots + l^2_{11} + 2e^2_1 + 2e^2_2 + \ldots + 2e^2_k \geq 2|E^{\prime}| + 7 + 2e^2_1 + 2e^2_2 + \ldots + 2e^2_k$$
+	$$62 \geq 2\left(|E^{\prime}| + \sum\limits_{i=1}^k e^2_i\right)$$
+	$$31 \geq \left(|E^{\prime}| + \sum\limits_{i=1}^k e^2_i\right) \geq \left(|E^{\prime}| + \sum\limits_{i=1}^k e_i\right) \geq 32$$
+	το οποίο είναι άτοπο.
+
+	$ $\newline
+	$(\text{ε})$ Χρησιμοποιώντας το αποτέλεσμα της άσκησης $3.9$ των διαλέξεων παίρνουμε τους πίνακες
+	$$B = K_4 (0,2) = \begin{pmatrix}
+		0 & 2 & 2 & 2 \\
+		2 & 0 & 2 & 2 \\
+		2 & 2 & 0 & 2 \\
+		2 & 2 & 2 & 0
+	\end{pmatrix}, \quad C = K_2(0,2) = \begin{pmatrix}
+		0 & 2\\
+		2 & 0
+	\end{pmatrix}$$
+
+	με ιδιοτιμές $6,-2,-2,-2$ και $2,-2$ αντίστοιχα. Επιπλέον θεωρούμε τον πίνακα
+	$$A = \begin{pmatrix}
+		3 & 0 & 0 & 0 & 0 \\
+		0 & 1 & 0 & 0 & 0 \\
+		0 & 0 & 1 & 0 & 0 \\
+		0 & 0 & 0 & 1 & 0 \\
+		0 & 0 & 0 & 0 & 1 \\
+	\end{pmatrix}$$
+	με ιδιοτιμές $3,1,1,1$.
+
+	$ $\newline
+	Χρησιμοποιώντας το αποτέλεσμα $4 (a)$ ο πίνακας
+	$$K = \begin{pmatrix}
+		A & 0 &0 \\
+		0& B & 0\\
+		0& 0 & C
+	\end{pmatrix}$$
+	θα είναι συμμετρικός με ιδιοτιμές $6,3,2,-2,-2,-2,-2,1,1,1,1$, ίχνος $7$ και στοιχεία θετικούς ακεραίους. Άρα ένα παράδειγμα είναι το γράφημα με τον πίνακα $K$ ως πίνακα γειτνίασης.
+\end{proof}
+
+
+
+
+
+\pagebreak
+
+\textbf{3.} Θεωρούμε το απλό γράφημα $\diamond_n$ με κορυφές $1,-1,2,-2,\ldots,n,-n$ στο οποίο δύο διακεκριμένες κορυφές $a$ και $b$ είναι γειτονικές αν και μόνο αν $a+b \neq 0$. Υπολογίστε τις ιδιοτιμές του πίνακα γειτνίασης του $\diamond_n$ και το πλήθος των κλειστών περιπάτων δοσμένου μήκους $l$ στο γράφημα αυτό για κάθε $n$.
+
+\begin{proof} $ $
+
+
+	$ $\newline
+	Αν $A(\diamond_n) = (a_{ij})$, τότε για κάθε $i \in [n]$ έχουμε $a_{ii} = 0$ και $a_{ij} = 0$ αν $j = -i$. Διαφορετικά $a_{ij} = 1$. Έτσι έχουμε:
+	
+	
+	$$A(\diamond_n) = 
+	\begin{pmatrix}
+		J_n - I_n & J_n - I_n \\
+		J_n - I_n & J_n - I_n
+	\end{pmatrix}$$
+
+	$ $\newline
+	Αν θέσουμε $A = J_n - I_n - xI_n$ και $B = J_n - I_n$ έχουμε $AB = BA$ και o $B$ είναι αντιστρέψιμος αφού στο μάθημα δείξαμε ότι έχει ιδιοτιμές $n-1,-1$. Συνεπώς:
+
+
+
+	$$x_{A(\diamond_n)} (x) = 
+	\begin{vmatrix}
+		J_n - I_n - xI_n & J_n - I_n \\
+		J_n - I_n & J_n - I_n - xI_n
+	\end{vmatrix} = 
+	\begin{vmatrix}
+		A & B \\
+		B & A
+	\end{vmatrix}$$
+
+	$ $\newline
+	Από την σχέση πινάκων:
+	$$
+	\begin{pmatrix}
+		A & -B \\
+		I_n & 0
+	\end{pmatrix} \cdot \begin{pmatrix}
+		A & B \\
+		B & A
+	\end{pmatrix} = \begin{pmatrix}
+		A^2 - B^2 & AB - BA \\
+		A & B
+	\end{pmatrix} = \begin{pmatrix}
+		A^2 - B^2 & 0 \\
+		A & B
+	\end{pmatrix}$$
+
+	και από το ερώτημα $4(a)$ και την απόδειξή του παίρνουμε ότι:
+	$$\begin{vmatrix}
+		A & -B \\
+		I_n & 0 
+	\end{vmatrix} = det(B),
+	\quad \begin{vmatrix}
+		A^2 - B^2 & 0 \\
+		A & B
+	\end{vmatrix} = det(A^2-B^2)det(B)$$
+	εφόσον ο $A$ είναι αντιστρέψιμος για τα $x \neq n-1,-1$ δηλαδή τις ιδιοτιμές του $J_n - I_n$, τις οποίες δεν συναντάμε στο τέλος. Άρα από τις παραπάνω σχέσεις παίρνουμε:
+	$$det(B) \cdot x_{A(\diamond_n)} (x)  = det(A^2 - B^2) det(B) \implies $$
+	$$x_{A(\diamond_n)} (x) = det(A^2 - B^2) = det(A-B)det(A+B)$$
+	αφού $AB = BA$. Άρα έχουμε:
+
+	$$x_{A(\diamond_n)} (x) = det(-xI_n)det(2J_n - 2I_n - xI_n) = (-1)^n x^n det(2J_n - 2I_n - xI_n) $$
+
+	Υπολογίζουμε:
+
+	$$det(2J_n - 2I_n - xI_n) = det \begin{pmatrix}
+		-x & 2 & 2 & \ldots & 2 \\
+		 2 & -x & & \ldots & 2 \\
+		\vdots & &  \ddots & &  \vdots \\
+		 2 &  & & -x &2 \\
+		 2 & 2 & \ldots & 2 & -x 
+	\end{pmatrix} = $$
+	$$ = det \begin{pmatrix}
+		-x-2 & 2 & 2 & \ldots & 2 \\
+		 0 & -x & & \ldots & 2 \\
+		\vdots & &  \ddots & &  \vdots \\
+		 0 &  & & -x &2 \\
+		 2+x & 2 & \ldots & 2 & -x 
+	\end{pmatrix} = det\begin{pmatrix}
+		-x-2 & 2 & 2 & \ldots & 2 \\
+		 0 & -x & & \ldots & 2 \\
+		\vdots & &  \ddots & &  \vdots \\
+		 0 &  & & -x &2 \\
+		 0 & 4 & \ldots & 4 & -x+2 
+	\end{pmatrix} = 
+	$$ %apo edw kai katw einai wraioi oi pinakes
+	$$ - (x+2) \cdot det \begin{pmatrix}
+		-x & 2 & & \ldots & 2 \\
+		 2 & -x & & \ldots & 2 \\
+		\vdots & &  \ddots & &  \vdots \\
+		 2  &  & & -x &2 \\
+		 4 & 4 & \ldots & 4 & -x+2 
+	\end{pmatrix} =$$
+	$$ -(x+2) \cdot det \begin{pmatrix}
+		-x-2 & 2 & & \ldots & 2 \\
+		 0 & -x & & \ldots & 2 \\
+		\vdots & &  \ddots & &  \vdots \\
+		 0  &  & & -x &2 \\
+		 x+2 & 4 & \ldots & 4 & -x+2 
+	\end{pmatrix} = $$
+	$$ = -(x+2) \cdot det \begin{pmatrix}
+		-x-2 & 2 & & \ldots & 2 \\
+		 0 & -x & & \ldots & 2 \\
+		\vdots & &  \ddots & &  \vdots \\
+		 0  &  & & -x &2 \\
+		 0 & 6 & \ldots & 6 & -x+4 
+	\end{pmatrix} =$$
+	$$= (-1)^2 (x+2)^2 \cdot det \begin{pmatrix}
+		-x & 2 & & \ldots & 2 \\
+		 2 & -x & & \ldots & 2 \\
+		\vdots & &  \ddots & &  \vdots \\
+		 2  &  & & -x &2 \\
+		 6 & 6 & \ldots & 6 & -x+4 
+	\end{pmatrix} = \ldots$$
+
+
+
+	$ $\newline 
+	Σε κάθε ορίζουσα αφαιρούμε από την πρώτη στήλη την τελευταία και στην συνέχεια προσθέτουμε στην τελευταία γραμμή την πρώτη, πράξεις που δεν αλλοιώνουν την τιμή της ορίζουσας. Επαναλαμβάνοντας την ίδια διαδικασία σε πεπερασμένα $n-2$ βήματα, ώστε να έχουμε διάσταση $2$, φτάνουμε σε
+
+	$$(-1)^{n-2} (x+2)^{n-2} \begin{vmatrix}
+		-x-2 & 2 \\
+		0 & -x + 2(n-1)
+	\end{vmatrix}$$
+
+	$ $\newline
+	Άρα έχουμε 
+	$$x_{A(\diamond_n)} (x) = (-1)^{2n} x^n (x+2)^{n-1} (x- 2(n-1))$$
+	και παίρνουμε τις ιδιοτιμές $0, -2, 2n-2$ με πολλαπλότητες $n,n-1,1$ αντίστοιχα. Από την πρόταση $3.6$ των σημειώσεων έχουμε ότι το πλήθος κλειστών περιπάτων μήκους $l$ στο $A(\diamond_n)$ είναι ίσο με 
+	
+	$$(-2)^l (n-1) + (2n-2)^l$$ 
+\end{proof}
+
+\pagebreak
+
+\textbf{4.} Έστω $G_n$ το απλό γράφμα με κορυφές $1,2,\ldots,n,1^{\prime},2^{\prime},\ldots,n^{\prime}$ και ακμές τα $n(n-1)$ ζεύγη $\{i,j^{\prime}\}$ με $i,j \in \{1,2,\ldots,n\}$ και $i\neq j$.
+
+$ $\newline
+$(a)$ Αν $A,B,C,D$ είναι τετραγωνικοί πίνακες της ίδιας διάστασης με στοιχεία μιγαδικούς αριθμούς, ο $A$ είναι αντιστρέψιμος και $AC = CA$, δείξτε ότι
+$$det \begin{pmatrix}
+	A & B \\
+	C & D
+\end{pmatrix} = det(AD-CB)$$
+
+$ $\newline
+$(b)$ Χρησιμοποιώντας το $(a)$, ή με άλλο τρόπο, υπολογίστε τις ιδιοτιμές του πίνακα γειτνίασης του $G_n$ για κάθε $n$.
+
+\begin{proof} $ $
+	
+	$ $\newline
+	$(a)$ Αν $A$ πίνακας διάστασης $n\times n$ και $I_m$ ο ταυτοτικός διάστασης $m\times m$, τότε θα δείξουμε αρχικά με επαγωγή στο $m$ ότι 
+	$$det \begin{pmatrix}
+		A & B \\
+		0 & I_m
+	\end{pmatrix} = det(A)$$
+
+	Για $m=1$ έχουμε:
+	$$det \begin{pmatrix}
+		& & & & b_{11} \\
+		& & A& & \vdots \\
+		 & & & & b_{n1} \\
+		0 & 0 & \ldots & 0 & 1 
+	\end{pmatrix} = (-1)^{(n+1) + (n+1)} det(A) = det(A)$$
+
+	Αν ισχύει για $m=k$, τότε για $m=k+1$ έχουμε
+	$$det \begin{pmatrix}
+		A & B \\
+		0 & I_{k+1}
+	\end{pmatrix} =  det \begin{pmatrix}
+		A & B^{\prime} & B^{\prime\prime} \\
+		0 & I_{k} & 0 \\
+		0 \quad 0 & \ldots \quad0 & 1
+	\end{pmatrix} = (-1)^{(n+k+1) + (n+k+1)} det \begin{pmatrix}
+		A & B^{\prime} \\
+		0 & I_{k}
+	\end{pmatrix} = $$
+	$$ = det \begin{pmatrix}
+		A & B^{\prime} \\
+		0 & I_{k}
+	\end{pmatrix} = det(A)$$
+	από την επαγωγική υπόθεση.
+
+	$ $\newline
+	Όμοια, ξεκινώντας από 
+	$$det \begin{pmatrix}
+		1 & 0 & \ldots & 0\\
+		b_{11} & & & &  \\
+		\vdots & & A& &  \\
+		b_{n1} & & & & 
+	\end{pmatrix} = det(A)$$
+	παίρνουμε επαγωγικά ότι
+	$$det \begin{pmatrix}
+		I_m & 0 \\
+		B & A
+	\end{pmatrix} = det(A)$$
+
+	$ $\newline
+	Για $A$ αντιστρέψιμο, έχουμε τις σχέσεις πινάκων:
+	$$\begin{pmatrix}
+		A & B\\
+		0 & D
+	\end{pmatrix} = \begin{pmatrix}
+		A & 0\\
+		0 & I_n
+	\end{pmatrix} \cdot \begin{pmatrix}
+		I_n & A^{-1}B\\
+		0 & D
+	\end{pmatrix}$$
+	$$\begin{pmatrix}
+		A & 0\\
+		B & D
+	\end{pmatrix} = \begin{pmatrix}
+		A & 0\\
+		B & I_n
+	\end{pmatrix} \cdot \begin{pmatrix}
+		I_n & 0\\
+		0 & D
+	\end{pmatrix}$$
+
+	$ $\newline
+	Με βάση τα παραπάνω έχουμε τις ορίζουσες
+	$$det \begin{pmatrix}
+		A & B\\
+		0 & D
+	\end{pmatrix} = det(A)det(D) = det \begin{pmatrix}
+		A & 0\\
+		B & D
+	\end{pmatrix}$$
+
+	$ $\newline
+	Έτσι, η σχέση πινάκων
+	$$ \begin{pmatrix}
+		A^{-1} & 0\\
+		-C & A
+	\end{pmatrix} \cdot \begin{pmatrix}
+		A & B\\
+		C & D
+	\end{pmatrix} = \begin{pmatrix}
+		I_n & A^{-1}B\\
+		AC-CA & AD-CB
+	\end{pmatrix} = \begin{pmatrix}
+		I_n & A^{-1}B\\
+		0 & AD-CB
+	\end{pmatrix}$$
+	μας δίνει την σχέση
+	$$det(A^{-1}) \cdot det(A) \cdot det \begin{pmatrix}
+		A & B\\
+		C & D
+	\end{pmatrix}  = det(AD-CB)$$
+	$$det \begin{pmatrix}
+		A & B\\
+		C & D
+	\end{pmatrix}  = det(AD-CB)$$
+	\vspace*{1cm}
+
+	$ $\newline
+	$(b)$ Ο πίνακας γειτνίασης του $G_n$ είναι ο
+	$$ A = A(G_n) = \begin{pmatrix}
+		0 & J_n - I_n \\
+		J_n - I_n & 0
+\end{pmatrix}$$
+
+	$ $\newline
+	Επομένως, χρησιμοποιώντας το $(a)$ έχουμε το ακόλουθο χαρακτηριστικό πολυώνυμο, εφόσον ο πίνακας $-xI_n$ είναι αντιστρέψιμος για τα $x\neq 0$ και ισχύει η σχέση $J^k_n = n^{k-1} J_n$.
+
+	$$x_A (x) = det \begin{pmatrix}
+	-xI_n & J_n - I_n \\
+	J_n - I_n & -xI_n
+	\end{pmatrix} = det \left( x^2 I_n - (J_n-I_n)^2\right)= $$
+	$$= det \left( x^2 I_n - J^2_n + 2J_n - I_n\right) = det \left( x^2 I_n + (2-n)J_n - I_n \right)$$
+
+	$ $\newline
+	Αν θέσουμε $y:= 2-n$ τότε έχουμε την ορίζουσα
+	$$ det \begin{pmatrix}
+		(x^2 -1 +y) & y & & \ldots & y \\
+		 y & (x^2 - 1 +y) & & \ldots & y \\
+		\vdots & &  \ddots & &  \vdots \\
+		 y  &  & & (x^2 - 1 +y) &y \\
+		 y & y & \ldots & y & (x^2 - 1 +y) 
+	\end{pmatrix} = $$
+	$$det \begin{pmatrix}
+		x^2 -1 & y & & \ldots & y \\
+		 0 & (x^2 - 1 +y) & & \ldots & y \\
+		\vdots & &  \ddots & &  \vdots \\
+		 0  &  & & (x^2 - 1 +y) &y \\
+		 -(x^2-1) & y & \ldots & y & (x^2 - 1 +y) 
+	\end{pmatrix} = $$
+	$$det \begin{pmatrix}
+		x^2 -1 & y & & \ldots & y \\
+		 0 & (x^2 - 1 +y) & & \ldots & y \\
+		\vdots & &  \ddots & &  \vdots \\
+		 0  &  & & (x^2 - 1 +y) &y \\
+		 0 & 2y & \ldots & 2y & (x^2 - 1 +2y) 
+	\end{pmatrix} = $$
+	$$ (x^2-1) \cdot det \begin{pmatrix}
+		  (x^2 - 1 +y) & y & \ldots & y \\
+		 y&  \ddots & &  \vdots \\
+		  \vdots & & (x^2 - 1 +y) &y \\
+		  2y & \ldots & 2y & (x^2 - 1 +2y) 
+	\end{pmatrix} $$
+
+	$ $\newline 
+	Όπου αφαιρέσαμε από την πρώτη στήλη την τελευταία και στην συνέχεια προσθέσαμε στην τελευταία γραμμή την πρώτη και φτάσαμε σε πίνακα ίδιας μορφής με μικρότερη διάσταση. Με πεπερασμένα $n-2$ βήματα, ώστε να μείνει διάσταση $2$, παίρνουμε
+
+	$$ (x^2-1)^{n-2} \cdot det \begin{pmatrix}
+		x^2 -1 +y & y \\
+		(n-1)y & x^2 - 1 + (n-1)y
+	\end{pmatrix} = $$
+	$$ (x^2-1)^{n-2} \cdot det \begin{pmatrix}
+		x^2 -1  & y \\
+		-(x^2 -1) & x^2 - 1 + (n-1)y
+	\end{pmatrix} = $$
+	$$ (x^2-1)^{n-2} det \begin{pmatrix}
+		x^2 -1 & y \\
+		0 & x^2 - 1 + ny
+	\end{pmatrix} \implies $$
+	\vspace*{1cm}
+	$$ x_A (x) = (x^2 -1)^{n-1}(x^2-(n-1)^2)$$
+
+	$ $\newline
+	Άρα έχουμε τις ιδιοτιμές $1,-1,n-1, -(n-1)$ με πολλαπλότητες $n-1,n-1,1,1$ αντίστοιχα.
+\end{proof}
+
+
+\end{document}
