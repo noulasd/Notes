@@ -1,0 +1,294 @@
+\documentclass{article}
+\usepackage[english,greek]{babel}
+\usepackage[utf8x]{inputenc}
+\usepackage{amsfonts, amsmath, amssymb}
+\usepackage{mathtools}
+\usepackage{enumitem}
+
+\usepackage{tikz-cd}
+
+\newcommand{\Z}{\mathbb{Z}}
+
+\title{\textbf{Ομολογική Άλγεβρα και Κατηγορίες} \\ 3η Ομάδα Ασκήσεων}
+
+\author{Νούλας Δημήτριος \\ 1112201800377}
+
+\begin{document}
+\maketitle
+
+
+\begin{enumerate}
+	
+	\item Η ομάδα $A$ είναι διαιρετή και έχει υποομάδα την $kerf$ συνεπώς η ομάδα πηλίκο $A /kerf \cong imf$ είναι διαιρετή. Άρα η ομάδα $imf$ είναι επιπλέον ένα εμφυτευτικό πρότυπο αφού είναι διαιρετή.
+
+		Ισοδύναμα κάθε μονομορφισμός $imf \xhookrightarrow{} M$ διασπάται.
+
+		Θεωρούμε την βραχεία ακριβή ακολουθία:
+		$$ 0 \rightarrow imf \xhookrightarrow{i} B \xrightarrow{p} cokerf \rightarrow 0$$
+
+		Έχουμε ότι ο μονομορφισμός $i$ είναι διασπώμενος $\iff$ η βραχεία ακριβής ακολουθία είναι διασπώμενη $\iff$ ο επιμορφισμός $p$ είναι διασπώμενος.
+	$ $\newline
+	
+
+	\item Αν $Ext_{R}^1 (M,N)=0$ για κάθε $N$ $R$-πρότυπο, δηλαδή είναι η τετριμμένη ομάδα, λόγω αμφιμονοσήμαντης αντιστοιχίας έχουμε ότι και το $ext(M,N)$ είναι σύνολο με ένα στοιχείο.
+
+		Δηλαδή κάθε επέκταση $0 \rightarrow N \rightarrow M^{\prime} \rightarrow M \rightarrow 0$ είναι ισοδύναμη με την τετριμμένη επέκταση:
+		$$0 \rightarrow N \rightarrow M\oplus N \rightarrow M \rightarrow 0$$
+		To οποίο είναι ισοδύναμο με το ότι κάθε επιμορφισμός $M^{\prime} \rightarrow M$ διασπάται. Aυτό με την σειρά του είναι ισοδύναμο ότι το $M$ είναι προβολικό.
+$ $\newline
+
+
+	\item Θα δείξουμε αρχικά ότι $n \cdot \Z / m\Z = (d\Z ) / (m \Z)$ όπου $d = $μκδ$(m,n)$. Πράγματι, έστω $n [z]_m$. Αν $n=dk$ τότε:
+		$$n [z]_m = dk[z]_m = [dkz]_m \in (d\Z ) / (m\Z )$$
+
+		Αντίστροφα, έστω $[dz]_m \in (d\Z ) / (m\Z)$. Υπάρχουν $a,b \in \Z$ τέτοια ώστε $am+bn=d$. Συνεπώς:
+		$$[dz]_m = [(am + bn)z]_m = [bnz]_m = n [bz]_m \in n \cdot \Z / m\Z$$
+
+		Επιπλέον, στην θεωρία έχει δειχθεί ότι $Ext_{\Z}^1 (\Z_n, B) = B / nB$. Άρα:
+		$$Ext_{\Z}^1 (\Z_n , \Z_m) = \Z_m / n \Z_m = \frac{\Z / m\Z}{ n \cdot \Z / m\Z} = \frac{\Z / m \Z}{d\Z / m\Z} \cong \Z / d\Z $$
+		χρησιμοποιώντας και το 3ο θεώρημα ισομορφισμών. Άρα πράγματι η ομάδα $Ext_{\Z}^1(\Z_m , \Z_n)$ είναι κυκλική τάξης $d$.
+		$ $\newline
+
+	\item Σταθεροποιούμε $n \in \mathbb{N}$ και ορίζουμε $K_n = \{ a \in A : na=0\}$. Ισχύει ότι $Hom_{\Z} (K_n , B) = 0$. Πράγματι, αν $f: K_n \rightarrow B$ προσθετική τότε:
+		$$0 = f(nk) = nf(k)$$
+		Δηλαδή το στοιχείο $f(k) \in B$ έχει πεπερασμένη τάξη $n$ και η ομάδα $B$ είναι ελευθέρας στρέψης, συνεπώς $f(k) = 0$ για κάθε $k \in K_n$.
+
+		Έχουμε την ακριβή ακολουθία:
+
+		\begin{center}
+			\begin{tikzcd}
+0 \arrow[r] & K_n \arrow[r, "i", hook] & A \arrow[r, "\cdot n"] & A \arrow[r] & 0
+\end{tikzcd}
+		\end{center}
+
+		όπου έχουμε τον πολλαπλασιασμό με $n$. Είναι πράγματι ακριβής σε κάθε θέση αφού:
+
+		\begin{itemize}
+			\item $im 0 = keri = 0$
+			\item $imi = K_n = kern$
+			\item Εφόσον η $A$ είναι διαιρετή, $imn = A = ker(A\rightarrow 0)$
+		\end{itemize}
+
+		Έχουμε την μακριά ακριβής ακολουθία συνομολογίας:
+
+		\begin{center}
+			\begin{tikzcd}
+\ldots \arrow[r] & {Ext_{\Z}^0 (K_n ,B)} \arrow[r] &   {Ext_{\Z}^1 (A,B)} \arrow[r] &   {Ext_{\Z}^1 (A,B)} \arrow[r] & \ldots
+\end{tikzcd}
+		\end{center}
+
+		δηλαδή παίρνουμε την ακριβή ακολουθία:
+
+		$$0 \rightarrow Ext_{\Z}^1 (A,B) \xrightarrow{n} Ext_{\Z}^1 (A,B)$$
+
+		Έπεται ότι η δεξιά απεικόνιση είναι 1-1. Αυτό σημαίνει ότι αν έχουμε ένα στοιχείο $x$ της ομάδας $Ext_{Z}^1 (A,B)$ με πεπερασμένη τάξη $n$, δηλαδή $nx=0$ συνεπάγεται ότι $x=0$. Αυτό συμβαίνει για το τυχόν $n \in \mathbb{N}$, άρα η ομάδα $Ext_{\Z}^1 (A,B)$ είναι ελεύθερη στρέψεως.
+$ $\newline
+
+\item $a)$ Θεωρούμε ως προς άτοπο τον ισομορφισμό $f: \Z_9 \rightarrow \Z_9$ ώστε το παρακάτω διάγραμμα να είναι μεταθετικό
+
+	\begin{center}
+		\begin{tikzcd}
+0 \arrow[r] & \Z_3 \arrow[r, "i"] \arrow[d, no head, Rightarrow] & \Z_9 \arrow[r, "p"] \arrow[d, "f"] & \Z_3 \arrow[r] \arrow[d, no head, Rightarrow] & 0 \\
+0 \arrow[r] & Z_3 \arrow[r, "-i"]                                & \Z_9 \arrow[r, "p"]                & Z_3 \arrow[r]                                 & 0
+\end{tikzcd}
+	\end{center}
+
+	Για να οριστεί πλήρως ο ισομορφισμός $f$ χρειάζεται να απεικονίσουμε έναν γεννήτορα σε έναν γεννήτορα. Έστω $f([1]_9 ) = [x]_9$ με μκδ$(x,9)=1$.
+	
+	Λόγω της μεταθετικότητας του δεύτερου τετραγώνου έχουμε:
+	$$(pf)[n]_9 = [n]_3$$ για κάθε $[n]_9 \in Z_9$.
+
+	ωστόσο $(pf)[n]_9 = n(pf) [1]_9 = n \cdot p\left( f[1]_9 \right) = n p[x]_9 = [nx]_3$. Δηλαδή, για κάθε $n \in \Z$ έχουμε ότι:
+	$$nx = n \quad mod 3$$ και άρα
+	$$ x = 1 \quad mod 3$$
+
+Από την μεταθετικότητα του πρώτου τετραγώνου προκύπτει ότι:
+$$f[3n]_9 = [-3n]_9$$
+
+Συνεπώς $[-3]_9 = f[3]_9 = 3f[1]_9 = [3x]_9$. Δηλαδή έχουμε τις συνεπαγωγές:
+
+	$$3x = -3 \quad mod 9$$
+	$$3(x+1) = 0 \quad mod 9 $$
+	$$x+1 = 0 \quad mod 3 $$
+	$$x = 2 \quad mod 3$$
+και άρα καταλήξαμε σε άτοπο.
+$ $\newline
+
+$b)$ Γνωρίζουμε ότι το $\Z_9 $ δεν είναι ισόμορφο με το $\Z_3 \oplus \Z_3$, συνεπώς καμία από τις δύο επεκτάσεις δεν είναι ισοδύναμη με την τετριμμένη. Έχουμε δηλαδή ότι το σύνολο $ext(\Z_3, \Z_3)$ έχει τουλάχιστον 3 κλάσες ισοδυναμίας για στοιχεία. Αρκεί να δείξουμε ότι έχει ακριβώς 3. 
+
+Λόγω αμφιμονοσήμαντης αντιστοιχίας με την ομάδα $Ext_{\Z}^1 (\Z_3 , \Z_3)$, αρκεί να δείξουμε ότι αυτή είναι (κυκλική) τάξης 3. Πράγματι:
+
+$$Ext_{\Z}^1 (\Z_3 , \Z_3) = \Z_3 / 3 \Z_3 \cong \Z_3 / \{0\} \cong \Z_3$$$ $\newline
+
+
+
+\item $a)$ Ορίζουμε την $\widetilde{f} : ext(M,N) \rightarrow ext(M^{\prime}, N)$ ως εξής:
+	$$[e] \mapsto [e^{\prime}]$$
+	Πρέπει να δείξουμε ότι είναι καλά ορισμένη απεικόνιση, δηλαδή δεν εξαρτάται από τον αντιπρόσωπο της κλάσης.
+
+	Αν $[e] = [\varepsilon]$ δηλαδή έχουμε ισομορφισμό $g: L_1 \rightarrow L_2$ ώστε το παρακάτω διάγραμμα να είναι μεταθετικό:
+
+	\begin{center}
+		\begin{tikzcd}
+			e:0 \arrow[r] & N \arrow[r] \arrow[d, no head, Rightarrow] & L_1 \arrow[r, "p_1"] \arrow[d, "g"] & M \arrow[r] \arrow[d, no head, Rightarrow] & 0 \\
+\varepsilon :0 \arrow[r] & N \arrow[r]                                & L_2 \arrow[r, "p_2"]                & M \arrow[r]                                & 0
+\end{tikzcd}
+	\end{center}
+
+	Θα πρέπει να έχουμε ισομορφισμό $\widetilde{g} : L^{\prime}_1 \rightarrow L^{\prime}_2$ και μεταθετικό διάγραμμα:
+
+	\begin{center}
+		\begin{tikzcd}
+0 \arrow[r] & N \arrow[r] \arrow[d, no head, Rightarrow] & L^{\prime}_1 \arrow[r, "p^{\prime}_1"] \arrow[d, "\widetilde{g}"] & M^{\prime} \arrow[r] \arrow[d, no head, Rightarrow] & 0 \\
+0 \arrow[r] & N \arrow[r]                                & L^{\prime}_2 \arrow[r, "p^{\prime}_2"]                            & M^{\prime} \arrow[r]                                & 0
+\end{tikzcd}
+	\end{center}
+
+	όπου:
+	$$L^{\prime}_1 = \{ (m^{\prime}, l) \in M^{\prime} \oplus L_1 : \quad f(m^{\prime}) = p_1 (l) \in M^{\prime} \}$$
+	$$L^{\prime}_2 = \{ (m^{\prime}, l) \in M^{\prime} \oplus L_2 : \quad f(m^{\prime}) = p_2 (l) \in M^{\prime} \} $$
+
+
+	Ορίζουμε την $\widetilde{g} : L^{\prime}_1 \rightarrow L^{\prime}_2 $ ως εξής:
+	$$(m^{\prime}, l) \longmapsto (m^{\prime}, g(l))$$
+
+	H $\widetilde{g}$ είναι καλά ορισμένη αφού $m^{\prime} \in M^{\prime}, g(l) \in L_2$ και ισχύει $f(m^{\prime} ) = p_1 (l) = p_2 (g(l))$ από την μεταθετικότητα του πρώτου διαγράμματος. Αρκεί να δείξουμε ότι η $\widetilde{g}$ είναι ισομορφισμός $R$-προτύπων και να ελέγξουμε την μεταθετικότητα του δεύτερου διαγράμματος.
+
+	Δείχνουμε τα εξής:
+
+	\begin{itemize}
+		\item $R$-γραμμικότητα:
+
+			$$\widetilde{g} \left( r\left( m^{\prime}, l \right) \right) = \widetilde{g} \left( rm^{\prime} , rl \right)  = \left( rm^{\prime}, g\left( rl \right)  \right) = r \left( m^{\prime}, g(l) \right) =  r\widetilde{g}\left( m^{\prime} , l \right)   $$
+
+			$$ \widetilde{g} \left( (m^{\prime}_1 , l_1 ) + (m^{\prime}_2, l_2 ) \right) = \widetilde{g} \left( m^{\prime}_1 + m^{\prime}_2 , l_1 + l_2  \right) = \left( m^{\prime}_1 + m^{\prime}_2 , g(l_1 + l_2) \right) = $$
+		$$	\left( m^{\prime}_1, g(l_1 ) \right) + \left( m^{\prime}_2 , g(l_2 ) \right)  = \widetilde{g} \left( m^{\prime}_1, l \right) + \widetilde{g} \left( m^{\prime}_2 , l_2 \right)   $$
+		$ $\newline
+		
+	\item 1-1:
+
+		Αν $(m^{\prime}, l) \mapsto (0_{M^{\prime}} , 0_{L_2}) = (m^{\prime}, g(l)$ τότε $m^{\prime}=0$ και $g(l) = 0 \implies l = 0$ αφού $g$ ισομορφισμός.
+$ $\newline
+
+	\item Επί:
+
+		Έστω $(m^{\prime}, l) \in L_2$. Αφού $g$ ισομορφισμός, υπάρχει $l^{\prime} \in L_1$ τέτοιο ώστε $g(l^{\prime}) = l$. Άρα:
+		$$\widetilde{g} (m^{\prime}, l^{\prime} ) = (m^{\prime}, g(l^{\prime}) = (m^{\prime}, l)$$
+
+
+			\end{itemize}
+$ $\newline
+
+			Αν $h_1 , h_2 : N \rightarrow L_1 , L_2 $ και $h^{\prime}_1 = (0, h_1) : N \rightarrow L^{\prime}_1, h^{\prime}_2 = (0,h_2) : N \rightarrow L^{\prime}_2$
+
+			\begin{center}
+				\begin{tikzcd}
+0 \arrow[r] & N \arrow[r, "h^{\prime}_1"] \arrow[d, no head, Rightarrow] & L^{\prime}_1 \arrow[r, "p^{\prime}_1"] \arrow[d, "\widetilde{g}"] & M^{\prime} \arrow[r] \arrow[d, no head, Rightarrow] & 0 \\
+0 \arrow[r] & N \arrow[r, "h^{\prime}_2"]                                & L^{\prime}_2 \arrow[r, "p^{\prime}_2"]                            & M^{\prime} \arrow[r]                                & 0 \\
+            & n \arrow[dd, no head, Rightarrow] \arrow[r]                & {(0,h_1 (n))} \arrow[d]                                           &                                                     &   \\
+            &                                                            & {(0,g(h_1(n))} \arrow[d, no head, Rightarrow]                     & g h_1 = h_2                                         &   \\
+            & n \arrow[r]                                                & {(0,h_2 (n))}                                                     &                                                     &   \\
+            & {(m^{\prime} , l)} \arrow[r] \arrow[d]                     & m^{\prime} \arrow[d, no head, Rightarrow]                         &                                                     &   \\
+            & {(m^{\prime} , g(l))} \arrow[r]                            & m^{\prime}                                                        &                                                     &
+\end{tikzcd}
+			\end{center}
+
+			άρα και τα δύο τετράγωνα είναι μεταθετικά. Συνεπώς $\widetilde{f}$ καλά ορισμένη απεικόνιση.
+$ $\newline
+
+
+
+
+$b)$ Αν έχουμε $I$ εμφυτευτικό και την βραχεία ακριβή ακολουθία:
+$$0 \rightarrow N \xrightarrow{i} I \xrightarrow{p} Q \rightarrow 0$$
+
+Τότε:
+$$Ext_{R}^1 (M,N) \cong coker[Hom_R (M,I) \xrightarrow{p_*} Hom_R {M,Q}] $$
+Συνεπώς αν $g \in Hom_R (M,Q)$ συμβολίζουμε με $[g]$ την κλάση  $g + imp_* $. Θεωρούμε αυτά τα $[g]$ ως στοιχεία του $Ext_R (M,N)$ (μέσω ισομορφισμού).
+
+Πηγαίνοντας το $[g]$ δεξιά και κάτω στο διάγραμμα παίρνουμε:
+$$[g] \rightarrow \lambda_{M,N} [g] = [0 \rightarrow N \xrightarrow{i^{\prime}_1 }  X_1 \xrightarrow{p^{\prime}_1} M \rightarrow 0 ] \rightarrow \widetilde{f}(\lambda_{M,N} [g] ) = $$
+$$[0 \rightarrow N \xrightarrow{i^{\prime \prime}_1 }   X^{\prime}_1   \xrightarrow{p^{\prime \prime }_1 } M^{\prime} \rightarrow 0 ]  $$
+
+Ομοίως πηγαίνοντάς το κάτω και δεξιά έχουμε:
+$$[g] \rightarrow f^* ([g]) = [gf] \rightarrow \lambda_{M^{\prime} , N}[gf] = $$
+$$[0 \rightarrow N \xrightarrow{ i^{\prime}_2} X_2 \xrightarrow{p^{\prime}_2 } M^{\prime} \rightarrow 0 ]$$
+
+όπου:
+\begin{gather*}
+	X_1 = \{ (x,y) \in M \oplus I : \quad g(x) = p(y) \} \\
+	X_2 = \{ (x,y) \in M^{\prime} \oplus I : \quad (gf)(x) = p(y) \} \\
+	X^{\prime}_1 = \{ (m^{\prime}, x_1) \in M^{\prime} \oplus X_1: \quad f(m^{\prime}) = p^{\prime}_1 (x_1) \in M \}
+\end{gather*}
+\begin{gather*}
+	i^{\prime}_1 (n) = (0,n) \in X_1 \\
+	i^{ \prime \prime}_1 (n) = (0 , i^{\prime}_1 (n)) \in X^{\prime}_1 \\
+	i^{\prime}_2 (n) = (0,n) \in X_2
+\end{gather*}
+\begin{gather*}
+	p^{\prime}_1( x,y) = x \in M \\
+	p^{\prime \prime}_1 (m^{\prime} , x_1) = m^{\prime} \in M^{\prime} \\
+	p^{\prime}_2 (m^{\prime} , y ) = m^{\prime} \in M^{\prime}
+\end{gather*}
+	
+Για να είναι το διάγραμμα μεταθετικό, δηλαδή να συμπίπτουν οι δύο κλάσεις πρέπει να υπάρχει ισομορφισμός $h: X^{\prime}_1 \rightarrow X_2$ ώστε το παρακάτω διάγραμμα να είναι μεταθετικό:
+
+\begin{center}
+\begin{tikzcd}
+0 \arrow[r] & N \arrow[r, "i^{\prime\prime}_1"] \arrow[d, no head, Rightarrow] & X^{\prime}_1 \arrow[d, "h"] \arrow[r, "p^{\prime \prime}_1"] & M^{\prime} \arrow[d, no head, Rightarrow] \arrow[r] & 0 \\
+0 \arrow[r] & N \arrow[r, "i^{\prime}_1"]                                      & X_2 \arrow[r, "p^{\prime}_2"]                                & M^{\prime} \arrow[r]                                & 0
+\end{tikzcd}
+\end{center}
+
+Ορίζουμε την απεικόνιση $h : X^{\prime}_1 \rightarrow X_2$ ως εξής:
+$$(m^{\prime},x_1) \longmapsto (m^{\prime}, y)$$
+όπου $x_1 = (x,y) \in M \oplus I$. Ο $h$ είναι καλά ορισμένος εφόσον έχουμε:
+$$(m^{\prime}, x_1) \in X^{\prime}_1 \implies f(m^{\prime}) = p^{\prime}_1 (x_1) = x \in M$$
+$$x_1 = (x,y) \in X_1 \implies g(x) = p(y)$$
+
+και άρα $(gf)(m^{\prime}) = g[f(m^{\prime})] = g(x) = p(y)$ δηλαδή ισχύει ότι $(m^{\prime} , y) \in X_2$.
+
+Στην συνέχεια δείχνουμε ότι είναι ισομορφισμός $R$-προτύπων
+
+\begin{itemize}
+	\item $R$-γραμμικότητα:
+
+		$$r(m^{\prime}, x_1) = (rm^{\prime},rx_1) \mapsto (rm^{\prime} , ry) = r (m^{\prime}, y)\quad\text{αφού } rx_1= (rx,ry)$$
+		$$(m^{\prime}_1, x^1_1) + (m^{\prime}_2, x^2_1) = (m^{\prime}_1 + m^{\prime}_2 , x^1_1 + x^2_1) \mapsto (m^{\prime}_1 + m^{\prime}_2 , y^1 + y^2) = (m^{\prime}_1, y^1) + (m^{\prime}_2, y^2) $$
+		εφόσον $x^1_1 = (x^1, y^1) $ και $x^2_1 = (x^2 , y^2)$.
+		$ $\newline
+	
+	\item 1-1:
+
+		Αν $χ_1=(χ,y)$ και $(m^{\prime}, x_1) \mapsto (0_{M^{\prime}} , 0_I) = (m^{\prime}, y)$ τότε $m^{\prime} = 0, y = 0$ και μένει να δειχτεί ότι $x = 0$. Πράγματι, από την προσθετικότητα της $f$:
+
+		$$0 = f(0) = f(m^{\prime}) = p^{\prime}_1 (x_1) = x$$
+		$ $\newline
+
+	\item Επί:
+
+		Έστω $(m^{\prime},y) \in X_2$. Έχουμε ότι $g(f(m^{\prime})) = p(y)$. Από αυτό συνεπάγεται ότι το στοιχείο $(f(m^{\prime}), y)$ ανήκει στο $X_1$. Έτσι έχουμε ότι το στοιχείο $(m^{\prime} , x_1)$ ανήκει στο $X^{\prime}_1$ αφού:
+		$$p^{\prime}_1 (x_1) = p^{\prime}_1 (f(m^{\prime}), y) = f(m^{\prime}) $$
+		Επιπλέον έχουμε ότι $h(m^{\prime}, x_1) = (m^{\prime}, y)$.
+\end{itemize}
+
+Μένει να επαληθευτεί η μεταθετικότητα των δύο τετραγώνων. Πράγματι:
+
+\begin{center}
+	\begin{tikzcd}
+n \arrow[r, "i^{\prime\prime}_1"] \arrow[d, no head, Rightarrow] & {(0,i^{\prime}_1 (n))} \arrow[r, "h"] & {h(0,i^{\prime}_1 (n)) } \\
+n \arrow[r, "i^{\prime}_2"]                                      & {(0,n)}                               &                          \\
+{i^{\prime}_1 (n) = (0,n)}                                       & {h(0,i^{\prime}_1 (n)) = (0,n)}       &
+\end{tikzcd}
+\end{center}
+$ $\newline
+
+\begin{center}
+\begin{tikzcd}
+{(m^{\prime}, x_1 )} \arrow[r, "p^{\prime \prime}_1"] \arrow[d, "h"'] & m^{\prime} \arrow[d, no head, Rightarrow] \\
+{(m^{\prime} , y)} \arrow[r, "p^{\prime}_2"]                          & m^{\prime}                                \\
+{x_1 = (x,y)}                                                         &
+\end{tikzcd}
+\end{center}
+\end{enumerate}
+\end{document}

@@ -1,0 +1,148 @@
+\documentclass{article}
+\usepackage[english,greek]{babel}
+\usepackage[utf8x]{inputenc}
+\usepackage{amsfonts, amsmath, amssymb}
+\usepackage{mathtools}
+\usepackage{enumitem}
+
+\usepackage{tikz-cd}
+
+\title{\textbf{Ομολογική Άλγεβρα και Κατηγορίες} \\ 1η Ομάδα Ασκήσεων}
+
+\author{Νούλας Δημήτριος \\ 1112201800377}
+
+\begin{document}
+\maketitle
+
+\begin{enumerate}
+
+	\item $i)\implies ii)$ Έστω $f : A \rightarrow B$ ισομορφισμός, δηλαδή o $f$ έχει αριστερό και δεξί αντίστροφο, τον $f^{-1} : B \rightarrow A$. Έχουμε ότι $f f^{-1} = 1_B$ δηλαδή ο $f$ είναι διασπώμενος επιμορφισμός. Για το μονομορφισμό θεωρούμε ένα παράλληλο ζεύγος μορφισμών $g,h : A^{\prime} \rightarrow A$ με $fg = fh $ τότε:
+		$$f^{-1} (fg) = f^{-1}(fh) \implies (f^{-1}f)g = (f^{-1}f)h \implies$$
+		$$1_A g = 1_A h \implies g = h : A^{\prime} \rightarrow A$$
+
+		$ii) \implies iii)$ Ο $f$ είναι διασπώμενος επιμορφισμός, δηλαδή υπάρχει $g: B \rightarrow A : fg=1_B$. Έστω ένα παράλληλο ζεύγος μορφισμών $a,b : B \rightarrow \Gamma$ με $af = bf$. Τότε:
+		$$(af)g = (bf)g \implies a(fg) = b(fg)\implies$$
+		$$a 1_B = b 1_B \implies a = b : B \rightarrow \Gamma$$
+		άρα ο $f$ είναι επιμορφισμός. Επιπλέον $f(gf) = (fg)f = 1_B f = f = f 1_A$ και επειδή ο $f$ είναι αριστερά διαγράψιμος έχουμε ότι $gf= 1_A$, άρα o $f$ είναι διασπώμενος μονομορφισμός. 
+		$ $\newline
+
+		$iii) \implies i)$ Έστω $f$ διασπώμενος μονομορφισμος, δηλαδή υπάρχει $g: B \rightarrow A$ με $ gf = 1_A$. Τότε έχουμε $(fg)f = f(gf) = f 1_A = f = 1_B f$ και $f$ δεξιά διαγράψιμος, άρα $fg=1_B$ και επειδή $gf=1_A$ έχουμε ότι ο $f$ είναι ισομορφισμός.
+		$ $\newline
+	
+	\item $i)$ Έστω $x \in A + (B\cap C) \implies x = a + y$ για κάποια $a \in A, y \in B\cap C$. Έχουμε:
+		$$x=a+y \quad a\in A, y \in B \implies x \in A+B$$
+		$$x = a+y \quad a\in A,y\in C \implies x \in A+C$$
+		από τα οποία έπεται ότι $x \in (A+B)\cap (A+C)$ δηλαδή $A + (B\cap C) \subseteq (A+B)\cap (A+C)$.
+
+		$ii)$ Θεωρούμε ως διανυσματικό χώρο τον $\mathbb{R}^2$ και ως υποχώρους του τις ευθείες:
+		$$A = \{ (x,y): y=x , \quad x,y\in \mathbb{R} \}$$
+		$$B = \{ (x,y): y=-x, \quad x,y \in \mathbb{R} \}$$
+		$$C = \{ (x,0) : x\in \mathbb{R} \}$$
+
+		Τότε $A+(B\cap C) = A + \{ (0,0) \} = A$. Επιπλέον, αν $x \in \mathbb{R}$ τότε $(x,0) = (\frac{x}{2}, \frac{x}{2}) +  (\frac{x}{2}, -\frac{x}{2}) \in A + B$, δηλαδή $C \subseteq A+B \implies A\cup B \cup C \subseteq A + B$. Ομοίως, $(x,-x) = (-x,-x) + (2x,0) \in A + C \implies A\cup B \cup C \subseteq A + C$.
+		Έχουμε:
+		$$A + (B\cap C) = A \subseteq A \cup B \cup C \subseteq (A+B)\cap (A+C)$$
+		δηλαδή ο εγκλεισμός του $i)$ είναι γνήσιος.
+		$ $\newline
+
+		$iii)$ Εφόσον $A \subseteq C$ έχουμε ότι $A+C = C$ και το "$\subseteq$" έπεται από το $i)$. Για το "$\supseteq$":
+
+		Έστω $x \in (A+B) \cap C$. Δηλαδή $x \in C$ και $x = a + b \in A + B$ για κάποια $a \in A, b \in B$. Έχουμε $a \in A \implies a \in C$ και άρα $x - a = b \in C$. Δηλαδή $b \in B\cap C$ και $x = a + b \in A + (B\cap C)$.
+		$ $\newline
+
+	\item $i)$ Έστω $c \in C$ και $f : M \rightarrow N$ γραμμική απεικόνιση. Έστω $x,y \in M, r \in R$, τότε:
+		$$(cf)(x+y) = cf(x+y) = c\big[f(x) + f(y)\big] = (cf)(x) + (cf)(y)$$
+		$$(cf)(rx) =  c\big[f(rx)\big] = crf(x) = rcf(x) = r(cf)(x)$$
+		άρα πράγματι η $cf: M \rightarrow N$ είναι γραμμική. Ορίζουμε:
+		$$K: C \rightarrow End(Hom_R(M,N),+)$$
+		$$K(c)(f) = cf \in Hom_R (M,N)$$
+		η οποία απεικόνιση είναι ομομορφισμός δακτυλίων και εφοδιάζει την αβελιανή ομάδα $Hom_R (M,N)$ με δομή $C$-προτύπου. Πράγματι, έστω $x \in M$:
+		$$\big[c(f+g)\big](x) = c\big[(f+g)(x)\big] = c\big[f(x) + g(x)\big] = cf(x) + cg(x)$$
+		$$\big[(c + c^{\prime})f \big](x) = (c+ c^{\prime} ) f(x) = cf(x) + c^{\prime} f(x)  $$
+		$$\big[(c c^{\prime}) f\big](x) = (c c^{\prime}) f(x) = c ( c^{\prime} f(x)) $$
+		$$\big[1_C f\big] (x) = 1_C f(x) = f(x) $$
+		όπου οι παραπάνω ισότητες προκύπτουν επειδή το $N$ είναι $R$-πρότυπο και $c,c^{\prime} \in R, f(x),g(x) \in N$.
+		$ $\newline
+
+		$ii)$ Έστω $c \in C, f: M \rightarrow N , g:N \rightarrow L$ γραμμικές απεικονίσεις. Αν $x \in M$ τότε $(cf)(x) = cf(x)$ και:
+		$$\big[g(cf)\big](x) = g\big[(cf)(x)\big] = g\big[cf(x)\big] = c g\big[f(x) \big] = c (gf)(x)   $$
+		όπου η τρίτη ισότητα προκύπτει από το γεγονός ότι $cf(x) \in N$ και $g$ γραμμική. Επιπλέον, με το ίδιο επιχείρημα:
+		$$\big[(cg)f\big](x) = (cg) \big[ f(x) \big] = g[cf(x)] = \ldots = c (gf)(x)$$
+		άρα πράγματι $g(cf)=c(gf) = (cg)f : M \rightarrow L$.
+		$ $\newline
+
+	\item $i)$ Έστω $M,N$ δύο $R$-πρότυπα. Αρκεί να δείξουμε ότι το παρακάτω διάγραμμα είναι μεταθετικό:
+		\begin{center}
+		\begin{tikzcd}
+		1_{\mathcal{K}} M = M \arrow[rr, "\eta (c)_M = c1_M"] \arrow[d, "1_{\mathcal{K}}f = f"', shift left=6] &  & M \arrow[d, "f"] \\
+		1_{\mathcal{K}}N=N \arrow[rr, "\eta (c)_N = c1_N"]                                       &  & N
+		\end{tikzcd}
+		\end{center}
+		
+		Έστω $x \in M$. Ακολουθώντας το διάγραμμα δεξιά και κάτω έχουμε $f(cx)$ ενώ κάτω και αριστερά έχουμε $cf(x)$ τα οποία είναι ίσα λόγω της γραμμικότητας της $f$ και επειδή $c \in R$.
+		$ $\newline
+
+
+		$ii)$ Ισχυρισμός: Κάθε ομομορφισμός $f: R\rightarrow R$ $R$-προτύπων είναι της μορφής $f(x) = xb$ για κάποιο μοναδικό $b \in R$.
+		Πράγματι, έχουμε $f(rx) = rf(x)$ για κάθε $r \in R$. Επομένως:
+		$$f(r) = rf(1_R) = rb$$
+		όπου $b = f(1_R)$, το οποίο $b$ από αυτήν την επιλογή για το που θα στείλουμε το $1_R$ μέσω της $f$ είναι μοναδικό.
+		$ $\newline
+
+		Για την συνιστώσα $\eta_R :R \rightarrow R$ η οποία είναι γραμμική έχουμε επομένως ότι $\eta_R = xc$ για το μοναδικό $c = \eta_R(1_R)$. Επιπλέον για κάθε $r \in R$ ορίζουμε τις γραμμικές $f_r : R \rightarrow R$ με $f_r (x) = xr$. Τότε επειδή ο $\eta$ είναι φυσικός μετασχηματισμός έχουμε ότι το παρακάτω διάγραμμα μετατίθεται:
+
+		\begin{center}
+			\begin{tikzcd}
+			R \arrow[rr, "\eta_R"] \arrow[d, "f_r"'] &  & R \arrow[d, "f_r"] \\
+			R \arrow[rr, "\eta_R"]                   &  & R
+		\end{tikzcd}
+		\end{center}
+		
+		από το οποίο προκύπτει $xrc = xcr \implies rc=cr$ για κάθε $r \in R$, συνεπώς $c \in C$ και $\eta_R (x) = cx$. Αρκεί να δειχτεί ότι οι υπόλοιπες συνιστώσες του $\eta$ έχουν την ίδια μορφή.
+
+		Πράγματι, έστω $M$ ένα $R$-πρότυπο. Για κάθε $m \in M$ ορίζουμε τις γραμμικές $f_m : R \rightarrow M$ τέτοιες ώστε $f_m (1_R) = m$ και έστω $r \in R$, από την μεταθετικότητα του παρακάτω διαγράμματος έχουμε ότι:
+
+		\begin{center}
+			\begin{tikzcd}
+			R \arrow[rr, "\eta_R"] \arrow[d, "f_m"'] &  & R \arrow[d, "f_m"] \\
+			M \arrow[rr, "\eta_M"]                   &  & M                 
+			\end{tikzcd}
+		\end{center}
+
+		$$r \eta_M (m) = crm = rcm \implies \eta_M (m) = cm \quad \forall m \in M$$
+		άρα πράγματι $\eta = \eta (c)$.
+		$ $\newline
+
+
+	\item $i)$ Έστω $n \in N$. Έχουμε $fs(n) = n$ και επιπλέον $s, ig\in Hom_R (N,M)$ όπου ορίζεται το κατά σημείο άθροισμα τους, επομένως $(s+ig)(n) = s(n) + ig(n)$. Άρα ισχύει:
+		\begin{gather*}(fs^{\prime})(n) = f\big[s^{\prime}(n)\big] = f \big[ (s+ig)(n) \big] = f \big[ s(n) + ig(n) \big] = \\
+			f\big[ s(n)\big] + f\big[ i(g(n)) \big] = n + 0_N = n
+		\end{gather*}
+		όπου $n \in N \implies g(n) \in kerf$ και άρα $f\big[i(g(n))\big] = f(g(n)) = 0_N$. Δηλαδή $fs^{\prime} = 1_N$.
+		$ $\newline
+
+		$ii)$ Για την γραμμική $f: M\rightarrow N$ και το $R$-πρότυπο $N$ από την καθολική ιδιότητα του πυρήνα γνωρίζουμε ότι υπάρχει απεικόνιση:
+		$$i_* : Hom_R (N,kerf) \rightarrow Hom_R (N,M)$$
+		η οποία είναι 1-1 και έχει εικόνα την υποομάδα $K \subseteq Hom_R (N,M)$ που περιέχει τις γραμμικές απεικονίσεις $h: N \rightarrow M$ τέτοιες ώστε $fh = 0_N : N\rightarrow N$.
+		Επιπέον $s, s^{\prime} \in Hom_R (N,M) \implies s-s^{\prime} \in Hom_R (N,M)$ και:
+		$$\big[ f(s-s^{\prime})\big](n) = f\big[(s-s^{\prime})(n)\big] = f\big[ s(n) - s^{\prime}(n)\big] = fs(n) - fs^{\prime}(n) = n - n = 0_N$$
+		για κάθε $n \in N$, άρα $s-s^{\prime} \in K$. Συνεπώς, λόγω του ότι η $i_*$ είναι 1-1 υπάρχει μοναδική $g \in Hom_R (N, kerf)$ τέτοια ώστε $i_* (g) = i(g) = s - s^{\prime} \implies s = s^{\prime} + ig$.
+		$ $\newline
+	
+	
+	\item $i)$ Έστω $n \in N$. Έχουμε $rf(n) = n$ και για $m \in M$ έχουμε όμοια με την προηγούμενη άσκηση ότι $(r+g\pi )(m) = r(m) + g\pi (m)$. Άρα:
+		$$(r^{\prime} f)(n) = \big[ (r+g\pi ) f\big](n)  = r\big[f(n)\big] + g\big[ \pi(f(n)) \big] = n$$
+		διότι $f(n) \in imf \implies \pi (f(n)) \in imf / imf \implies \pi (f(n)) = 0_{cokerf}$ και $g( 0_{cokerf} ) = 0_N$. Άρα πράγματι $r^{\prime} f = 1_N$.
+		$ $\newline
+
+		$ii)$ Για την γραμμική $f: N \rightarrow M$ και το $R$-πρότυπο $N$ από την καθολική ιδιότητα του συνπυρήνα γνωρίζουμε ότι υπάρχει απεικόνιση:
+		$$\pi^* : Hom_R (cokerf, N) \rightarrow Hom_R (M,N)$$
+		η οποία είναι 1-1 και έχει εικόνα την υποομάδα $C \subseteq Hom_R (M,N)$ που περιέχει τις γραμμικές απεικονίσεις $h: M \rightarrow N$ τέτοιες ώστε $hf = 0_N : N \rightarrow N$.
+		Επιπλέον $r, r^{\prime} \in Hom_R (M,N) \implies r-r^{\prime} \in Hom_R(M,N)$ και:
+		$$\big[ (r - r^{\prime})f\big] (n) = (r-r^{\prime})f(n) = rf(n) - r^{\prime}f(n) = n - n = 0_N$$
+		επομένως $r-r^{\prime} \in C$ και λόγω του ότι η $\pi^*$ είναι 1-1, υπάρχει μοναδική $g \in Hom_R (cokerf,N)$ τέτοια ώστε $\pi^* (g) = g\pi = r - r^{\prime} \implies r = r^{\prime} + g\pi$.
+
+
+	
+\end{enumerate}
+\end{document}

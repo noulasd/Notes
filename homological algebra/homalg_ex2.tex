@@ -1,0 +1,260 @@
+\documentclass{article}
+\usepackage[english,greek]{babel}
+\usepackage[utf8x]{inputenc}
+\usepackage{amsfonts, amsmath, amssymb}
+\usepackage{mathtools}
+\usepackage{enumitem}
+
+\usepackage{tikz-cd}
+
+\title{\textbf{Ομολογική Άλγεβρα και Κατηγορίες} \\ 2η Ομάδα Ασκήσεων}
+
+\author{Νούλας Δημήτριος \\ 1112201800377}
+
+\begin{document}
+\maketitle
+
+\begin{enumerate}
+
+	\item $i)$ Γνωρίζουμε για τους ισομορφισμούς στην $S-Mod$ ότι είναι ακριβώς οι 1-1 και επί γραμμικές απεικονίσεις, επομένως οι συνιστώσες $\eta _M : FM \rightarrow GM$ είναι 1-1 και επί. Έστω $A \xrightarrow{f} B \xrightarrow{g} \Gamma$ μια ακριβής ακολουθία $R$-προτύπων. Θεωρούμε το ακόλουθο μεταθετικό διάγραμμα:
+
+		\begin{center}
+			\begin{tikzcd}
+			FA \arrow[r, "Ff"] \arrow[d, "\eta_A"'] & FB \arrow[r, "Fg"] \arrow[d, "\eta_B"'] & F\Gamma \arrow[d, "\eta_{\Gamma}"] \\
+			GA \arrow[r, "Gf"]                      & GB \arrow[r, "Gg"]                      & G\Gamma
+			\end{tikzcd}
+		\end{center}
+	
+		Αν ο $G$ είναι ακριβής, δηλαδή η κάτω γραμμή είναι ακριβής έχουμε $imGf = kerGg$. Επιπλέον $\eta_{\Gamma} (Fg) (Ff) = (Gg)(Gf)\eta_A = 0 \eta_A = 0 = \eta_{\Gamma} 0$ και $\eta_{\Gamma} $ 1-1 συνεπώς $(Fg) (Ff) = 0$ δηλαδή $imFf \subseteq kerFg$. Αντίστροφα, αν $b \in kerFg$ τότε $(Gg) \eta_B (b) = \eta_{\Gamma} (0) = 0 \implies \eta_B (b) \in kerGg = imGf$ συνεπώς υπάρχει $a^{\prime} \in GA$ τέτοιο ώστε $Gf(a^{\prime} ) = \eta_B (b)$. Επειδή η $\eta_A$ είναι επί υπάρχει $a \in A$ τέτοιο ώστε $\eta_A (a) = a^{\prime}$ και:
+		\[\eta_B (Ff) (a) = (Gf)\eta_A (a) = (Gf) (a^{\prime}) = \eta_B (b) \implies Ff(a) = b\]
+	αφού $\eta_B$ 1-1 και άρα $\in imFf$. Συνεπώς $kerFg \subseteq imFf$.
+	$ $\newline
+
+	Αν ο $F$ είναι ακριβής έχουμε $imFf = kerFg$. Επιπλέον $(Gg)(Gf)\eta_A = \eta_{\Gamma} (Fg)(Ff) = \eta_{\Gamma} 0 = 0 = 0 \eta_A$ και επειδή $\eta_A$ επί έχουμε $(Gf)(Gf)= 0$ δηλαδή $imGf \subseteq kerGg$. Αντίστροφα, αν $b \in kerGg$ επειδή η $\eta_B$ είναι επί υπάρχει $b^{\prime} \in FB$ τέτοιο ώστε $\eta_B (b^{\prime} ) = b$.
+	\[ \eta_{\Gamma} (Fg) (b^{\prime} ) = (Gg)\eta_B (b^{\prime}) = 0 \implies b^{\prime} \in kerFg = imFf \]
+	αφού $\eta_{\Gamma}$ 1-1. Συνεπώς υπάρχει $a^{\prime} \in FA$ τέτοιο ώστε $Ff(a^{\prime} ) = b^{\prime}$.
+	\[ (Gf) \eta_A (a^{\prime} ) = \eta_B (Ff) (a^{\prime} )  = \eta_B (b^{\prime})  =b \implies b \in imGf\]
+	δηλαδή $kerGg \subseteq imGf$.
+	$ $\newline	
+
+	$ii)$ Θεωρούμε το μεταθετικό διάγραμμα:
+
+	\begin{center}
+		\begin{tikzcd}
+		0 \arrow[r] & FA \arrow[r, "Ff"] \arrow[d, "\eta_A"'] & FB \arrow[r, "Fg"] \arrow[d, "\eta_B"'] & F\Gamma \arrow[d, "\eta_{\Gamma}"] \\
+		0 \arrow[r] & GA \arrow[r, "Gf"]                      & GB \arrow[r, "Gg"]                      & G\Gamma
+	\end{tikzcd}
+	\end{center}
+	
+	Αν ο $G$ είναι αριστερά ακριβής (αντίστοιχα ο $F$) η ακριβεία στο $FB$ (αντίστοιχα στο $GB$ ) δείχνεται όπως προηγουμένως. Έστω $G$ αριστερά ακριβής, για να είναι ο $F$ αριστερά ακριβής αρκεί η $Ff$ να είναι 1-1. Έστω $a \in kerFf$. Τότε $ (Gf) \eta_A (a) = \eta_B (Ff)(a) = \eta_B 0 $ και επειδή $Gf$ 1-1 έχουμε $\eta_A (a) = 0 \implies a=0$. Άρα $kerFf = \{0\}$.
+	$ $\newline
+
+	Έστω $F$ αριστερά ακριβής, ομοίως αρκεί να δειχτεί ότι η $Gf$ είναι 1-1. Έστω $a \in kerGf$. Τότε αφού $\eta_A$ επί, υπάρχει $a^{\prime} \in FA$ τέτοιο ώστε $\eta_A (a^{\prime}) = a$.
+	\[ \eta_B (Ff) (a^{\prime}) = (Gf) \eta_A (a^{\prime}) = 0 \xRightarrow{\eta_B \text{1-1}} Ff(a^{\prime} ) = 0 \xRightarrow{Ff \text{1-1}} a^{\prime} = 0 \implies a =0\]
+	δηλαδή $kerGf=\{0\}$.
+	$ $\newline
+
+
+	\item Έστω $M, N$ δύο $R$-πρότυπα και $f: M \rightarrow N$ $R$-γραμμική. Αρκεί να δείξουμε ότι το παρακάτω διάγραμμα είναι μεταθετικό.
+		\begin{center}
+			\begin{tikzcd}
+{Hom_R (X,M)} \arrow[rr, "\eta_M"] \arrow[d, "f_*"'] &  & U(M) = M \arrow[d, "Uf = f"] \\
+{Hom_R(X,N)} \arrow[rr, "\eta_N"]                    &  & U(N)=N
+\end{tikzcd}
+		\end{center}
+		Έστω $g \in Hom_R (X,M)$. Ακολουθώντας το διάγραμμα δεξιά παίρνουμε $g(x_0) \in M$ και στην συνέχεια κάτω παίρνουμε $f(g(x_0)) \in N$. Αντίστοιχα, ακολουθώντας το διάγραμμα κάτω παίρνουμε $f_* (g) = fg \in Hom_R(X,N)$ και στην συνέχεια δεξιά παίρνουμε $(fg)(x_0) = f(g(x_0)) \in N$.
+	$ $\newline
+
+\item $i)$ Έχουμε $A \subseteq M, B \subseteq M$ συνεπώς $A+B \subseteq M$. Αντίστροφα, εφόσον μκδ$(2^n , 3^n) = 1$ για κάθε $n \in \mathbb{N}$ υπάρχουν $a=a(n),b=b(n) \in \mathbb{Z}$ τέτοια ώστε $a 2^n + b 3^n = 1$. Συνεπώς, αν $(x_n)_n \in M$ τότε $x_n = a 2^n x_n + b 3^n x_n$. Δηλαδή $(x_n)_n = \left( a(n) 2^n x_n  \right)_n + \left( b(n) 3^n x_n \right)_n \in A+B$.
+	$ $\newline
+
+	$ii)$ Σταθεροποιούμε $k \in \mathbb{N}$. Έστω $(a_n)_n \in A$. Για τα $k \leq n$, εφόσον $2^n \mid a_n$ γράφουμε τους όρους της $(a_n)_n$ ως:
+	$$a_n = 0 +  2^k 2^{n-k} b_n$$
+
+	Για τα $k > n$ (ισχύει για πεπερασμένους όρους της ακολουθίας) έχουμε την αναπαράσταση $a_n = a_n + 0$. Δηλαδή $(a_n)_n = (x_n)_n + (y_n)_n \in M_0 + 2^k M$ τέτοιες ώστε:
+
+	\[
+x_n =
+     \begin{cases}
+       0, &\quad\text{αν } k \leq n\\
+       a_n,  &\quad\text{αν } k >n \\
+     \end{cases} \quad
+y_n = \begin{cases}
+	2^k 2^{n-k} b_n, &\quad\text{αν } k \leq n\\
+	0, &\quad\text{αν } k > n \\
+\end{cases}
+\]
+Επομένως $A \subseteq M_0 + 2^k M$ για το τυχόν $k \in \mathbb{N}$. Ομοίως το $B \subseteq M_0 + 2^n M$ για κάθε $n \in \mathbb{N}$.
+$ $\newline
+
+$iii)$ Έστω $(x_n)_n \in M$. Τότε για κάθε $n$ υπάρχουν $a, b \in \mathbb{Z}$ έτσι ώστε $x_n = ax_n 2^n + b x_n 3^n \implies (x_n)_n = (a(n) x_n 2^n)_n + (b(n) x_n 3^n)_n = (2^n a_n)_n + (3^n b_n)_n \in A+B$.
+
+Συνεπώς $f((x_n)_n) = f((2^n a_n)_n) + f((3^n b_n)_n)$ από προσθετικότητα. Ωστόσο: 
+\begin{gather*}
+	f((2^n a_n)_n) = f(a_0, 2a_1, 2^2 a_2,\ldots 2^{k-1} a_{k-1}, 0, 0 \ldots ) \\
+	+ f(0,\ldots,0 ,2^k a_k, 2^{k+1} a_{k+1}, \ldots )
+\end{gather*}
+Επειδή $f|_{Μ_0} = 0$ ο πρώτος όρος είναι 0, άρα:
+\begin{gather*}
+	f((2^n a_n)_n) = f(0,\ldots,0 ,2^k a_k, 2^{k+1} a_{k+1}, \ldots ) \\
+	= 2^k f( 0,\ldots, 0 , a_k, 2a_{k+1},\ldots ) = 2^k x
+\end{gather*}
+δηλαδή $2^k \mid f((2^n a_n)_n) $ για κάθε $k\geq 0$. Άρα $f((2^n a_n)_n) = 0$ και ομοίως $f((3^n b_n)_n) = 0$. Συνεπώς $f=0$.
+$ $\newline
+
+$iv)$ Έστω $f\in Hom_{\mathbb{Z}} (M / M_0 , \mathbb{Z} )$. Έχουμε:
+$$M \xrightarrow{p} M / M_0 \xrightarrow{f} \mathbb{Z} $$
+και άρα για την $fp : M \rightarrow \mathbb{Z}$ ισχύει $fp( M_0) = \{0 \} $ συνεπώς $fp = 0$ και επειδή η προβολή $p$ είναι επιμορφισμός, παίρνουμε $f=0$. Άρα:
+$$Hom_{\mathbb{Z}} (M / M_0 , \mathbb{Z} ) = \{ 0 \}$$
+$ $\newline
+
+\item $i)$ Εφόσον η $M_0$ είναι υποομάδα της $M$ υπάρχει σύνολο $J \subseteq I$ τέτοιο ώστε $M_0 = \mathbb{Z}^{(J) }$. Επιπλέον, επειδή η $M_0$ είναι αριθμήσιμη όπως και η $\mathbb{Z}^{(\mathbb{N})}$. Έχουμε ότι το $J$ είναι αριθμήσιμο. Άρα $I \setminus J \neq \varnothing$. Θεωρούμε την ομάδα πηλίκο $Μ/Μ_0$. Αν $(a_i)_i + M_0 \in M / M_0$ τότε για κάθε $i \in J$ ισχύει $a_i = 0$. Συνεπώς:
+	$$M / M_0 = \mathbb{Z}^{(I)} / \mathbb{Z} ^{(J)} = \{ (a_i)_i + Μ_0 : a_i \neq 0 \quad\text{για πεπερασμένα } i \in I \} \cong \mathbb{Z}^{(I \setminus J)}$$
+
+	Ο ισομορφισμός προκύπτει από την $\mathbb{Z}$-γραμμική απεικόνιση:
+	$$\phi : \mathbb{Z}^{(I)} \rightarrow \mathbb{Z}^{(I \setminus J)}  $$
+	$$ (a_i)_i \mapsto (a_i)_i \quad\forall i \in I \setminus J$$
+
+και το 1ο θεώρημα ισομορφισμών προτύπων.
+
+Έστω $i_0 \in I \setminus J$. Θεωρούμε τον επιμορφισμό $f: \mathbb{Z}^{(I \setminus J )} \rightarrow \mathbb{Z} $: $(a_i)_i \mapsto a_{i_0} \in \mathbb{Z}$. Τότε αν $p$ η προβολή του $Μ$ στο $M / M_0$ έχουμε:
+$$M \xrightarrow{p} M / M_0 \xrightarrow{\phi} \mathbb{Z}^{(I \setminus J)} \xrightarrow{f} \mathbb{Z}$$ και εφόσον $p, f$ επιμορφισμοί καθώς και $\phi$ ισομορφισμός η $f\phi p : M \rightarrow \mathbb{Z}$ είναι μη τετριμμένη ενώ $f\phi p( M_0) = f\phi (\{0\} ) = \{0\}$.
+$ $\newline
+
+$ii)$ Αν το $\mathbb{Z}^{\mathbb{N}}$ είναι προβολικό τότε υπάρχει πρότυπο $Q$ και σύνολο $I$ τέτοια ώστε: $\mathbb{Z}^{\mathbb{N}} \oplus Q \cong \mathbb{Z}^{(I)}$. Επειδή το αριστερό μέλος είναι υπεραριθμήσιμο έχουμε ότι το $I$ είναι υπεραριθμήσιμο. Επιπλέον καθώς $\mathbb{Z}^{\left(\mathbb{N}  \right) } \subseteq \mathbb{Z}^{\mathbb{N}}$ έχουμε ότι:
+$$\mathbb{Z}^{(\mathbb{N})} \oplus Q \cong M_0 \leq \mathbb{Z}^{(I)}$$
+όπου $Μ_0$ υποομάδα της $\mathbb{Z}^{(I)}$. Συνεπώς υπάρχει από το $i)$ μη τετριμμένη $\mathbb{Z}$-γραμμική $f: \mathbb{Z}^{(I)} \rightarrow \mathbb{Z}$ που να μηδενίζεται στον περιορισμό στο $M_0$. Λόγω του ισομορφισμού, υπάρχει μη τετριμμένη γραμμική $\phi : \mathbb{Z}^{\mathbb{N}} \oplus Q \rightarrow \mathbb{Z}$ όπου μηδενίζεται στον περιορισμό $\mathbb{Z}^{(\mathbb{N})} \oplus Q$ και συνεπώς, από την προηγούμενη άσκηση, μηδενίζεται παντού στο $\mathbb{Z}^{\mathbb{N}} \oplus Q$, το οποίο είναι άτοπο. Άρα το $\mathbb{Z}^{\mathbb{N}}$ δεν είναι προβολικό.
+$ $\newline
+
+\item $i)$ Θεωρούμε την $\mathbb{Z}$-γραμμική απεικόνιση:
+	$$f: M \rightarrow N $$
+	$$(x_n)_n \mapsto (2^n x_n)_n \in N$$
+
+	Έστω $(x_n)_n \in kerf$. Τότε $(2^n x_n)_n = 0_N = 0_M = (0)_n$ δηλαδή $x_n = 0$ για κάθε $n$. Συνεπώς $kerf = \{ 0\}$.
+	$ $\newline
+
+	$ii)$ Έχουμε ότι οι ακολουθίες στο $M_0$ είναι τελικά μηδενικές συνεπώς $M_0 \subseteq N$ και $2Ν \subseteq N \implies M_0 + 2N \subseteq N$. Αντίστροφα, έστω $(a_n)_n \in N$. Ορίζουμε τις ακολουθίες $(x_n)_n \in M_0, (y_n)_n \in 2N$ ως εξής:
+	\[ x_n = \begin{cases}
+			0, \quad\text{αν } 2\mid a_n \\
+			a_n, \quad\text{διαφορετικά }
+	\end{cases} \quad y_n = \begin{cases}
+	2\frac{a_n}{2}, \quad\text{αν } 2 \mid a_n\\
+	0, \quad\text{διαφορετικά }\\
+	\end{cases}
+	\]
+	Πράγματι $(x_n) \in M_0$ εφόσον το 2 δεν θα διαιρεί το $a_n$ για πεπερασμένα το πλήθος $n$ καθώς $\upsilon (a_n) \rightarrow \infty$. Δηλαδή:
+	$$ (a_n)_n = (x_n)_n + (y_n)_n \in M_0 + 2N$$
+	$ $\newline
+
+	$iii)$ Από δεύτερο θεώρημα ισομορφισμών προτύπων έχουμε:
+
+	$$N / 2N = (M_0 + 2N) / 2N \cong M_0 / (M_0 \cap 2N) = M_0 / 2M_0 $$
+	εφόσον $2M_0 \subseteq 2N, M_0 \implies 2M_0 \subseteq M_0 \cap 2N$ και αν $(a_n)_n \in M_0 \cap 2N$ τότε $a_n \neq 0$ για πεπερασμένα το πλήθος $n$ και $a_n = 2 x_n$ όπου $(x_n)_n \in N$. Δηλαδή το $a_n$ όπου δεν είναι 0 είναι πολλαπλάσιο του 2 $\implies (a_n)_n \in 2M_0$.
+
+	Έχουμε ότι $M_0 / 2M_0 = \{ (x_n \quad mod2)_n : (x_n)_n \in M_0 \}$, δηλαδή ακολουθίες με στοιχεία 0 ή 1 και πεπερασμένο το πλήθος 1. Αν $(a_n)_n \in M_0 / 2M_0$ με $a_n =0,1$ και $m$ η θέση στην οποία εμφανίζεται το 1 για τελευταία φορά τότε η $(a_n)_n$ αντιστοιχίζεται κατά μοναδικό τρόπο στον φυσικό αριθμό $a_m a_{m-1} \ldots a_2 a_1 a_0$ με δυαδική αναπαράσταση. Δηλαδή υπάρχει 1-1 απεικόνιση από το $M_0 / 2M_0$ στο $\mathbb{N}$.
+	$ $\newline
+
+\item $i)$ Θεωρούμε την $\mathbb{Z}$-γραμμική απεικόνιση:
+	$$\phi : N \rightarrow (\mathbb{Z} / 2\mathbb{Z})^{(Ι)}$$
+	$$(a_i)_i \mapsto (a_i \quad mod 2)_i $$
+
+	Αν $\phi \left( (a_i)_i \right) = (0)_i \implies a_i = 0 \quad mod 2$ για κάθε $i \in I$ δηλαδή $(a_i)_i \in 2N$, συνεπώς $ker\phi = 2N$. Από πρώτο θεώρημα ισομορφισμών προτύπων έχουμε ότι:
+	$$ N / 2N \cong (\mathbb{Z} / 2 \mathbb{Z} )^{(I)}$$
+	Επιπλέον το $(\mathbb{Z} / 2 \mathbb{Z})^{(\mathbb{N})}$ είναι αριθμήσιμο με την αντιστοίχιση στην δυαδική αναπαράσταση των φυσικών. Συνεπώς $|Ι| = |\mathbb{N}|$. Επιπλέον το $\mathbb{Z}^{(\mathbb{N})}$ είναι αριθμήσιμο καθώς είναι αριθμήσιμη ένωση των αριθμήσιμων $F_k = \{ (a_n)_n : a_n = 0, n > k\}$. Άρα η ομάδα $N = \mathbb{Z}^{(I)}$ είναι αριθμήσιμη.
+	$ $\newline
+
+	$ii)$ Αν το $\mathbb{Z}^{\mathbb{N}}$ είναι προβολικό ως $\mathbb{Z}$-πρότυπο τότε υπάρχει $\mathbb{Z}$-πρότυπο $Q$ και $I$ σύνολο τέτοιο ώστε: $ \mathbb{Z}^{\mathbb{N}} \oplus Q \cong \mathbb{Z}^{(I)}$. Συνεπώς αν $N = \{ (a_n)_n : lim \upsilon(a_n) = \infty \}$ τότε $N \oplus Q \cong H \leq \mathbb{Z}^{(I)}$ όπου $H$ υποομάδα του $\mathbb{Z}^{(I)}$. Τότε $N \cong H_0 \leq H$ και από πρόταση υπάρχει σύνολο $J$ τέτοιο ώστε $H_0 \cong \mathbb{Z}^{(J)}$. Δηλαδή $N \cong \mathbb{Z}^{(J)}$. Επειδή από την προηγούμενη άσκηση ισχύει ότι η $N / 2N$ αριθμήσιμη έπεται ότι και η $\mathbb{Z}^{(J)} / 2\mathbb{Z}^{(J)}$ είναι αριθμήσιμη. Από το $i)$ έχουμε ότι η $\mathbb{Z}^{(J)}$ είναι αριθμήσιμη και άρα το ίδιο ισχύει για την $N$. Αυτό είναι άτοπο αφού έχει δειχτεί στην προηγούμενη άσκση ότι η $N$ είναι υπεραριθμήσιμη. Άρα το $\mathbb{Z}^{\mathbb{N}}$ δεν είναι προβολικό ως $\mathbb{Z}$-πρότυπο.
+	$ $\newline
+
+\item $i)$ Η ταυτοτική απεικόνιση του 0 ως $R$-προτύπου είναι η μηδενική απεικόνιση. Επειδή ισχύει $F 1_A = 1_{FA}$ καθώς ο $F$ είναι συναρτητής, έχουμε ότι η $F 0 \rightarrow F 0$ είναι η ταυτοτική απεικόνιση του $F 0 $ $S$-προτύπου. Αρκεί να δείξουμε ότι $F(0: A \rightarrow B) = 0 : FA \rightarrow FB$. Λόγω προσθετικότητας ισχύει: $F 0 = F(0 + 0) = F 0 + F 0$ και λόγω της δομής της αβελιανής ομάδας $Hom_S (FA,FB)$ ισχύει $F 0 = 0_{Hom_S (FA,FB)} = 0 :FA \rightarrow FB$.
+	$ $\newline
+
+	Γνωρίζουμε για έναν προσθετικό συναρτητή ότι τα $FM \oplus FN, F(M\oplus N)$ είναι ισομορφικά μέσω της $a: FM \oplus FN \rightarrow F(M\oplus N)$ όπου $a(x,y) = (Fi_M)(x) + (Fi_N)(y) \in F(M\oplus N)$ για κάθε $(x,y) \in FM\oplus FN$.
+
+	Άρα αν $FM,FN=0$ (ως $S$-πρότυπα) ισχύει $FM\oplus FN = 0 \implies F(M\oplus N)=0$. Αντίστροφα αν $F(M \oplus N) = 0 \implies FM\oplus FN = 0$. Έστω $x \in FM$ τότε $(x,0) \in FM\oplus FN = 0 \implies x =0$. Συνεπώς $FM=0$ και ομοίως $FN=0$.
+	$ $\newline
+
+	$ii)$ Έστωσαν $M,N \in k_F$ και $f: M \rightarrow N$ $R$-γραμμική. Θεωρούμε την βραχεία ακριβή ακολουθία:
+	$$0 \rightarrow kerf \xrightarrow{i} M \xrightarrow{\phi} imf \rightarrow 0$$
+	και επειδή ο $F$ είναι αριστερά ακριβής η παρακάτω ακολουθία $S$-προτύπων είναι ακριβής:
+	$$0\rightarrow Fkerf \xrightarrow{Fi} FM = 0 \xrightarrow{Ff} Fimf$$
+	δηλαδή η $Fi:Fkerf \rightarrow \{ 0 \} $ είναι 1-1 και άρα το $Fkerf$ έχει 1 στοιχείο, συνεπώς είναι το μηδενικό $S$-πρότυπο.
+	$ $\newline
+
+	$iii)$ Θεωρούμε την βραχεία ακριβή ακολουθία:
+	$$0 \rightarrow imf \xrightarrow{j} N \xrightarrow{p} cokerf \rightarrow 0$$
+	καθώς ο $F$ είναι ακριβής η παρακάτω ακολουθία $S$-προτύπων είναι και αυτή μια βραχεία ακριβή ακολουθία:
+	$$0\rightarrow Fimf \xrightarrow{Fj} FN = 0 \xrightarrow{Fp} Fcokerf \rightarrow 0$$
+	δηλαδή η $Fp : \{0\} \rightarrow Fcokerf $ είναι επί, άρα το $Fcokerf$ έχει 1 στοιχείο, συνεπώς είναι το μηδενικό $S$-πρότυπο.
+	$ $\newline
+	
+	Έστωσαν $A,C \in k_F$ και $f:A\rightarrow B, g:B \rightarrow C$ $R$-γραμμικές τέτοιες ώστε να έχουμε την παρακάτω βραχεία ακριβή ακολουθία:
+	$$0\rightarrow A \xrightarrow{f} B \xrightarrow{g} C \rightarrow 0$$
+	Καθώς ο $F$ είναι ακριβής έχουμε την παρακάτω βραχεία ακριβή ακολουθία:
+	$$0 \rightarrow FA = 0 \xrightarrow{Ff} FB \xrightarrow{Fg} FC=0 \rightarrow 0$$
+	δηλαδή έχουμε $Fg$ επί και $kerFg=imFf=0$ άρα $Fg$ ισομορφισμός $S$-προτύπων, συνεπώς $FB=0$.
+	$ $\newline
+
+\item Έστω $A,B$ αβελιανές ομάδες και $f: A \rightarrow B$ ομομορφισμός ομάδων. Έχουμε τους συναλλοίωτους συναρτητές $F=Hom_R (M, Hom_{\mathbb{Z}}(R,\_ )): Ab \rightarrow Ab$ και $G=Hom_{\mathbb{Z}} (UM,\_ ): Ab \rightarrow Ab$. Ο πρώτος μάλιστα είναι σύνθεση των δύο συναλλοίωτων συναρτητών:
+	$$ Hom_{\mathbb{Z}}(R, \_ ) : \mathbb{Z}\text{-}Mod = Ab \rightarrow Ab$$
+	όπου εδώ ως $R$ θεωρούμε την προσθετική ομάδα $(R,+)$ και
+	$$Hom_R (M , \_ ): R\text{-}Mod \rightarrow Ab $$
+	όπου λόγω της εκφώνησης έχουμε $Hom_{\mathbb{Z}} (R,A), Hom_{\mathbb{Z}} (R,B) \in ob(R\text{-}Mod)$. Επιπλέον, η δράση του $F$ σε μια απεικόνιση $g$ είναι απλά η $g_*$ (σύνθεση από αριστερά) εφόσον αυτό προκύπτει από τις διαδοχικές δράσεις των παραπάνω συναρτητών. Φυσικά έχουμε και ότι $Gg = g_*$.
+	Αρκει επομένως να δείξουμε ότι το παρακάτω διάγραμμα είναι μεταθετικό:
+
+	\begin{center}
+		\begin{tikzcd}
+		{Hom_R (M , Hom_{\mathbb{Z}} (R,A) )} \arrow[rr, "\zeta_A"] \arrow[d, "f_*"'] &  & {Hom_{\mathbb{Z}} (UM,A)} \arrow[d, "f_*"] \\
+		{Hom_R (M,Hom_{\mathbb{Z}} (R,B))} \arrow[rr, "\zeta_B"]                      &  & {Hom_{\mathbb{Z}} (UM, B)}
+\end{tikzcd}
+	\end{center}
+
+	Έστω $h \in {Hom_R (M , Hom_{\mathbb{Z}} (R,A) )}$. Έχουμε:
+	\begin{gather*}
+		h:M\longrightarrow Hom_{\mathbb{Z}} (R,A) \\
+		x \mapsto g_x : (R,+) \longrightarrow A \\
+		h(x)(r) = g_x (r) \in A \quad\forall r \in R
+	\end{gather*}
+	Ακολουθώντας το διάγραμμα κάτω και δεξιά παίρνουμε το στοιχείο $\zeta_B (fh)$ όπου για $x \in UM = M$ ισχύει:
+	$$\zeta_B (fh)(x) = [(fh)(x)](r_0) = [f(h(x))] (r_0) = (fg_x)(r_0)= f[g_x(r_0)] \in B$$
+	Aκολουθώντας το διάγραμμα δεξιά και κάτω παίρνουμε το στοιχείο $f[\zeta_A (h)]$ όπου για $x \in UM = M$ ισχύει:
+	$$f[\zeta_A (h)] (x) = f[\zeta_A (h)(x)] = f[h(x)(r_0)] = f[g_x (r_0)] \in B$$
+	άρα το διάγραμμα είναι μεταθετικό.
+	$ $\newline
+
+\item $i)$ Ο συναρτητής $U$ είναι ακριβής καθώς αν θεωρήσουμε μια βραχεία ακριβή ακολουθία $R$-προτύπων:
+	$$0\rightarrow A \xrightarrow{f} B \xrightarrow{g} C \rightarrow 0$$
+	με $f,g$ $R$-γραμμικές, η ίδια ακολουθία που προκύπτει με την δράση του $U$ θα παραμείνει βραχεία και ακριβής. Αυτό ισχύει διότι οι $F$-διανυσματικοί χώροι είναι επιπλέον $F$-πρότυπα και έτσι το μέρος της δομής που "ξεχνάει" ο συναρτητής $U$ είναι ότι δρουν "λιγότερα" στοιχεία με πολλαπλασιαμό από αριστερά στις αβελιανές ομάδες, τα στοιχεία του υποδακτυλίου $F$ και όχι όλου του δακτυλίου $R$. Δηλαδή οι αβελιανές ομάδες $(Μ,+)$ που έχουν δομή $R$-προτύπου με τον ομομορφισμό $L: R \rightarrow End(M,+,\cdot)$ παραμένουν ίδιες και με δομή $F$-προτύπου με τον περιορισμό $L|_F$. Έτσι έχουμε τις $F$-γραμμικές $f,g$ με $f$ 1-1, $g$ επί και $imf=kerg$ (ως $F$-πρότυπα), δηλαδή η παρακάτω ακολουθία $F$-προτύπων είναι βραχεία και ακριβής:
+	$$0\rightarrow A \xrightarrow{f} B \xrightarrow{g} C \rightarrow 0$$
+	$ $\newline
+
+	$ii)$ Έστω $V$ $F$-διανυσματικός χώρος και $f: M \rightarrow N$ μονομορφισμός $R$-προτύπων. Επειδή ο συναρτητής $U$ είναι ακριβής, έχουμε $f: UM=M \rightarrow UN=N$ μονομορφισμός $F$-προτύπων. Επίσης, εφόσον το $F$ είναι σώμα, από την θεωρία γνωρίζουμε ότι το $V$ είναι εμφυτευτικό ως $F$-πρότυπο. Eπομένως έχουμε ότι η επαγόμενη απεικόνιση:
+	$$f^* : Hom_F (UN,V) \rightarrow Hom_F (UM,V)$$
+	είναι επί.
+	Αρκεί να δείξουμε ότι η απεικόνιση:
+	$$f^* : Hom_R(N, Hom_F (R,V)) \rightarrow Hom_R (M, Hom_F (R,V))$$
+	είναι και αυτή επί.
+
+	Έστω $g \in Hom_R (M, Hom_F (R,V))$.
+	\begin{gather*}
+		g: M \rightarrow Hom_F (R,V)\\
+		m \mapsto g_m = g(m) : R \rightarrow V \\
+		g(m)(r) = g_m (r) \in V \quad\forall r \in R
+	\end{gather*}
+	Έστω $r_0 \in R$, τότε $g(m)(r_0) \in V$ για κάθε $m \in M$ δηλαδή $g(r_0 ) \in Hom_F(UM, V)$. Άρα υπάρχει $g^{\prime}_{r_0} : UN \rightarrow V$ τέτοια ώστε $f^* (g^{\prime}_{r_0} ) = g^{\prime}_{r_0}f = g(r_0)$.
+
+	Για κάθε $r \in R$ έχουμε $g^{\prime}_r (n) \in V$ για κάθε $n \in UN = N$. Δηλαδή, για την επαγόμενη απεικόνιση:
+
+	\begin{gather*}
+		g^{\prime} : N \rightarrow Hom_F (R,V) \\
+		n \mapsto g^{\prime} (n) = g^{\prime}_n : R \rightarrow V \\
+		g^{\prime}(n)(r) \in V \quad\forall r \in R
+	\end{gather*}
+	Ισχύει ότι:
+	\begin{gather*}
+		[f^* (g^{\prime}) ] (m)(r) = (g^{\prime} f)(m)(r) = [g^{\prime}f(m)](r) = g^{\prime} (n)(r) = g^{\prime}_r (n) = \\
+		g^{\prime}_r [f(m)] = [g^{\prime}_r f](m)=g_r (m) = g(m)(r)
+	\end{gather*}
+	και άρα η $f^*$ είναι επί.
+\end{enumerate}
+\end{document}
