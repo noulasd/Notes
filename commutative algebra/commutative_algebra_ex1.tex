@@ -1,0 +1,286 @@
+
+\documentclass[oneside,a4paper]{article}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{amssymb}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage[greek]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{mathtools}
+\usepackage{blindtext}
+\usepackage[T1]{fontenc}
+\usepackage{titlesec}
+\usepackage{sectsty}
+\usepackage{verbatim}
+\usepackage{multirow}
+\chapternumberfont{\tiny} 
+\chaptertitlefont{\Huge}
+%ελληνικοι χαρακτηρες σε μαθ pdf utf-8
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{tikz-cd}
+
+\usepackage{xcolor}
+\usepackage{framed}%frames
+
+\usepackage{array}
+\usepackage{pbox}
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{tikz}
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%περιθώρια%%%%%%%%%%%%
+\usepackage[a4paper,margin=3.5cm]{geometry}
+
+
+%%%%%%%%συντομευσεις%%%%%%%%%%
+\newtheorem{theorem}{Θεώρημα}
+\newtheorem{lemma}{Λήμμα}
+\newtheorem{example}{Παράδειγμα}
+\newtheorem*{defn}{Ορισμός}
+\newtheorem{prop}{Πρόταση}
+\newtheorem{cor}{Πόρισμα}
+
+\newcommand {\tl}{\textlatin}
+%%%%%%%%%αριθμηση%%%%%%%%%%%%%%
+\renewcommand{\theenumi}{\arabic{enumi}}
+\renewcommand{\labelenumi}{{\rm(\theenumi)}}
+\renewcommand{\labelenumii}{\roman{enumii}) }
+%%%%%%%%%%%% New theorems %%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\Co}{\mathbb{C}}
+%%%%%%%%%%%%%%%%%%%%% Document starts %%%%%%%%%%%%
+\begin{document}
+	
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\selectlanguage{greek}
+	%%%%%%%%%%%%%%%%%%%%%%% Start Roman numbering %%%% vbbnn
+	%\pagenumbering{roman}
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	
+	\begin{framed}	
+		%\vspace{0.3truecm}
+		\begin{center}
+			\huge Μεταθετική Άλγεβρα
+		\end{center}
+		%\vspace{0.3truecm}
+		\begin{center}
+			\huge Εργασία 1
+		\end{center}
+		\vspace{0.3truecm}
+		\begin{center}
+			Ονομ/νο: Νούλας Δημήτριος\\
+			ΑΜ: 1112201800377\\
+			\tl{email}: \tl{dimitriosnoulas@gmail.com}
+		\end{center}
+		\vspace{0.3truecm}
+	\end{framed}
+	\vspace*{\fill}
+	\begin{center}
+	\includegraphics[width=0.5\textwidth]{C:/Users/dimit/Desktop/TeX/uoa_logo}
+	\end{center}
+\vspace{1cm}
+\pagebreak
+
+\noindent Άσκηση $1.1)$ 
+\quad Θεωρούμε τα ιδεώδη $I = (m)$ και $J = (n)$ του $\Z$. Δείξτε τις εξής ισότητες:
+
+\begin{enumerate}
+	\item	  $I+J=(d), d=gcd(m,n)$.
+	\item	 $I\cap J=(e), e=lcm(m,n)$.
+	\item $IJ=(mn)$.
+	\item $(I:J)=(c), c=m/d$.	  \end{enumerate}
+
+\begin{proof} $ $
+	$ $\newline
+	\begin{enumerate}
+		\item Έστω $a \in (d)$, δηλαδή $a = dk$. Υπάρχουν $x,y \in \Z$ έτσι ώστε $mx+ny = d$. Συνεπώς $a = (kx)m + (ky)n \in (m)+(n)$. Αντίστροφα, έστω $a \in (m)+(n)$. Δηλαδή $a = km + \lambda n$. Έχουμε $d|m,n \implies d|a \iff a=dk \iff a \in (d)$.
+		\item Έστω $a \in I\cap J$, δηλαδή $a \in (m),(n)$ από όπου παίρνουμε $n,m|a \implies e|a \iff a = ek \iff a \in (e)$. Αντίστροφα, έστω $a \in (e)$. Δηλαδή $a = ke$ και από τις σχέσεις $m,n|e$ παίρνουμε $m,n|a$ δηλαδή $a \in (m),(n)$ και άρα $a \in I\cap J$.
+		\item Έστω $a \in IJ$, δηλαδή $a = mkn\lambda = (k\lambda )mn \in (mn)$. Αντίστροφα, αν $a \in (mn)$ τότε $a = mnk = (km) n \in IJ$ αφού το $I$ είναι ιδεώδες και άρα $km \in I$.
+		\item Εστω $a \in (c)$, δηλαδή $a = ck = (m/d) k$. Έστω τυχόν $b \in J$, δηλαδή $b = \lambda n$. Τότε $ab = (m/d)k n \lambda = \left( \left( n/d \right) \lambda k \right) m \in I$ εφόσον το $n/d$ είναι ακέραιος. Άρα από τον ορισμό του μεταφορέα $(c) \subseteq (I:J)$.
+		
+		\indent Αντίστροφα, έστω $a \in (I:J) = \{ x \in \Z: \quad x(n) \subseteq (m)\}$. Τότε $a (n) \subseteq (m)$ δηλαδή υπάρχει $k \in \Z$ τέτοιο ώστε $an = km$. Παίρνουμε $a (n/d) = k (m/d)$ και $gcd(n/d,m/d) = 1$ συνεπώς $\frac nd | k$. Άρα $y = \frac k{n/d} \in \Z$ και $a = cy \in (c)$.
+		\end{enumerate}
+\end{proof}
+
+\pagebreak
+
+\noindent Άσκηση $1.3)$
+\quad Έστω μηδενοδύναμο στοιχείο $r \in R$. Δείξτε ότι $1 +r \in U(R)$. Συμπεράνατε ότι $u +r \in U(R)$  για κάθε $u \in U(R)$.
+\begin{proof} $ $
+
+	$ $\newline %μπορώ να υποθέσω ν ελάχιστο αλλά δεν έχει ιδιαίτερη σημασία, δεν θα μηδενίζονται όλες οι μικρότερες δυνάμεις στην παρένθεση, στην χειρότερη ν=2 και (1+ρ)(1-ρ) = 1
+	Το $r$ είναι μηδενοδύναμο συνεπώς υπάρχει $n \in \mathbb{N}$ τέτοιο ώστε $r^n = 0$. Αν το $n$ είναι άρτιος διαλέγουμε το $n+1$ και έχουμε $r^{n+1} = 0$ και έτσι μπορούμε να υποθέσουμε ότι το $n$ είναι περιττός.
+	Συνεπώς για $x,y \in R$ ισχύει η ταυτότητα για το περιττό $n$:
+	$$x^n + y^n = (x+y)(x^{n-1} - x^{n-2}y + x^{n-3}y^2 - \ldots -xy^{n-2} + y^{n-1})$$
+	εφόσον δεν υπάρχει πρόβλημα με τις πράξεις και την μεταθετικότητα στον δακτύλιο.
+
+	$$1 = 1 + r^n = (1+r)(r^{n-1} - r^{n-2} + r^{n-3} - \ldots - r + 1)$$
+	%note to self: to  (r^{n-1} - r^{n-2} + r^{n-3} - \ldots - r + 1) einai diaforo tou 0 kathws to prwto kommati olo xwris to 1 einai mhdenodunamo
+	Το στοιχείο $(r^{n-1} - r^{n-2} + r^{n-3} - \ldots - r + 1)$ είναι διάφορο του $0$ καθώς το πρώτο μέρος $r^{n-1} - r^{n-2} + r^{n-3} - \ldots - r$ είναι μηδενοδιαιρέτης εφόσον το $r$ είναι μηδενοδύναμο, άρα δεν μπορεί να είναι ίσο με $1$.
+	Συνεπώς το $(1+r)$ είναι αντιστρέψιμο.
+
+	Αν έχουμε $u \in U(R)$ τότε υπάρχει $b\neq 0$ τέτοιο ώστε $ub=1$. Έχουμε:
+
+	$$u^n = u^n + r^n  = (u+r)(u^{n-1} - u^{n-2}r + u^{n-3}r^2 - \ldots - ur^{n-2} + r^{n-1})$$
+	πολλαπλασιάζοντας και τα δύο μέλη με $b^n$ παίρνουμε:
+	$$1 = (u+r)b^n(u^{n-1} - u^{n-2}r + u^{n-3}r^2 - \ldots - ur^{n-2} + r^{n-1})$$
+	και το $(u^{n-1} - u^{n-2}r + u^{n-3}r^2 - \ldots - ur^{n-2} + r^{n-1})$ είναι διάφορο του $0$ καθώς το κομμάτι $- u^{n-2}r + u^{n-3}r^2 - \ldots - ur^{n-2} + r^{n-1}$ είναι μηδενοδιαιρέτης και δεν μπορεί να είναι ίσο με $u^{n-1}$. Άρα το $u+r$ είναι αντιστρέψιμο.
+\end{proof}
+
+\pagebreak
+
+\noindent Άσκηση $1.6)$
+\quad Έστω $k$ σώμα ή ο δακτύλιος $\Z$. Θεωρούμε σημείο $P=(a_1,...,a_n) \in k^n=k \times \cdots \times k$ και τον ομομορφισμό εκτίμησης $$\phi_P: k[x_1,..,x_n] \rightarrow k, f(x_1,...,x_n) \mapsto f(a_1,...,a_n).$$ Δείξτε ότι $ker\phi_P=(x_1-a_1,...,x_n-a_n)$ και $k[x_1,..,x_n]/ker\phi_P \simeq k. $
+
+\begin{proof} $ $
+
+	$ $\newline
+	Ο ομομορφισμός εκτίμησης είναι επιμορφισμός καθώς για κάθε $a\in k$ και σταθερό πολυώνυμο $f(x_1, \ldots x_n) = a$ έχουμε $\phi_p (f(x_1,\ldots,x_n)) = a$.
+
+	$ $\newline
+	Έστω $x= (x_1, \ldots , x_n)$ και $f(x) \in (x_1-a_1,\ldots x_n-a_n)$, δηλαδή
+	$$f(x) = \sum\limits_{i=1}^{n} f_i(x)(x_i-a_i)$$
+	τότε από τις ιδιότητες του ομομορφισμού παίρνουμε:
+	$$\phi_p (f(x)) = \sum\limits_{i=1}^n f_i (P) (a_i - a_i) = 0$$
+	άρα $f(x) \in ker\phi_p$.
+
+	$ $\newline
+	Αντίστροφα, θα χρησιμοποιήσουμε επαγωγή στον αριθμό των μεταβλητών $n$. Για $n=1$ είναι γνωστό ότι $ker\phi_{a_1} = (x_1 - a_1)$. Έστω ότι ισχύει για τους φυσικούς που είναι μικρότεροι του $n$ και $f(x) \in ker\phi_P$.
+	
+	$ $\newline
+	Θέτουμε ως $R = k[x_1,\ldots, x_{n-1}]$ το οποίο είναι ακέραια περιοχή είτε το $k$ είναι σώμα είτε $k=\Z$. Σαφώς είναι και το $R[x_n]$ ακέραια περιοχή και σε αυτόν τον δακτύλιο θα εφαρμόσουμε Ευκλείδεια διαίρεση του $f(x)$ με το $g(x) = x_n - a_n$ το οποίο έχει αντιστρέψιμο μεγιστοβάθμιο συντελεστή. Παίρνουμε:
+	$$f(x) = q(x)(x_n - a_n) + r$$ 
+	με $deg(r) < deg(x_n - a_n)=1$ όπου ο βαθμός είναι ως προς την μεταβλητή $x_n$ και άρα $r \in R$. Το πολυώνυμο $r$ είναι στις $n-1$ μεταβλητές και επειδή $f(x) \in ker\phi_P:$
+	$$0 = \phi_P(f(x)) = \phi_P (q(x))\cdot 0 + \phi_P (r) $$
+	ωστόσο στο πολυώνυμο $r$ η εκτίμηση γίνεται στο σημείο $P^{\prime} = (a_1, \ldots, a_{n-1})$ και έτσι $r \in ker\phi_{P^{\prime}} = (x_1 - a_1,\ldots, x_{n-1} - a_{n-1})$ από την επαγωγική υπόθεση.
+	Άρα έχουμε:
+	$$f(x) = q(x)(x_n - a_n) + \sum\limits_{i=1}^{n-1} r_i (x_1,\ldots, x_{n-1}) (x_i - a_i) = \sum\limits_{i=1}^n f_i (x) (x_i - a_i)$$
+\end{proof}
+\pagebreak
+
+\noindent Άσκηση $1.7)$
+\quad Έστω  $I,J$ ιδεώδη του δακτυλίου   με  $I+J=R$.  Δείξτε ότι $I^m+J^n=R$  για κάθε $m, n>0$.
+
+\begin{proof} $ $
+
+	$ $\newline $ 1 \in R = I + J$ συνεπώς υπάρχουν $a \in I, b \in J$ τέτοια ώστε $a+b=1$.
+
+	$$1= a + b = (a+b)^{m+n-1} = \sum\limits_{i=0}^{m+n-1} \binom{m+n-1}{i} a^{m+n-1-i} b^i$$
+
+	για να έχουμε $a^m x + b^n y$ θέλουμε οι εκθέτες των $a$ και $b$ που θα μένουν αφού βγάλουμε τους κοινούς παράγοντες να είναι θετικοί. Δηλαδή $n-1-i>0$ και $i-n>0$ και αυτό το πετυχαίνουμε ως εξής:
+
+	$$(a+b)^{m+n-1} = \left(\sum\limits_{i=0}^{n-1} \binom{m+n-1}{i} a^{m+n-1-i} b^i \right) + \left(\sum\limits_{i=n}^{m+n-1} \binom{m+n-1}{i} a^{m+n-1-i} b^i \right)$$
+	$$ = a^m \left(\sum\limits_{i=0}^{n-1} \binom{m+n-1}{i} a^{n-1-i} b^i \right) + b^n \left(\sum\limits_{i=n}^{m+n-1} \binom{m+n-1}{i} a^{m+n-1-i} b^{i-n} \right) $$
+	$$= a^m x + b^n y \in I^m + J^n $$
+
+	και εφόσον το $1$ ανήκει στο ιδεώδες $I^m + J^n$ έχουμε ότι $I^m + J^n = R$.
+\end{proof}
+\pagebreak
+
+\noindent Άσκηση $1.11)$
+\quad Έστω $k$ σώμα και $I$ ιδεώδες του πολυωνυμικού δακτυλίου $k[x_1,...,x_n]$. Ορίζουμε: $$V(I)= \{P=(a_1,...,a_n) \in k^n: f(P)=0 \;\; \forall f(x_1,...,x_n) \in I)\}.$$ 
+To $V(I)$ είναι το σύνολο των κοινών ριζών όλων των πολυωνύμων του $I$.
+
+
+Για $k=\mathbb{R}$ και $n=2$ σχεδιάστε το $V(I)$ sτις εξής περιπτώσεις.
+\begin{itemize}
+	\item	   $I=(x^2+y^2-1)$.
+	\item	   $I=(x-1, x^2-y)$.
+	\item	  $I=((x-1)(x^2-y))$.
+
+\end{itemize}
+
+
+Έστω $I, J$ ιδεώδη του $k[x_1,...,x_n]$. Δείξτε τα εξής.
+\begin{enumerate}
+	\item	  $V(I+J)=V(I)\cap V(J). $
+	\item	  $V(IJ)=V(I)\cup V(J). $
+\end{enumerate}
+
+Στη συνέχεια δώστε μια διαισθητική γεωμετρική ερμηνεία του αποτελέσματος της άσκησηs $1.8ii)$.
+
+
+\begin{proof}
+	$ $\newline
+	\begin{enumerate}
+		\item Έστω $P \in V(I+J)$, δηλαδή $f(P) = 0$ για κάθε $f(x_1,\ldots, x_n) \in I+J$. Έστω τώρα $g(x_1,\ldots,x_n) \in I$. Το ιδεώδες $J$ περιέχει το μηδενικό πολυώνυμο, συνεπώς $g(x_1,\ldots, x_n) + 0 \in I+J$ και από την υπόθεση $g(P) = 0$. Άρα $P \in V(I)$ και όμοια στο $V(J)$.
+		
+		$ $\newline Έστω $P \in V(I)\cap V(J)$ και $f(x_1, \ldots, x_n) \in I+J$. Τότε $f = g + h$ με $g \in I$ και $h \in J$. Από την υπόθεση $g(P)=h(P) = 0$ και άρα $f(P) = 0$ δηλαδή $P \in V(I+J)$.
+
+		\item Έστω $P \in V(I)\cup V(J)$, δηλαδή $P \in V(I)$ ή $P \in V(J)$ και έστω $f \in IJ$. Τότε $f=gh$ με $g \in I, h \in J$. Έχουμε $g(P) = 0$ ή $h(P) = 0$ και άρα $f(P) = 0$, συνεπώς $P \in V(IJ)$.
+		
+		$ $\newline Αντίστροφα, έστω $P \in V(IJ)$ και $P \not\in V(J)$, τότε υπάρχει $h \in J$ τέτοιο ώστε $h(P) \neq 0$. Έστω τυχόν $g \in I$. Τότε από την υπόθεση:
+		$$g(P)h(P) = 0$$
+		και επειδή είμαστε σε περιοχή $g(P) = 0$, άρα $P \in V(I)$. Όμοια αν $P \not\in V(I) \implies P \in V(J)$. Άρα $P \in V(I)\cup V(J)$.
+	\end{enumerate}
+
+	\pagebreak
+
+	\begin{itemize}
+		\item $V(x^2 + y^2 -1 ) = $
+		\begin{figure}[ht]
+		\centering
+		\includegraphics[width=0.5\textwidth]{C:/Users/dimit/Desktop/TeX/commutative_sage2}
+		\end{figure}
+		
+		\item $V(x-1,x^2 -y) = V(x-1)\cap V(x^2 - y) = \{(1,y): \quad y \in \mathbb{R}\} \cap \{ (x,x^2): \quad x \in \mathbb{R}\} = \{(1,1)\}$
+		\item $V(x-1,x^2-y) = V(x-1)\cup V(x^2 - y) = \{(1,y): \quad y \in \mathbb{R}\} \cup \{ (x,x^2): \quad x \in \mathbb{R}\} = $
+		
+		\begin{figure}[h]
+			\centering
+			\includegraphics[width=0.5\textwidth]{C:/Users/dimit/Desktop/TeX/commutative_sage1}
+			\end{figure}
+	\end{itemize}
+Αλγεβρικά έχουμε $x^2 = y$ στον παρακάτω δακτύλιο και άρα:
+$$\frac{\mathbb{R}[x,y]}{(x^2-y,x-x^3+xy)} \simeq \frac{\mathbb{R}[x,x^2]}{(x-x^3+x^3)} = \frac{\mathbb{R}[x]}{(x)} \simeq \mathbb{R}$$
+Γεωμετρικά, επειδή στο δεξί μέλος έχουμε ένα αντίγραφο του $\mathbb{R}$ αυτό σημαίνει ότι οι περιορισμοί των δύο πολυωνύμων στο 0 είναι ένα συγκεκριμένο σημείο. Αυτό μπορούμε να το δούμε και ως:
+$$V(x^2-y,x-x^3+xy) = V(x^2-y)\cap V(x-x^3 + xy) = \{(0,0)\}$$
+
+\end{proof}
+\pagebreak
+Τα σχέδια έγιναν με το λογισμικό \tl{SageMath} που ζει πάνω στην γλώσσα προγραμματισμού \tl{Python}:
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=\linewidth,height=\textheight,keepaspectratio]{C:/Users/dimit/Desktop/TeX/commutative_sage3}
+	\end{figure}
+\pagebreak
+
+\noindent Άσκηση $1.12)$
+\quad Έστω $\phi:R \to S$ ένας ομομορφισμός δακτυλίων.
+\begin{enumerate} 
+\item Δείξτε ότι αν $I$ είναι ιδεώδες του $R$ και ο $\phi$ είναι επί, τότε το σύνολο $\phi(I)$ είναι ιδεώδες του $S$. 
+\item Δείξτε με παράδειγμα ότι ο προηγούμενος ισχυρισμός δεν αληθεύει γενικά χωρίς την υπόθεση περί επί.
+\item Δείξτε ότι αν $K$ είναι ιδεώδες του $S$, τότε το σύνολο $\phi^{-1}(K)$ είναι ιδεώδες του $R$.
+\end{enumerate}
+
+\begin{proof}
+
+	$ $\newline
+	\begin{enumerate}
+		\item Έστω $y_1 , y_2 \in \phi (I)$, τότε υπάρχουν $x_1,x_2 \in I$ τέτοια ώστε $y_1 = \phi (x_1), y_2 = \phi (x_2)$.
+		$$y_1 - y_2 = \phi (x_1) - \phi (x_2) = \phi ( x_1 - x_2)$$
+		και $x_1 - x_2 \in I$, αφού το $I$ είναι ιδεώδες, άρα $y_1 - y_2 \in \phi (I)$.
+		Έστω $s \in S$, τότε αφού $\phi$ επί υπάρχει ένα $x_0 \in X$ τέτοιο ώστε $s = \phi (x_0)$.
+		$$sy_1 = \phi (x_0) \phi (x_1) = \phi (x_0 x_1)$$
+		και $x_0 x_1 \in I$, αφού το $I$ είναι ιδεώδες, άρα $sy_1 \in \phi (I)$.
+		
+		\item Θεωρούμε την εμφύτευση δακτυλίων $\mathbb{Z} \xhookrightarrow{i} \Q$ με $i(x) = x$. Είναι ομομορφισμός δακτυλίων αλλά δεν είναι επί και ενώ το $2\Z$ είναι ιδεώδες του $\Z$ το $i(2\Z )$ δεν είναι ιδεώδες του $\Q$ καθώς:
+		$$\frac12 \cdot 2 = 1 \not\in i(2\Z) = 2\Z$$
+		το $\Q$ είναι σώμα εξάλλου και έχει μόνο τον εαυτό του και το τετριμμένο ιδεώδες. 
+
+		\item Έστω $x_1 , x_2 \in \phi^{-1} (K)$, τότε $\phi (x_1), \phi (x_2 ) \in K$, δηλαδή 
+		$$\phi (x_1 - x_2) = \phi ( x_1)  - \phi (x_2 ) \in K$$ 
+		αφού το $K$ είναι ιδεώδες. Άρα $x_1 - x_2 \in \phi^{-1} (K)$.
+
+		Έστω $r \in R$, τότε $\phi (rx_1) = \phi (r) \phi (x_1) \in K$, αφού το $K$ είναι ιδεώδες. Άρα $rx_1 \in \phi^{-1} (K)$.
+	\end{enumerate}
+\end{proof}
+
+
+\end{document}

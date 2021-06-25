@@ -1,0 +1,372 @@
+\documentclass[oneside,a4paper]{article}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{amssymb}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage[greek]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{mathtools}
+\usepackage{blindtext}
+\usepackage[T1]{fontenc}
+\usepackage{titlesec}
+\usepackage{sectsty}
+\usepackage{verbatim}
+\usepackage{multirow}
+\chapternumberfont{\tiny} 
+\chaptertitlefont{\Huge}
+%ελληνικοι χαρακτηρες σε μαθ pdf utf-8
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{tikz-cd}
+
+\usepackage{xcolor}
+\usepackage{framed}%frames
+
+\usepackage{array}
+\usepackage{pbox}
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{tikz}
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%περιθώρια%%%%%%%%%%%%
+\usepackage[a4paper,margin=3.5cm]{geometry}
+
+
+%%%%%%%%συντομευσεις%%%%%%%%%%
+\newtheorem{theorem}{Θεώρημα}
+\newtheorem{lemma}{Λήμμα}
+\newtheorem{example}{Παράδειγμα}
+\newtheorem*{defn}{Ορισμός}
+\newtheorem{prop}{Πρόταση}
+\newtheorem{cor}{Πόρισμα}
+
+\newcommand {\tl}{\textlatin}
+%%%%%%%%%αριθμηση%%%%%%%%%%%%%%
+\renewcommand{\theenumi}{\arabic{enumi}}
+\renewcommand{\labelenumi}{{\rm(\theenumi)}}
+\renewcommand{\labelenumii}{\roman{enumii}) }
+%%%%%%%%%%%% New theorems %%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\Co}{\mathbb{C}}
+%%%%%%%%%%%%%%%%%%%%% Document starts %%%%%%%%%%%%
+\begin{document}
+	
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\selectlanguage{greek}
+	%%%%%%%%%%%%%%%%%%%%%%% Start Roman numbering %%%% vbbnn
+	%\pagenumbering{roman}
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	
+	\begin{framed}	
+		%\vspace{0.3truecm}
+		\begin{center}
+			\huge Μεταθετική Άλγεβρα
+		\end{center}
+		%\vspace{0.3truecm}
+		\begin{center}
+			\huge Εργασία 4
+		\end{center}
+		\vspace{0.3truecm}
+		\begin{center}
+			Ονομ/νο: Νούλας Δημήτριος\\
+			ΑΜ: 1112201800377\\
+			\tl{email}: \tl{dimitriosnoulas@gmail.com}
+		\end{center}
+		\vspace{0.3truecm}
+	\end{framed}
+	\vspace*{\fill}
+	\begin{center}
+	\includegraphics[width=0.5\textwidth]{C:/Users/dimit/Desktop/TeX/uoa_logo}
+	\end{center}
+\vspace{1cm}
+\pagebreak
+
+
+\noindent Άσκηση $4.2)$
+\quad Έστω $R$ δακτύλιος, $S$ πολλαπλασιαστικό υποσύνολο του $R$ και $I,J$ ιδεώδη του $R$. Δείξτε τις εξής ισότητες.
+	\begin{enumerate}
+		\item	$S^{-1}(I+J)=S^{-1}I +S^{-1}J$.
+		\item $S^{-1}(I \cdot J)=S^{-1}I \cdot S^{-1}J$.
+		
+		\item	$S^{-1}(I \cap J)=S^{-1}I \cap S^{-1}J.$
+		\item	$S^{-1}\sqrt{I} = \sqrt{S^{-1}I}$.
+		\item 	$S^{-1}(nil(R))=nil(S^{-1}R)$.
+	\end{enumerate}
+
+\begin{proof} $ $
+	\vspace{1cm}
+	\begin{enumerate}
+		\item Έστω $x \in S^{-1}(I +J)$ δηλαδή $x = \frac rs$ για κάποια $r \in I+J$ και $s \in S$. Έχουμε $r=a + b$ με $a \in I, b \in J$ και
+		$$x= \frac rs = \frac{a+b}{s} = \frac as + \frac bs \in S^{-1} I  + S^{-1} J$$
+
+		$ $\newline
+		Αντίστροφα, αν έχουμε $x \in S^{-1} I  + S^{-1} J$, τότε για κάποια $a \in I, b\in J$ και $s_1,s_2 \in S$ θα ισχύει:
+		$$x = \frac a{s_1} + \frac b{s_2} = \frac{as_2 + bs_1}{s_1 s_2} \in S^{-1}(I+J)$$
+		αφού $s_2 a \in I, \quad s_1 b \in J$ εφόσον τα $I,J$ είναι ιδεώδη και $s_1 s_2 \in S$ αφού το $S$ είναι πολλαπλασιαστικό.
+
+		\item 
+		$$IJ = \big\{ \sum\limits_{i=1}^n a_i b_i: \quad n\in \mathbb{N}, a_i \in I, b_i \in J\big\}$$
+		Αν $x \in S^{-1} (IJ)$, τότε 
+
+		$$ x = \frac{\sum\limits_{i=1}^n a_i b_i}{s}= \sum\limits_{i=1}^n \frac{a_i b_i}s = \sum\limits_{i=1}^n \frac {a_i}s \frac {b_i}1 \in S^{-1}I \cdot S^{-1}J$$
+
+		$$S^{-1}I \cdot S^{-1}J = \big\{ \sum\limits_{i=1}^n a_i b_i: \quad n\in \mathbb{N}, a_i \in S^{-1}I, b_i \in S^{-1}J\big\} = $$
+		$$ = \big\{ \sum\limits_{i=1}^n \frac{a_i}{s_i} \frac{b_i}{s^{\prime}_i} : \quad n\in \mathbb{N}, a_i \in I, b_i \in J, s_i,s^{\prime}_i \in S\big\}$$
+
+		Αν $x \in S^{-1}I \cdot S^{-1}J$, τότε
+		$$x = \sum\limits_{i=1}^n \frac{a_i}{s_i} \frac{b_i}{s^{\prime}_i} = \frac{a_1 b_1}{s_1 s^{\prime}_1} + \frac{a_2 b_2}{s_2 s^{\prime}_2} + \ldots + \frac{a_n b_n}{s_n s^{\prime}_n} = $$
+		$$ \frac{(s_2 s^{\prime}_2 s_3 s^{\prime}_3 \cdots s_n s^{\prime}_n )a_1 b_1 + (s_1 s^{\prime}_1 s_3 s^{\prime}_3 \cdots s_n s^{\prime}_n )a_2 b_2 + \ldots + (s_1 s^{\prime}_1 s_2 s^{\prime}_2 \cdots s_{n-1} s^{\prime}_{n-1} )a_n b_n}{s}$$ 
+		όπου $s = s_1 s^{\prime}_1 s_2 s^{\prime}_2 \cdots s_n s^{\prime}_n$. Το $s$ ανήκει στο πολλαπλασιαστικό σύνολο $S$. O "αριθμητής" είναι στοιχείο του $IJ$, καθώς μπορούμε να δούμε το γινόμενο μπροστά από κάθε $a_i$ με το ίδιο το $a_i$ ως ένα στοιχείο του $I$ πολλαπλασιασμένο με το στοιχείο $b_i \in J$. Άρα $x \in S^{-1}(IJ)$.
+
+
+		\item Αν $x \in S^{-1}(I\cap J)$ τότε υπάρχουν $a \in I \cap J$ και $s \in S$ με $x = \frac as$. Τότε 
+		$$a \in I, s \in S \implies x \in S^{-1}I$$
+		$$a \in J, s \in S \implies x \in S^{-1}J$$
+		άρα $x \in S^{-1}I \cap S^{-1}J$.
+
+		$ $\newline
+		Αντίστροφα, αν $x \in S^{-1}I \cap S^{-1}J$ τότε υπάρχουν $a \in I, b \in J, s_1,s_2 \in S$ τέτοια ώστε
+		$$x = \frac{a}{s_1} = \frac{b}{s_2}$$
+		από όπου έχουμε ότι υπάρχει $u \in S$ τέτοιο ώστε $w = uas_2 = u s_1 b$. Έχουμε λόγω του στοιχείου $a$ ότι $w \in I$ και λόγω του στοιχείου $b$ ότι $w \in J$. Άρα $w \in I\cap J$ και ισχύει η σχέση
+		$$ x= \frac{a}{s_1} = \frac{w}{s_1 s_2 u} \in S^{-1}(I\cap J)$$
+		αφού $s_1 s_2 u \in S$ καθώς το $S$ είναι πολλαπλασιαστικό και $w \in I\cap J$.
+
+
+		\item Έστω $x \in S^{-1} \sqrt{I}$, τότε υπάρχουν $s \in S, a \in \sqrt{I}$ τέτοια ώστε $x= \frac as$ και $a^n \in I$. Έχουμε ότι $s^n \in S$ αφού το $S$ είναι πολλαπλασιαστικό άρα
+		$$\left(\frac as\right)^n = \frac{a^n}{s^n} \in S^{-1}I$$
+		και άρα εφόσον $x^n \in S^{-1} I$ παίρνουμε ότι $x \in \sqrt{S^{-1} I}$.
+
+		$ $\newline
+		Αντίστροφα, έχουμε ότι το $\sqrt{S^{-1}I}$ είναι ιδεώδες του δακτυλίου $S^{-1} R$
+		$$\sqrt{S^{-1} I} = \{y \in S^{-1}R: \quad \text{ υπάρχει } n \text{ ώστε } y^n = \left(\frac xs \right)^n \in S^{-1} I\}$$
+		Άρα το στοιχείο που θα θεωρήσουμε είναι της μορφής $\frac xs$ με $x \in R, s \in S$.
+
+		$$\frac xs \in \sqrt{S^{-1}I} \implies \left(\frac xs\right)^n = \frac{x^n}{s^n} \in S^{-1}I$$
+
+		$ $\newline
+		Εδώ δεν είναι σωστό να πούμε ότι $x^n \in I$, αυτό που μπορούμε να κάνουμε είναι εφόσον το $\frac{x^n}{s^n}$ ανήκει στο $S^{-1}I$ τότε θα υπάρχουν $a \in I, t \in S$ τέτοια ώστε
+		$$\frac{x^n}{s^n} = \frac at$$
+		και από αυτήν την σχέση έπεται ότι υπάρχει $u \in S$ έτσι ώστε $ux^n t = us^n a \in I$. Αυτό ισχύει καθώς $a \in I$ και το $I$ είναι ιδεώδες. 
+		$$ I \ni (u^{n-1} t^{n-1}) ux^n t = (uxt)^n \implies uxt \in \sqrt{I}$$
+		και επιπλέον $ust \in S$, καθώς το $S$ είναι πολλαπλασιαστικό. Άρα
+		$$\frac xs = \frac{uxt}{ust} \in S^{-1} \sqrt{I}$$
+		όπου αυτή ισότητα ισχύει καθώς για κάθε $s^{\prime} \in S$ έχουμε $s^{\prime} x (ust) = s^{\prime} s (uxt)$.
+
+
+
+		\item Έστω $x \in S^{-1} nil(R)$, δηλαδή υπάρχουν $a \in nil(R), s \in S$ με $x = \frac as$ και $a^n = 0$. Τότε
+		$$\left(\frac as\right)^n = \frac {a^n}{s^n} = \frac 0{s^n} = \frac 01 = 0$$
+		άρα το $x$ είναι μηδενοδύναμο στοιχείο του $S^{-1}R$.
+
+		$ $\newline
+		Αντίστροφα, το $nil(S^{-1}R)$ είναι ιδεώδες του $S^{-1}R$ και έτσι παίρνουμε ένα $\frac xs$ ως στοιχείο του με $x \in R, s \in S$ για το οποίο ισχύει
+		$$\left(\frac xs\right)^n = \frac 01 \implies \frac{x^n}{s^n} = \frac 01$$
+		και άρα υπάρχει $u \in S$ τέτοιο ώστε $ux^n = 0$. Άρα και $u^{n-1}(ux^n) = (ux)^n = 0$, δηλαδή το $ux$ είναι μηδενοδύναμο στοιχείο του $R$. Επιπλέον $us \in S$, αφού το $S$ είναι πολλαπλασιαστικό. Άρα έχουμε
+		$$\frac xs = \frac {ux}{us} \in S^{-1} nil(R)$$
+	\end{enumerate}
+\end{proof}
+\pagebreak
+
+\noindent Άσκηση $4.5)$
+\quad Έστω $R$ μη μηδενικός δακτύλιος τέτοιος ώστε κάθε τοπικοποίηση $R_{\mathfrak{p}}$, όπου $\mathfrak{p} \in SpecR$, δεν έχει μη μηδενικό μηδενοδύναμο στοιχείο. Δείξτε ότι και ο $R$ δεν έχει μη μηδενικό μηδενοδύναμο στοιχείο.
+
+\begin{proof} $ $
+
+	$ $\newline
+	Έστω ότι υπάρχει $x \in R$ μηδενοδύναμο, μη μηδενικό στοιχείο με $x^n= 0$. Ορίζουμε τον μηδενιστή του $x$:
+	$$Ann(x) = \{r \in R: \quad rx = 0\}$$
+	το οποίο είναι μη τετριμμένο γνήσιο ιδεώδες του $R$, αφού $x^{n-1} \in Ann(x)$, $x \neq 0$ και
+	$$(r_1 - r_2)x = r_1 x - r_2 x = 0$$
+	$$(r^{\prime}r)x = r^{\prime} (rx) = r^{\prime} 0 = 0$$
+	
+	$ $\newline
+	Έχουμε από την θεωρία ότι υπάρχει μέγιστο ιδεώδες $\mathfrak{q}$, άρα και πρώτο, που περιέχει το ιδεώδες $Ann(x)$. Έτσι αν ορίσουμε $S = R - \mathfrak{q}$, τότε $\mathfrak{q} \cap S = \varnothing \implies Ann(x) \cap S = \varnothing$.
+
+	$ $\newline
+	Μέσω του φυσικού ομομορφισμού σε αυτήν την τοπικοποίηση $S^{-1}R$ έχουμε
+	$$\left(\frac{x}1\right)^n = \frac{x^n}1 = \frac01 = 0$$
+	
+	δηλαδή το $x/1$ είναι μηδενοδύναμο στην τοπικοποίηση, άρα είναι το μηδενικό στοιχείο. 
+	
+	$ $\newline
+	Από την σχέση $\frac{x}1 = 0$ έπεται ότι υπάρχει $u \in S$ τέτοιο ώστε $ux = 0$. Αυτό είναι άτοπο καθώς τότε θα ίσχυε $ u \in S \cap Ann(x) = \varnothing$. 
+
+\end{proof}
+\pagebreak
+
+
+\noindent Άσκηση $4.6)$
+\quad Έστω $k$ σώμα. Θεωρούμε το δακτύλιο $k[x, x^{-1}]$ των πολυωνύμων \tl{Laurent}. Είδαμε στο μάθημα ότι $$k[x, x^{-1}]=S^{-1}(k[x]),$$ όπου $S=\{1,x,x^2,...\}.$ Δείξτε ότι ο $k[x, x^{-1}]$  είναι περιοχή κυρίων ιδεωδών χρησιμοποιώντας το προηγούμενο γεγονός.
+
+\begin{proof} $ $
+	
+	$ $\newline
+	Έστω $J$ ένα ιδεώδες του $k[x,x^{-1}] = S^{-1}(k[x])$. Το $J$ θα έχει την μορφή $S^{-1}I$ για $I$ ιδεώδες του $k[x]$, εφόσον δείξαμε στο μάθημα ότι οι επεκτάσεις και οι συστολές είναι σε ένα προς ένα και επί αντιστοιχία για τον φυσικό ομομορφισμό $\phi : R \rightarrow S^{-1}R, x \mapsto \frac x1$. Δηλαδή $J = \phi(I) = I^{e}$.
+
+	$ $\newline
+	Το $k[x]$ είναι περιοχή κυρίων ιδεωδών άρα $I = (f(x))$ με $f(x) \in k[x]$. Ισχυριζόμαστε ότι 
+	$$J = \left(\frac{f(x)}{1}\right)$$
+	όπου το $\frac{f(x)}{1}$ είναι πολυώνυμο του $k[x,x^{-1}]$ και άρα το ιδεώδες που παράγεται είναι του $S^{-1}R$.
+
+	$$\text{Aν } y \in \left(\frac{f(x)}{1}\right) \text{ τότε }  y = \frac{f(x)}1 \cdot \frac{g(x)}{x^n} = \frac{\left(f(x)g(x)\right)}{x^n} \in S^{-1} I = J$$
+	εφόσον τα στοιχεία του δακτυλίου $k[x,x^{-1}]=S^{-1}k[x]$, στον οποίο ζει το ιδεώδες, είναι της μορφής $\frac{g(x)}{x^n}$ με $g(x) \in k[x]$ και επιπλέον $f(x)g(x) \in I$. 
+
+
+	$ $\newline
+	Αντίστροφα, αν $y \in J = S^{-1}(f(x))$ τότε υπάρχει $x^n \in S$ και $g(x) \in k[x]$ τέτοια ώστε
+	$$y = \frac{f(x)g(x)}{x^n} = \frac {f(x)}1 \frac{g(x)}{x^n} \in \left(\frac{f(x)}1\right)$$
+
+	$ $\newline
+	Άρα δείξαμε ότι το τυχόν ιδεώδες $J$ του $k[x,x^{-1}]$ είναι κύριο. Έχουμε ότι ο δακτύλιος $k[x,x^{-1}]$ είναι και περιοχή εφόσον είναι τοπικοποίηση περιοχής, άρα είναι περιοχή κυρίων ιδεωδών. 
+
+
+\end{proof}
+
+
+\pagebreak
+
+
+\noindent Άσκηση $5.1)$
+\quad Δείξτε ότι το $\mathbb{Q}$ δεν είναι πεπερασμένα παραγόμενο $\mathbb{Z}$-πρότυπο. Στη συνέχεια δείξτε ότι για κάθε σώμα $k$ το σώμα των ρητών συναρτήσεων $k(x)$ δεν είναι πεπερασμένα παραγόμενο $k[x]$-πρότυπο.
+
+\begin{proof} $ $
+	
+	$ $\newline
+	Έστω ότι είναι πεπερασμένα παραγόμενο $\Z$-πρότυπο, δηλαδή υπάρχουν $q_1, q_2, \ldots ,q_k \in \Q$ τέτοια ώστε $$(q_1,q_2,\ldots ,q_k) = \Q$$ και θεωρούμε $q_i = \frac{m_i}{n_i}$ με μκδ$(m_i,n_i)=1$. Διαλέγουμε έναν πρώτο $p$ που δεν διαιρεί κανένα από τα $n_i$. Έτσι από την παραπάνω ισότητα, το $\frac 1p$ είναι $\Z$-γραμμικός συνδυασμός των $q_1,q_2,\ldots, q_k$. Δηλαδή υπάρχουν $x_i \in \Z$ έτσι ώστε $$\frac 1p = x_1 \frac{m_1}{n_1} + x_2 \frac{m_2}{n_2} + \ldots + x_k \frac{m_k}{n_k}$$
+
+	$ $\newline
+	Το δεύτερο μέρος είναι ένα κλάσμα με παρονομαστή $n_1 n_2 \cdots n_k$ αν κάνουμε τις προσθέσεις. Έτσι, από ισότητα κλασμάτων έχουμε ότι $$p | n_1 n_2 \cdots n_k \implies p|n_i \quad \text{ για κάποιο } i$$ το οποίο είναι άτοπο από την υπόθεση που κάναμε.
+
+	$ $\newline Έχουμε $$k(x) = \big\{\frac{f(x)}{g(x)}: \quad f(x),g(x) \in k[x], g(x)\neq 0 \big\}$$ Αν υποθέσουμε ότι είναι πεπερασμένα παραγόμενο $k[x]$-πρότυπο, δηλαδή $$k(x) = \left(\frac{f_1 (x)}{g_1(x)}, \frac{f_2 (x)}{g_2(x)} , \ldots , \frac{f_n (x)}{g_n(x)}\right)$$ με μκδ$(f_1(x),g_1(x))=1$. Με την ίδια λογική με πριν, διαλέγουμε ένα ανάγωγο $p(x) \in k[x]$ το οποίο δεν διαιρεί κανένα από τα $g_i(x)$. Έτσι, έχουμε ότι υπάρχουν $h_1(x),\ldots, h_n(x)$ τέτοια ώστε $$\frac{1}{p(x)} = h_1(x)\frac{f_1 (x)}{g_1(x)} + h_2(x) \frac{f_2 (x)}{g_2(x)} + \ldots + h_n(x) \frac{f_n (x)}{g_n(x)}$$
+
+	$ $\newline Ομοίως, το δεύτερο μέλος θα είναι κλάσμα με παρονομαστή το $g_1(x) g_2 (x) \cdots g_n(x)$. Από ισότητα κλασμάτων παίρνουμε ότι $$p(x) | g_1(x) g_2(x) \cdots g_n(x) \implies p(x) | g_i(x) \quad \text{ για κάποιο } i$$ το οποίο είναι πάλι άτοπο.
+\end{proof}
+\pagebreak
+
+
+\noindent Άσκηση $5.3)$
+\quad Έστω $L,N$ υποπρότυπα του $R$- προτύπου $M.$ Δείξτε ότι αν τα $L+N,\ L\cap N$ είναι πεπερασμένα παραγόμενα, τότε και τα $L, N$ είναι πεπερασμένα παραγόμενα.
+\begin{proof} $ $
+	
+	$ $\newline
+	Έστω ότι τα σύνολα $$\{ \ell_i + n_i, \quad i = 1,\ldots,m\}, \{x_i, \quad  i = 1,\ldots, k\}$$ είναι βάσεις των $L+N, L\cap N$ αντίστοιχα. Ισχυριζόμαστε ότι τα στοιχεία $\{\ell_i\}\cup\{x_i\}$ παράγουν το $L$ και συμμετρικά τα $\{n_i\}\cup \{x_i\}$ παράγουν το $N$.
+
+	$ $\newline
+	Έστω $\ell \in L$, τότε $\ell + 0_N \in L+N$ και άρα υπάρχουν $r_1,r_2,\ldots r_m \in R$ τέτοια ώστε
+	$$\ell = \sum\limits_{i=1}^m r_i (\ell_i + n_i)$$ και από αυτό έπεται ότι 
+	$$L \ni \ell - \sum\limits_{i=1}^m r_i \ell_i = \sum\limits_{i=1}^m r_i n_i \in N$$
+	εφόσον τα $r_i \ell_i \in L$ και $r_i n_i \in N$, καθώς τα $L,N$ είναι $R$-υποπρότυπα. Συνεπώς $$\ell - \sum\limits_{i=1}^m r_i \ell_i \in L\cap N \implies \ell - \sum\limits_{i=1}^m r_i \ell_i = \sum\limits_{i=1}^k r^{\prime}_i x_i$$
+	$$\ell = \sum\limits_{i=1}^m r_i \ell_i + \sum\limits_{i=1}^k r^{\prime}_i x_i$$
+	άρα πράγματι τα $\ell_i$ με τα $x_i$ παράγουν το $L$ και εργαζόμαστε όμοια για το $N$.
+\end{proof}
+
+\pagebreak
+
+
+
+\noindent Άσκηση $5.10)$
+\quad Έστω $I, J$ ιδεώδη του $R$. Ορίζοντας κατάλληλους ομομορφισμούς, δείξτε ότι υπάρχει ακριβής ακολουθία $R$-προτύπων  της μορφής $$ 0 \to I \cap J \to R \to (R/I) \times (R/J) \to R/(I+J) \to 0.$$ Στη συνέχεια δείξτε ότι από το προηγούμενο αποτέλεσμα έπεται το κινέζικο θεώρημα υπολοίπων.
+
+\begin{proof} $ $
+
+	$ $\newline
+	Ορίζουμε $i: I\cap J \xhookrightarrow{} R$ την εμφύτευση $x\mapsto x$ που είναι ομομορφισμός προτύπων (και δακτυλίων) και έτσι $keri = \{0\}$, από όπου έχουμε την ακρίβεια στην πρώτη θέση. Επιπλέον, $Imi = I\cap J$.
+
+	$ $\newline Ορίζουμε $$\phi: R \rightarrow (R/I) \times (R/J)$$
+	$$r \mapsto (r+I,r+J)$$ και είναι πράγματι ομομορφισμός προτύπων εφόσον:
+	$$\phi(r_1 + r_2) = (r_1 + r_2 + I, r_1 + r_2 + J) = (r_1 + I,r_1 + J) + (r_2 + I, r_2 + J) = \phi(r_1) + \phi(r_2)$$
+	$$\phi(r^{\prime}r) = (r^{\prime}r + I, r^{\prime}r + J) = r^{\prime}(r+I,r+J)=r^{\prime}\phi(r)$$
+	Επιπλέον, $$r \in ker\phi \iff (r+I,r+J) = (I,J) \iff r\in I \text{ και } r\in J \iff r \in I\cap J$$
+	δηλαδή $Imi = ker\phi = I\cap J$ και έτσι έχουμε ακρίβεια και στην δεύτερη θέση. Έχουμε επίσης ότι $Im\phi = \{(r+I,r+J): \quad r\in R\}$, η οποία δεν είναι απαραίτητα επί.
+
+	$ $\newline
+	Ορίζουμε την απεικόνιση $$\pi : (R/I)\times (R/J) \rightarrow R/(I+J)$$
+	$$(r_1 + I, r_2 + J) \mapsto (r_1 - r_2) + (I+J)$$
+	και πρέπει να δειχτεί ότι είναι καλά ορισμένη εφόσον θεωρούμε αντιπροσώπους στο πεδίο εκκίνησης. Αν $(r_1+I,r_2+J)=(x_1+I,x_2 +J)$ τότε:
+	$$r_1 + I = x_1 + I \iff r_1 - x_1 \in I$$
+	$$r_2 + J = x_2 + J \iff r_2 - x_2 \in J$$
+	δηλαδή $$(r_1 - x_1) - (r_2 - x_2) \in I + J \iff (r_1 - r_2) + I+J = (x_1 - x_2) + I+J$$
+
+	
+	
+	$ $\newline
+	Επιπλέον, είναι πράγματι ομομορφισμός προτύπων εφόσον:
+	$$\pi\left((r_1 + I, r_2 + J) + (x_1 + I, x_2 + J)\right) = \pi( r_1 + x_1 + I, r_2 + x_2 +J) = $$
+	$$= r_1 + x_1 - (r_2 + x_2) + (I+J) = (r_1 - r_2) + (x_1 - x_2) + (I+J) = \pi(r_1+I,r_2+J) + \pi(x_1 + I, x_2 + J)$$
+	
+	$$\pi(r(r_1+I,r_2+J)) = \pi(rr1+I,rr_2 + J) = rr_1 -rr_2 + (I+J) = r(r_1-r_2) + (I+J) = $$
+	$$ =  r \left(r_1 - r_2 + (I+J)\right) = r \pi(r_1 + I,r_2 +J)$$
+
+	
+	$ $\newline 
+	Η $\pi$ είναι επί και έτσι έχουμε την ακρίβεια στην τέταρτη θέση, εφόσον για μια τυχαία κλάση $r + (I+J)$ έχουμε $(r+I,J)\mapsto r +(I+J)$. Θα δείξουμε την ακρίβεια στην τρίτη θέση, δηλαδή $Im\phi = ker\pi$ με διπλό εγκλεισμό.
+
+	$ $\newline
+	Άρχικά $\pi (r +I,r+J) = (r-r) + I+J = I+J$ άρα έχουμε $Im\phi \subseteq ker\pi$. Αν τώρα $(r_1+I,r_2 +J) \in ker\pi$ τότε $$(r_1 - r_2) + I+J = I+J \iff r_1 - r_2 \in I+J$$ δηλαδή υπάρχουν $i \in I,j \in J$ τέτοια ώστε $$r_1 - r_2 = i+j \implies r_1 - i = r_2 + j $$
+	Έτσι $$(r_1 + I, r_2 + J) = (r_1 - i + I, r_2 + j +J) = (r_1 - i + I, r_1 -i +J) \in Im\phi$$ και δείξαμε την ακρίβεια της ακολουθίας.
+
+	$ $\newline
+	Αν $I+J = R$, τότε $R/(I+J) \simeq 0$. Δηλαδή έχουμε την ακριβή ακολουθία $R$-προτύπων: $$ 0 \to I \cap J \to R \to (R/I) \times (R/J) \to 0$$ Βρισκόμαστε δηλαδή στην περίπτωση που η $\phi$ είναι επί. Θέλουμε να είναι και ακριβής ακολουθία δακτυλίων, δηλαδή η απεικόνιση $\phi$ να είναι και ομομορφισμός δακτυλίων. Αυτό ισχύει εφόσον:
+
+	$$\phi(1)=(1+I,1+J)$$
+	$$\phi(r^{\prime} r) = (r^{\prime}r + I, r^{\prime}r + J) = (r^{\prime}+I, r^{\prime}+J)\cdot (r+I,r+J) = \phi(r^{\prime}) \phi(r)$$
+
+	$ $\newline
+	και οι δύο "πολλαπλασιασμοί" ταυτίζονται με $$r^{\prime}\phi(r) = (r^{\prime}r+I, r^{\prime}r+J) = \phi(r^{\prime}) \phi(r)$$
+	
+	
+	$ $\newline
+	Έτσι από το πρώτο θεώρημα ισμορφισμών δακτυλίων για την $\phi$ επάγεται ο ισομορφισμός δακτυλίων
+	$$R/(I\cap J) \simeq R/I \times R/J$$.
+
+\end{proof}
+\pagebreak
+
+\noindent Άσκηση $5.13)$
+\quad Έστω $R$ τοπικός δακτύλιος της \tl{Noether} με μέγιστο ιδεώδες $\mathfrak{m}$. Δείξτε ότι αν $SpecR\ne \{ \mathfrak{m} \}$, τότε για κάθε θετικό ακέραιο $n,$ έχουμε ${{\mathfrak{m}}^{n+1}}\ne {{\mathfrak{m}}^{n}}.$ Τί συμβαίνει με τις δυνάμεις του $\mathfrak{m}$ αν $SpecR = \{ \mathfrak{m} \}$?
+
+
+\begin{proof} $ $
+
+	$ $\newline
+	Έχουμε ότι $\mathfrak{m} = Jac(R)$ και ότι το $\mathfrak{m}^n$ είναι πεπερασμένα παραγόμενο για κάθε $n$ εφόσον ο δακτύλιος $R$ είναι της \tl{Noether}, άρα μπορούμε να χρησιμοποιούμε το λήμμα \tl{Nakayama}.
+
+	$ $\newline
+	Αν $\mathfrak{m}^{n+1} = \mathfrak{m}^n$ για κάποιο $n$ τότε $$\mathfrak{m} \cdot \mathfrak{m}^n = \mathfrak{m}^n \implies \mathfrak{m}^n = 0$$
+
+	$ $\newline
+	Εφόσον $SpecR\neq\{\mathfrak{m}\}$ έχουμε ότι υπάρχει πρώτο ιδεώδες $\mathfrak{p}$ που δεν είναι το $\mathfrak{m}$ και μάλιστα περιέχεται στο $\mathfrak{m}$ εφόσον κάθε ιδεώδες περιέχεται σε ένα μέγιστο. Έχουμε ότι $$\mathfrak{p} \supseteq (0) = \mathfrak{m}^n \implies \mathfrak{p} = \sqrt{\mathfrak{p}} \supseteq \sqrt{\mathfrak{m}^n} = \mathfrak{m}$$
+	το οποίο είναι άτοπο αφού υποθέσαμε $\mathfrak{p} \neq \mathfrak{m}$.
+
+	$ $\newline
+	Αν $SpecR= \{\mathfrak{m}\}$ τότε $nil(R) = Jac(R) = \mathfrak{m}$ και το $m$ είναι πεπερασμένα παραγόμενο, έστω $\mathfrak{m} = (m_1, \ldots, m_k)$. Θα δείξουμε ότι υπάρχει κάποιο $N$ για το οποίο $\mathfrak{m}^N = 0$ και έτσι η ακολουθία $$\mathfrak{m} \supseteq \mathfrak{m}^2 \supseteq \ldots \supseteq \mathfrak{m}^N \supseteq \mathfrak{m}^{N+1} \supseteq \ldots $$ θα είναι τελικά σταθερή. Έχουμε ότι τα $m_i$ είναι μηδενοδύναμα, δηλαδή υπάρχουν $n_i$ τέτοια ώστε $m^{n_i}_i = 0$. Θέτουμε $N= k \cdot \max \{n_1,\ldots,n_k\}$.
+
+	$ $\newline
+	Από τον πολλαπλασιασμό ιδεωδών, οι γεννήτορες του $\mathfrak{m}^N$ θα είναι τα στοιχεία της μορφής $m^{a_1}_1 m^{a_2}_2 \cdots m^{a_k}_k$ με $a_1 + a_2 + \ldots + a_k = N$. Αν για όλα τα $i$ ισχύει ότι $a_i < \max \{n_1,\ldots, n_k\}$ τότε αθροίζοντάς για κάθε $i$ παίρνουμε $N < N$ το οποίο είναι άτοπο. Άρα υπάρχει $i$ με $a_i > max > n_i$ δηλαδή ο όρος $m^{a_i}_i$ είναι $0$ στον τυχαίο γεννήτορα του $\mathfrak{m}^N$. Συνεπώς $\mathfrak{m}^N = 0$.  
+\end{proof}
+\pagebreak
+
+
+\noindent Άσκηση $5.17)$
+\quad Έστω $R$ μη μηδενικός δακτύλιος. Δείξτε ότι κάθε ιδεώδες του
+$R$ είναι ελεύθερο $R$-πρότυπο αν και μόνο αν ο $R$ είναι περιοχή κυρίων ιδεωδών.
+
+
+\begin{proof} $ $
+
+	$ $\newline
+	Αν ο δακτύλιος $R$ είναι περιοχή κυρίων ιδεωδών, τότε κάθε μη τετριμμένο ιδεώδες του έχει την μορφή $I=(x), x\neq 0$. Αυτό έχει βάση ως $R$-πρότυπο το μονοσύνολο $\{x\}$, εφόσον κάθε στοιχείο του γράφεται κατά μοναδικό τρόπο στην μορφή $rx$, με $r \in R$. Επιπλέον, το $x$ είναι γραμμικά ανεξάρτητο εφόσον $$rx = 0, x\neq 0 \implies r = 0$$ αφού βρισκόμαστε σε περιοχή. Άρα κάθε ιδεώδες είναι ελεύθερο $R$-πρότυπο.
+
+	$ $\newline
+	Αντίστροφα, έστω ότι κάθε ιδεώδες του $R$ είναι ελεύθερο $R$-πρότυπο. Τότε για $x \in R, x\neq 0$ το ιδεώδες $(x)$ είναι ελεύθερο και κάθε στοιχείο του γράφεται κατά μοναδικό τρόπο στην μορφή $rx, r\in R$. Aπό τον ορισμό της βάσης, έπεται ότι το $\{x\}$ είναι βάση του $(x)$. Άρα το $\{x\}$ είναι γραμμικά ανεξάρτητο ως βάση, συνεπώς αν $$rx = 0, x\neq 0 \implies r = 0$$ δηλαδή το τυχόν $x$ δεν είναι μηδενοδιαιρέτης. Άρα βρισκόμαστε σε περιοχή.
+
+	$ $\newline
+	Έστω τώρα ένα τυχόν ιδεώδες $I \neq (0)$. Ως ελεύθερο πρότυπο είναι ισόμορφο με ένα ευθύ άθροισμα αντιγράφων του $R$. Αν τα αντίγραφα είναι παραπάνω από δύο, δηλαδή υπάρχουν παραπάνω από δύο στοιχεία $x,y$ σε μια βάση του $I$ τότε $$(y)x + (-x)y = 0$$ δηλαδή δεν γίνεται να είναι γραμμικά ανεξάρτητα. Άρα αναγκαστικά το $I\neq (0)$ έχει βάση ως $R$-πρότυπο κάποιο μονοσύνολο $\{x\}$, δηλαδή $I=(x)$.
+
+\end{proof}
+\end{document}

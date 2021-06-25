@@ -1,0 +1,364 @@
+\documentclass[oneside,a4paper]{article}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{amssymb}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage[greek]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{mathtools}
+\usepackage{blindtext}
+\usepackage[T1]{fontenc}
+\usepackage{titlesec}
+\usepackage{sectsty}
+\usepackage{verbatim}
+\usepackage{multirow}
+\chapternumberfont{\tiny} 
+\chaptertitlefont{\Huge}
+%ελληνικοι χαρακτηρες σε μαθ pdf utf-8
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{tikz-cd}
+
+\usepackage{xcolor}
+\usepackage{framed}%frames
+
+\usepackage{array}
+\usepackage{pbox}
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{tikz}
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%περιθώρια%%%%%%%%%%%%
+\usepackage[a4paper,margin=3.5cm]{geometry}
+
+
+%%%%%%%%συντομευσεις%%%%%%%%%%
+\newtheorem{theorem}{Θεώρημα}
+\newtheorem{lemma}{Λήμμα}
+\newtheorem{example}{Παράδειγμα}
+\newtheorem*{defn}{Ορισμός}
+\newtheorem{prop}{Πρόταση}
+\newtheorem{cor}{Πόρισμα}
+
+\newcommand {\tl}{\textlatin}
+%%%%%%%%%αριθμηση%%%%%%%%%%%%%%
+\renewcommand{\theenumi}{\arabic{enumi}}
+\renewcommand{\labelenumi}{{\rm(\theenumi)}}
+\renewcommand{\labelenumii}{\roman{enumii}) }
+%%%%%%%%%%%% New theorems %%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\Co}{\mathbb{C}}
+%%%%%%%%%%%%%%%%%%%%% Document starts %%%%%%%%%%%%
+\begin{document}
+	
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\selectlanguage{greek}
+	%%%%%%%%%%%%%%%%%%%%%%% Start Roman numbering %%%% vbbnn
+	%\pagenumbering{roman}
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	
+	\begin{framed}	
+		%\vspace{0.3truecm}
+		\begin{center}
+			\huge Μεταθετική Άλγεβρα
+		\end{center}
+		%\vspace{0.3truecm}
+		\begin{center}
+			\huge Εργασία 5
+		\end{center}
+		\vspace{0.3truecm}
+		\begin{center}
+			Ονομ/νο: Νούλας Δημήτριος\\
+			ΑΜ: 1112201800377\\
+			\tl{email}: \tl{dimitriosnoulas@gmail.com}
+		\end{center}
+		\vspace{0.3truecm}
+	\end{framed}
+	\vspace*{\fill}
+	\begin{center}
+	\includegraphics[width=0.5\textwidth]{C:/Users/dimit/Desktop/TeX/uoa_logo}
+	\end{center}
+\vspace{1cm}
+\pagebreak
+
+\noindent Άσκηση $6.4)$
+\quad Έστω $L,N$ υποπρότυπα του $R$- προτύπου $M.$ Δείξτε ότι αν τα ${M}/{L}, {M}/{N}\;$  είναι της \tl{Noether} (αντίστοιχα του \tl{Artin}), τότε και τα ${M}/{L\cap N} , {M}/{L+N}$ είναι της \tl{Noether} (αντίστοιχα του \tl{Artin}).
+\vspace*{1cm}
+\begin{proof} $ $
+
+	$ $\newline
+	Έχουμε την ακριβή ακολουθία $R$-προτύπων 
+	$$0 \longrightarrow \frac{M}{L\cap N} \longrightarrow \frac MN \oplus \frac ML \longrightarrow \frac{M}{N+L} \longrightarrow 0$$ 
+
+	$ $\newline
+	Αν τα $M/N, M/L$ είναι $R$-πρότυπα της \tl{Noether} (αντ. του \tl{Artin}) τότε θα είναι και το ευθύ άθροισμά τους πρότυπο της \tl{Noether} (αντ. του \tl{Artin}) από την πρόταση $6.7$. Παίρνουμε τα ζητούμενα αποτελέσματα από την πρόταση $6.6$ εφόσον το κέντρο της ακολουθίας είναι της \tl{Noether} (αντ. του \tl{Artin}) έπεται ότι θα είναι και τα άκρα.
+
+	$ $\newline
+	Αρκεί να επαληθεύσουμε την ακρίβεια της ακολουθίας. Οι απεικονίσεις είναι οι εξής:
+	$$\phi: \frac{M}{L\cap N} \longrightarrow \frac MN \oplus \frac ML$$ 
+	$$m + (L\cap N) \longmapsto (m + N, m + L)$$
+
+	\vspace*{0.1cm}
+	$$ \pi: \frac MN \oplus \frac ML \longrightarrow \frac{M}{N+L}$$ 
+	$$(m_1 + N, m_2 + L) \longmapsto (m_1 - m_2) + (N+L)$$
+
+	$ $\newline
+	Για την $\phi$:
+	
+	$ $\newline
+	Καλά ορισμένη:
+	$$x+(N\cap L) = m + (N\cap L) \implies x-m + (N\cap L) = N\cap L \implies x-m \in N\cap L$$
+	$$ \implies (x-m +N , x-m +L) =  (N, L) \implies (x+N,x+L) = (m+N,m+L)$$
+
+	$ $\newline
+	Ομομορφισμός $R$-προτύπων:
+	$$\phi( [m_1] + [m_2]) = \phi( [m_1 + m_2]) = (m_1 + m_2 + N, m_1 + m_2 + L) = $$
+	$$=  (m_1 + N, m_1 + L) + (m_2 + N, m_2 + L) =  \phi([m_1]) + \phi([m_2])$$
+	\vspace*{0.1cm}
+	$$\phi(r[m]) = \phi([rm]) = (rm + N, rm+L) = r(m+N,m+L) = r\phi([m])$$
+
+	$ $\newline
+	Μονομορφισμός:
+	$$\phi([m]) = (N,L) \implies (m+N,m+L) = (N,L) \implies m\in N , m \in L $$
+	$$\implies m\in N\cap L \implies [m]=0$$
+
+	$ $\newline
+	Με εικόνα:
+	$$Im\phi = \{(m+N,m+L): \quad m \in M\} $$
+
+	$ $\newline
+	Για την $\pi$ έχουμε εργαστεί όμοια για να δείξουμε ότι είναι καλά ορισμένος ομομορφισμός $R$-προτύπων στην άσκηση $10$ της εργασίας $5$, με την διαφορά ότι εκεί είχαμε πεπερασμένο ευθύ γινόμενο το οποίο ταυτίζεται με το πεπερασμένο ευθύ άθροισμα. Υπενθυμίζουμε ότι είναι επιμορφισμός εφόσον για το τυχαίο $m + (N+L)$ έχουμε
+	$$\pi(m + N, L) = m + (N+L)$$
+	
+	$ $\newline
+	Μαζί με το προφανές $Im\phi \subseteq ker\pi$, έχουμε και την αντίστροφη σχέση. Αν θεωρήσουμε $(m_1 +N, m_2 +L) \in ker\pi$, τότε
+	$$m_1 - m_2 \in N + L \implies m_1 - m_2 = n + \ell \implies m_1 - n = m_2 + \ell$$
+
+	$$(m_1 + N, m_2 + L) = (m_1 - n + N, m_2 + \ell + L) = (m_1 - n + N, m_1 - n + L) \in Im\phi$$
+
+\end{proof}
+\pagebreak
+
+\noindent Άσκηση $6.6)$
+\quad Έστω $M$ ένα πεπερασμένα παραγόμενο $R$-πρότυπο του \tl{Artin}. Δείξτε ότι ο δακτύλιος ${R}/{ann(M)}\;$ είναι του \tl{Artin}.
+\vspace*{1cm}
+\begin{proof} $ $
+
+	$ $\newline
+	Το $M$ είναι πεπερασμένα παραγόμενο, δηλαδή υπάρχουν $m_1 , m_2 ,\ldots, m_k \in R$ τέτοια ώστε
+	$$M = (m_1 , m_2 ,\ldots , m_k) = \big \{ \sum\limits_{i=1}^k r_i m_i : \quad r_i \in R \big \} $$
+
+	$ $\newline
+	Ορίζουμε την απεικόνιση
+	$$\phi : R \longrightarrow \bigoplus\limits_{i=1}^k M$$
+	$$r \longmapsto (rm_1, rm_2 , \ldots , rm_k)$$
+
+	$ $\newline
+	Είναι ομομορφισμός προτύπων εφόσον:
+	$$\phi(r_1 + r_2) = ((r_1+r_2)m_1, (r_1+r_2)m_2 , \ldots , (r_1+r_2)m_k) = $$
+	$$=  (r_1 m_1, r_1 m_2 , \ldots , r_1 m_k) + (r_2 m_1, r_2 m_2 , \ldots , r_2 m_k)  = \phi(r_1) + \phi (r_2)$$
+
+	$$\phi(r^{\prime}r) = (r^{\prime}rm_1, r^{\prime}rm_2, \ldots , r^{\prime}rm_k) = r^{\prime}(rm_1, rm_2 , \ldots , rm_k) = r^{\prime}\phi(r)$$
+
+	$ $\newline
+	Επιπλέον έχουμε ότι $$ann(M) = \{r \in R: \quad rm = 0 \quad\forall m \in M\} = \{r \in R: \quad rm_i = 0, \quad i=1,2,\ldots,k\}$$
+
+	$ $\newline
+	Έτσι $ann(M) \subseteq ker\phi$. Για την αντίστροφη σχέση, αν $r \in ker\phi$ τότε θα ισχύει $rm_i = 0$ για όλα τα $i$, δηλαδή $r \in ann(M)$. Άρα $ ann(M) = ker\phi$. Από το πρώτο θεώρημα ισομορφισμών προτύπων έπεται ότι
+
+	$$\frac{R}{ann(M)} \simeq Im\phi \leq \bigoplus\limits_{i=1}^k M$$
+
+	$ $\newline
+	Έχουμε την ακριβή ακολουθία $R$-προτύπων
+	$$0\rightarrow \frac{R}{ann(M)} \simeq Im\phi \xhookrightarrow{} \bigoplus\limits_{i=1}^k M \rightarrow \frac{\bigoplus\limits_{i=1}^k M}{Im\phi} \rightarrow 0 $$
+
+	$ $\newline
+	Εφόσον το $M$ είναι $R$-πρότυπο του \tl{Artin}, τότε θα είναι και το ευθύ άθροισμα των $k$ αντιγράφων του. Το κέντρο της ακριβής ακολουθίας είναι πρότυπο του \tl{Artin} άρα θα είναι και τα άκρα του. 
+	
+	$ $\newline
+	Συγκεκριμένα το $R/ann(M)$ θα έιναι $R$-πρότυπο του \tl{Artin}. Κάνοντας την αλλαγή δακτυλίου σε $R/I$-πρότυπο με $I=ann(M)$ που είναι ιδεώδες του $R$, έχουμε από παρατήρηση που έγινε στις διαλέξεις του κεφαλαίου 6 ότι το $R/ann(M)$ θα είναι και $R/ann(M)$-πρότυπο του \tl{Artin}. Δηλαδή όπως έχει οριστεί θα είναι και δακτύλιος του \tl{Artin}.
+\end{proof}
+\pagebreak
+
+
+
+\noindent Άσκηση $6.7)$
+\quad Έστω $R$ μη μηδενικός δακτύλιος της \tl{Noether}. Δείξτε ότι υπάρχει πρώτο ιδεώδες $p$ του $R$ τέτοιο ώστε υπάρχει μονομορφισμός  $R$-προτύπων της μορφής και $f:{R}/{p}\;\to R$.
+\vspace*{1cm}
+\begin{proof} $ $
+
+	$ $\newline
+	Θεωρούμε το σύνολο των ιδεωδών του $R$
+	$$\{ ann(x): \quad x \in R, x \neq 0\}$$
+	το οποίο είναι μη κενό καθώς περιέχει το τετριμμένο ιδεώδες $(0) = ann(1)$. Εφόσον ο δακτύλιος $R$ είναι της \tl{Noether}, θα υπάρχει μέγιστο στοιχείο έστω $\mathfrak{p} = ann(x)$. Θα δείξουμε ότι είναι πρώτο ιδεώδες. Αρχικά είναι γνήσιο ιδεώδες και όχι όλο το $R$ καθώς αν ήταν όλο το $R$ θα ίσχυε $1\cdot x = 0$, δηλαδή $x=0$ το οποίο είναι άτοπο.
+
+	$ $\newline
+	Έστω $ab \in \mathfrak{p}$, δηλαδή $abx = 0$. Αν $a \not\in \mathfrak{p}$, τότε 
+	$$b(ax) = 0 \implies b \in ann(ax)$$
+	και από τον ορισμό του μηδενιστή έχουμε την σχέση υποσυνόλων
+	$$ \mathfrak{p} = ann(x) \subseteq ann(ax)$$
+	και εφόσον το $\mathfrak{p}$ είναι μέγιστο, παίρνουμε την ισότητα $\mathfrak{p} = ann(ax) \ni b$. Όμοια, αν $b\not\in \mathfrak{p} \implies a \in \mathfrak{p}$.
+
+	$ $\newline
+	Έχουμε ότι ο ομομορφισμός $R$-προτύπων 
+	$$\phi: R \longrightarrow R$$
+	$$r \longmapsto rx$$
+	έχει πυρήνα το $\mathfrak{p}$ και έτσι μέσα από το πρώτο θεώρημα ισομορφισμών προτύπων παίρνουμε τον ζητούμενο μονομορφισμό:
+	$$\frac{R}{\mathfrak{p}} \simeq Im\phi \xhookrightarrow{} R$$
+	δηλαδή έχουμε ως μονομορφισμό $R$ προτύπων την καλά ορισμένη απεικόνιση $$r + \mathfrak{p} \mapsto rx \in R$$
+\end{proof}
+\pagebreak
+
+
+\noindent Άσκηση $6.10)$
+\quad Δείξτε ότι το μήκος \begin{enumerate}
+	\item	του $\mathbb{R}[x]$-προτύπου ${\mathbb{R}[x]}/{({{x}^{4}}+2{{x}^{2}}+1)}$ είναι 2, 
+	\item του $\mathbb{C}[x]$-προτύπου ${\mathbb{C}[x]}/{({{x}^{4}}+2{{x}^{2}}+1)}$ είναι 4,
+	και
+	\item	του $\mathbb{Z}[x]$-προτύπου ${\mathbb{Z}[x]}/{({{x}^{4}}+2{{x}^{2}}+1)}$ είναι $\infty $. \end{enumerate}
+
+	\vspace*{1cm}
+\begin{proof} $ $
+
+	\begin{enumerate}
+		\item Αρκεί να βρούμε μια συνθετική σειρά με μήκος $2$ και από την θεωρία αυτό αρκεί για να έχουν όλες μήκος $2$. Έχουμε λοιπόν την συνθετική σειρά με μήκος $2$:
+		$$0 \subseteq \frac{(x^2+1)}{((x^2+1)^2)} \subseteq \frac{\mathbb{R}[x]}{((x^2+1)^2)}$$
+		
+		$ $\newline
+		Το πηλίκο από την πρώτη σχέση υποσυνόλου είναι απλό εφόσον αν έχουμε $I$ ιδεώδες του $(x^2+1)/((x^2+1)^2)$ τότε από το θεώρημα αντιστοιχίας ιδεωδών θα έιναι της μορφής
+		$$I = \frac{J}{((x^2+1)^2)} \quad \text{ με } \quad ((x^2+1)^2 \subseteq J \subseteq (x^2+1)$$
+		και επειδή το $\mathbb{R}[x]$ είναι περιοχή κυρίων ιδεδών, έχουμε $J = (f(x))$ και από τις παραπάνω σχέσεις παίρνουμε 
+		$$x^2 + 1 | f(x) \implies f(x) = (x^2+1)g(x) \quad (g(x),x^2+1) =1$$
+		$$f(x) = (x^2+1)g(x) | (x^2+1)^2 \implies g(x)|(x^2+1)$$
+		και το  $x^2 + 1$ είναι ανάγωγο, άρα $g(x) = \pm1$ ή $\pm(x^2+1)$. Δηλαδή σε καμία περίπτωση το $I$ δεν είναι γνήσιο ιδεώδες.
+
+		$ $\newline
+		Το ιδεώδες $(x^2+1)$ του $\mathbb{R}[x]$ είναι μέγιστο, και το πηλίκο από την δεύτερη σχέση του υποσυνόλου είναι ισόμορφο με το $\mathbb{R}[x]/(x^2+1)$, αν επικαλεστούμε το τρίτο θεώρημα ισομορφισμών προτύπων. Άρα από την πρόταση $6.1$ έπεται ότι και αυτό το πηλίκο είναι απλό.
+
+		\item Έχουμε την συνθετική σειρά με μήκος $4$:
+		$$0 \subseteq \frac{(x^2+1)(x-i)}{((x^2+1)^2)} \subseteq \frac{(x^2+1)}{((x^2+1)^2)} \subseteq \frac{(x-i)}{((x^2+1)^2)} \subseteq \frac{\mathbb{C}[x]}{((x^2+1)^2)}$$
+		
+		$ $\newline
+		Το πηλίκο στην τέταρτη θέση είναι απλό καθώς το $(x-i)$ είναι μέγιστο ιδεώδες του $\mathbb{C}[x]$.Για τα πηλίκα στις πρώτες τρεις θέσεις δουλεύουμε όμοια με το προηγούμενο παράδειγμα χρησιμοποιώντας το τρίτο θεώρημα ισομορφισμών. Δηλαδή δείχνουμε την απλότητα στην τρίτη θέση ως εξής και όμοια στις άλλες δύο:
+
+		$$\frac{\frac{(x-i)}{((x^2+1)^2)}}{\frac{(x^2+1)}{((x^2+1)^2)}} \simeq \frac{(x-i)}{(x^2+1)}$$
+		που έχει ιδεώδη $\frac{J}{(x^2+1)}$ με $$(x^2+1) \subseteq J \subseteq (x-i) \quad \text{ και } \quad J = (g(x))$$
+		αφού $\mathbb{C}[x]$ είναι περιοχή κυρίων ιδεωδών. Επιπλέον $(x-i) | g(x) $ και $g(x) | (x-i)(x+i)$, δηλαδή $g(x) = \pm1$ ή $\pm(x-i)$ και άρα δεν υπάρχουν ενδιάμεσα ιδεώδη.
+
+		\item Έχουμε την ακριβή ακολουθία $\Z [x]$-προτύπων:
+		$$0\rightarrow ((x^2+1)^2) \rightarrow \Z [x] \rightarrow \frac{\Z [x]}{((x^2+1)^2)} \rightarrow 0$$
+		και τα άκρα θα είναι $\Z [x]$-πρότυπα του \tl{Artin} αν και μόνο αν το $\Z [x]$ είναι $\Z[x]$-πρότυπο του \tl{Artin}. Ισοδύναμα το $\Z[x]$ να είναι δακτύλιος του \tl{Artin}. Αυτό δεν ισχύει καθώς $$\frac{\Z [x]}{(x)} \simeq \Z$$ είναι περιοχή και όχι σώμα, δηλαδή το ιδεώδες $(x)$ είναι πρώτο και όχι μέγιστο. Εφόσον σε έναν δακτύλιο του \tl{Artin} τα πρώτα ιδεώδη με τα μέγιστα ταυτίζονται, το $\Z [x]$ δεν είναι δακτύλιος του \tl{Artin} και άρα το $\Z[x]/((x^2+1)^2)$ δεν είναι $\Z [x]$-πρότυπο του \tl{Artin}. Συνεπώς, δεν μπορεί να έχει συνθετική σειρά και άρα το μήκος του είναι άπειρο.
+	\end{enumerate}
+\end{proof}
+\pagebreak
+
+\noindent Άσκηση $7.1)$
+\quad Ποιοι από τους παρακάτω δακτύλιους είναι του \tl{Artin}? Ποιες είναι οι διαστάσεις \tl{Krull} αυτών?
+\begin{enumerate}
+	\item $\mathbb{C}[x,y]/(x^2,y^3)$
+	\item $\Z_{(2)}$ (τοπικοποίηση).
+	\item $R/\mathfrak{m}^t$, όπου $\mathfrak{m}$ μέγιστο ιδεώδες δακτυλίου $R$ της \tl{Noether}.
+\end{enumerate}
+\vspace*{1cm}
+\begin{proof}
+	
+	$ $\newline
+	\begin{enumerate}
+
+		
+
+		\item Έχουμε ότι ο δακτύλιος $\mathbb{C}[x,y]$ είναι της \tl{Noether} από το θεώρημα βάσης του \tl{Hilbert} και έτσι και το πηλίκο $\mathbb{C}[x,y]/(x^2,y^3)$ είναι της \tl{Noether}. Έχουμε ότι το ιδεώδες $\mathfrak{m} = (x,y)/(x^2,y^3)$ είναι μέγιστο εφόσον $$\frac{\mathbb{C}[x,y]/(x^2,y^3)}{(x,y)/(x^2,y^3)} \simeq \frac{\mathbb{C}[x,y]}{(x,y)} \simeq \mathbb{C}$$
+		από το τρίτο θεώρημα ισομορφισμών δακτυλίων.
+
+		$ $\newline
+		Επιπλέον, $m^5 = 0$ αφού οι γεννήτορες του $m^5$ θα είναι τα στοιχεία $x^ay^b + (x^2,y^3)$ με $a+b = 5$, δηλαδή $x^ay^b \in (x^2,y^3)$ αφού θα ισχύει τουλάχιστον ένα από τα $a\geq 2$ ή $b \geq 3$.
+
+		$ $\newline
+		Καθώς ο δακτύλιος είναι της \tl{Noether} και υπάρχουν μέγιστα ιδεώδη που το γινόμενό τους κάνει $0$, έχουμε ότι ο δακτύλιος είναι του \tl{Artin}. Έτσι και η διάσταση \tl{Krull} του είναι $0$.
+
+		\vspace*{0.5cm}
+		\item Αν θεωρήσουμε $R = \mathbb{Z}$ και $S = \mathbb{Z}-(2)$, τότε ο δακτύλιός μας είναι ο $S^{-1} R$. Γνωρίζουμε από την θεωρία ότι για τον φυσικό ομομορφισμό $ x \mapsto \frac{x}1 \in S^{-1} R$ οι συστολές και οι επεκτάσεις είναι σε 1-1 και επί αντιστοιχία. Επιπλέον, τα πρώτα ιδεώδη του $S^{-1}R$ είναι της μορφής $P^e$ για μοναδικό πρώτο ιδεώδες $P$ του $R$ με $P\cap S = \varnothing$.
+		
+		$ $\newline
+		Έτσι, ο δακτύλιος $S^{-1}R$ που έχει μοναδικό μέγιστο ιδεώδες
+		$$ \mathfrak{m} = \big\{\frac{2a}{b}| \quad a,b \in \Z, \quad 2\not | \quad b\}$$ έχει και τα πρώτα ιδεώδη $(3)^e, (5)^e, (7)^e, \ldots$ τα οποία δεν είναι μέγιστα και άρα ο δακτύλιος δεν είναι του \tl{Artin}. 
+		
+		$ $\newline
+		Έχουμε $$0 = (0)^e \subseteq (3)^e$$ η οποία είναι γνήσια σχέση και άρα $dim(S^{-1}R) \geq 1$. Αν τώρα υποθέσουμε ότι υπάρχει γνήσια αλυσίδα πρώτων ιδεωδών με μήκος μεγαλύτερο ή ίσο του $2$ τότε μέσα από τις συστολές θα την απεικονίζουμε σε γνήσια αλυσίδα πρώτων ιδεωδών του $\mathbb{Z}$ με ίδιο μήκος. Αυτό είναι άτοπο καθώς αυτές οι αλυσίδες στο $\mathbb{Z}$ έχουν το πολύ μήκος $1$. Άρα $dim(S^{-1}R) = 1$.
+		\vspace*{0.5cm}
+		\item Όμοια με το $(1)$, ο $R$ είναι δακτύλιος της \tl{Noether} και άρα το ίδιο ισχύει για το πηλίκο $R/\mathfrak{m}^t$. Αν θέσουμε $$\overline{\mathfrak{m}} = \frac{\mathfrak{m}}{\mathfrak{m}^t}$$ τότε το $\overline{\mathfrak{m}}$ είναι μέγιστο από το τρίτο θεώρημα ισομορφισμών καθώς $$\frac{R/\mathfrak{m}^t}{m/\mathfrak{m}^t} \simeq \frac{R}{\mathfrak{m}} \quad \text{ που είναι σώμα αφού } \mathfrak{m} \text{ μέγιστο}$$ επιπλέον έχουμε $(\overline{\mathfrak{m}})^t = 0$ και άρα ο δακτύλιος είναι του \tl{Artin} εφόσον είναι της \tl{Noether} και υπάρχουν μέγιστα ιδεώδη που έχουν γινόμενο $0$. Άρα και η διάσταση \tl{Krull} είναι $0$.
+	\end{enumerate}
+\end{proof}
+\pagebreak
+
+\noindent Άσκηση $7.2)$
+\quad Δείξτε ότι κάθε γνήσιο ιδεώδες τοπικού δακτυλίου του \tl{Artin} είναι πρωταρχικό.
+\vspace*{1cm}
+\begin{proof} $ $
+
+	$ $\newline
+	Έχουμε δείξει σε προηγούμενη εργασία ότι αν το ριζικό ενός ιδεωδούς $\sqrt{I}$ είναι μέγιστο, τότε το ιδεώδες είναι πρωταρχικό. Έχουμε ότι ο δακτύλιος που έχει την ιδιότητα \tl{Artin} έχει και την ιδιότητα \tl{Noether} και άρα κάθε γνήσιο ιδεώδες $I$ έχει πρωταρχική ανάλυση από το θεώρημα \tl{Lasker-Noether}. Θεωρούμε μια πρωταρχική ανάλυση $$I= Q_1 \cap Q_2 \cap \ldots \cap Q_k$$ με $\sqrt{Q_i} = \mathfrak{p_i}$ πρώτο ιδεώδες. Εφόσον ο δακτύλιος είναι του \tl{Artin}, κάθε πρώτο ιδεώδες είναι μέγιστο. Άρα έχουμε για κάθε $i = 1,2,\ldots,k$ ότι $\sqrt{Q_i} = \mathfrak{m}$ και $\mathfrak{m}$ είναι το μοναδικό μέγιστο ιδεώδες του δακτυλίου.
+	$$\sqrt{I} = \sqrt{Q_1 \cap Q_2 \cap \ldots \cap Q_k} = \sqrt{Q_1} \cap \sqrt{Q_2} \cap \ldots \cap \sqrt{Q_k} = \mathfrak{m} \text{ μέγιστο } \implies I \text{ πρωταρχικό }$$
+\end{proof}
+\pagebreak
+
+\noindent Άσκηση $7.6)$
+\quad Έστω $R$ δακτύλιος του \tl{Artin}. Δείξτε ότι ως $R$-πρότυπο, το $R$ έχει πεπερασμένο μήκος. Στη συνέχεια δείξτε ότι κάθε πεπερασμένα παραγόμενο $R$-πρότυπο έχει πεπερασμένο μήκος.
+\vspace*{1cm}
+\begin{proof} $ $
+
+	$ $\newline
+	Ο $R$ ως δακτύλιος του \tl{Artin} είναι και δακτύλιος της \tl{Noether}. Ως δακτύλιος του \tl{Artin} είναι και $R$-πρότυπο του \tl{Artin} και ως δακτύλιος της \tl{Noether} είναι και $R$-πρότυπο της \tl{Noether}. Από αυτά τα δύο έπεται ότι το $R$ ως πρότυπο υπεράνω του εαυτού του έχει συνθετική σειρά και άρα το μήκος του είναι πεπερασμένο.
+
+	$ $\newline
+	Έστω $M = (x_1, x_2, \ldots, x_n)$ ενα πεπερασμένα παραγόμενο $R$-πρότυπο. Αν θεωρήσουμε τον επιμορφισμό $R$-προτύπων 
+	$$\phi : \bigoplus\limits_{i=1}^n R \longrightarrow M $$
+	$$(r_1 , r_2, \ldots, r_n) \longmapsto r_1 x_1 + r_2 x_2 + \ldots + r_n x_n$$ έτσι από το πρώτο θεώρημα ισομορφισμών προτύπων έχουμε ότι το $M$ είναι ισόμορφο με πηλίκο του $\bigoplus\limits_{i=1}^n R$. Αυτό είναι $R$-πρότυπο της \tl{Noether} και του \tl{Artin} αφού είναι η κάθε συνιστώσα του. 
+	
+	$ $\newline
+	Άρα και το οποιοδήποτε πηλίκο του παραμένει $R$-πρότυπο της \tl{Noether} και $R$-πρότυπο του \tl{Artin}. Αυτό προκύπτει αν πάρουμε ακριβείς ακολουθίες με κέντρο το \tl{Artin} (αντ. \tl{Noether}) $R$-πρότυπο και βάλουμε αριστερά την εμφύτευση του υποπροτύπου και δεξιά την προβολή στο πηλίκο. Επιχειρηματολογώντας διαφορετικά μπορούμε να χρησιμοποιούμε την αντιστοιχία των υποπροτύπων ενός προτύπου πηλίκου στις αύξουσες και φθίνουσες αλυσίδες. Έτσι έχουμε ότι το $M$ είναι $R$-πρότυπο της \tl{Noether} και του \tl{Artin}, άρα έχει συνθετική σειρά και έτσι πεπερασμένο μήκος.
+\end{proof}
+\pagebreak
+
+\noindent Άσκηση $7.7)$
+\quad Έστω $R$ δακτύλιος της \tl{Noether} και \tl{I} γνήσιο ιδεώδες του $R$. Δείξτε ότι το $R$-πρότυπο $R/I$ έχει πεπερασμένο μήκος αν και μόνο αν το σύνολο $AssI$ αποτελείται από μέγιστα ιδεώδη.
+\vspace*{1cm}
+\begin{proof} $ $
+
+	$ $\newline
+	Εφόσον το $I$ είναι γνήσιο και ο $R$ δακτύλιος της \tl{Noether}, από το θεώρημα \tl{Lasker-Noether} έχουμε την ύπαρξη μιας ελάχιστης πρωταρχικής ανάλυσης. Έστω $$I = Q_1 \cap Q_2 \cap \ldots \cap Q_n$$ και $AssI = \{p_1,p_2,\ldots,p_n\}$.
+	
+	
+	%Ορίζουμε την αλυσίδα $R$-υποπροτύπων του $R/I$: $$\frac RI \supseteq \frac{p_1}I \supseteq \frac{p_1 \cap p_2}I \supseteq \frac{p_1 \cap p_2 \cap p_3}I \supseteq \ldots \supseteq \frac{p_1\cap p_2 \cap p_3 \cap \ldots \cap p_n}I \supseteq 0$$ και θα δείξουμε ότι αυτή είναι μια συνθετική σειρά, από όπου θα έπεται το $\ell_{R}(R/I)< \infty$. Θα χρησιμοποιούμε συνεχώς το τρίτο και το δεύτερο θεώρημα ισομορφισμών προτύπων. Έχουμε ότι $$\frac{R/I}{p_1/I} \simeq \frac{R}{p_1}$$ το οποίο πηλίκο είναι απλό εφόσον το $p_1$ είναι μέγιστο. 
+	%$$\frac{p_1/I}{p_1 \cap p_2 /I} \simeq \frac{p_1}{p_1 \cap p_2} \simeq \frac{p_1 + p_2}{p_2} = \frac{R}{p_2}$$ εφόσον τα $p_i$ είναι διακεκριμένα και μέγιστα, το $p_1 + p_2$ θα είναι γνήσια μεγαλύτερο του $p_1$ άρα θα είναι όλος ο δακτύλιος. Όμοια, το πηλίκο είναι απλό εφόσον το $p_2$ είναι μέγιστο. 
+
+	%$$\frac{p_1\cap p_2/I}{(p_1 \cap p_2) \cap p_3/I} \simeq \frac{p_1\cap p_2}{(p_1 \cap p_2) \cap p_3} \simeq \frac{(p_1 \cap p_2) + p_3}{p_3} = \frac{R}{p_3}$$ όπου πάλι το $p_1\cap p_2 + p_3$ είναι γνήσια μεγαλύτερο του μεγίστου $p_3$. Με βάση το τελεταυαίο δείχνουμε ότι κάθε ενδιάμεσο πηλίκο είναι απλό, δηλαδή $$\frac{p_1\cap p_2 \cap \ldots \cap p_{i-1}/I}{(p_1 \cap p_2\cap \ldots \cap p_{i-1}) \cap p_i/I} \simeq \frac{p_1\cap p_2 \cap \ldots \cap p_{i-1}}{(p_1 \cap p_2\cap \ldots \cap p_{i-1}) \cap p_i} \simeq \frac{(p_1 \cap \ldots \cap p_{i-1}) + p_i}{p_i} = \frac{R}{p_i}$$
+
+	%$ $\newline
+	%Μένει να δείξουμε ότι το $p_1 \cap p_2 \cap \ldots \cap p_n/I$ είναι απλό. Αν υπάρχει ιδεώδες $J^{\prime}$ του $R/I$ τέτοιο ώστε $$0 \subseteq J^{\prime} \subseteq \frac{p_1 \cap \ldots \cap p_n}{I}$$ τότε αυτό θα είναι της μορφής $J/I$ με $J$ ιδεώδες του $R$ τέτοιο ώστε $$I \subseteq J \subseteq p_1 \cap p_2 \cap \ldots \cap p_n$$ Αν υποθέσουμε ότι το $J$ δεν είναι κάποιο από τα άκρα της παραπάνω σχέσης, θα είναι γνήσιο ιδεώδες του $R$ και θα έχει μια πρωταρχική ανάλυση που θα διαφέρει από αυτήν του $I$. Δηλαδή θα υπάρχει κάποιος όρος της ανάλυσης του $J$ που δεν θα ταυτίζεται με κανένα από τα $Q_i$. Ωστόσο έχουμε
+	%$$\sqrt{I} = p_1 \cap p_2 \cap \ldots \cap p_n \subseteq \sqrt{J} \subseteq  \sqrt{p_1 \cap p_2 \cap \ldots \cap p_n} = p_1 \cap p_2 \cap \ldots \cap p_n$$ δηλαδή $AssI = AssJ = \{p_1,p_2,\ldots , p_n\}$. Επειδή όλα αυτά τα πρώτα ιδεώδη είναι μέγιστα τότε είναι και όλα ελάχιστα μεταξύ τους. Άρα από το δεύτερο θεώρημα μοναδικότητας πρωταρχικών αναλύσεων
+	%%%%%diorthosi%%%%
+
+	$ $\newline
+	Αν υποθέσουμε ότι $\ell_R (R/I) = n < \infty$, δηλαδή θα υπάρχει συνθετική σειρά με μήκος $n$ (άρα κάθε συνθετική σειρά θα έχει μήκος $n$) έχουμε ότι το $R/I$ είναι $R$-πρότυπο του \tl{Artin} και της \tl{Noether}. Ισοδύναμα, το $R/I$ είναι $R/I$-πρότυπο του \tl{Artin} και της \tl{Noether}. Δηλαδή το $R/I$ είναι δακτύλιος του \tl{Artin} και της \tl{Noether}. Το ότι είναι και δακτύλιος της \tl{Noether} το είχαμε και ως πηλίκο του $R$. Μας χρειάζεται ότι το $R/I$ είναι δακτύλιος του \tl{Artin} και άρα κάθε πρώτο του ιδεώδες είναι και μέγιστο.
+
+	$ $\newline
+	Έστω $p_i \in AssI$, το $p_i$ είναι πρώτο ιδεώδες του $R$ και περιέχει το $I$. Άρα το $p_i/I$ είναι πρώτο ιδεώδες του $R/I$ εφόσον το $R/p_i$ είναι περιοχή και έχουμε τον ισομορφισμό δακτυλίων $$\frac{R/I}{p_i/I} \simeq R/p_i $$
+
+	$ $\newline
+	Ωστόσο τo $p_i/I$ θα είναι και μέγιστο ως πρώτο ιδεώδες του $R/I$, δηλαδή ο παραπάνω ισομορφισμός είναι μεταξύ σωμάτων και έτσι το $p_i$ είναι και αυτό μέγιστο.
+
+	$ $\newline
+	Αντίστροφα, υποθέτουμε ότι κάθε $p_i \in AssI$ είναι μέγιστο. Επειδή ο $R$ είναι δακτύλιος της \tl{Noether} θα είναι και το πηλίκο $R/I$. Για να δείξουμε ότι $\ell_R(R/I)$ με βάση τον προηγούμενο συλλογισμό με την αλλαγή δακτυλίου και την ύπαρξη συνθετικής σειράς, αρκεί να δείξουμε ότι ο $R/I$ είναι δακτύλιος του \tl{Artin}. Έχουμε $$p_1 p_2 \cdots p_n \subseteq p_1 \cap p_2 \cap \ldots \cap p_n = \sqrt{I}$$ και το $\sqrt{I}$ είναι πεπερασμένα παραγόμενο αφού βρισκόμαστε σε δακτύλιο της \tl{Noether}. Αν είναι $a_j, j = 1,2,\ldots k$ οι γεννήτορες του $\sqrt{I}$, τότε θα υπάρχουν $m_j$ τέτοια ώστε $a^{m_j}_j \in I$. Συνεπώς, για μεγάλο $N$ (π.χ. $N = k \cdot max\{m_1,m_2,\ldots,m_k\}$) θα έχουμε ότι $(\sqrt{I})^n \subseteq I$.
+
+	$ $\newline
+	Όμοια με την πρώτη κατεύθυνση, εφόσον τα $p_i$ είναι μέγιστα ιδεώδη του $R$ θα είναι και τα $p_i /I$ μέγιστα ιδεώδη του $R/I$. Έχουμε ότι $$\frac{p^N_1}I \cdot \frac{p^N_2}I \cdots \frac{p^N_n}I = \frac{(p_1 p_2 \cdots p_n)^N}{I} \subseteq \frac{(\sqrt{I})^n}{I} \subseteq \frac{I}{I} = 0$$ άρα ο $R/I$ ως δακτύλιος είναι της \tl{Noether} και έχει μηδενικό γινόμενο μεγίστων ιδεωδών. Από αυτό έπεται ότι είναι δακτύλιος του \tl{Artin}.
+\end{proof}
+
+
+\end{document}

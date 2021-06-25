@@ -1,0 +1,440 @@
+\documentclass[oneside,a4paper]{article}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{amssymb}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage[greek]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{mathtools}
+\usepackage{blindtext}
+\usepackage[T1]{fontenc}
+\usepackage{titlesec}
+\usepackage{sectsty}
+\usepackage{verbatim}
+\usepackage{multirow}
+\chapternumberfont{\tiny} 
+\chaptertitlefont{\Huge}
+%ελληνικοι χαρακτηρες σε μαθ pdf utf-8
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{tikz-cd}
+
+\usepackage{xcolor}
+\usepackage{framed}%frames
+
+\usepackage{array}
+\usepackage{pbox}
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{tikz}
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%περιθώρια%%%%%%%%%%%%
+\usepackage[a4paper,margin=3.5cm]{geometry}
+
+
+%%%%%%%%συντομευσεις%%%%%%%%%%
+\newtheorem{theorem}{Θεώρημα}
+\newtheorem{lemma}{Λήμμα}
+\newtheorem{example}{Παράδειγμα}
+\newtheorem*{defn}{Ορισμός}
+\newtheorem{prop}{Πρόταση}
+\newtheorem{cor}{Πόρισμα}
+
+\newcommand {\tl}{\textlatin}
+%%%%%%%%%αριθμηση%%%%%%%%%%%%%%
+\renewcommand{\theenumi}{\arabic{enumi}}
+\renewcommand{\labelenumi}{{\rm(\theenumi)}}
+\renewcommand{\labelenumii}{\roman{enumii}) }
+%%%%%%%%%%%% New theorems %%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\Co}{\mathbb{C}}
+%%%%%%%%%%%%%%%%%%%%% Document starts %%%%%%%%%%%%
+\begin{document}
+	
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\selectlanguage{greek}
+	%%%%%%%%%%%%%%%%%%%%%%% Start Roman numbering %%%% vbbnn
+	%\pagenumbering{roman}
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	
+	\begin{framed}	
+		%\vspace{0.3truecm}
+		\begin{center}
+			\huge Μεταθετική Άλγεβρα
+		\end{center}
+		%\vspace{0.3truecm}
+		\begin{center}
+			\huge Εργασία 3
+		\end{center}
+		\vspace{0.3truecm}
+		\begin{center}
+			Ονομ/νο: Νούλας Δημήτριος\\
+			ΑΜ: 1112201800377\\
+			\tl{email}: \tl{dimitriosnoulas@gmail.com}
+		\end{center}
+		\vspace{0.3truecm}
+	\end{framed}
+	\vspace*{\fill}
+	\begin{center}
+	\includegraphics[width=0.5\textwidth]{C:/Users/dimit/Desktop/TeX/uoa_logo}
+	\end{center}
+\vspace{1cm}
+\pagebreak
+
+
+\noindent Άσκηση $3.3)$
+\quad Στις ακόλουθες περιπτώσεις εξετάστε αν ο δακτύλιος $R$ είναι της \tl{Noether}.
+\begin{enumerate}
+    \item $R = S[x,y]/I$, όπου $S$ δακτύλιος της \tl{Noether} και $I$ ιδεώδες του $S[x,y]$.
+    \item $R = \Z[\sqrt{-3}]/(4)$.
+    \item $R$ ο δακτύλιος των απεικονίσεων $\mathbb{R}\rightarrow \mathbb{R}$.
+    \item $R$ ο δακτύλιος των απεικονίσεων $\Z_n \rightarrow \Z_n, n >1$.
+    \item $R = \{a_{2n} x^{2n} + \ldots + a_2 x^2 + a_0 | n \geq 0\}$ υποδακτύλιος του $\Z[x]$.
+\end{enumerate}
+\begin{proof} $ $
+
+	$ $\newline
+	\begin{enumerate}
+		\item Χρησιμοποιώντας το θεώρημα βάσης του \tl{Hilbert} έχουμε τις συνεπαγωγές
+		$$S \quad \text{\tl{  Noetherian }} \implies S[x] \quad \text{\tl{  Noetherian }} \implies S[x][y] = S[x,y] \quad \text{\tl{  Noetherian }}$$
+		και από την θεωρία κάθε πηλίκο δακτυλίου της \tl{Noether} είναι δακτύλιος της \tl{Noether}.
+
+		\item Έχουμε ότι ο $\Z[x]$ είναι \tl{Noetherian} και άρα είναι \tl{Noetherian} και το πηλίκο
+		$$\frac{\Z [x]}{(x^2+3)} \simeq \Z [\sqrt{-3}]$$
+		όπου ο ισομορφισμός προκύπτει από τον επί ομομορφισμό εκτίμησης $f(x) \mapsto f(\sqrt{-3})$. Αφού ο δακτύλιος $\Z [\sqrt{-3}]$ είναι της \tl{Noether}, είναι και το πηλίκο $\Z[\sqrt{-3}]/(4)$. 
+		
+		$ $\newline
+		Εφόσον τα πηλίκα διατηρούν την ιδιότητα της \tl{Noether}, χρησιμοποιώντας το πρώτο θεώρημα ισομορφισμών δακτυλίων, μπορούμε να συμπεράνουμε γενικότερα ότι οι επιμορφισμοί μεταφέρουν την ιδιότητα της \tl{Noether} μεταξύ των δακτυλίων.
+
+		\item Ο δακτύλιος $R = \mathbb{R}^{\mathbb{R}}$ δεν είναι της \tl{Noether} με τις κατά σημείο πράξεις καθώς αν έχουμε $A\subseteq \mathbb{R}$ ορίζουμε:
+		$$\phi(A) = \{f \in R: \quad f(a) = 0 \quad\forall a \in A\}$$
+		το οποίο είναι ιδεώδες του $R$ εφόσον:
+		$$(f-g)(a) = f(a)-g(a) = 0 $$
+		$$(hf)(a) = h(a) f(a) = h(a) \cdot 0 = 0$$
+		Από τον ορισμό του $\phi(A)$ έχουμε ότι $A\subseteq B \implies \phi(A) \supseteq \phi(B)$. Μπορούμε να διαλέξουμε το $A$ να είναι διάστημα και $x_0 \in A$, τότε έχουμε τον γνήσιο εγκλεισμό
+		$$ \phi (A) \subset \phi(A \setminus \{x_0\})$$
+		εφόσον μια $f \in R$ που στέλνει τα υπόλοιπα στοιχεία του $A$ στο $0$ και το $x_0$ σε κάποιο μη μηδενικό πραγματικό αριθμό θα ανήκει στο $\phi(A\setminus \{x_0\}) \setminus \phi(A)$. Έτσι έχουμε μια αύξουσα ακολουθία ιδεωδών η οποία δεν είναι τελικά σταθερή:
+
+		$$\phi(A) \subset \phi(A \setminus \{x_0\} ) \subset \phi(A \setminus \{x_0, x_1\} ) \subset \ldots$$
+
+		\item Ο δακτύλιος $R$ των απεικονίσεων $\Z_n \rightarrow \Z_n$ είναι της \tl{Noether} καθώς είναι πεπερασμένος. Πράγματι για μια τέτοια απεικόνιση $f$ έχουμε $n$ επιλογές (με επανάληψη) για να διαλέξουμε σε ποια κλάση του πεδίου τιμών θα απεικονίσουμε τις $n$ κλάσεις του πεδίου ορισμού. Δηλαδή $|R| = n^n$.
+		
+		\item Έχουμε ότι ο δακτύλιος $\Z [x]$ είναι της \tl{Noether} και η απεικόνιση:
+		$$\phi : \Z [x] \longrightarrow R$$
+		$$f(x) \longmapsto f(x^2)$$
+
+		είναι επιμορφισμός. Πράγματι, αν $f(x),g(x) \in \Z [x]$ και $n = \max \{degf(x),degg(x)\}$ τότε:
+		$$\phi(f(x) + g(x))  = \phi \left( \sum\limits_{i=0}^n (f_i + g_i)x^i \right) = \sum\limits_{i=0}^n (f_i+g_i)x^{2i} = $$
+		$$ = \sum\limits_{i=0}^{degf(x)} f_i x^{2i} + \sum\limits_{i=0}^{degg(x)} g_i x^{2i} = \phi(f(x)) + \phi(g(x))$$
+		επιπλέον αν $c_i = \sum\limits_{k=0}^i f_k g_{i-k}$ το λεγόμενο \tl{product rule}, τότε
+		$$ \phi (f(x)g(x)) = \phi \left( \sum\limits_{i=0}^n c_i x^i \right) = \sum\limits_{i=0}^n c_i x^{2i} = $$
+		$$ = \left( \sum\limits_{i=0}^{degf(x)} f_i x^{2i} \right) \cdot \left(\sum\limits_{i=0}^{degg(x)} g_i x^{2i} \right)  = \phi(f(x)) \phi( g(x))$$
+
+		και το επί ισχύει εφόσον για κάθε $a_{2n} x^{2n} + \ldots a_2 x^2 + a_0 \in R$ έχουμε:
+		$$a_{2n} x^n + a_{2(n-1)}x^{n-1} + \ldots + a_4 x^2 + a_2 x + a_0 \longmapsto  a_{2n} x^{2n} + \ldots a_2 x^2 + a_0 $$
+
+		Έτσι ο δακτύλιος $R$ είναι της \tl{Noether} λόγω του παραπάνω επιμορφισμού.
+	\end{enumerate}
+\end{proof}
+\pagebreak
+
+\noindent Άσκηση $3.4)$
+\quad Έστω $k$ σώμα, $n$ θετικός ακέραιος και $f_1,f_2,\ldots \in k[x_1 ,\ldots, x_n]$. Για κάθε ακέραιο $m\geq 2$ θέτουμε $X_m = \{P \in k^n| f_1 (P) = \ldots = f_{m-1} (P) = 0$ και $f_m (P) = 1\}$. Δείξτε ότι υπάρχει $N$ τέτοιο ώστε $X_m = \varnothing$ για κάθε $m\geq N$.
+
+\begin{proof} $ $
+	
+	$ $\newline 
+	Αν δούμε το $f_m -1$ ως νέο πολυώνυμο τότε το $X_m$ είναι αλγεβρικό σύνολο και ορίζουμε τα ιδεώδη του $k[x_1,\ldots,x_n]$ που αντιστοιχούν στα αλγεβρικά σύνολα:
+	$$I(X_m) = \{ f \in k[x_1, \ldots , x_n]: \quad f(P) = 0 \quad \forall P \in X_m\}$$
+	είναι πράγματι ιδεώδες αφού $f(P) - g(P) = 0-0 = 0$ και $h(P)f(P) = h(P)\cdot 0 = 0$
+
+	$ $\newline
+	Επιπλέον ορίζουμε:
+	$$Y_m = \{ P \in k^n: \quad f_1(P) = f_2 (P) = \ldots = f_{m-1}(P) = 0 \} \supseteq X_m $$
+	
+	και για $m_2 > m_1$ οι κοινές ρίζες των πρώτων σε σειρά $m_2-1$ πολυωνύμων θα περιέχονται στις κοινές ρίζες των πρώτων $m_1-1$ πολυωνύμων. Μαζί με αυτό και με το γεγονός ότι το ιδεώδες του αλγεβρικού συνόλου αντιστρέφει την φορά των υποσυνόλων παίρνουμε:
+	$$ m_2 > m_1 \implies Y_{m_2} \subseteq Y_{m_1} \implies I(Y_{m_2}) \supseteq I(Y_{m_1}) $$
+	
+	$ $\newline
+	Δηλαδή έχουμε μια αύξουσα ακολουθία ιδεωδών $(I(Y_m))_{m \in \mathbb{N}}$ στον δακτύλιο $k[x_1,\ldots,x_n]$ ο οποίος είναι της \tl{Noether} από το θεώρημα βάσης του \tl{Hilbert}. Άρα η ακολουθία είναι τελικά σταθερή, δηλαδή υπάρχει $N \in \mathbb{N}$ τέτοιο ώστε:
+	$$I(Y_{N}) = I(Y_{N+1}) \quad \left( = I(Y_{N+2}) = \ldots \right)$$
+
+	$ $\newline
+	Θα δείξουμε ότι $X_N = \varnothing$ και με το ίδιο επιχείρημα επαγωγικά θα έχουμε $X_{N+1}, X_{N+2}, \ldots = \varnothing$.
+
+	$ $\newline
+	Έστω ότι υπάρχει $Q \in X_N$, τότε $Q \in Y_N$ και $f_N (Q) = 1$. Έχουμε από τους ορισμούς ότι $f_N \in I(Y_{N+1})$ αφού $f_N(P) = 0$ για κάθε $P \in Y_{N+1}$. Άρα $f_N \in I(Y_N)$, δηλαδή $f_N(P) = 0$ για κάθε $P \in Y_N$. Αυτό είναι άτοπο αφού $Q \in Y_N$.
+\end{proof}
+
+\pagebreak
+
+
+
+\noindent Άσκηση $3.7)$
+\quad Έστω $\phi: R \rightarrow S$ ομομορφισμός δακτυλίων και $J$ ιδεώδες του $S$. Θυμίζουμε ότι με $J^c$ συμβολίζουμε το ιδεώδες $\phi^{-1}(J)$ του $R$.
+\begin{enumerate}
+	\item Αν το $J$ είναι $p$-πρωταρχικό, τότε το $J^c$ είναι $p^c$-πρωταρχικό ιδεώδες του $R$.
+	\item Αν 
+	$$J = Q_1 \cap \ldots \cap Q_n, \sqrt{Q_i} = p_1 \quad (1)$$
+	είναι πρωταρχική ανάλυση του $J$, τότε
+	$$J^c = Q^c_1 \cap \ldots \cap Q^c_n, \sqrt{Q^c_i} = p^c_i \quad (2)$$
+	είναι πρωταρχική ανάλυση του $J^C$
+
+	\item Υποθέτουμε ότι ο $\phi$ είναι επί, Δείξτε ότι αν η $(1)$ είναι ελάχιστη πρωταρχική ανάλυση, τότε και η $(2)$ είναι ελάχιστη πρωταρχική ανάλυση.
+\end{enumerate} 
+
+\begin{proof} $ $
+
+	$ $\newline
+	\begin{enumerate}
+		\item Θα δείξουμε αρχικά ότι το $J^C$ είναι πρωταρχικό. Αν $ab \in J^c$ με $a \not\in J^c$ τότε:
+		$$\phi(ab) \in J$$ και $\phi (a) \not\in J$. Δηλαδή
+		$$\phi(a) \phi(b) \in J \quad\text{ και } \phi(a) \not\in J, \quad J \text{ πρωταρχικό } \implies \phi(b)^n \in J  $$
+		και άρα $\phi (b^n) \in J$, δηλαδή $b^n \in J^c$. Για να δείξουμε ότι είναι $p^c$-πρωταρχικό αρκεί να δείξουμε την σχέση:
+		$$\sqrt{J^c} = (\sqrt{J})^c$$
+
+		Πράγματι
+		$$x \in (\sqrt{J})^c \iff \phi(x) \in \sqrt J$$
+		$$\iff \phi(x)^n \in J$$
+		$$\iff \phi(x^n) \in J$$
+		$$\iff x^n \in J^c$$
+		$$\iff x \in \sqrt{J^c}$$
+
+		\item Οι σχέσεις $\sqrt{Q^c_i} = p^c_i$ ισχύουν λόγω του πρώτου ερωτήματος και εφόσον το $Q_i$ είναι $p_i$-πρωταρχικό, έχουμε ότι το $Q^c_i$ είναι $p^c_i$-πρωταρχικό. Επιπλέον
+		$$ J^c = \phi^{-1}(J) = \phi^{-1}\left(\bigcap\limits_{i=1}^n Q_i \right) = \bigcap\limits_{i=1}^n \phi^{-1}(Q_i) = \bigcap\limits_{i=1}^n Q^c_i$$
+		από την ιδιότητα της αντίστροφης εικόνας.
+
+		\item Εφόσον $p_i \neq p_j$ έχουμε ότι $\phi^{-1} (p_i) \neq \phi^{-1}(p_j)$, δηλαδή $p^c_i \neq p^c_j$ για $i\neq j$. Έστω $i \in \{1,2,\ldots,n\}$ και προς άτοπο ότι ισχύει:
+		$$\bigcap\limits_{j\neq i} Q^c_j = J^c$$
+		$$ \phi^{-1} \left( \bigcap\limits_{j\neq i} Q_j \right) = \bigcap\limits_{j\neq i} \phi^{-1}(Q_j) = \phi^{-1}(J)$$
+		τότε καθώς η $\phi$ είναι επί έχουμε
+		$$ \bigcap\limits_{j\neq i} Q_j = \phi \left( \phi^{-1} \left( \bigcap\limits_{j\neq i} Q_j \right) \right) = \phi \left( \phi^{-1}(J) \right) = J$$
+		το οποίο είναι άτοπο εφόσον η πρωταρχική ανάλυση του $J$ είναι ελάχιστη.
+	\end{enumerate}
+	
+\end{proof}
+
+\pagebreak
+
+
+\noindent Άσκηση $3.10)$
+\quad Έστω $R$ δακτύλιος της \tl{Noether} και $I,J,Q$ ιδεώδη του $R$ με $Q$ πρωταρχικό και $IJ \subseteq Q$. Δείξτε ότι $I \subseteq Q$ ή υπάρχει ακέραιος $n$ με $J^n \subseteq Q$.
+
+\begin{proof} $ $
+
+	$ $\newline
+	Έστω ότι $I \not\subseteq Q$, δηλαδή υπάρχει $x \in I$ και $x \not\in Q$. Καθώς ο δακτύλιος $R$ είναι της \tl{Noether} έχουμε ότι το $J$ είναι πεπερασμένα παραγόμενο, δηλαδή υπάρχουν $y_i, i=1,\ldots,s$ στοιχεία του $R$ τέτοια ώστε:
+	$$J = (y_1, y_2 ,\ldots ,y_s)$$
+
+	τώρα για κάθε $i$ έχουμε ότι
+	$$xy_i \in IJ = \big\{\sum\limits_{k=1}^n a_k b_k | \quad a_k \in I, b_k \in J, n \in \mathbb{N} \big\} \subseteq Q$$
+
+	δηλαδή $xy_i \in Q, x\not\in Q$ και $Q$ πρωταρχικό. Έπεται ότι υπάρχει $n_i$ τέτοιο ώστε $y_i^{n_i} \in Q$.
+
+	$ $\newline
+	Θέτουμε $N = n_1 + n_2 + \ldots + n_s$. Τότε το $J^N$ παράγεται ως εξής:
+	$$J^N = \left( \big\{ y^{m_1}_1 y^{m_2}_2 \cdots y ^{m_s}_s | \quad m_i \geq 0, m_1 + m_2 + \ldots + m_s = N \big\}\right)$$
+	δηλαδή από όλα τα μονώνυμα βαθμού $N$ που προκύπτουν από τα $y_1, y_2 ,\ldots, y_s$.
+
+	$ $\newline
+	Έστω ένα τέτοιο μονώνυμο $y^{m_1}_1 y^{m_2}_2 \cdots y ^{m_s}_s$. Δεν μπορεί για όλα τα $i$ να ισχύει $m_i < n_i$, καθώς αν τα αθροίσουμε θα πάρουμε $N < N$. Συνεπώς υπάρχει κάποιο $m_i \geq n_i$ και άρα $y^{m_i}_i \in Q$. Συπεπώς, αφού το $Q$ είναι ιδεώδες θα ανήκει ολόκληρο το μονώνυμο στο $Q$ και επειδή ήταν τυχόν παίρνουμε $J^N \subseteq Q$.
+
+	%χρειάζεται αντίστροφα εδώ; κάτι είτε είναι υποσύνολο είτε δεν είναι. Άρα τελείωσα με την μια κατεύθυνση;
+	$ $\newline
+	Αντίστροφα, αν δεν υπάρχει $n$ τέτοιο ώστε $J^n \subseteq Q$ τότε με τον παραπάνω συλλογισμό δεν μπορεί να υπάρχει $x \in I$ που δεν ανήκει στο $Q$. Άρα αν το $I$ είναι μη κενό και $x \in I \implies x \in Q$. Διαφορετικά, αν $I = (0) \subseteq Q$.
+\end{proof}
+
+\pagebreak
+
+
+
+
+\noindent Άσκηση $3.13)$
+\quad Για $k$ σώμα και $R = k[x,y,z]$ θεωρούμε τα ιδεώδη $p_1 = (x,y)$, $p_2 = (x,z)$, $m = (x,y,z)$ και $I = p_1 p_2$. Δείξτε ότι τα $p_1, p_2$ είναι πρώτα και το $m$ μέγιστο. Στη συνέχεια δείξτε ότι μια ελάχιστη πρωταρχική ανάλυση του $I$ είναι $I=p_1 \cap p_2 \cap m^2$. Ποιες συνιστώσες είναι μεμονωμένες και ποιες εμφυτευμένες;
+
+\begin{proof} $ $
+
+	$ $\newline
+	Έχουμε τους ισομορφισμούς:
+	$$k[x,y,z]/(x,y) \simeq k[z], \quad k[x,y,z]/(x,z) \simeq k[y], \quad k[x,y,z]/(x,y,z) \simeq k$$
+	και τα πρώτα δύο είναι περιοχές, δηλαδή $p_1 ,p_2$ πρώτα και το τρίτο είναι σώμα, δηλαδή $m$ μέγιστο.
+
+	$$I = p_1 p_2 = (x,y)\cdot(x,z) = (x^2 , xy,xz,yz)$$
+	Καθένα από τα παραπάνω στοιχεία που παράγουν το $I$ ανήκουν στα $(x,y),(x,z)$ και $m^2 = (x,y,z)^2 = (x^2,y^2,z^2, xy,xz,yz)$. Άρα έχουμε την μια σχέση $I \subseteq p_1 \cap p_2 \cap m^2$.
+
+	$ $\newline
+	Έστω $u \in p_1 \cap p_2 \cap m^2$. Αφού $u \in m^2$ το γράφουμε ως:
+	$$u = a_1 x^2 + a_2 y^2 + a_3 z^2 + a_4 xy + a_5 xz + a_6 yz$$
+	$$u = a + a_2 y^2 + a_3 z^2$$
+	εφόσον ήδη ισχύει ότι $a = a_1 x^2 + a_4 xy + a_5 xz + a_6 yz \in I$. Τώρα καθώς $u \in p_1$ και $a_2 y^2 \in p_1$ έχουμε ότι η διαφορά τους που είναι $a_3 z^2$ θα ανήκει στο $p_1$. Ωστόσο $z^2 \not\in p_1$, συνεπώς $a_3 \in p_1$ αφού είναι πρώτο ιδεώδες. Με όμοιο συλλογισμό δείχνουμε ότι $a_2 \in p_2$.
+
+	$ $\newline
+	Άρα έχουμε
+	$$a_2 y^2 = y (ya_2) \in p_1 p_2 = I $$
+	$$a_3 z^2 = z (a_3 z) \in p_1 p_2$$
+	συνεπώς $u = a + a_2 y^2 + a_3 z^2 \in I$. Άρα $I = p_1 \cap p_2 \cap m^2$.
+
+	$ $\newline
+	Το ότι είναι πρωταρχική ανάλυση έπεται από το γεγονός ότι τα $p_1, p_2$ είναι πρώτα και άρα πρωταρχικά και επειδή το ριζικό του $m^2$ είναι μέγιστο τότε το $m^2$ είναι πρωταρχικό (θα αποδειχθεί). Δηλαδή καθένα από τα $p_1,p_2, m^2$ είναι πρωταρχικό και τα ριζικά τους $(x,y),(x,z),(x,y,z)$ είναι διακεκριμένα.
+
+	$ $\newline
+	Για να δείξουμε ότι είναι ελάχιστη αυτή η ανάλυση παρατηρούμε ότι τα $x,y^2,z^2$ δεν ανήκουν στο $I = (x^2,xy,xz,yz)$ ενώ έχουμε:
+	$$x \in (p_1 \cap p_2) \setminus m^2$$
+	$$y^2 \in (p_1 \cap m^2) \setminus p_2$$
+	$$z^2 \in (p_2 \cap m^2) \setminus p_1$$
+	και άρα δεν μπορούμε να παραλείψουμε κάποια από τις συνιστώσες. Έχουμε 
+	$$AssI = \{(x,y),(x,z),(x,y,z)\}$$ 
+	δηλαδή οι συνιστώσες $(x,y),(x,z)$ είναι μεμονωμένες και η εμφυτευμένη σε αυτές είναι η $(x,y,z)$.
+
+	\pagebreak
+	$ $\newline Αποδεικνύουμε και ότι για τυχαίο ιδεώδες $I$ με $\sqrt{I}$ μέγιστο, έχουμε ότι $I$ πρωταρχικό.
+	Έστω $ab \in I$ με $a \not\in I$. Αν δεν υπάρχει $n$ τέτοιο ώστε $b^n \in I$, δηλαδή $b \not\in \sqrt{I}$ τότε:
+	$$\sqrt{I} + (b) \supset \sqrt{I} \implies \sqrt{I} + (b) = R$$
+	δηλαδή υπάρχει $x \in \sqrt{I}$ και $r \in R$ με $x+rb= 1$. Έχουμε ότι υπάρχει $m$ τέτοιο ώστε $x^m \in I$ και άρα:
+	$$1 = 1^m = (x+rb)^m = \sum\limits_{i=0}^m \binom{m}{i} x^{m-i} (rb)^i = x^m + \sum\limits_{i=1}^m \binom{m}{i} x^i (rb)^{m-i} = x^m + r^{\prime}b$$
+	$$1 = x^m + r^{\prime}b$$
+	$$ a = ax^m + r^{\prime}(ab) \in I$$
+	
+	αφού $ab, x^m \in I$, το οποίο έιναι άτοπο.
+\end{proof}
+
+\pagebreak
+
+
+\noindent Άσκηση $3.17)$
+\quad Έστω $R$ δακτύλιος και $I$ γνήσιο ιδεώδες του $R$.
+\begin{enumerate}
+	\item Δείξτε ότι το σύνολο των πρώτων ιδεωδών του $R$ που περιέχουν το $I$ έχει ελάχιστο στοιχείο. Κάθε τέτοιο ιδεώδες λέγεται ελάχιστο πρώτο ιδεώδες του $I$.
+	\item Στο $\Z$ ποια είναι τα ελάχιστα πρώτα ιδεώδη του $(24)$.
+	\item Δείξτε ότι αν ο $R$ είναι της \tl{Noether}, τότε το πλήθος των ελαχίστων πρώτων ιδεωδών του $I$ είναι πεπερασμένο.
+\end{enumerate}
+
+\begin{proof} $ $
+
+	$ $\newline
+	\begin{enumerate}
+		\item Θεωρούμε το σύνολο:
+		$$P = \{ \text{ πρώτα ιδεώδη που περιέχουν το } I\} $$
+		και έχουμε ότι $P \neq \varnothing$ καθώς για κάθε ιδεώδες υπάρχει μέγιστο που το περιέχει. Ορίζουμε μερική διάταξη στο $P$ ως εξής:
+		$$p,q \in P \implies p \geq q \iff p \subseteq q$$
+		Θεωρούμε $X=\{p_{\lambda}\}_{\lambda \in \Lambda}$ μια μη κενή αλυσίδα του $P$. Τότε ορίζουμε
+
+		$$\overline{x} = \bigcap\limits_{p\in X} p$$
+		το οποίο είναι ιδεώδες ως τομή ιδεωδών και ισχύει $\overline{x} \geq p$ για κάθε $p \in X$. Θέλουμε να δείξουμε ότι είναι και πρώτο. 
+		
+		$ $\newline
+		Έστω $ab \in \overline{x}$. Αν κανένα από τα $a,b$ δεν ανήκει στο $\overline{x}$ τότε υπάρχουν δείκτες $\lambda_1, \lambda_2 \in \Lambda$ έτσι ώστε $a \not\in p_{\lambda_1}$ και $b \not\in p_{\lambda_2}$. Λόγω της ολικής διάταξης στο $X$ μπορούμε δίχως βλάβη γενικότητας να υποθέσουμε ότι $p_{\lambda_1} \geq p_{\lambda_2}$ και άρα $a,b \not\in p_{\lambda_1}$. Αυτό είναι άτοπο εφόσον:
+		$$ab \in \overline{x} \implies ab \in p_{\lambda_1} \implies a \in p_{\lambda_1} \quad\text{ ή } \quad b \in p_{\lambda_1}$$  
+
+		αφού το $p_{\lambda_1}$ είναι πρώτο. Άρα το $\overline{x}$ είναι πρώτο. Συνεπώς κάθε αλυσίδα του $P$ έχει μέγιστο στοιχείο ως προς την μερική διάταξη $\geq$ και άρα υπάρχει ελάχιστο πρώτο ιδεώδες που περιέχει το τυχόν ιδεώδες $I$.
+
+		\item Έχουμε $24 = 3\cdot 2^3$ και άρα τα πρώτα ιδεώδη που περιέχουν το $(24)$ είναι τα $(2),(3)$ και είναι και τα δύο ελάχιστα αφού το ένα δεν περιέχει το άλλο.
+		
+		
+		\item Έστω $q$ ελάχιστο πρώτο ιδεώδες που περιέχει το $I$. Θεωρούμε μια ελάχιστη πρωταρχική ανάλυση $I = Q_1 \cap \ldots \cap Q_n$ εφόσον είμαστε σε δακτύλιο της \tl{Noether}. Έχουμε:
+		$$ q \supseteq I \implies \sqrt{q} = q \supseteq \sqrt{I} = p_1 \cap p_2 \cap \ldots \cap p_n$$
+
+		όπου τα $p_i$ είναι τα στοιχεία του $AssI$ και από το λήμμα \tl{prime avoidance} παίρνουμε ότι $p_i \subseteq q$ για κάποιο $i = 1,\ldots,n$. Λόγω της τομής έχουμε ότι $I \subseteq \sqrt{I} \subseteq p_i$. Δηλαδή το $p_i$ είναι πρώτο ιδεώδες που περιέχει το $I$ και περιέχεται στο ελάχιστο $q$. Συνεπώς $q=p_i \in AssI$ και άρα τα ελάχιστα πρώτα ιδεώδη του $I$ είναι πεπερασμένα.
+
+	\end{enumerate}
+
+\end{proof}
+
+\pagebreak
+
+
+
+\noindent Άσκηση $3.22)$
+\quad Εξετάστε ποιες από τις ακόλουθες προτάσεις αληθεύουν.
+\begin{enumerate}
+	\item Κάθε δακτύλιος της \tl{Noether} που είναι και περιοχή, είναι περιοχή μοναδικής παραγοντοποίησης.
+	\item Κάθε υποδακτύλιος σώματος είναι δακτύλιος της \tl{Noether}.
+	\item Αν $R,S$ δακτύλιοι της \tl{Noether}, τότε και ο $R \times S$ είναι δακτύλιος της \tl{Noether}.
+\end{enumerate}
+
+
+\begin{proof} $ $
+	
+	$ $\newline
+	\begin{enumerate}
+		\item Δείξαμε στην προηγούμενη εργασία ότι ο δακτύλιος $\Z [\sqrt{-3}]$ δεν είναι περιοχή μοναδικής παραγοντοποίησης, ενώ δείξαμε και στην άσκηση $3.3)$ ότι είναι δακτύλιος της \tl{Noether}. Φυσικά είναι περιοχή ως υποσύνολο του σώματος των μιγαδικών αριθμών.
+		\item Κάθε ακέραια περιοχή εμφυτεύεται (με μονομορφισμό δακτυλίων) στο σώμα πηλίκων της όπως για παράδειγμα $\Z \xhookrightarrow{} \Q$ και αυτό είναι το ελάχιστο σώμα που την περιέχει. Εφόσον γνωρίζουμε ότι η περιοχή $\Z [ x_1, x_2 ,\ldots ]$ δεν είναι δακτύλιος της \tl{Noether} τότε δεν ισχύει η πρόταση για το σώμα πηλίκων της $\Q (x_1,x_2,\ldots)$.
+		\item Η πρόταση αυτή είναι αληθής, καθώς τα ιδεώδη του $R\times S$ είναι της μορφής $I\times J$ με $I$ ιδεώδες του $R$ και $J$ ιδεώδες του $S$. Συνεπώς για κάθε άπειρη ακολουθία ιδεωδών:
+		$$I_1 \times J_1 \subseteq I_2 \times J_2 \subseteq I_3 \times J_3 \subseteq \ldots$$
+
+		θα έχουμε τις τελικά σταθερές ακολουθίες:
+		$$I_1 \subseteq I_2 \subseteq I_3 \subseteq \ldots $$
+		$$J_1 \subseteq J_2 \subseteq J_3 \subseteq \ldots $$
+		και άρα η αρχική ακολουθία θα είναι τελικά σταθερή.
+
+	\end{enumerate}
+	
+\end{proof}
+
+\pagebreak
+
+\noindent Άσκηση $3.23)$ (Τοπολογία \tl{Zariski} στο $k^n$)
+\quad Θεωρούμε αλγεβρικά κλειστό σώμα $k$ και την τοπολογία \tl{Zariski} στο $k^n$.
+\begin{enumerate}
+	\item Ποια είναι τα κλειστά σύνολα του $k$?
+	\item Δείξτε ότι κάθε δύο μη κενά ανοιχτά σύνολα του $k^n$ έχουν μη κενή τομή. Αληθεύει ότι η τοπολογία \tl{Zariski} είναι \tl{Hausdorff}?
+	\item Αληθεύει ότι η τοπολογία \tl{Zariski} του $k^2$ είναι το γινόμενο των τοπολογιών \tl{Zariski} του $k$?
+	\item Κάθε πολυώνυμο $f \in k[x_1,\ldots, x_n]$ ορίζει την αντίστοιχη πολυωνυμική συνάρτηση $k^n \rightarrow k, P \mapsto f(P)$ που συμβολίζουμε πάλι με $f$. Δείξτε ότι η $f$ είναι συνεχής.
+\end{enumerate}
+
+
+\begin{proof} $ $
+
+	$ $\newline
+	\begin{enumerate}
+		\item Τα κλειστά σύνολα του $k^n$ είναι τα $V(J) = \{P \in k^n: \quad f(P) = 0 \quad \forall f \in J\}$ όπου $J$ ιδεώδες του $k[x_1,\ldots,x_n]$. Για $n = 1$ τα ιδεώδη $J$ του $k[x]$ είναι κύρια, δηλαδή $J = (g(x))$ και επειδή το $k$ είναι αλγεβρικά κλειστό περιέχει όλες τις ρίζες του $g(x)$. Έχουμε:
+		$$V(J) = V(g(x)) = \{\text{ οι } deg(g(x)) \text{ ρίζες του } g(x)\}$$
+		και επειδή τα κλειστά σύνολα είναι πεπερασμένα, δηλαδή τα συμπληρώματα των ανοικτών, έχουμε την συμπεπερασμένη τοπολογία στην περίπτωση του $n=1$.
+
+		\item Έστω δύο γνήσια κλειστά και μη κενά $V(I),V(J) \subset k^n$ με $V(I)^c \cap V(J)^c = \varnothing$. Τότε 
+		$$V(I) \cup V(J) = k^n \implies V(IJ) = k^n$$
+		
+		$ $\newline
+		Τα $I,J$ δεν είναι τετριμμένα εφόσον τα $V(I),V(J)$ είναι γνήσια. Επίσης, τα $I,J$ είναι ιδεώδη του $k[x_1,\ldots,x_n]$ ο οποίος έιναι δακτύλιος της \tl{Noether} από το θεώρημα βάσης του \tl{Hilbert}. Άρα τα $I,J$ είναι πεπερασμένα παραγόμενα
+		$$I = (f_1,\ldots,f_m), \quad J = (g_1, \ldots, g_s)$$
+		$$\implies IJ = (f_1 g_1, f_1 g_2, \ldots , f_m g_s) \neq (0)$$
+		εφόσον ο δακτύλιος είναι περιοχή.
+
+		$ $\newline
+		Επειδή $V(IJ) = k^n$ έχουμε ότι για κάθε $f_i g_j$ πολυώνυμο από αυτά που παράγουν το $IJ$ ισχύει ότι $f_i g_j (P) = 0$ για κάθε $P \in k^n$. Συπεπώς αυτά τα πολυώνυμα $f_i g_j$ δεν μπορούν να είναι σταθερά και $\neq 0$. Κάποιο από αυτά τα $f_i g_j$, το οποίο ονομάζουμε $h$, δηλαδή περιέχει μια μεταβλητή $x_{\lambda}$ σε δύναμη $\geq 1$ και με μη μηδενικό συντελεστή. Δίχως βλάβη γενικότητας υποθέτουμε ότι $\lambda = 1$ και έτσι:
+		$$h(P)= 0 \quad \forall P \in k^n \implies h(x_1,0,0,\ldots,0) \in k[x_1] \text{ έχει ρίζα του κάθε στοιχείο του } k$$
+
+		$ $\newline 
+		Το $h(x_1,0,0,\ldots, 0)$ περιέχει όσες ρίζες είναι ο βαθμός του στο αλγεβρικά κλειστό σώμα $k$. Επιπλέον, το $k$ ως αλγεβρικά κλειστό σώμα δεν μπορεί να είναι πεπερασμένο. Σε ένα πεπερασμένο σώμα με στοιχεία $a_1,\ldots,a_m$ το πολυώνυμο $f(x) = 1 + (x-a_1)\cdots (x-a_m)$ δεν έχει ρίζα και άρα το πεπερασμένο σώμα δεν μπορεί να είναι αλγεβρικά κλειστό. Άρα φτάσαμε σε άτοπο εφόσον έχουμε μη μηδενικό πολυώνυμο του $k[x_1]$ με άπειρες ρίζες.
+
+		$ $\newline
+		Κάθε δύο ανοιχτά $V(I)^c, V(J)^c$ τέμνονται δηλαδή και έτσι ο χώρος δεν μπορεί να είναι \tl{Hausdorff} εφόσον για οποιαδήποτε δύο διαφορετικά σημεία οι ανοιχτές περιοχές του ενός θα τέμνονται με όλες τις ανοιχτές περιοχές του άλλου.
+
+		\item Έχουμε το αποτέλεσμα ότι ένας τοπολογικός χώρος $X$ είναι \tl{Hausdorff} αν και μόνο αν η διαγώνιος $\Delta = \{(x,x): \quad x \in X\}$ είναι κλειστό σύνολο του χώρου $X \times X$ με την τοπολογία γινόμενο. 
+		
+		$ $\newline
+		Εφόσον ο $k$ δεν είναι \tl{Hausdorff} η διαγώνιος δεν είναι κλειστό σύνολο της τοπολογίας γινόμενο του $k \times k$. Ωστόσο στην τοπολογία \tl{Zariski} του $k^2$ η διαγώνιος είναι ακριβώς το σύνολο:
+		$$V(x-y) = \{P=(x,y) \in k^2: \quad f(P) = 0 \quad \forall f(x,y) \in (x-y)\} = $$
+		$$= \{P = (x,y) \in k^2: \quad x-y = 0 \} = \Delta$$
+		το οποίο είναι κλειστό από τον τρόπο που ορίζεται η τοπολογία \tl{Zariski}. Άρα αυτές οι δύο τοπολογίες δεν ταυτίζονται.
+
+		\item Θα δείξουμε ότι η $f$ αντιστρέφει κλειστά σε κλειστά το οποίο είναι ισοδύναμος χαρακτηρισμός με την συνέχεια. Έστω $V(g(x))$ κλειστό υποσύνολο του $k$, δηλαδή το πεπερασμένο σύνολο των ριζών $a_1, \ldots, a_m$ του $g(x) \in k[x]$.
+		
+		$ $\newline
+		Θέτουμε $h_i (x_1,\ldots, x_n) = f(x_1,\ldots, x_n) - a_i$. Τότε:
+		$$f^{-1} (V(g(x))) = \{P \in k^n: \quad f(P) = a_i \quad \text{για οποιαδήποτε ρίζα } a_i \text{ του } g(x)\}= $$
+		$$= \{P \in k^n: \quad h_i(P) = 0 \quad \forall i =1,\ldots, m \} =$$
+		$$= V(h_1,h_2, \ldots, h_m)$$
+		το οποίο είναι κλειστό από τον ορισμό της τοπολογίας \tl{Zariski}. 
+	\end{enumerate}
+\end{proof}
+
+\pagebreak
+\pagebreak
+
+\end{document}
