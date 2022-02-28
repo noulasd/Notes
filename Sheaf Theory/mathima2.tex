@@ -1,0 +1,154 @@
+\vspace{0.3truecm}
+\begin{defn}
+    Ένα \underline{δράγμα} (πάνω από τον $X$) είναι μια τριάδα $(\So, \pi, X)$ όπου $\So, X$ είναι τοπολογικοί χώροι και $$\pi: \So \longrightarrow X $$ είναι τοπικός ομοιμορφισμός. Δηλαδή, για κάθε $s \in \So$ υπάρχει ανοιχτή περιοχή $V \in \mathcal{N}_s$ με το $\pi(V)$ να είναι ανοιχτό υποσύνολο του $X$ και $$\pi|_V : V \longrightarrow  \pi(V) $$ να είναι ομοιομορφισμός.
+\end{defn}
+
+$ $\newline
+Στο εξής, θα αναφερόμαστε στο $X$ ως \underline{βάση}, στο $\pi$ ως \underline{προβολή} και στο $\So$ ως \underline{ολικό χώρο}.
+
+\vspace{0.1truecm}
+
+\begin{lemma} Έστω $\Sheaf$ δράγμα, τότε η προβολή είναι ανοιχτή απεικόνιση.
+\end{lemma}
+
+\begin{proof}
+    Θα δείξουμε ότι αν $V \subseteq \So$ ανοιχτό $\implies \pi(V) \subseteq X$ ανοιχτό. Έστω ένα τέτοιο $V \subseteq \So$ και έστω $x \in \pi(V)$, τότε υπάρχει $z \in V$ με $\pi(z) = x$. Από τον ορισμό του δράγματος, για το $z \in \So$ υπάρχει $V_0$ ανοιχτό υποσύνολο του $\So$ με $z \in V_0$ και $\pi(V_0)$ να είναι ανοιχτό υποσύνολο του $X$, καθώς και $\pi|_{V_0} : V_0 \rightarrow \pi(V_0)$ ομοιομορφισμός. Έχουμε ότι $z \in V\cap V_0$ που είναι ανοιχτό υποσύνολο του $V_0$ (στην τοπολογία που επάγεται από τον $X$, όταν όλα είναι ανοιχτά στην μεγάλη τοπολογία δεν έχουμε πρόβλημα και μπορούμε να περιορίζουμε και άλλο την $\pi$), τότε $\pi(V\cap V_0)$ είναι ανοιχτό υποσύνολο του $\pi(V)$ και $x = \pi(z) \in \pi(V\cap V_0)$, δηλαδή το $\pi(V\cap V_0)$ είναι ανοιχτή περιοχή του $x$ στο $\pi(V)$. Αυτό είναι ανοιχτό στον $X$, άρα το $\pi(V\cap V_0)$ είναι ανοιχτή περιοχή του $x$ στον $X$.
+\end{proof}
+
+\begin{lemma} Έστω $\Sheaf$  δράγμα, τότε το $$\mathcal{B} = \{V \subseteq \So \text{ ανοιχτό: } \pi(V) \text{ ανοιχτό, } \pi|_V: V \rightarrow \pi(V) \text{ ομοιομορφισμός} \}$$ είναι βάση της τοπολογίας του $\So$.
+\end{lemma}
+
+\begin{proof} Έστω $A \subseteq \So$ ανοιχτό και $x \in A$, τότε υπάρχει από τον ορισμό του δράγματος $V$ ανοιχτή περιοχή του $x$ με $\pi(V)$ ανοιχτό και $\pi|_V:V\rightarrow \pi(V)$ ομοιομορφισμό. Το $V\cap A \subseteq A$ είναι ανοιχτή περιοχή του $x$ και περιέχεται στο $\mathcal{B}$ αφού περιορίζοντας την $\pi|_V$ στο $V\cap A$ δεν χαλάει η ιδιότητα του ομοιομορφισμού.
+\end{proof}
+
+\begin{defn} Έστω $\Sheaf$ δράγμα, για κάθε $x \in X$ το $\So_x = \pi^{-1}(x)$ θα λέγεται νήμα πάνω από το $x$.
+\end{defn}
+
+$ $\newline
+Φυσικά, $\So = \bigcup\limits_{x \in X}$ η οποία ένωση είναι ξένη, αν $x\neq y$ τότε $\So_x \cap \So_y = \varnothing$, δηλαδή τα νήματα διαμερίζουν τον ολικό χώρο.
+
+\begin{lemma} Έστω $\Sheaf$ δράγμα και $x \in X$, τότε το νήμα $\So_x$ σαν τοπολογικός υπόχωρος του $\So$ είναι διακριτός.
+
+\end{lemma}
+
+
+\begin{figure}[H]
+    \centering
+    \incfig{mathima_2_figure1}
+    %\caption{}
+    %\label{}
+\end{figure}
+
+\begin{proof}
+    Έστω $z \in \So_x$. Θα δείξουμε ότι το $\{x\}$ είναι ανοιχτό υποσύνολο του $\So_x$. Παίρνουμε $V \in \mathcal{N}_z$ από ορισμό δράγματος και το $U = V\cap \So_x$ είναι ανοιχτό υποσύνολο του $\So_x$. Έχουμε ότι η $\pi|_U : U \rightarrow \pi(U)$ είναι ομοιομορφισμός αφού $U\subseteq V$, δηλαδή 1-1 στο $U$ με $z \in U$. Αν υπάρχει και άλλο στοιχείο στο $U$, αφού θα ανήκει στο νήμα θα προβάλλεται και αυτό στο $x$ το οποίο είναι άτοπο. Άρα $U = \{z\}$ και $\pi(U) = \{x\}$ ανοιχτό υποσύνολο του $\So_x$.
+\end{proof}
+
+$ $\newline
+Δηλαδή, με την ανοιχτή περιοχή είναι σαν να κόβουμε μια φέτα στο παραπάνω σχήμα και έτσι να κρατάμε ένα σημείο του νήματος.
+
+\begin{defn} Έστω $\Sheaf$ δράγμα. Ένα υποδράγμα είναι μια τριάδα $(A,\pi_A, X)$ όπου $A \subseteq \So$ ανοιχτό (πάντα διατηρούμε τα ανοιχτά).
+\end{defn}
+
+\begin{defn} Έστω $\Sheaf, (\mathcal{T}, \rho, X)$ δράγματα. Ένας μορφισμός δραγμάτων $\Sheaf \rightarrow (\mathcal{T}, \rho, X)$ είναι μια απεικόνιση $f : \So \rightarrow \mathcal{T}$ συνεχής, με την ιδιότητα $\rho \circ f = \pi$, δηλαδή να κάνει το παρακάτω τρίγωνο μεταθετικό: 
+\end{defn}
+
+\begin{figure}[H]
+    \centering
+\begin{tikzcd}
+    \So \arrow[rd, "\pi"'] \arrow[rr, "f"] &   & \mathcal{T} \arrow[ld, "p"] \\
+                                           & X &                            
+    \end{tikzcd}
+\end{figure}
+
+\begin{remark} $$\rho \circ f = \pi \iff \rho(f(z)) = \pi(z) \quad \forall z \in \So$$
+    $$\iff \forall z \in \So_x \quad \rho(f(z)) = \pi(z)$$
+    $$\iff \forall z \in \So_x \quad f(z) \in \mathcal{T}_x$$
+    $$\iff f(\So_x) \subseteq \mathcal{T}_x$$ δηλαδή στην ουσία οι μορφισμοί δραγμάτων απαιτούμε να βάζουν τα νήματα μέσα σε νήματα. Θα λέμε έτσι ότι η $f$ διατηρεί τα νήματα και ότι ο μορφισμός δραγμάτων είναι μια συνεχής απεικόνιση μεταξύ των ολικών χώρων η οποία διατηρεί τα νήματα.
+
+
+\end{remark}
+
+\begin{lemma} Έστω $\Sheaf, (\mathcal{T},\rho, X)$ δράγματα και $f: \So \rightarrow \mathcal{T}$ μορφισμός δραγμάτων. Τότε η $f$ είναι τοπικός ομοιομορφισμός, δηλαδή το $(\So,f,\mathcal{T})$ είναι δράγμα. 
+\end{lemma}
+
+\begin{proof} Έστω $z \in \So$, τότε $f(z) \in \mathcal{T}$ και άρα υπάρχουν ανοιχτές περιοχές $V \in \mathcal{N}_z, W \in \mathcal{N}_{f(z)}$ με ομοιομορφισμούς
+    $$\pi|_V : V \longrightarrow \pi(V) \subseteq X \text{ ανοιχτό }$$
+    $$\rho|_{W} : W \longrightarrow \rho(W) \subseteq X \text{ ανοιχτό }$$
+
+    Και $f$ συνεχής, άρα για το $W \in \mathcal{N}_{f(z)}$ μπορούμε να θεωρήσουμε (μικραίνοντας το $V$) ότι $f(V) \subseteq W$. Χρησιμοποιώντας την σχέση $\rho \circ f = \pi$ παίρνουμε το παρακάτω διάγραμμα:
+
+    \begin{figure}[H]
+        \centering
+    \begin{tikzcd}
+        \So \supseteq V \arrow[rd, "\pi|_V"'] \arrow[rr, "f"] &                                        & f(V) \arrow[ld, "p"'] & \subseteq W \arrow[ld, "p|_W"] \\
+                                                              & \pi (V) \arrow[ru, dashed, bend right] & \subseteq p(W)        &                               
+        \end{tikzcd}
+    \end{figure}
+    και άρα $f(V)$ ανοιχτό και $f|_{V} = \left(\rho|_{f(V)}\right)^{-1} \circ \pi|_V$, είναι ομοιμορφισμός ως σύνθεση ομοιομορφισμών.
+\end{proof}
+
+$ $\newline
+Θα ορίσουμε την κατηγορία $\So h_X$ των δραγμάτων πάνω από έναν τοπολογικό χώρο $X$. Ως αντικείμενα θα έχουμε τα δράγματα πάνω από τον χώρο $X$ και ως μορφισμούς τους μορφισμούς δραγμάτων που ορίσαμε παραπάνω.
+
+\begin{remark}Η σύνθεση στην $\So h_X$ είναι η συνήθης σύνθεση απεικονίσεων.
+\end{remark}
+\begin{figure}[H]
+    \centering
+\begin{tikzcd}
+    \So \arrow[rd, "\pi"'] \arrow[r, "f"] & \mathcal{T} \arrow[d, "p"] \arrow[r, "g"] & \mathcal{P} \arrow[ld, "\mathfrak{p}"] \\
+                                          & X                                         &                                       
+    \end{tikzcd}
+\end{figure}
+
+$ $\newline
+Έχουμε $g \circ f : \So \rightarrow \mathcal{P}$ συνεχής ως σύνθεση συνεχών. Θέλουμε να ισχύει $\mathfrak{p} \circ (g \circ f) = \pi$. Πράγματι $\mathfrak{p} \circ (g \circ f) = (\rho \circ g) \circ f = \rho \circ f = \pi$. Αρκεί να ελέγξει κανείς ότι $id_{\So} : \So \rightarrow \So$ είναι μορφισμός δραγμάτων και $id_{\So} \circ f = f, g \circ id_{\So} = g$ κλπ.
+
+
+
+\begin{defn} Σε μια κατηγορία $\C$ ένας μορφισμός $f: A \rightarrow B$ λέγεται ισομορφισμός αν υπάρχει $g : B \rightarrow A$ έτσι ώστε:
+    $$f\circ g = 1_B$$
+    $$g \circ f = 1_A$$
+
+\end{defn}
+
+\begin{prop} Έστω ο μορφισμός στην $\So h_X$:
+    $$f: \Sheaf \longrightarrow (\mathcal{T},\rho,X)$$ Τα ακόλουθα είναι ισοδύναμα:
+    \begin{enumerate}
+        \item $f$ ισομορφισμός.
+        \item $f$ ισομορφισμός στα νήματα.
+        \item $f$ 1-1 και επί.
+    \end{enumerate}
+\end{prop}
+
+\begin{proof} Το ότι η $f$ είναι ισομορφισμός είναι ισοδύναμο με το να αντιστρέφεται και η $f^{-1}$ να είναι μορφισμός δραγμάτων. Έπεται ότι η $f$ είναι 1-1 και επί, άρα 1-1 και επί στα νήματα. Το μόνο που χρειάζεται να αποδείξουμε είναι το $(3) \implies (1)$. Αφού $f$ 1-1 και επί, τότε υπάρχει $f^{-1}:\mathcal{T} \rightarrow \So$ και είναι μορφισμός αφού $\rho \circ f = \pi \implies \rho = \pi \circ f^{-1}$. Επιπλέον, η $f^{-1}$ είναι συνεχής αφού η $f$ είναι τοπικός ομοιομορφισμός.
+\end{proof}
+
+$ $\newline
+\underline{Παραδείγματα:}
+
+\begin{enumerate}
+    \item Τετριμμένο δράγμα (θα προκύπτει αρκετά στην συνέχεια). Έστω $X$ τοπολογικός χώρος και $M$ ένα σύνολο το οποίο κάνουμε τοπολογικό χώρο με την διακριτή τοπολογία. Τότε έχουμε το δράγμα:
+    $$\pi_X : M\times X \longrightarrow X$$ που θεωρούμε την τοπολογία γινόμενο και άρα η προβολή $\pi_X$ είναι συνεχής και για κάθε $m \in M$ το $V = \{m\} \times X$ είναι ανοιχτό με 
+    $$\pi_X|_V : V \longrightarrow X $$ ομοιομορφισμό.
+
+    \item Έλικα $\So = \{(\cos t, \sin t, t): \quad t \in \mathbb{R}\}$ και $X = S^1$ με 
+    $$\pi : \So \longrightarrow X$$
+    $$(\cos t,\sin t, t) \longmapsto (\cos t, \sin t)$$
+
+    \item Οι χώροι επικάλυψης είναι δράγματα.
+\end{enumerate}
+
+\begin{defn} Έστω $\Sheaf$ δράγμα και $U\subseteq X$ (όχι απαραίτητα ανοιχτό). Μια \underline{τομή} του $\So$ πάνω από το $U$ είναι μια συνεχής απεικόνιση $s : U \rightarrow \So$ έτσι ώστε να ισχύει $\pi(s(x)) = x$ για κάθε $x \in U$.
+\end{defn}
+
+$ $\newline
+Ισοδύναμα: Για κάθε $x \in U$ να ισχύει $s(x) \in \So_x$. Δηλαδή, να έχουμε $\pi \circ s = id_U$ ή αλλιώς το παρακάτω διάγραμμα να είναι μεταθετικό:
+
+\begin{figure}[H]
+    \centering
+\begin{tikzcd}
+    & \So \arrow[d, "\pi"] \\
+U \arrow[r, "i", hook] \arrow[ru, "s"] & X                   
+\end{tikzcd}
+\end{figure}
+
