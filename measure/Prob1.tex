@@ -1,0 +1,65 @@
+\documentclass[a4paper,11pt,draft]{article} %papersize,fontsize,
+\input{userpackage} % all other userpackages
+
+%\title{Μεταθετική άλγεβρα - 6η εργασία}
+%\author{Θελξινόη Λουκίδου - 1112201700118}
+\date{}
+
+\linespread{1.3} %distance between lines
+\usepackage[top=50pt,bottom=50pt,left=55pt,right=55pt]{geometry}
+\setlength{\parindent}{0ex}
+
+\begin{document}
+
+\begin{problem}[1]
+    Έστω \((X,d,\mu,)\) μετρικός χώρος πιθανότητας και \(\phi :(X,d) \to (Y,\sigma)
+    \lt{Lipschitz}\) με συνάρτηση με σταθερά 1.\\
+    Θεωρούμε το μέτρο πιθανότητας \(\mu_{\phi}\) στην \(\mathcal{B}(Y)\) που ορίζεται 
+    από την 
+    \[\mu_{\phi}(A) = \mu(\phi^{-1}(A)), \quad A \in \mathcal{B}(Y)\]
+    Αποδείξτε ότι, για κάθε \(t >0\),
+    \[\alpha_{\mu_{\phi}}(t) \leq \alpha_{\mu}(t)\]
+    \end{problem}
+    
+    \begin{proof}
+        Έστω \(t>0\).
+        Από τον ορισμό των \(\alpha_{\mu_{\phi}}(t), \alpha_{\mu}(t)\)
+        αρκεί για κάθε \(A \in \mathcal{B}(Y)\) με \(\mu_{\phi}(A) = \mu(\phi^{-1}(A)) \geq \frac{1}{2}\)
+        να δείξουμε ότι \(1-\mu(\phi^{-1}(A_t)) \leq 1-\mu(\phi^{-1}(A)_t)
+        \iff \mu(\phi^{-1}(A)_t) \leq \mu(\phi^{-1}(A_t))\). \\
+        Για αυτό αρκεί \(\phi^{-1}(A)_t \subseteq \phi^{-1}(A_t)\)\\
+        Αφού \(\phi\) 1-\lt{Lipschitz} έχουμε 
+        \[dist(x,\phi^{-1}(A)) \geq dist(\phi(x),\phi(\phi^{-1}(A))) \geq 
+        dist(\phi(x),A)\]
+        Άρα \(dist(x,\phi^{-1}(A)) <t \Rightarrow dist(\phi(x),A) <t\)\\
+        Οπότε 
+        \[\phi^{-1}(A)_t = \{x \in X : dist(x,\phi^{-1}(A)) <t\} \subseteq
+        \{x \in X: dist(\phi(x),A) <t\} = \{x \in X: \phi(x) \in A_t\} = \phi^{-1}(A_t)
+        \]
+    \end{proof}
+    
+    \begin{problem}[2]
+    Έστω $(X,d,\mu )$ μετρικός χώρος πιθανότητας και
+    έστω $\alpha_{\mu }$ η συνάρτηση συγκέντρωσης του $\mu $. Υποθέτουμε
+    ότι για κάποιο $\varepsilon \in (0,1)$ και για κάποιο $t>0$ ισχύει
+    $\alpha_{\mu }(t)<\varepsilon $. Αποδείξτε ότι: αν $A \in \mathcal{B}(X)$ και $\mu (A)\geq \varepsilon $, τότε $1-\mu (A_{t+r})\leq
+    \alpha_{\mu }(r)$ για κάθε $r>0$.    
+    \end{problem}
+    \begin{proof}
+    Έστω \(r > 0, \ A \in \mathcal{B}(X) \text{ με } \mu(A) \geq \varepsilon\). \\
+    Αν \(\varepsilon \leq \frac{1}{2}\) τότε 
+    \[(A_t)_r \subseteq A_{t+r} \Rightarrow \mu((A_t)_r) \leq \mu(A_{t+r})
+    \Rightarrow 1-\mu(A_{t+r}) \leq 1-\mu((A_t)_r) \leq \alpha_{\mu}(r) \]
+    Αφού \(1-\mu(A_t) \leq \alpha_{\mu}(t) < \varepsilon \Rightarrow 
+    \mu(A_t) > 1-\varepsilon \geq \frac{1}{2}\)\\
+    Αν \(\varepsilon > \frac{1}{2}\) τότε 
+    \[A_r \subseteq A_{t+r} \Rightarrow 1-\mu(A_{t+r}) \leq 1-\mu(A_r) \leq \alpha_{\mu}(r)\]
+    Αφού \(\mu(A) \geq \varepsilon > \frac{1}{2}\).\\
+    Σε κάθε περίπτωση έχεουμε το ζητούσμενο αποτέλεσμα.  
+    \end{proof}
+
+
+
+
+
+\end{document}

@@ -1,0 +1,65 @@
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{amssymb}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage[greek]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{mathtools}
+\usepackage{blindtext}
+\usepackage[T1]{fontenc}
+\usepackage{titlesec}
+\usepackage{sectsty}
+\usepackage{verbatim}
+\usepackage{multirow}
+\chapternumberfont{\tiny} 
+\chaptertitlefont{\Huge}
+%ελληνικοι χαρακτηρες σε μαθ pdf utf-8
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{tikz-cd}
+
+\usepackage{xcolor}
+\usepackage{framed}%frames
+\usepackage{float}
+\usepackage{array}
+\usepackage{pbox}
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{tikz}
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%περιθώρια%%%%%%%%%%%%
+\usepackage[a4paper,margin=3.5cm]{geometry}
+
+\usepackage{graphicx,import}
+
+\newtheorem{theorem}{Θεώρημα}
+\newtheorem*{lemma}{Λήμμα}
+\newtheorem{example}{Παράδειγμα}
+\newtheorem*{defn}{Ορισμός}
+\newtheorem*{prop}{Πρόταση}
+\newtheorem{cor}{Πόρισμα}
+\newtheorem*{remark}{Παρατήρηση}
+
+\newcommand {\tl}{\textlatin}
+%%%%%%%%%αριθμηση%%%%%%%%%%%%%%
+\renewcommand{\theenumi}{\arabic{enumi}}
+\renewcommand{\labelenumi}{{\rm(\theenumi)}}
+\renewcommand{\labelenumii}{\roman{enumii}) }
+%%%%%%%%%%%% New theorems %%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\Co}{\mathbb{C}}
+\newcommand{\So}{\mathcal{S}}
+\newcommand{\C}{\mathcal{C}}
+
+\newcommand{\Sheaf}{(\So, \pi, X)}
+
+\newcommand{\incfig}[1]{%
+    \fontsize{12pt}{12pt}\selectfont %χρησιμοποιώ height 600 width 300 pixels
+    \def\svgwidth{2in}
+    \import{./figures/}{#1.pdf_tex}
+}

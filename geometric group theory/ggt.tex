@@ -1,0 +1,327 @@
+\documentclass[oneside,a4paper]{article}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{amssymb}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage[greek]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{mathtools}
+\usepackage{blindtext}
+\usepackage[T1]{fontenc}
+\usepackage{titlesec}
+\usepackage{sectsty}
+\usepackage{verbatim}
+\usepackage{multirow}
+\chapternumberfont{\tiny} 
+\chaptertitlefont{\Huge}
+%ελληνικοι χαρακτηρες σε μαθ pdf utf-8
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{tikz-cd}
+
+\usepackage{xcolor}
+\usepackage{framed}%frames
+
+\usepackage{array}
+\usepackage{pbox}
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{tikz}
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%περιθώρια%%%%%%%%%%%%
+\usepackage[a4paper,margin=3.5cm]{geometry}
+
+
+
+\usetikzlibrary{lindenmayersystems,arrows.meta}
+\newcount\quadrant
+\pgfdeclarelindenmayersystem{cayley}{
+  \rule{A -> B [ R [A] [+A] [-A] ]}
+  \symbol{R}{ \pgflsystemstep=0.5\pgflsystemstep } 
+  \symbol{-}{
+    \pgfmathsetcount\quadrant{Mod(\quadrant+1,4)}
+    \tikzset{rotate=90}
+  }
+  \symbol{+}{
+    \pgfmathsetcount\quadrant{Mod(\quadrant-1,4)}
+    \tikzset{rotate=-90}
+  }
+  \symbol{B}{
+    \draw [dot-cayley] (0,0) -- (\pgflsystemstep,0) 
+       node [font=\footnotesize, midway, 
+         anchor={270-mod(\the\quadrant,2)*90}, inner sep=.5ex] 
+           {\ifcase\quadrant$a$\or$b$\or$a^{-1}$\or$b^{-1}$\fi};
+    \tikzset{xshift=\pgflsystemstep}
+  }
+}
+\tikzset{
+  dot/.tip={Circle[sep=-1.5pt,length=3pt]}, cayley/.tip={Stealth[]dot[]}
+}
+
+
+%%%%%%%%συντομευσεις%%%%%%%%%%
+\newtheorem{theorem}{Θεώρημα}
+\newtheorem{lemma}{Λήμμα}
+\newtheorem{example}{Παράδειγμα}
+\newtheorem*{defn}{Ορισμός}
+\newtheorem{prop}{Πρόταση}
+\newtheorem{cor}{Πόρισμα}
+
+\newcommand {\tl}{\textlatin}
+%%%%%%%%%αριθμηση%%%%%%%%%%%%%%
+\renewcommand{\theenumi}{\arabic{enumi}}
+\renewcommand{\labelenumi}{{\rm(\theenumi)}}
+\renewcommand{\labelenumii}{\roman{enumii}) }
+%%%%%%%%%%%% New theorems %%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\Co}{\mathbb{C}}
+%%%%%%%%%%%%%%%%%%%%% Document starts %%%%%%%%%%%%
+\begin{document}
+	
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\selectlanguage{greek}
+	%%%%%%%%%%%%%%%%%%%%%%% Start Roman numbering %%%% vbbnn
+	%\pagenumbering{roman}
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	
+	\begin{framed}	
+		%\vspace{0.3truecm}
+		\begin{center}
+			\huge Θεωρία Ομάδων 2
+		\end{center}
+		%\vspace{0.3truecm}
+		\begin{center}
+			\huge Διδάσκων: Μ. Συκιώτης
+		\end{center}
+		\vspace{0.3truecm}
+		\begin{center}
+			Ονομ/νο: Νούλας Δημήτριος\\
+			ΑΜ: \\
+			\tl{email}: \tl{dimitriosnoulas@gmail.com}
+		\end{center}
+		\vspace{0.3truecm}
+	\end{framed}
+	\vspace*{\fill}
+	\begin{center}
+	\includegraphics[width=0.5\textwidth]{C:/Users/dimit/Desktop/TeX/uoa_logo}
+	%\includegraphics[width=0.5\textwidth]{/mnt/c/Users/dimit/Desktop/TeX/uoa_logo}
+	\end{center}
+\vspace{1cm}
+\pagebreak
+
+\section{Ελεύθερες Ομάδες}
+\vspace{0.1cm}
+
+Θα ορίσουμε τις ελεύθερες ομάδες ξεκινώντας από την καθολική ιδιότητα. Έστω $F$ ομάδα και $X\subseteq F$. Λέμε ότι η $F$ είναι ελεύθερη επί του $X$ αν για κάθε ομάδα $G$ και κάθε απεικόνιση $\phi : X \rightarrow G$ υπάρχει μοναδικός ομομορφισμός $\tilde{\phi} : F \rightarrow G$ που επεκτείνει την $\phi$, δηλαδή το παρακάτω διάγραμμα να είναι μεταθετικό.
+
+\begin{figure}[ht]
+	\centering
+\begin{tikzcd}
+	X \arrow[rr, hook] \arrow[rd, "\phi"'] &   & F \arrow[ld, "\tilde{\phi}"] \\
+										   & G &                             
+	\end{tikzcd}
+\end{figure}
+
+??
+\noindent Είναι εύκολο να δούμε ότι αν η $F$ είναι ελεύθερη επί του $X$ τότε το $X$ την παράγει. Έχοντας δεδομένη την καθολική ιδιότητα παίρνουμε για $G=<X>$ και $X \xhookrightarrow{} <X> \subseteq F$ την ταυτοτική απεικόνιση, αυτή επεκτείνεται σε ομομορφισμό $\tilde{i} : F \rightarrow <X>$. Από τις ιδιότητες του ομομορφισμού προκύπτει ότι $\tilde{i}|_{<X>} : <X> \rightarrow <X>$ είναι η ταυτοτική της ομάδας $<X>$. Αρκεί να δείξουμε ότι η $\tilde{i}$ έχει τετριμμένο πυρήνα για να είναι ισομορφισμός. Πράγματι, αν $\tilde{i}(y) = 1$ τότε κυνηγώντας το $1$ στο διάγραμμα παίρνουμε 
+
+\noindent Θα συμβολίζουμε με $F = F(X)$ την ελεύθερη ομάδα επί του $X$.
+
+\begin{prop}
+	$F(X_1) \simeq F(X_2) \iff |X_1| = |X_2|$ αν δηλαδή η βάση είναι ισοπληθική. Αυτό θα το ονομάζουμε \tl{rank} της ομάδας.
+\end{prop}
+
+
+
+\begin{proof}
+	?
+\end{proof}
+
+
+\noindent Αν $|X| = n$ τότε $F = F(X) = F_n$ ελεύθερη ομάδα τάξης (ή διάστασης) $n$.
+
+
+\noindent Ξεκινώντας τον ορισμό μέσω της καθολικής ιδιότητας δεν εξασφαλίζουμε την ύπαρξη τέτοιων ομάδων. Έχουμε ωστόσο ότι $F_1 = \Z$ και ότι αν $X$ είναι ένας χώρος που αποτελείται από ένα μπουκέτο $n$ θηλιών με αρχή το ίδιο σημείο, τότε $\pi_1 (X) = F_n$.
+
+\noindent Γενικότερα θεωρούμε το $X^{-1}$ ως σύμβολο και το αντιστοιχίζουμε με το $X$ με την προφανή αντιστοίχιση $x \leftrightarrow x^-1$. Τότε λέμε ότι έχουμε ένα αλφάβητο $X \sqcup X^{-1}$ και $W$ το σύνολο των λέξεων σε αυτό.
+
+\noindent Λέμε ότι η λέξη $w_1$ προκύπτει από την $w_2$ με στοιχειώδη αναγωγή αν η $w_1$ προκύπτει από την $w_2$ αφαιρώντας μια υπολέξη της μορφής $x x^{-1}$ ή $x^{-1} x$. Με την έννοια της στοιχειώδης αναγωγής ορίζουμε μια σχέση ισοδυναμίας στο $W$ ως εξής:
+
+$w \sim v$ αν υπάρχει πεπερασμένη ακολουθία λέξεων $w = w_1, w_2, \ldots, w_n = v$ έτσι ώστε για κάθε διαδοχικές λέξεις της ακολουθίας να προκύπτει η μία από την άλλη με στοιχειώδη αναγωγή. 
+
+\begin{defn} Ορίζουμε $F(X) = W/\sim$ με πολλαπλασιασμό:
+	$$[w_1]\cdot [w_2] = [w_1 w_2]$$
+	όπου με $[w]$ συμβολίζουμε την κλάση της $w$ και στο δεξί μέλος έχουμε την κλάση της παράθεσης των λέξεων $w_1,w_2$.
+\end{defn}
+
+\noindent Θα λέμε μια λέξη ανηγμένη αν δεν επιδέχεται στοιχειώδης αναγωγές. Αποδεικνύεται ότι κάθε κλάση ισοδυναμίας περιέχει μοναδική ανηγμένη λέξη. Δηλαδή, κάθε στοιχείο γράφεται κατά μοναδικό τρόπο ως ανηγμένη λέξη στους γεννήτορες και στα αντίστροφά τους.
+
+\begin{prop}
+	Κάθε ομάδα είναι επιμορφική εικόνα ελεύθερης.
+\end{prop}
+
+\begin{proof}
+	?
+\end{proof}
+
+
+\noindent Αν $R \subseteq F(x)$ τότε με $F(X)$ τότε με $<X| R>$ συμβολίζουμε την ομάδα $F(X)/<<R>>$. Όπου $<<R>>$ είναι η κανονική υποομάδα της $F(X)$ που παράγεται από το $R$. Δηλαδή, η τομή όλων των κανονικών υποομάδων που περιλαμβάνουν το $R$.
+
+
+\noindent Λέμε ότι $G = <X|R> = $ μια παράσταση της $G$ αν και μόνο αν $G \simeq <X|R> = F(x)/<<R>>$. Αναφερόμαστε στο $X$ ως γεννήτορες και στο $R$ ως σχέσεις. Για αυτό αν το $<<R>>$ είναι τετριμμένο η ομάδα είναι ελεύθερη σχέσεων.
+
+
+\noindent Λέμε την $G$ πεπερασμένα παριστώμενη αν τα $X$ και $R$ είναι πεπερασμένα. Για παράδειγμα η θεμελιώδης ομάδα ενός πεπερασμένου συμπλέγματος κελιών (\tl{cw-complex}) είναι πεπερασμένα πα
+
+
+\noindent Αν $R= \varnothing$ τότε $G = <X|\varnothing> = <X> = F(X)$.
+
+$$\Z_n = <a| a^n = 1> = <a| a^n>, \quad \Z \times \Z = <a,b| ab=ba>$$
+
+\section{ Γραφήματα \tl{Cayley}}
+
+\noindent Θα δείξουμε το εξής αποτέλεσμα: Κάθε πεπερασμένα παραγόμενη ομάδα $G$ μπορεί να αναπαρασταθεί πιστά (μονομορφισμός) ως ομάδα ισομετριών ενός μετρικού χώρου.
+
+\begin{defn}
+	Έστω $G$ πεπερασμένα παραγόμενη ομάδα με πεπερασμένο σύνολο γεννητόρων $S$. Το γράφημα \tl{Cayley} $\Gamma(G,S)$ της $G$ ως προς το $S$ ορίζεται ως εξής:
+\end{defn}
+
+\begin{itemize}
+	\item Έχει κορυφές τα στοιχεία της $G$.
+	\item Για κάθε κορυφή $g$ και γεννήτορα $s \in S$ υπάρχει μια ακμή (γεμωετρική) που ενώνει τις κορυφές $g$ και $gs$.
+\end{itemize}
+
+
+\begin{figure}[ht]
+	\centering
+	\begin{tikzcd}
+		g \arrow[r, "s"] & gs
+		\end{tikzcd}
+	\end{figure}
+
+\noindent Παρατηρούμε ότι δύο κορυφές $g$ και $h$ συνδέονται με μια ακμή αν και μόνο αν $g^{-1}h \in S^{\pm 1}$.
+
+\begin{figure}[ht]
+	\centering
+	\begin{tikzcd}
+		&  & gs      \\
+g \arrow[rru, "s"] \arrow[rrd, "s^{-1}"] &  &         \\
+		&  & gs^{-1}
+\end{tikzcd}
+\end{figure}
+
+\noindent Αν $g^{-1}h = s \in S \iff h = gs$.
+
+\noindent Αν $g^{-1}h = s^{-1} \in S^{-1}$ τότε $h^{-1}g = s \iff g = hs$.
+
+\noindent Ισχύουν τα παρακάτω:
+
+\begin{enumerate}
+	\item $\Gamma(G,S)$ συνεκτικό.
+	\item Το $\Gamma(G,S)$ περιέχει θηλιά αν και μόνο αν $1 \in S$.
+	\item $\Gamma(G,S)$ περιέχει θηλιά ή κύκλο μήκους $2$ αν και μόνο αν $S\cap S^{-1} \neq \varnothing$.
+	\item Κάθε κορυφή του $\Gamma(G,S)$ αποτελεί άκρο $2n$ το πλήθος ακμών με $n = |S|$.
+	\item Το $\Gamma(G,S)$ είναι δέντρο (συνεκτικό, χωρίς κύκλους) αν και μόνο αν η $G$ είναι ελεύθερη με βάση το $S$.
+\end{enumerate}
+
+\begin{figure}[ht]
+	\centering
+	\begin{tikzcd}
+		& \cdot \arrow[rd, "s^{\varepsilon_2}_{i2}", no head] &                          &                                                     &   \\
+g \arrow[ru, "s^{\varepsilon_1}_{i1}", no head] &                                                     & \cdot \arrow[r, no head] & \ldots \arrow[r, "s^{\varepsilon_k}_{ik}", no head] & h
+\end{tikzcd}
+\end{figure}
+
+\noindent $<X| R>$ οι σχέσεις κρύβονται στους κύκλους του γραφήματος, δηλαδή εκεί που θα έχουμε $s^{\varepsilon_1}_{i1} \cdots s^{\varepsilon_k}_{ik} = 1$.
+
+\noindent Το γράφημα $\Gamma(G,S)$ αποκτά δομή μετρικού χώρου ως εξής:
+
+\begin{itemize}
+	\item Κάθε ακμή έχει μήκος $1$.
+	\item Η απόσταση δύο κορυφών είναι το ελάχιστο των μηκών των μονοπατιών που τις ενώνουν.
+\end{itemize}
+
+\noindent Τα μονοπάτια που επιτυγχάνουν την απόσταση των άκρων τους θα λέγονται γεωδαισιακά.
+
+\noindent Η $G$ γίνεται μετρικός χώρος με την μετρική της $\Gamma(G,S)$. Η επαγόμενη μετρική στο $G$ θα λέγεται μετρική της λέξης:
+
+$$d_S(g,h) = \min \{k \in \mathbb{N}, g^{-1}h = s^{\varepsilon_1}_{i1} \cdots s^{\varepsilon_k}_{ik}, s_{ij} \in S, \varepsilon_i \in \{\pm 1\} \}$$
+
+\noindent Πρόκειται για το ελάχιστο των μηκών των λέξεων στο αλφάβητο $S^{\pm 1}$ που αναπαριστούν το $g^{-1}h$. Φυσικά $ ||1|| = 0$, όπου η νόρμα είναι η νόρμα της λέξης $||g||_S = d_S (1,g)$ και ικανοποιεί τα παρακάτω:
+
+\begin{itemize}
+	\item $||g||_S \geq 0$.
+	\item $||gh||_S \leq ||g||_S + ||h||_S$.
+	\item $||g^{-1}||_S = ||g||_S$.
+	\item $||g^{-1}h||_S = d_S(g,h)$.
+\end{itemize}
+
+\noindent Παρατηρήσεις:
+
+\begin{enumerate} 
+	\item Η μετρική της λέξης εξαρτάται από το σύνολο γεννητόρων $S$.
+	\item Η $G$ δρα στο $\Gamma(G,S)$ με πολλαπλασιασμό από αριστερά:
+	\begin{figure}[ht]
+		\centering
+	\begin{tikzcd}
+	L_g : x\mapsto gx &  & L_g: x \arrow[r, "s"] & xs\mapsto gx  \arrow[r, "s"] & gxs \\
+                  &  &                       & {(x,xs) \mapsto (gx,gxs)}    &    
+\end{tikzcd}
+\end{figure}
+\end{enumerate}
+\noindent Δρα σαν ισομετρία. Η $L_g$ ορίζεται με τέτοιο τρόπο ώστε το εσωτερικό της ακμής να είναι ισομετρία. Έτσι κάθε $L_g$ είναι ισομετρία του $\Gamma(G,S)$ και η $G$ δρα στο $\Gamma(G,S)$ με ισομετρίες.
+
+\noindent Η δράση $G \rightarrow \Gamma(G,S)$ είναι ελεύθερη μεταβατική στις κορυφές και το γράφημα πηλίκο (δηλαδή ο χώρος τροχιών) αποτελείται από μια κορυφή και $2n$ το πλήθος ακμές. Δηλαδή $\Gamma(G,S)/G$ είναι το μπουκέτο $2n$ θηλιών από το ίδιο σημείο.
+
+\pagebreak
+\noindent Παράδειγμα γραφήματος \tl{Cayley} για την ελεύθερη τάξης $2$ $G=F_2 = F(a,b)$:
+\begin{figure}[ht]
+	\centering
+\begin{tikzpicture}
+	\draw l-system [l-system={cayley, axiom=[A] [+A] [-A] [++A], step=4cm, order=3}];
+	\end{tikzpicture}
+\end{figure}
+
+
+\pagebreak
+\section{Σχεδόν Ισομετρίες}
+
+
+
+\begin{defn} Έστω $(X,d_X), (Y,d_Y)$ δύο μετρικοί χώροι. Μια όχι απαραίτητα συνεχή, ούτε $1-1$) $\phi : X \rightarrow Y$ λέγεται $(\lambda,\varepsilon)$-σχεδόν ισομετρική εμφύτευση αν υπάρχουν $\lambda > 0$ και $\varepsilon \geq 0$ έτσι ώστε:
+	$$\frac{1}{\lambda} d_X (x_1,x_2) - \varepsilon \leq d_Y ( \phi (x_1), \phi (x_2)) \leq  \lambda d_X (x_1,x_2) + \varepsilon \quad \forall x_1,x_2 \in X$$
+\end{defn}
+
+
+\noindent Αν επιπροσθέτως, υπάρχει $k\geq 0$ τέτοιο ώστε κάθε στοιχείο του $Y$ να βρίσκεται στην $k$-περιοχή της εικόνας $\phi (X)$, δηλαδή $Y \subseteq N_k(\phi(X))$, τότε λέμε ότι η $\phi$ είναι $(\lambda,\varepsilon)$-σχεδόν ισομετρία. Έχουμε δηλαδή σε αυτήν την περίπτωση το σχεδόν επί. Σαφώς όπου δεν χρειάζεται διευκρίνηση λέμε απλά σχεδόν ισομετρία.
+
+$$N_k(A) = \{y \in Y: \quad d_Y(y,a)\leq k, \quad \text{ για κάποιο } a \in A\}, \quad A \subseteq Y.$$
+
+\noindent Δύο μετρικοί χώροι λέγονται σχεδόν ισομετρικοί αν υπάρχει μια σχεδόν ισομετρία $\phi :X \rightarrow Y$ και συμβολίζουμε $X \underset{qi}{\sim} Y$. Η έννοια της σχεδόν ισομετρίας επάγει σχέση ισοδυναμίας στην κλάση των μετρικών χώρων.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}
+
+
