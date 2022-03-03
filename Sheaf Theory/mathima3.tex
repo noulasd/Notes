@@ -1,0 +1,214 @@
+\vspace{0.3truecm}
+\begin{remark} Έστω $U \subseteq X$ (όχι απαραίτητα ανοιχτό) και $s: U \rightarrow \So$ τυχαία (όχι κατ ανάγκη συνεχής) με $\pi \circ s = id_U$. Έπεται ότι η $s:U \rightarrow s(U)$ είναι 1-1 και επί. Δηλαδή, υπάρχει $s^{-1}: s(U) \rightarrow U$ και από την σχέση $\pi \circ s = id_U$ παίρνουμε $\pi|_{s(U)} = s^{-1}$ από την μοναδικότητα αριστερής και δεξιάς αντίστροφης. Ισοδύναμα $s = \left( \pi|_{s(U)}\right)$. Εδώ έχουμε χρησιμοποιήσει μόνο συνολοθεωρητικά επιχειρήματα και δεν έχουμε απαιτήσει ανοιχτά σύνολα και συνέχεια.
+\end{remark}
+
+\begin{figure}[H]
+    \centering
+\begin{tikzcd}
+    \So \arrow[d, "\pi"] & \supseteq & s(U) \arrow[d, "\pi|_{s(U)}"']   \\
+    X                    & \supseteq & U \arrow[u, "s"', bend right=49] \\
+    \pi \circ s = id_U & \implies & \pi|_{s(U)} \circ s = id_U
+    \end{tikzcd}
+\end{figure}
+
+
+$ $\newline
+Παρακάτω θα θεωρούμε (συνεχείς) τομές σε \underline{ανοιχτά} $U\subseteq X$.
+
+$ $\newline
+Συμβολίζουμε: $\So (U)$ ή $\Gamma(U, \So)$ για το σύνολο
+$$\{s: U \longrightarrow \So| \quad s \text{ τομή }\}$$
+
+\begin{remark}
+    Έστω $z \in A \subseteq \So$, το $A$ να είναι ανοιχτό. Μπορούμε να θεωρήσουμε ότι υπάρχει $V \subseteq X$ ανοιχτό με $z \in V, \pi(V)$ ανοιχτό και $\pi|_V: V\rightarrow \pi(V)$ ομοιομορφισμό με $V\subseteq A$ (Υπενθύμιση: τα $V$ του ορισμού του δράγματος είναι βάση της τοπολογίας του $\So$).
+\end{remark}
+
+\begin{lemma} Έστω $\Sheaf$, $U \subseteq X$ ανοιχτό και $s \in \So (U)$ τομή. Τότε $s(U)\subseteq \So$ ανοιχτό και $s: U \rightarrow s(U)$ ομοιομορφισμός.
+\end{lemma}
+
+$ $\newline
+Ουσιαστικά με αυτό το λήμμα έχουμε ότι οι τομές $s$ είναι τοπικές αντίστροφες της $\pi$ πάνω στα $s(U)$.
+%τομές τοπικές αντίστροφες της π πάνω στα s(U)
+\begin{proof} $(1)$ Θα δείξουμε ότι $s(U)$ ανοιχτό υποσύνολο του $\So$.
+
+    $ $\newline
+    Έστω $z = s(x) \in s(U), x\in U$. Υπάρχει $V$ ανοιχτό υποσύνολο του $\So$ με $z \in V$ έτσι ώστε το $\pi (V)$ να είναι ανοιχτό υποσύνολο του $X$ και $\pi |_V:V\rightarrow \pi (V)$ ομοιομορφισμός. Επιπλέον, η $s$ είναι συνεχής στο $x$ και $V \in \mathcal{N}_{s(x)}$, $V$ ανοιχτό. Λόγω συνέχειας παίρνουμε ότι το $A$ είναι ανοιχτή περιοχή του $x$ με $A \subseteq U$ και $s(A) \subseteq V$. Εφαρμόζοντας την $\pi$ παίρνουμε:
+    $$\pi (s(A)) = A \subseteq \pi (V)$$ και $\pi(V)$ ανοιχτό. Άρα $s(A) \subseteq V$, δηλαδή το $s(A)$ είναι ανοιχτό μέσα στο ανοιχτό $V$ και άρα είναι και σε όλο το $\So$.
+
+    $ $\newline
+    $s(A) \subseteq \So$ ανοιχτό και $x \in A \subseteq U \implies z = s(x) \in s(A) \subseteq s(U)$, άρα $s(U)$ ανοιχτό.
+
+    $ $\newline
+    $(2)$ $V\supseteq s(A)$
+
+    \begin{figure}[H]
+        \centering
+    \begin{tikzcd}
+        V \arrow[d, "\pi_V"'] & \supseteq & s(A) \arrow[d, "\pi|_{S(A)} = \text{ομοιομ.} = s^{-1}|_{s(A)}"] \\
+        \pi(V)                & \supseteq & A \subseteq U                                                         
+        \end{tikzcd}
+    \end{figure}
+    $ $\newline
+    και έχουμε $s$ 1-1, επί, συνεχής, και τοπικός ομοιομορφισμός, άρα η $s$ είναι ομοιομορφισμός.
+
+\end{proof}
+
+%οποιοδήποτε σημείο του ολικού χώρου το πιάνουμε σαν εικόνα τομής
+\begin{lemma}
+    Έστω $\Sheaf$ δράγμα, $z \in \So$. Τότε υπάρχει $U\subseteq X$ ανοιχτό και $s \in \So (U)$ με $z \in s(U)$.
+\end{lemma}
+
+\begin{proof} $z \in \So \implies$ υπάρχει $V \subseteq \So$ ανοιχτό με $z \in V, \pi(V)$ ανοιχτό, $\pi |_V:V\rightarrow \pi (V)$ ομοιομορφισμός. Άρα υπάρχει:
+    $$s:= \left(\pi |_V\right)^{-1} : \pi (V) \longrightarrow V$$ συνεχής, με $\pi (V) \subseteq U$ και $\pi \circ s = id_U$. Άρα για $x = \pi (z)$ ισχύει $s(x) = s(\pi(z)) = z$.
+\end{proof}
+
+\begin{lemma}
+    Έστω $\Sheaf$ δράγμα, τότε το σύνολο:
+    $$\{s(U): \quad U \text{ ανοιχτό } \subseteq X, s \in \So(U)\}$$ αποτελεί βάση της τοπολογίας του $\So$.
+\end{lemma}
+
+$ $\newline
+Το επόμενο λήμμα είναι σημαντικό:
+
+\begin{lemma}
+    Έστω $\Sheaf$ δράγμα, $A,B \subseteq X$ ανοιχτά με $x \in A\cap B \neq \varnothing$ και $s \in \So (A), \sigma \in \So (B)$ με $s(x) = \sigma (x)$. Τότε υπάρχει $U \subseteq A\cap B$ ανοιχτό με $x \in U$ και $s|_U = \sigma |_U$.
+    %λύσεις εξισώσεων από ένα σημείο ισότητα παντού σε μια περιοχή
+\end{lemma}
+
+$ $\newline
+Αν σκεφτεί κανείς ότι ο \tl{Leray} που ασχολήθηκε με τα δράγματα με σκοπό την μελέτη διαφορικών εξισώσεων, αυτό το λήμμα είναι η κατάλληλη περίπτωση για αυτό που ήθελε μιας και αν οι αρχικές συνθήκες δύο λύσεων ταυτίζονται τότε ταυτίζονται και ολόκληρες οι λύσεις σε μια ανοιχτή περιοχή.
+
+\begin{proof}
+    $ z= s(x) = \sigma (x) \in \So$. Από ορισμό δράγματος υπάρχει $V$ ανοιχτό $\subseteq X: \pi(V)$ ανοιχτό και $\pi|_V:\rightarrow \pi (V)$ ομοιομορφισμός. 
+    
+    $$s(x) = z \in s(A)\subseteq \So \text{ ανοιχτό }$$ 
+    $$\sigma (x) = z \in \sigma (B) \subseteq \So \text{ ανοιχτό }$$ Θεωρούμε στην θέση του $V$ το $V= V\cap \sigma (B) \cap s(A)$, μικραίνουμε το ανοιχτό δηλαδή να είναι μέσα στα άλλα δύο και άρα έχουμε:
+
+    $$\pi |_{s(A)} = s^{-1}: s(A)\longrightarrow A$$
+    $$\pi |_{\sigma (B)} = \sigma^{-1}: \sigma (B) \longrightarrow B$$
+
+    $$\pi|_V = s^{-1}|_V = \sigma^{-1} |_V \text{ μαζί με } \sigma|_U = s|_U \implies $$
+    $$s = \sigma |_{\pi(V) = U}$$
+
+
+\end{proof}
+
+$ $\newline
+Σε αυτό το σημείο έχουμε εξαντλήσει όσα προκύπτουν με τον ορισμό, έχουμε μόνο τον τοπικό ομοιομορφισμό για να δουλέψουμε, μένει να δούμε πώς συμπεριφέρονται οι μορφισμοί δραγμάτων στις τομές:
+%πως συμπεριφέρονται οι μορφισμοί δραγμάτων στις τομές
+
+\begin{prop}
+    Έστω $\Sheaf, (\mathcal {T},\rho , X)$ δράγματα και $f : \So \rightarrow \mathcal {T}$ συνεχής. Τα ακόλουθα είναι ισοδύναμα:
+    \begin{enumerate}
+        \item $f$ μορφισμός δραγμάτων.
+        \item Για κάθε $U \subseteq X$ ανοιχτό, για κάθε $s \in \So (U)$ ισχύει $f\circ s \in \mathcal{T}(U)$.
+        \item Για κάθε $z \in \So$ υπάρχει ανοιχτό $U \subseteq X$ και τομή $s \in \So (U)$ τέτοια ώστε $ z \in s(U)$ και $f\circ s \in \mathcal{T}(U)$.
+    \end{enumerate}
+\end{prop}
+
+\begin{figure}[H]
+    \centering
+\begin{tikzcd}
+    \So \arrow[r, "f"] \arrow[rd, "\pi"', shift right=2] & \mathcal{T} \arrow[d, "\rho"] \\
+                                                         & X \arrow[lu, "s"']           
+    \end{tikzcd}
+\end{figure}
+
+
+\begin{proof}
+    $ $\newline
+    $(1)\implies (2)$ $f$ συνεχής και $f$ μορφισμός, άρα $\rho \circ f = \pi$. Έστω $U \subseteq X$  ανοιχτό, $s \in \So (U)$. Τότε $f\circ s : U \rightarrow \mathcal{T}$ συνεχής σαν σύνθεση συνεχών. Επιπλέον:
+    $$\rho \circ (f\circ s) = (\rho \circ f)\circ s = \pi \circ s = id_U$$ άρα $f\circ s \in \mathcal{T} (U)$.
+
+    $ $\newline
+    $(2) \implies (3)$ Για κάθε $z \in \So$ υπάρχει $U$ με $x \in U$ και $s \in \So (U)$ με $s(x) = z$ και από προηγούμενο λήμμα έχουμε $f \circ s \in \mathcal{T}(U)$.
+
+    $ $\newline
+    $(3) \implies (1)$ Θα δείξουμε ότι $\rho \circ f = \pi$. Έστω $z \in \So$. Από $(3)$ έχουμε $U \subseteq X$ ανοιχτό με $x \in U$ και $s \in \So (U)$ με $s(x) = z \in s(U)$. Έχουμε $f\circ s \in \mathcal{T}(U) \implies \rho \circ (f\circ s) = id_U$. Δηλαδή, $\rho \circ f \circ s (x) = \rho \circ f(z)$ αλλά και $\rho \circ f \circ s(x) = id(x) = x = \pi (z)$. Άρα $\rho \circ f = \pi$ αφού το $z$ τυχαίο, δηλαδή πράγματι $f$ μορφισμός δραγμάτων.
+
+    %μορφισμοί δραγμάτων μεταφέρουν τομές σε τομές (to remember)
+\end{proof}
+
+$ $\newline
+Άρα σαν μνημονικό κανόνα έχουμε ότι οι μορφισμοί δραγμάτων μεταφέρουν τομές σε τομές. Θα δούμε στην συνέχεια την αλγεβρική εικόνα των δραγμάτων, κάτι που αρχικά μοιάζει με τελείως διαφορετικό αντικείμενο.
+
+%Θα δούμε τώρα την αλγεβρική εικόνα, αρχικά φαίνεται κάτι τελείως διαφορετικό
+
+$ $\newline
+Έστω $X$ τοπολογικός χώρος, $\tau_X$ η τοπολογία του $X$. Ένα \underline{προδράγμα συνόλων} πάνω από το $X$ είναι ένα ζεύγος:
+$$\left( \{P(U)\}_{U \in \tau_X}, \{\rho^U_V\}_{V\subseteq U \in \tau_X}\right)$$ όπου $\{P(U)\}_{U \in \tau_X}$ οικογένεια συνόλων, με σύνολο δεικτών την $\tau_X$ και 
+$$\rho^U_V : P(U) \longrightarrow P(V)$$ απεικονίσεις: (περιορισμού)
+\begin{enumerate}
+    \item $\rho^U_U = id_{P(U)}: P(U) \rightarrow P(U) \quad \forall U \in \tau_X$.
+    \item Για κάθε $ W\subseteq V \subseteq U$ στην $\tau_X$, τότε ισχύει:
+    $$\rho^V_W \circ \rho^U_V = \rho^U_W$$ ή αλλιώς το τρίγωνο είναι μεταθετικό:
+
+    \begin{figure}[H]
+        \centering
+    \begin{tikzcd}
+        P(U) \arrow[rd, "P^V_W"'] \arrow[r, "P^U_V"] & P(V) \arrow[d, "P^V_W"] \\
+                                                     & P(W)                   
+        \end{tikzcd}
+    \end{figure}
+ 
+\end{enumerate}
+\underline{Παραδείγματα:}
+\begin{enumerate}
+    \item $(X,\tau_X)$ τοπολογικός χώρος, για κάθε $U$ ανοιχτό συμβολίζουμε:
+    $$\mathcal{C}(U) = \{f: U \rightarrow \mathbb{R}| \quad \text{ συνεχής }\}$$ και για κάθε $V\subseteq U$ με $ V,U \in \tau_X$ θέτουμε:
+    $$\rho^U_V : \mathcal{C} (U) \rightarrow \mathcal{C}(V)$$
+    $$f \longmapsto f|_V$$ Τότε το ζεύγος των οικογενειών $(\{\mathcal{C}(U)\}, \{\rho^U_V\}\})$ είναι ένα προδράγμα πάνω από το $X$ ($:=$ το προδράγμα των συνεχών). Αρκεί να ελέγξουμε τις συνθήκες:
+
+    $ $\newline
+    (1)$\rho^U_U (f) = f|_U = f$ όπου $f: U \rightarrow \mathbb{R}$
+    $ $\newline
+    (2) Για κάθε $ W \subseteq V \subseteq U$ και $f:U \rightarrow \mathbb{R} \implies f|_W = (f|_V)|_W$
+
+    \item $P(U) = \{f: U \rightarrow \mathbb{R}| \quad \text{ σταθερές }\}$ (οι συνήθεις περιορισμοί θα εννοούνται σε τέτοια παραδείγματα)
+    \item $B(U) = \{f: U \rightarrow \mathbb{R}| \quad \text{ φραγμένες }\}$
+    \item $(M = \text{ πολλαπλότητα}, \tau_M)$ και 
+    $$\mathcal{C}^{\infty}(U) = \{f: U \rightarrow \mathbb{R}| \quad \mathcal{C}^{\infty}\text{-διαφ}\}$$
+
+    \item $X = \mathbb{C}$,
+    $$\mathcal{O}(U) = \{f: U \rightarrow \mathbb{C}| \quad \text{ ολόμορφη }\}$$
+
+    \item $\Sheaf$ δράγμα, τότε το ζεύγος:
+    $$\left( \{\So (U)\}_{U \in \tau_X}, \{\rho^U_V = \text{ συνήθεις περιορισμοί } \}_{V\subseteq U \in \tau_X}\right)$$ ονομάζεται το προδράγμα των τομών του δράγματος.
+
+
+\end{enumerate}
+
+\begin{defn} $(X,\tau_X)$ τοπολογικός χώρος και 
+    $$S \equiv (S(U),\rho^U_V)_{V\subseteq U \in \tau_X}, \quad T \equiv (T(U),\lambda^U_V)_{V\subseteq U \in \tau_X}$$ προδράγματα πάνω από το $X$. Ένας μορφισμός προδραγμάτων $f: S \rightarrow T$ είναι μια οικογένεια απεικονίσεων:
+    $$f_U: S(U) \longrightarrow T(U), \quad U \in \tau_X$$ έτσι ώστε για κάθε $V\subseteq U \in \tau_X$ να είναι μεταθετικό το τετράγωνο: 
+
+    \begin{figure}[H]
+        \centering
+    \begin{tikzcd}
+        S(U) \arrow[r, "f_U"] \arrow[d, "\rho^U_V"'] & T(U) \arrow[d, "\lambda^U_V"] \\
+        S(V) \arrow[r, "f_V"]                        & T(V)                         
+        \end{tikzcd}
+    \end{figure}
+\end{defn}
+
+$ $\newline
+Για κάθε προδράγμα $(P(U),\rho^U_V) \equiv P$ η οικογένεια $1 = \{1_U\}: P \rightarrow P$ με
+$$1_U = id_U: P(U) \rightarrow P(U)$$ είναι μορφισμός προδραγμάτων.
+
+$ $\newline
+Θέλουμε να ορίσουμε τώρα μια σύνθεση μορφισμών προδραγμάτων ώστε να φτιάξουμε μια νέα κατηγορία. Αν $f:S \rightarrow T$ και $g:T \rightarrow P$ μορφισμοί προδραγμάτων, όπου $f \equiv \{f_U\}_{U \in \tau_X}$ και $g \equiv \{g_U\}_{U \in \tau_X}$ τότε ορίζουμε την σύνθεση:
+$$g \circ f \equiv \{ (g\circ f) := g_U \circ f_U \}_{U \in \tau_X}$$ και για κάθε $V\subseteq U \in \tau_X$ έχουμε το μεταθετικό διάγραμμα:
+
+\begin{figure}[H]
+    \centering
+    \begin{tikzcd}
+        S(U) \arrow[r, "f_U"] \arrow[rr, "g_U \circ f_U", bend left=49] \arrow[d, "\rho^U_V"'] & T(U) \arrow[r, "g_U"] \arrow[d, "\lambda^U_V"'] & P(U) \arrow[d, "\mu^U_V"] \\
+        S(V) \arrow[rr, "g_V \circ f_V", bend right=49] \arrow[r, "f_V"]                       & T(V) \arrow[r, "g_V"]                           & P(V)                     
+        \end{tikzcd}
+\end{figure}
+$$\mu^U_V \circ (g_U \circ f_U) = (g_V \circ f_V)\circ \rho^U_V$$
+$$\mu^U_V \circ (g_V \circ f_V) = (g_V \circ \lambda^U_V) \circ f_U$$
+$$= g_V \circ f_V \circ \rho^U_V$$ άρα πράγματι $g\circ f$ είναι μορφισμός προδραγμάτων $S \rightarrow P$.
+
+$ $\newline
+Συνεπώς τα προδράγματα και μορφισμοί προδραγμάτων από μόνα τους αποτελούν μια κατηγορία $\mathcal{P}\mathcal{S}h_X$.
