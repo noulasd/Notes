@@ -1,0 +1,158 @@
+\vspace{0.3truecm}
+
+\begin{figure}[H]
+    \centering
+    \begin{tikzcd}
+        S(U) \arrow[rrr] \arrow[rd, "\rho^U_V"] \arrow[dd, "\rho^U_W"'] &                                         &  & T(U) \arrow[dd, "\lambda^U_W"] \arrow[rd, "\lambda^U_V"] &                                \\
+                                                                        & S(V) \arrow[rrr] \arrow[ld, "\rho^V_W"] &  &                                                          & T(V) \arrow[ld, "\lambda^V_W"] \\
+        S(W) \arrow[rrr]                                                &                                         &  & T(W)                                                     &                               
+        \end{tikzcd}
+\end{figure}
+
+Έστω $(\tau_X, \leq )$ διατεταγμένο σύνολο με $A\leq B \iff B\subseteq A$. Τότε έχουμε μια κατηγορία με αντικείμενα τα $U \in \tau_X$ και μορφισμούς:
+
+$$Mor(U,V) = \begin{cases}
+    \varnothing, \quad\text{ αν } U,V \text{ δεν διατάσσονται} \\
+    \{(U,V)\}, \quad U \leq V \quad (\text{ δηλ. } V\subseteq U)
+\end{cases}$$
+
+$ $\newline
+Αν $U \in \tau_X$, τότε $Mor(U,U) = \{(U,U)\}$.
+
+$ $\newline
+Για κάθε $W\subseteq V \subseteq U$ έχουμε την πράξη:
+$$\circ : Mor(U,V) \times Mor(V,W) \longrightarrow Mor(U,W)$$
+
+
+$ $\newline
+Έστω $F$ συναρτητής: $(\tau_X , \leq) \rightarrow \mathcal{S}et$. Δηλαδή, για κάθε $U \in \tau_X$ έχουμε κάποιο $F(U)$ σύνολο, άρα υπάρχει οικογένεια $(F(U))_{U \in \tau_X}$ με $(U,V) \in Mor(U,V)$ στην $(\tau_X,\leq)$. Συνεπώς, έχουμε
+$$F(U,V): F(U)\rightarrow F(V)$$ ώστε:
+
+\begin{enumerate}
+    \item $(U,U) = 1_U \in Mor(U,U) \implies F(U,U) = F(1_U) = 1_{F(U)}: F(U) \rightarrow F(U)$
+    \item Αν $W\subseteq V \subseteq U$, τότε $F(U,W) = F((V,W)\circ (U,V)) = F(V,W) \circ F(U,V)$
+
+\end{enumerate}
+
+
+$ $\newline
+Συγκρίνοντας τους ορισμούς του προδράγματος και του συναρτητή $(\tau_X, \leq) \rightarrow \mathcal{S}et$, παίρνουμε ότι αυτές οι δύο έννοιες ταυτίζονται.
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{defn} Έστω $\mathcal{C},\mathcal{D}$ κατηγορίες και $F,G : \mathcal{C} \rightarrow \mathcal{D}$ συναρτητές. Ένας φυσικός μετασχηματισμός $\phi : F \rightarrow G$ είναι μια οικογένεια $\phi \equiv (\phi_A)_{A\in \mathcal{C}}$ όπου
+    $$\phi_A: FA \rightarrow GA,\quad \forall A \in \mathcal{C}$$ έτσι ώστε για κάθε $f:A\rightarrow B$ στην $\mathcal{C}$ το παρακάτω τετράγωνο να είναι μεταθετικό:
+\end{defn}
+\begin{figure}[H]
+    \centering
+    \begin{tikzcd}
+        FA \arrow[rr, "Ff"] \arrow[d, "\phi_A"] &  & FB \arrow[d, "\phi_B"] \\
+        GA \arrow[rr, "Gf"]                     &  & GB                    
+        \end{tikzcd}
+\end{figure}
+
+$ $\newline
+Ένας μορφισμός προδραγμάτων $S = (S(U),\rho^U_V), T = (T(U),\lambda^U_V)$ είναι ένας φυσικός μετασχηματισμός $\phi :S \rightarrow T$.
+
+
+
+
+
+\begin{defn}[Συναρτητής-Τομή (\tl{section functor}) ]
+    $$\Gamma: \mathcal{S}h_X \longrightarrow \mathcal{P}\mathcal{S}h_X$$
+$$\Sheaf \longmapsto \left(\Gamma(U,\So),\rho^U_V\right)$$ προδράγμμα συνόλων, με $\rho^U_V$ τους συνήθεις περιορισμούς. Αν $f:\So \rightarrow \mathcal{T}$ μορφισμός δραγμάτων πάνω από το $X$, τότε για κάθε $U\in \tau_X$ έχουμε:
+$$\Gamma(U,\So) \xrightarrow[]{f_U} \Gamma(U,\mathcal{T})$$
+$$s\longmapsto f\circ s$$ και η οικογένεια $(f_U: \Gamma(U,\So) \rightarrow \Gamma(U,\mathcal{T}))_{U \in \tau_X}$ είναι μορφισμός προδραγμάτων.
+\end{defn}
+
+$ $\newline
+Πράγματι, εφόσον το παρακάτω τετράγωνο είναι μεταθετικό:
+\begin{figure}[H]
+    \centering
+    \begin{tikzcd}
+        {\Gamma(U,\So)} \arrow[rr, "f_U"] \arrow[d, "\rho^U_V"] &  & {\Gamma(U,\mathcal{T})} \arrow[d, "\lambda^U_V"] \\
+        {\Gamma(V,\So)} \arrow[rr, "f_V"]                       &  & {\Gamma(V,\mathcal{T})}                         
+        \end{tikzcd}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+\begin{tikzcd}
+    \So \arrow[r, "f"] \arrow[rd, "\pi"'] & \mathcal{T} \arrow[r, "g"] \arrow[d, "\rho"] & \mathcal{P} \arrow[ld, "\mathfrak{p}"] \\
+                                          & W                                            &                                       
+    \end{tikzcd}
+\end{figure}
+
+$$\Gamma(g\circ f) = \left((g\circ f)_U : \Gamma(U,\So) \rightarrow \Gamma(U,\mathcal{T})\right)$$
+$$\quad s\longmapsto g\circ f\circ s$$
+
+\vspace{0.3truecm}
+
+\begin{defn}[\tl{Directed System}]
+    Έστω $(A,\leq )$ ένα διατεταγμένο σύνολο και $\mathcal{C}$ μια κατηγορία. Ένα επαγωγικό σύστημα στην $\mathcal{C}$ (με δείκτες από το $A$) είναι ένας (συναλλοίωτος) συναρτητής $\mathbb{A} : (A,\leq) \rightarrow \mathcal{C}$. Δηλαδή, είναι μια οικογένεια $(A_{\lambda})_{\lambda \in \Lambda}$ μαζί με μια οικογένεια μορφισμών:
+    $$\phi^{\lambda_1}_{\lambda_2} : A_{\lambda_1} \rightarrow A_{\lambda_2}$$ όπου $A_{\lambda} = \mathbb{A}(\lambda)$ και $\phi^{\lambda_1}_{\lambda_2} = \mathbb{A}((\lambda_1,\lambda_2))$ για $\lambda_1 \leq \lambda_2$, έτσι ώστε:
+    \begin{enumerate}
+        \item $\phi^{\lambda}_{\lambda}:A_{\lambda}\rightarrow A_{\lambda} \equiv id_{A_{\lambda}}$
+        \item $\phi^{\lambda_2}_{\lambda_3} \circ \phi^{\lambda_1}_{\lambda_2} = \phi^{\lambda_1}_{\lambda_3}$, για κάθε $\lambda_1 \leq \lambda_2 \leq \lambda_3$.
+    \end{enumerate}
+\end{defn}
+\begin{figure}[H]
+    \centering
+    \begin{tikzcd}
+        A_{\lambda_1} \arrow[rr, "\phi^{\lambda_1}_{\lambda_2}"] \arrow[rrd, "\phi^{\lambda_1}_{\lambda_3}"'] &  & A_{\lambda_2} \arrow[d, "\phi^{\lambda_2}_{\lambda_3}"] \\
+                                                                                                              &  & A_{\lambda_3}                                          
+        \end{tikzcd}
+\end{figure}
+
+\begin{defn}[\tl{Directed Limit}]
+    Έστω $(A_{\lambda},\phi^{\lambda_1}_{\lambda_2})$ επαγωγικό σύστημα στην $\mathcal{C}$, όπου $(\Lambda,\leq)$ διατεταγμένο σύνολο. Επαγωγικό όριο του συστήματος έιναι ένα ζεύγος $(A,(\phi_{\lambda})_{\lambda \in \Lambda})$ όπου $A$ αντικείμενο της $\mathcal{C}$ και $\phi_{\lambda}:A_{\lambda} \rightarrow A$ για κάθε $\lambda \in \Lambda$, έτσι ώστε:
+    \begin{enumerate}
+        \item Για κάθε $\lambda_1 \leq \lambda_2$ να ισχύει $\phi_{\lambda_2} \circ \phi^{\lambda_1}_{\lambda_2} = \phi_{\lambda_1}$.
+        \begin{figure}[H]
+            \centering
+            \begin{tikzcd}
+                A_{\lambda_1} \arrow[rr, "\phi_{\lambda_1}"] \arrow[rd, "\phi^{\lambda_1}_{\lambda_2}"'] &                                               & A \\
+                                                                                                         & A_{\lambda_2} \arrow[ru, "\phi_{\lambda_2}"'] &  
+                \end{tikzcd}
+        \end{figure}
+
+        \item Ισχύει η επόμενη καθολική συνθήκη: Αν $(B,\psi_{\lambda})$ με $B$ αντικείμενο της $\mathcal{C}$ και για κάθε $\lambda \in \Lambda$ να έχουμε $\psi_{\lambda}:A_{\lambda}\rightarrow B$ τέτοια ώστε για κάθε $\lambda_1 \leq \lambda_2$ να ισχύει $\psi_{\lambda_1} = \psi_{\lambda_2} \circ \phi^{\lambda_1}_{\lambda_2}$, τότε υπάρχει μοναδικός μορφισμός $h:A\rightarrow B$ με $\psi_{\lambda} = h\circ \phi_{\lambda}$ για κάθε $\lambda \in \Lambda$.
+            \begin{figure}[H]
+                \centering
+                \begin{tikzcd}
+                    A_{\lambda_1} \arrow[dd, "\phi^{\lambda_1}_{\lambda_2}"'] \arrow[rrd, "\phi_{\lambda_1}"] \arrow[rrrd, "\psi_{\lambda_1}", bend left] &  &                          &   \\
+                                                                                                                                                          &  & A \arrow[r, "h", dashed] & B \\
+                    A_{\lambda_2} \arrow[rru, "\phi_{\lambda_2}"] \arrow[rrru, "\psi_{\lambda_2}", bend right]                                            &  &                          &  
+                    \end{tikzcd}
+            \end{figure}
+    \end{enumerate}
+
+\end{defn}
+
+\begin{defn} Ένας μορφισμός $f:A\rightarrow B$ στην $\mathcal{C}$ λέγεται ισομορφισμός $\iff$ υπάρχει μορφισμός $g:B\rightarrow A$ στην $\mathcal{C}$ με $g\circ f =1_A, \quad f\circ g = 1_B$.
+\end{defn}
+
+\vspace{0.3truecm}
+
+
+\begin{prop} Αν το επαγωγικό σύστημα $(A_{\lambda},\phi^{\lambda_1}_{\lambda_2})$ στην $\mathcal{C}$ έχει όριο τότε αυτό είναι (μοναδικό) μονοσήμαντα ορισμένο ως προς ισομορφισμό.
+\end{prop}
+
+\begin{proof} Έστω δύο όρια $(A,\phi_{\lambda}), (B,\psi_{\lambda})$.
+    $$A \text{ όριο } \implies \exists ! h : A\rightarrow B, \quad h\circ \phi_{\lambda} = \psi_{\lambda} \quad \forall \lambda \in \Lambda$$
+    $$B \text{ όριο } \implies \exists ! h^{\prime} : B\rightarrow A, \quad h^{\prime}\circ \psi_{\lambda} = \phi_{\lambda} \quad \forall \lambda \in \Lambda$$
+
+\begin{figure}[H]
+        \centering
+    \begin{tikzcd}
+        A_{\lambda_1} \arrow[dd, "\phi^{\lambda_1}_{\lambda_2}"'] \arrow[rrd, "\phi_{\lambda_1}"] \arrow[rrrd, "\psi_{\lambda_1}", bend left] &  &                                      &                                               \\
+                                                                                                                                              &  & A \arrow[r, "h", dashed, shift left] & B \arrow[l, "h^{\prime}", dashed, shift left] \\
+        A_{\lambda_2} \arrow[rru, "\phi_{\lambda_2}"] \arrow[rrru, "\psi_{\lambda_2}", bend right]                                            &  &                                      &                                              
+        \end{tikzcd}
+\end{figure}
+$ $\newline
+Άρα έχουμε $\phi_{\lambda} = h^{\prime} \circ \psi_{\lambda} \implies h \circ h^{\prime} \circ \psi_{\lambda} = h\circ \phi_{\lambda} = \psi_{\lambda}$. Υπάρχει ωστόσο μοναδικό $\xi:B\rightarrow B$ με $\xi \circ \psi_{\lambda} = \psi_{\lambda}$. Έχουμε ότι αυτό ισχύει για $\xi = 1_B$ αλλά και για $\xi = h\circ h^{\prime]}$. Έπεται ότι $h\circ h^{\prime} = 1_B$. Αντίστοιχα βρίσκουμε ότι $h^{\prime}\circ h = 1_A$, δηλαδή $h$ ισομορφισμός.
+\end{proof}
