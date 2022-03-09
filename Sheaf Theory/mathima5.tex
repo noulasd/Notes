@@ -1,0 +1,200 @@
+\vspace*{0.3cm}
+
+\begin{theorem} Στην κατηγορία $\mathcal{S}et$ κάθε επαγωγικό σύστημα με σύνολο δεικτών ένα κατευθυνόμενο σύνολο $(\Lambda,\leq)$ έχει όριο.
+\end{theorem}
+
+\begin{proof}
+    $ $\newline
+    Έστω $(A_{\lambda},\phi^{\lambda_1}_{\lambda_2}:A_{\lambda_1}\rightarrow A_{\lambda_2})_{\lambda_1 \leq \lambda_2}$ ένα επαγωγικό σύστημα συνόλων, με $(\Lambda,\leq)$ να είναι ένα κατευθυνόμενο σύνολο. Θεωρούμε την διακεκριμένη ένωση:
+    $$\bigsqcup\limits_{\lambda \in \Lambda}A_{\lambda}$$ και θεωρούμε την εξής σχέση: Αν $a_1,a_2 \in \sqcup A_{\lambda}$, τότε υπάρχουν δείκτες $\lambda_1,\lambda_2 \in \Lambda$ τέτοιοι ώστε $a_1 \in A_{\lambda_1}, a_2 \in A_{\lambda_2}$. Ορίζουμε:
+    $$a_1 \sim a_2 \iff \exists \lambda \geq \lambda_1,\lambda_2:$$
+    $$\phi^{\lambda_1}_{\lambda}(a_1)  = \phi^{\lambda_2}_{\lambda}(a_2)$$ είναι σχέση ισοδυναμίας (προφανώς αυτοπαθής και συμμετρική).
+
+    $ $\newline %figoura 1
+    Για την μεταβατικότητα, αν έχουμε $a_1 \sim a_2$ και $a_2 \sim a_3$ με $a_1 \in A_{\lambda_1},a_2 \in A_{\lambda_2},a_3 \in A_{\lambda_3}$,
+    τότε υπάρχει $\lambda \geq \lambda_1,\lambda_2$ με 
+    $$\phi^{\lambda_1}_{\lambda}(a_1)  = \phi^{\lambda_2}_{\lambda}(a_2)$$ καθώς και ένα $\mu \geq \lambda_2,\lambda_3$ τέτοιο ώστε:
+    $$\phi^{\lambda_2}_{\mu}(a_2)  = \phi^{\lambda_3}_{\mu}(a_3)$$ 
+
+    $ $\newline
+    Στο κατευθυνόμενο $\Lambda$ υπάρχει $k\geq \lambda, \mu$ με $\lambda_1\leq \lambda \leq k$, τέτοιο ώστε:
+    \begin{figure}[H]
+        \centering
+        \begin{tikzcd}
+            \lambda_1 \arrow[rd]            &                    &   \\
+                                            & \lambda \arrow[rd] &   \\
+            \lambda_2 \arrow[rd] \arrow[ru] &                    & k \\
+                                            & \mu \arrow[ru]     &   \\
+            \lambda_3 \arrow[ru]            &                    &  
+            \end{tikzcd}
+    \end{figure}
+    $$\phi^{\lambda_1}_k (a_1)= \phi^{\lambda}_k \circ \phi^{\lambda_1}_{\lambda}(a_1) = \phi^{\lambda}_{k} \circ \phi^{\lambda_2}_{\lambda}(a_2) = \phi^{\lambda_2}_k (a_2) = \phi^{\mu}_k \circ \phi^{\lambda_2}_{\mu} (a_2)= \phi^{\mu}_k \circ \phi^{\lambda_3}_{\mu} (a_3) = \phi^{\lambda_3}_k (a_3)$$ 
+
+    $ $\newline
+    Θέτουμε $A = \sqcup A_{\lambda}\big/\sim$ και θεωρούμε την κανονική προβολή: 
+    $$q: \sqcup A_{\lambda} \longrightarrow A$$
+    $$a\longmapsto q(a) = [a]$$ Παρατηρούμε ότι για κάθε $\lambda_0 \in \Lambda$ ισχύει $A_{\lambda_0} \subseteq \sqcup A_{\lambda}$ και υπάρχει $\phi_{\lambda_0} := q|_{A_{\lambda_0}}$. Τότε το $(A,\phi_{\lambda})_{\lambda \in \Lambda}$ είναι το όριο του επαγωγικού συστήματος.
+
+    $ $\newline
+    Για το $(1)$ έστω $\lambda_1\leq \lambda_2$ με μεταθετικό τρίγωνο:
+    
+    \begin{figure}[H]
+        \centering
+        \begin{tikzcd}
+            A_{\lambda_1} \arrow[rdd, "\phi^{\lambda_1}_{\lambda_2}"] \arrow[rrd, "\phi_{\lambda_1} = q|_{A_{\lambda_1}}"] &                                                                    &   \\
+                                                                                                                           &                                                                    & A \\
+                                                                                                                           & A_{\lambda_2} \arrow[ru, "\phi_{\lambda_2} = q|_{A_{\lambda_2}}"'] &  
+            \end{tikzcd}
+    \end{figure}
+    \noindent δηλαδή $\phi_{\lambda_2} \circ \phi^{\lambda_1}_{\lambda_2} = \phi_{\lambda_1}$. Πράγματι αν έχουμε $a \in A_{\lambda_1}$ τότε
+    $$\phi_{\lambda_2} \circ \phi^{\lambda_1}_{\lambda_2} (a) = \phi_{\lambda_1}(a) \iff $$
+    $$[\phi^{\lambda_1}_{\lambda_2} (a)] = [a] \iff $$
+    $$\phi^{\lambda_1}_{\lambda_2}(a) \sim a$$ η οποία είναι προφανής, αφού $\phi^{\lambda_1}_{\lambda_2}(a) = \phi^{\lambda_2}_{\lambda_2} \circ \phi^{\lambda_1}_{\lambda_2}(a)$ και $\lambda_2 \geq \lambda_1,\lambda_2$.
+
+    $ $\newline
+    Για το $(2)$  Έστω $(B,\psi_{\lambda}: A_{\lambda} \rightarrow B)$ με $\lambda_1 \leq \lambda_2$ και μεταθετικό τρίγωνο:
+    \begin{figure}[H]
+        \centering
+        \begin{tikzcd}
+            A_{\lambda_1} \arrow[dd, "\phi^{\lambda_1}_{\lambda_2}"'] \arrow[rd, "\psi_{\lambda_1}"] &   \\
+                                                                                                     & B \\
+            A_{\lambda_2} \arrow[ru, "\psi_{\lambda_2}"']                                            &  
+            \end{tikzcd}
+    \end{figure}
+    
+    $ $\newline
+    τότε μαζί με αυτό το τρίγωνο υπάρχει και το προηγούμενο που κατασκευάσαμε βασιζόμενοι στην κανονική προβολή $q$. Βάζουμε τα τρίγωνα μαζί και ψάχνουμε μια $h$:
+    
+    \begin{figure}[H]
+        \centering
+        \begin{tikzcd}
+            A_{\lambda_1} \arrow[dd, "\phi^{\lambda_1}_{\lambda_2}"'] \arrow[rrd, "\phi_{\lambda_1}"] \arrow[rrrd, "\psi_{\lambda_1}", bend left] &  &                                      &                                               \\
+                                                                                                                                                  &  & A \arrow[r, "h?", dashed] & B \\
+            A_{\lambda_2} \arrow[rru, "\phi_{\lambda_2}"] \arrow[rrru, "\psi_{\lambda_2}", bend right]                                            &  &                                      &                                              
+            \end{tikzcd}
+    \end{figure}
+
+    \noindent Κάθε $[a] \in A$ προέρχεται από κάποιο $a \in A_{\lambda},\lambda \in \Lambda$. Θέλουμε η $h$ που θα βρούμε να κάνει το παρακάτω τρίγωνο μεταθετικό:
+
+    \begin{figure}[H]
+        \centering
+        \begin{tikzcd}
+            a \in A_{\lambda} \arrow[rd, "q = \phi_{\lambda}"'] \arrow[rrd, "\psi_{\lambda}", bend left] &                                     &   \\
+                                                                                                         & A \arrow[r, "h"', dashed] & B
+            \end{tikzcd}
+    \end{figure}
+    
+    
+    \noindent θέτουμε $h([a]) = \psi_{\lambda}(a)$. Πρέπει να δείξουμε ότι είναι καλά ορισμένη, δηλαδή ανεξάρτητη του αντιπροσώπου $a$ της κλάσης $[a]$.
+    Έστω $[a_1] = [a_2]$ και $a_1 \in A_{\lambda_1}, a_2 \in A_{\lambda_2}$. Δηλαδή, υπάρχει $\lambda\geq \lambda_1,\lambda_2$ με $\phi^{\lambda_1}_{\lambda} (a_1) = \phi^{\lambda_2}_{\lambda}(a_2)$ και εφόσον το παρακάτω τρίγωνο είναι μεταθετικό:
+
+
+    \begin{figure}[H]
+        \centering
+        \begin{tikzcd}
+            a_1 \in A_{\lambda_1} \arrow[rd, "\phi^{\lambda_1}_{\lambda}"'] \arrow[rrd, "\psi_{\lambda_1}", bend left] &                                          &   \\
+                                                                                                                       & A_{\lambda} \arrow[r, "\psi_{\lambda}"'] & B
+            \end{tikzcd}
+    \end{figure}
+    
+    
+    \noindent παίρνουμε ότι $h([a_1]) = \psi_{\lambda_1}(a_1) = \psi_{\lambda} \circ \phi^{\lambda_1}_{\lambda} (a_1) = \psi_{\lambda} \circ \phi^{\lambda_2}_{\lambda}(a_2) = \psi_{\lambda_2} (a_2) = h([a_2])$.
+    $ $\newline
+    Ορίσαμε την $h$ έτσι ώστε να έχουμε μεταθετικότητα των τριγώνων, δηλαδή $h\circ q = \psi_{\lambda}$ και έχουμε την μοναδικότητα από το μονοσήμαντο αυτού του ορισμού.
+\end{proof}
+
+\begin{remark} Η παραπάνω απόδειξη αποτελεί και μεθοδολογία για το πώς βρίσκουμε το όριο.
+\end{remark}
+
+$ $\newline
+\underline{Εφαρμογή} 1: Έστω $(\Lambda,\leq) \equiv (\mathbb{N},\leq)$ με την συνήθη διάταξη και $A_n = \mathbb{R}^n$. Αν $m\leq n$ τότε ορίζουμε 
+$$\phi^{m}_n : \mathbb{R}^m \rightarrow \mathbb{R}^n$$
+$$x\longmapsto (x,0,0,\ldots,0)$$ με $(n-m)$-πλήθος μηδενικά. Το παραπάνω είναι ένα επαγωγικό σύστημα και από το θεώρημα έχουμε την ύπαρξη του ορίου.
+
+\underline{Άσκηση}: Υπολογίστε το όριο $(A,\phi_n)$ και εξετάστε αν το $A$ έχει δομή διανυσματικού χώρου έτσι ώστε οι $\phi_n$ να είναι γραμμικές. (Δηλαδή διατηρεί το όριο την δομή της κατηγορίας? αν θεωρήσουμε ότι ξεκινήσαμε από διανυσματικούς χώρους και όχι από σύνολα.)
+
+
+$ $\newline
+\underline{Εφαρμογή} 2: Έστω $(X,\tau_X)$ τοπολογικός χώρος και $(\mathcal{C}(U),\rho^U_V)_{V\subseteq U \in \tau_X}$ με περιορισμούς απεικονίσεις. Είναι ένα προδράγμμα συνόλων. Έστω $x \in X$ και $\mathcal{N}^0_x = \mathcal{N}_x \cap \tau_X$, δηλαδή οι ανοιχτές περιοχές του $x$. Τότε το $(\mathcal{N}^0_x,\leq)$ είναι κατευθυνόμενο σύνολο με $U\leq V \iff V\subseteq U$ που δεν περιέχει κενά σύνολα αφού το καθένα θα περιέχει το $x$.
+
+$ $\newline
+Αν περιοριστούμε στο $(\mathcal{C}(U),\rho^U_V)_{V\subseteq U \in \mathcal{N}^0_x}$, τότε από το θεώρημα ξέρουμε ότι υπάρχει το όριο. 
+
+\underline{Άσκηση}: Να υπολογιστεί.
+
+$ $\newline
+Έστω δύο επαγωγικά συστήματα $(A_{\lambda},\phi^{\lambda_1}_{\lambda_2}), (B_{\lambda},\psi^{\lambda_1}_{\lambda_2})$ για $\lambda_1\leq \lambda_2$ και
+$$f\equiv (f_{\lambda}:A_{\lambda}\rightarrow B_{\lambda})$$ ένας μορφισμός επαγωγικών συστημάτων, δηλαδή για κάθε $\lambda_1 \leq \lambda_2$
+το παρακάτω τετράγωνο να είναι μεταθετικό:
+
+\begin{figure}[H]
+    \centering
+    \begin{tikzcd}
+        A_{\lambda_1} \arrow[rr, "f_{\lambda_1}"] \arrow[d, "\phi^{\lambda_1}_{\lambda_2}"'] &  & B_{\lambda_1} \arrow[d, "\psi^{\lambda_1}_{\lambda_2}"] \\
+        A_{\lambda_2} \arrow[rr, "f_{\lambda_2}"]                                            &  & B_{\lambda_2}                                          
+        \end{tikzcd}
+\end{figure}
+
+\begin{prop}
+    Αν το $(A_{\lambda},\phi^{\lambda_1}_{\lambda_2})$ έχει όριο $(A,\phi_{\lambda})$ και όμοια το $(B_{\lambda},\psi^{\lambda_1}_{\lambda_2})$ να έχει όριο $(B,\psi_{\lambda})$ και $(f_{\lambda}:A_{\lambda}\rightarrow B_{\lambda})$ να είναι μορφισμός επαγωγικού συστήματος, τότε υπάρχει μοναδική $\overline{f} : A \rightarrow B$ που κάνει μεταθετικά όλα τα παρακάτω διαγράμματα:
+
+    \begin{figure}[H]
+        \centering
+        \begin{tikzcd}
+            A_{\lambda} \arrow[rr, "h_{\lambda}"] \arrow[d, "\phi_{\lambda}"'] &  & B_{\lambda} \arrow[d, "\psi_{\lambda}"] \\
+            A \arrow[rr, "\overline{f}", dashed]                               &  & B                                      
+        \end{tikzcd}
+    \end{figure}
+    
+    \begin{figure}[H]
+        \centering
+        \begin{tikzcd}
+            A_{\lambda_1} \arrow[dd, "\phi^{\lambda_1}_{\lambda_2}"'] \arrow[rrd, "\psi_{\lambda_1} \circ f_{\lambda_1} = x_{\lambda_1}", bend left] &  &   \\
+                                                                                                                                                     &  & B \\
+            A_{\lambda_2} \arrow[rru, "\psi_{\lambda_2}\circ f_{\lambda_2} = x_{\lambda_2}"', bend right]                                            &  &  
+            \end{tikzcd}
+    \end{figure}
+\end{prop}
+\begin{proof}
+    \noindent Το $(B,x_{\lambda} = \psi_{\lambda}\circ f_{\lambda})$ ικανοποιεί το $(1)$ του ορισμού του επαγωγικού ορίου. Επειδή το όριο του $(A_{\lambda}, \phi^{\lambda_1}_{\lambda_2})$ είναι το $(A,\phi_{\lambda})$ υπάρχει μοναδική $h:A\rightarrow B$ με 
+    $$x_{\lambda} = h \circ \phi_{\lambda}, \quad \forall \lambda \in \Lambda$$
+    $$x_{\lambda} = \psi_{\lambda} \circ f_{\lambda} = h \circ \phi_{\lambda}$$ και θέτουμε $\overline{f} = h$.
+
+\end{proof}
+
+
+
+\section*{Δραγματοποίηση προδράγματος}
+
+$ $\newline
+Έστω $(S(U),\rho^U_V)_{V\subseteq U\in \tau_X}$ προδράγμα συνόλων πάνω από τοπολογικό χώρο $(X,\tau_X)$. Έστω ένα σημείο $x \in X$ και θεωρούμε το σύνολο $\mathcal{N}^0_x$ των ανοιχτών περιοχών του $x$ και έτσι το κατευθυνόμενο σύνολο $(\mathcal{N}^0_x,\leq)$.
+
+$ $\newline
+Άρα το $(S(U),\rho^U_V)_{V\subseteq U \in \mathcal{N}^0_x}$ είναι ένα επαγωγικό σύστημα συνόλων με κατευθυνόμενο σύνολο δεικτών $(\mathcal{N}^0_x,\leq)$. Από το θεώρημα έχουμε την ύπαρξη του ορίου:
+$$(\So_x,\rho^U_x: S(U)\rightarrow \So_x)_{U \in \mathcal{N}^0_x}$$ (θα δικαιολογηθεί στην συνέχεια που συμπίπτει ο συμβολισμός με τα νήματα.)
+
+$ $\newline
+Παρατηρούμε ότι $U\in \tau_X \implies U \in \mathcal{N}^0_x, \quad \forall x \in U$. Άρα το $S(U)$ είναι σύνολο πολλών επαγωγικών συστημάτων. Για κάθε $x \in U$, το $S(U)$ συμμετέχει στο αντίστοιχο επαγωγικό σύστημα με δείκτες το $\mathcal{N}^0_x$.
+
+$ $\newline
+Για κάθε $s \in S(U)$ και για $x\neq y \in U$ υπάρχει $[s]_x$ στο όριο $\So_x$ του $(S(W),\rho^V_W)_{W\subseteq V \in \mathcal{N}^0_x}$. Όμοια, υπάρχει $[s]_y$ στο όριο $\So_y$ του $(S(W),\rho^V_W)_{W\subseteq V \in \mathcal{N}^0_y}$.
+
+$ $\newline
+Θέτουμε 
+$$\mathcal{S} := \bigsqcup\limits_{x \in X} \mathcal{S}_x$$ και τότε για κάθε $U \in \tau_X$ και $s \in S(U)$ θέτουμε:
+$$\tilde{s}: U \longrightarrow \mathcal{S}$$
+$$\tilde{s}(x) = [s]_x = \rho^U_x(s) \in \mathcal{S}_x$$
+
+
+
+\begin{figure}[H]
+    \centering
+    \incfig{mathima_5_figure1}
+    %\caption{}
+    %\label{}
+\end{figure}
+
+$ $\newline
+Θέτουμε επιπλέον: 
+$$\pi:\mathcal{S} \longrightarrow X$$
+$$u\longmapsto \pi(u) = x$$ οταν $u \in \mathcal{S}_x$. Στην επόμενη διάλεξη θα δείξουμε ότι είναι τοπικός ομοιομορφισμός.

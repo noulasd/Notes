@@ -1,6 +1,6 @@
 %% Creator: Inkscape inkscape 0.92.5, www.inkscape.org
 %% PDF/EPS/PS + LaTeX output extension by Johan Engelen, 2010
-%% Accompanies image file 'mathima_2_figure1.pdf' (pdf, eps, ps)
+%% Accompanies image file 'mathima_5_figure1.pdf' (pdf, eps, ps)
 %%
 %% To include the image in your LaTeX document, write
 %%   \input{<filename>.pdf_tex}
@@ -38,7 +38,7 @@
   \newcommand*\fsize{\dimexpr\f@size pt\relax}%
   \newcommand*\lineheight[1]{\fontsize{\fsize}{#1\fsize}\selectfont}%
   \ifx\svgwidth\undefined%
-    \setlength{\unitlength}{225bp}%
+    \setlength{\unitlength}{321.90440981bp}%
     \ifx\svgscale\undefined%
       \relax%
     \else%
@@ -50,21 +50,13 @@
   \global\let\svgwidth\undefined%
   \global\let\svgscale\undefined%
   \makeatother%
-  \begin{picture}(1,2)%
+  \begin{picture}(1,1.65347626)%
     \lineheight{1}%
     \setlength\tabcolsep{0pt}%
-    \put(0,0){\includegraphics[width=\unitlength,page=1]{mathima_2_figure1.pdf}}%
-    \put(0.04296875,0.3203125){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$X$\end{tabular}}}}%
-    \put(0,0){\includegraphics[width=\unitlength,page=2]{mathima_2_figure1.pdf}}%
-    \put(0.37890628,0.515625){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$x$\end{tabular}}}}%
-    \put(0,0){\includegraphics[width=\unitlength,page=3]{mathima_2_figure1.pdf}}%
-    \put(0.60742188,0.52734375){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\pi(V)$\end{tabular}}}}%
-    \put(0,0){\includegraphics[width=\unitlength,page=4]{mathima_2_figure1.pdf}}%
-    \put(0.49804688,0.890625){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\pi$\end{tabular}}}}%
-    \put(0,0){\includegraphics[width=\unitlength,page=5]{mathima_2_figure1.pdf}}%
-    \put(0.35742188,1.37890625){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\mathcal{S}_x$\end{tabular}}}}%
-    \put(0,0){\includegraphics[width=\unitlength,page=6]{mathima_2_figure1.pdf}}%
-    \put(0.36523438,1.77148438){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$z$\end{tabular}}}}%
-    \put(0,0){\includegraphics[width=\unitlength,page=7]{mathima_2_figure1.pdf}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=1]{mathima_5_figure1.pdf}}%
+    \put(-0.00618875,0.01095779){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$X$\end{tabular}}}}%
+    \put(0.47628659,0.19100323){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$x$\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=2]{mathima_5_figure1.pdf}}%
+    \put(0.40803404,0.84646389){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\mathcal{S}_x$\end{tabular}}}}%
   \end{picture}%
 \endgroup%

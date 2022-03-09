@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2020.10.13)  7 MAR 2022 18:43
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2020.10.13)  9 MAR 2022 11:27
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -838,12 +838,11 @@ Package: iftex 2020/03/06 v1.0d TeX engine tests
 ) (c:/texlive/2020/texmf-dist/tex/latex/import/import.sty
 Package: import 2020/04/01  v 6.2
 )
-\c@theorem=\count314
-\c@example=\count315
-\c@cor=\count316
+\c@example=\count314
+\c@cor=\count315
 ) (c:/texlive/2020/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2020-09-24 L3 backend support: PDF output (pdfTeX)
-\l__kernel_color_stack_int=\count317
+\l__kernel_color_stack_int=\count316
 \l__pdf_internal_box=\box66
 ) (c:/Users/dimit/Desktop/TeX/Notes/Sheaf Theory/main.aux
 LaTeX Font Info:    Trying to load font information for LGR+cmr on input line 4.
@@ -870,16 +869,16 @@ LaTeX Font Info:    Checking defaults for LGR/cmr/m/n on input line 4.
 LaTeX Font Info:    ... okay on input line 4.
  (c:/texlive/2020/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count318
+\scratchcounter=\count317
 \scratchdimen=\dimen291
 \scratchbox=\box67
-\nofMPsegments=\count319
-\nofMParguments=\count320
+\nofMPsegments=\count318
+\nofMParguments=\count319
 \everyMPshowfont=\toks48
-\MPscratchCnt=\count321
+\MPscratchCnt=\count320
 \MPscratchDim=\dimen292
-\MPnumerator=\count322
-\makeMPintoPDFobject=\count323
+\MPnumerator=\count321
+\makeMPintoPDFobject=\count322
 \everyMPtoPDFconversion=\toks49
 ) (c:/texlive/2020/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
@@ -967,7 +966,15 @@ File: ./figures//mathima_2_figure1.pdf Graphic file (type pdf)
 <use ./figures//mathima_2_figure1.pdf, page 6>
 Package pdftex.def Info: ./figures//mathima_2_figure1.pdf , page6 used on input line 66.
 (pdftex.def)             Requested size: 144.54pt x 289.09279pt.
+<./figures//mathima_2_figure1.pdf, id=43, page=7, 225.84375pt x 451.6875pt>
+File: ./figures//mathima_2_figure1.pdf Graphic file (type pdf)
+<use ./figures//mathima_2_figure1.pdf, page 7>
+Package pdftex.def Info: ./figures//mathima_2_figure1.pdf , page7 used on input line 68.
+(pdftex.def)             Requested size: 144.54pt x 289.09279pt.
 ) [5] [6 <c:/Users/dimit/Desktop/TeX/Notes/Sheaf Theory/./figures//mathima_2_figure1.pdf> <c:/Users/dimit/Desktop/TeX/Notes/Sheaf Theory/./figures//mathima_2_figure1.pdf
+
+pdfTeX warning: pdflatex.exe (file c:/Users/dimit/Desktop/TeX/Notes/Sheaf Theory/./figures//mathima_2_figure1.pdf): PDF inclusion: multiple pdfs with page group included in a single page
+> <c:/Users/dimit/Desktop/TeX/Notes/Sheaf Theory/./figures//mathima_2_figure1.pdf
 
 pdfTeX warning: pdflatex.exe (file c:/Users/dimit/Desktop/TeX/Notes/Sheaf Theory/./figures//mathima_2_figure1.pdf): PDF inclusion: multiple pdfs with page group included in a single page
 > <c:/Users/dimit/Desktop/TeX/Notes/Sheaf Theory/./figures//mathima_2_figure1.pdf
@@ -986,20 +993,34 @@ pdfTeX warning: pdflatex.exe (file c:/Users/dimit/Desktop/TeX/Notes/Sheaf Theory
 LaTeX Font Info:    Trying to load font information for U+euf on input line 100.
  (c:/texlive/2020/texmf-dist/tex/latex/amsfonts/ueuf.fd
 File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
-) [7]) [8] (c:/Users/dimit/Desktop/TeX/Notes/Sheaf Theory/mathima3.tex [9] [10] [11] [12]) [13] (c:/Users/dimit/Desktop/TeX/Notes/Sheaf Theory/mathima4.tex [14] [15]) [16] (c:/Users/dimit/Desktop/TeX/Notes/Sheaf Theory/main.aux) ) 
+) [7]) [8] (c:/Users/dimit/Desktop/TeX/Notes/Sheaf Theory/mathima3.tex [9] [10] [11] [12]) [13] (c:/Users/dimit/Desktop/TeX/Notes/Sheaf Theory/mathima4.tex [14] [15]) [16] (c:/Users/dimit/Desktop/TeX/Notes/Sheaf Theory/mathima5.tex [17] [18] [19] (c:/Users/dimit/Desktop/TeX/Notes/Sheaf Theory/./figures/mathima_5_figure1.pdf_tex
+<./figures//mathima_5_figure1.pdf, id=100, page=1, 323.11156pt x 534.25728pt>
+File: ./figures//mathima_5_figure1.pdf Graphic file (type pdf)
+<use ./figures//mathima_5_figure1.pdf, page 1>
+Package pdftex.def Info: ./figures//mathima_5_figure1.pdf , page1 used on input line 56.
+(pdftex.def)             Requested size: 144.54pt x 238.98692pt.
+<./figures//mathima_5_figure1.pdf, id=101, page=2, 323.11156pt x 534.25728pt>
+File: ./figures//mathima_5_figure1.pdf Graphic file (type pdf)
+<use ./figures//mathima_5_figure1.pdf, page 2>
+Package pdftex.def Info: ./figures//mathima_5_figure1.pdf , page2 used on input line 59.
+(pdftex.def)             Requested size: 144.54pt x 238.98692pt.
+) [20]) [21 <c:/Users/dimit/Desktop/TeX/Notes/Sheaf Theory/./figures//mathima_5_figure1.pdf> <c:/Users/dimit/Desktop/TeX/Notes/Sheaf Theory/./figures//mathima_5_figure1.pdf
+
+pdfTeX warning: pdflatex.exe (file c:/Users/dimit/Desktop/TeX/Notes/Sheaf Theory/./figures//mathima_5_figure1.pdf): PDF inclusion: multiple pdfs with page group included in a single page
+>] (c:/Users/dimit/Desktop/TeX/Notes/Sheaf Theory/main.aux) ) 
 Here is how much of TeX's memory you used:
- 18975 strings out of 479917
- 373993 string characters out of 5886664
- 661511 words of memory out of 5000000
- 35171 multiletter control sequences out of 15000+600000
- 554534 words of font info for 77 fonts, out of 8000000 for 9000
+ 19390 strings out of 479917
+ 384764 string characters out of 5886664
+ 667193 words of memory out of 5000000
+ 35580 multiletter control sequences out of 15000+600000
+ 555242 words of font info for 80 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  111i,17n,112p,1437b,1198s stack positions out of 5000i,500n,10000p,200000b,80000s
 {c:/texlive/2020/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}<c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/euler/eufm10.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/euler/eufm7.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/cbfonts/grmi1000.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/cbfonts/grmn0700.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/cbfonts/grmn1000.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/cbfonts/grmn2074.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/cbfonts/grxn1000.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/cbfonts/grxn1440.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb>
-Output written on "c:/Users/dimit/Desktop/TeX/Notes/Sheaf Theory/main.pdf" (16 pages, 932911 bytes).
+Output written on "c:/Users/dimit/Desktop/TeX/Notes/Sheaf Theory/main.pdf" (21 pages, 958227 bytes).
 PDF statistics:
- 166 PDF objects out of 1000 (max. 8388607)
- 115 compressed objects within 2 object streams
+ 187 PDF objects out of 1000 (max. 8388607)
+ 128 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 48 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 63 words of extra memory for PDF output out of 10000 (max. 10000000)
 
