@@ -1,0 +1,264 @@
+\vspace*{0.3cm}
+
+$ $\newline
+Ξεκινάμε με ένα $\presheaf$ προδράγμα συνόλων πάνω από έναν τοπολογικό χώρο $X$ και σταθεροποιούμε ένα $x \in X$ και αντί να παίρνουμε όλα τα ανοιχτά, κρατάμε τις ανοιχτές περιοχές του $x$ περιορίζοντας έτσι το σύνολο δεικτών στο $\mathcal{N}^0_x$. Έτσι περνάμε σε ένα επαγωγικό σύστημα συνόλων: 
+$$(S(U),\rho^U_V)_{V\subseteq U \in \mathcal{N}^0_x}$$ με σύνολο δεικτών να είναι το κατευθυνόμενο $(\mathcal{N}^0_x, \leq \equiv \supseteq)$. Άρα από το γενικό θεώρημα ξέρουμε ότι υπάρχει το επαγωγικό όριο. Το κατασκευάζουμε παίρνοντας την διακεκριμένη ένωση:
+$$\bigsqcup\limits_{U \in \openx} S(U)$$ και ορίζοντας την παρακάτω σχέση ισοδυναμίας. Έστω $s \in S(U),\sigma \in S(V)$ με $U,V \in \openx$. Ορίζουμε:
+
+$$s \sim_{x} \sigma \iff \exists W \in \openx, \quad W \subseteq U\cap V$$ τέτοιο ώστε:
+$$\rho^U_W(s) = \rho^V_W (\sigma)$$ μάλιστα, είναι σχέση ισοδυναμίας που εξαρτάται από το $x \in X$ που έχουμε σταθεροποιήσει. Τις κλάσεις ισοδυναμίας τις συμβολίζουμε ως
+
+$$\So_x = \left(\bigsqcup\limits_{U \in \openx} S(U) \right)\Big/ \sim_x$$ Επιπλέον, έχουμε την κανονική απεικόνιση για να πηγαίνουμε στις κλάσεις:
+
+$$\rho_x : \bigsqcup\limits_{U \in \openx} S(U) \longrightarrow \So_x$$
+$$s \longmapsto \rho_x(s) = [s]_x$$ όπου γράφουμε και το $x$ στην κλαση του $s$ για να ξέρουμε σε ποια σχέση ισοδυναμίας αναφερόμαστε. Καθώς το πεδίο ορισμού της $\rho_x$ ειναι μια διακεκριμένη ένωση, μπορούμε να πάρουμε περιορισμούς στα μικρά σύνολα:
+
+
+%$\So = \sqcup_{U\in \mathcal{N}^0_x} S(U) / \sim_x$
+
+%$\rho : \sqcup _{U \in \mathcal{N}^0_x} S(U) \rightarrow \So_x$
+
+%$$s\longmapsto \rho_x(s) = [s]_x$$
+
+$$\rho^U_x = \rho_x|_{S(U)} : S(U)\longrightarrow \So_x$$
+$$s\longmapsto [s]_x$$
+
+$ $\newline
+Θέτουμε
+$$\mathcal{S}  = \bigsqcup\limits_{x \in X} \So_x$$
+και έστω $z \in \mathcal{S}$, αφού το $\So$ είναι διακεκριμένη ένωση, τότε υπάρχει μοναδικό $x \in X$ με $z \in \mathcal{S}_x$
+
+$ $\newline
+Θέτουμε για αυτόν τον δείκτη $\pi(z) = x$ και έτσι έχουμε μια καλά ορισμένη απεικόνιση $\pi:\mathcal{S}\rightarrow X$.
+
+$ $\newline
+\underline{Ισχυρισμός}: Το $\Sheaf$ είναι δράγμα. Θέλουμε δηλαδή το $\So$ να επιδέχεται μια τοπολογία που κάνει την $\pi$ τοπικό ομοιομορφισμό. Θα χρειαστούμε κάποια λήμματα.
+
+$ $\newline
+Έστω $U\in\tau_X$ και $s\in S(U)$, πριν αποδείξουμε ότι είναι δράγμα κατασκευάζουμε τις συνεχείς τομές του δράγματος. Θέτουμε:
+$$\tilde{s} : U \longrightarrow \So$$
+$$\tilde{s}(x) = [s]_x$$ και ιδιαιτέρως $[s]_x \in \mathcal{S}_x \subseteq \So$.
+
+$ $\newline
+Επιπλέον, την κλάση $[s]_x$ την βλέπουμε σαν την εικόνα της κανονικής απεικόνισης που μας πάει στο επαγωγικό όριο εφαρμοσμένη στο $s$, δηλαδή $[s]_x = \rho^U_x (s)$. Άρα κρατάμε την σχέση: 
+
+
+$$\tilde{s}(x) = [s]_x = \rho^U_x(s)$$ και οι $\tilde{s}$ που ορίσαμε είναι είναι 1-1, αφού δύο διαφορετικές εικόνες θα πέσουν σε διαφορετικά νήματα. Έτσι, αν θεωρήσουμε την $\tilde{s}$ στην εικόνα της:
+
+$$\tilde{s} : U \rightarrow \tilde{s}(U)\subseteq \mathcal{S}$$ αυτή είναι 1-1, επί και ισχύει τετριμμένα ότι: 
+$$\pi \circ \tilde{s} = id_U$$ αφού $\tilde{s}(x) \in \So_x$ και προβάλλοντας παίρνουμε το $x$.
+
+
+$ $\newline
+Υπενθυμίζουμε ότι για ένα δράγμα υπάρχει μια βάση της τοπολογίας που αποτελείται από τις εικόνες των τομών, η οποία συμπίπτει με την βάση της τοπολογίας που αποτελούν τα $V$ στα οποία η προβολή είναι τοπικός ομοιομορφισμός. Με αυτό σαν σκέψη θέτουμε:
+
+
+$$\mathcal{B} = \{\tilde{s}(U)| \quad U \in \tau_x, s \in S(U)\}$$
+και ισχυριζόμαστε ότι αυτή η οικογένεια είναι βάση τοπολογίας.
+
+\begin{lemma}[1] Για κάθε $z \in \So$ υπάρχει $U\in \tau_x$ και υπάρχει $s \in S(U)$ τέτοια ώστε $z = \tilde{s}(x)$ για $x \in U$.
+\end{lemma}
+
+\begin{proof}
+     Έστω 
+     $$z \in \So = \bigsqcup\limits_{U \in \openx} \So_x \implies$$
+     $$\exists ! x \in X: \quad z \in \So_x \implies$$
+     $$z = [s]_x$$ με $U \in \openx$ και $s \in S(U)$. Ωστόσο, από τα προηγούμενα έχουμε $[s]_x = \tilde{s} (x)$.
+\end{proof}
+\vspace*{0.2cm}
+\begin{lemma}[2]
+    Έστω $s \in S(U), \sigma \in S(V)$ με $U,V \in \tau_X$ και υπάρχει $z \in \tilde{s}(U)\cap \tilde{\sigma}(V)$. Τότε υπάρχει μη-κενό ανοιχτό $W \subseteq U\cap V$ τέτοιο ώστε:
+    $$\tilde{s}|_W = \tilde{\sigma}|_W$$ 
+\end{lemma}
+
+\begin{proof} Έχουμε:
+    $$\tilde{s}:U\longrightarrow \So$$
+    $$\tilde{\sigma}: V \longrightarrow \So$$
+    
+    
+    $$\text{Υπάρχει } x \in U: \quad z = \tilde{s}(x) \in \So_x$$
+    $$\text{Υπάρχει } y \in V: \quad  z = \tilde{\sigma}(y) \in \So_y$$ και αφού το $\So$ είναι διακεκριμένη ένωση έχουμε $x=y$. Άρα $U,V \in \openx$ και 
+    $$\tilde{s} (x) = \tilde{\sigma}(x) \implies$$
+    $$[s]_x = [\sigma]_x \implies $$
+    $$s \sim_x \sigma \implies $$
+    $ $\newline
+    Υπάρχει $W \in \openx$ με $W\subseteq U\cap V$ τέτοιο ώστε:
+    $$\rho^U_W(s) = \rho^V_W(\sigma)$$
+
+    $ $\newline
+    Θέλουμε να δείξουμε τη ισότητα των $\tilde{s},\tilde{\sigma}$ στο $W$, άρα θεωρούμε $y\in W$ και έχουμε τα μεταθετικά τρίγωνα:
+    
+    
+    \begin{figure}[H]
+        \centering
+        \begin{tikzcd}
+            s \in S(U) \arrow[rd, "\rho^U_W"'] \arrow[rrd, "\rho^U_y", bend left]       &                            &       \\
+                                                                                        & S(W) \arrow[r, "\rho^W_y"] & \So_y \\
+            \sigma \in S(V) \arrow[ru, "\rho^V_W"] \arrow[rru, "\rho^V_y"', bend right] &                            &      
+            \end{tikzcd}
+    \end{figure}
+    $$\tilde{s}(y) = [s]_y = \rho^U_y (s) = \rho^W_y \circ \rho^U_W (s) = $$
+    $$\rho^W_y \circ \rho^V_W(\sigma) = \rho^V_y(\sigma) = [\sigma]_y = \tilde{\sigma}(y)$$
+\end{proof}
+
+$ $\newline
+Ουσιαστικά, στην προηγούμενη απόδειξη κρύβεται η εξής παρατήρηση που θα χρησιμοποιούμε συχνά:
+\begin{remark}
+    Έστω $s \in S(U)$ με $ V\subseteq U$ τότε: 
+    $$\tilde{s}|_V = \widetilde{\rho^U_V(s)}$$ %bigtilde
+\end{remark}
+
+$ $\newline
+Τώρα βασιζόμενοι στα δύο λήμματα έχουμε την παρακάτω πρόταση:
+
+\begin{prop}
+    $$\mathcal{B} = \{\tilde{s}(U):\quad s \in S(U), \quad U \in \tau_X\}$$ είναι βάση μιας τοπολογίας.
+\end{prop}
+
+\begin{proof}
+    Η μία συνθήκη της βάσης είναι το λήμμα $(1)$ και η δεύτερη το λήμμα $(2)$.
+\end{proof}
+
+\vspace*{0.3cm}
+\begin{prop}
+    Το $\Sheaf$ είναι δράγμα.
+\end{prop}
+
+\begin{proof} Πρέπει να δείξουμε ότι η $\pi$ είναι τοπικός ομοιομορφισμός. Παρατηρούμε:
+    $$\tilde{s} : U \rightarrow \tilde{s} (U) \subseteq \So$$ είναι αντιστρέψιμη με 
+    $$\tilde{s}^{-1} = \pi|_{B}: B \longrightarrow \pi(B) = U$$ όπου
+    $$ \mathcal{B} \ni B = \tilde{s}(U)$$
+
+    $ $\newline
+    Άρα αρκεί να δείξουμε ότι οι απεικονίσεις $\tilde{s}: U \rightarrow \tilde{s}(U) = B$ είναι ομοιομορφισμοί. Δεδομένου το ότι είναι 1-1 και επί, έχουμε να δείξουμε ότι είναι συνεχείς και ανοιχτές.
+
+    $ $\newline
+    $\tilde{s}$ ανοιχτή: Έστω $V \subseteq U$ ανοιχτό. Θα δείξουμε ότι το $\tilde{s} (V)$ είναι ανοιχτό. Ειδικότερα, είναι βασικό. Υπάρχει $t = \rho^U_V(s)$, αφού είχαμε ξεκινήσει με ένα $s \in S(U)$ τέτοιο ώστε 
+    $$\rho^U_V : S(U)\longrightarrow S(V) \ni t = \rho^U_V(s)$$
+    άρα, από την παρατήρηση:
+    $$\tilde{s}(V) = \tilde{s}|_V (V) = \widetilde{\rho^U_V(s)}(V) = \tilde{t}(V) \in \mathcal{B} \subseteq \tau_{\So}$$ με $\tau \in S(V)$.
+
+    $ $\newline
+    $\tilde{s}$ συνεχής: Έστω $x \in U$, θα δείξουμε ότι η $\tilde{s}$ είναι συνεχής στο $x$. Εστω ανοιχτό $A\subseteq \tilde{s}(U)$ με $\tilde{s}(x) \in A$. Αφού $A$ ανοιχτό, υπάρχει $B \in \mathcal{B}:$
+
+    $$\tilde{s}(x) \in B \subseteq A \subseteq \tilde{s}(U)$$
+    και αφού το $B$ είναι βασικό, γράφεται ως $B = \tilde{\sigma}(V)$ με $V \in \tau_X$ και $\sigma \in S(V)$.
+
+    $ $\newline
+    Επίσης $\tilde{s}(x) \in \tilde{s}(U)$. Δηλαδή, από το λήμμα $(2)$ υπάρχει $W \in \openx$ κα $ W \subseteq U\cap V$ για το οποίο:
+    $$\tilde{s}|_W = \tilde{\sigma}|_W$$
+
+    $ $\newline
+    Θέτουμε $t:= \rho^U_W (s)  = \rho^V_W (\sigma)$ και έτσι:
+    $$\tilde{s}(W) = \widetilde{\rho^U_W(s)}(W) = \tilde{t}(W) \in \mathcal{B}$$ αλλά και 
+    $$\tilde{t}(W) = \tilde{\sigma}(W) \subseteq \tilde{\sigma}(V) = B \subseteq A \subseteq \tilde{s}(V)$$
+    Δηλαδή, το $\tilde{s}(W) \subseteq A$ πέφτει μέσα στο ανοιχτό.
+\end{proof}
+
+$ $\newline
+Συμπέρασμα: κάθε προδράγμα συνόλων μας δίνει ένα δράγμα. Χρειαζόμαστε κάτι ακόμα για να είμαστε σωστοί.
+
+$ $\newline
+Έστω $(f_U: S(U)\rightarrow T(U))_{U\in \tau_X}$ μορφισμός προδραγμάτων μεταξύ των $(S(U),\rho^U_V), (T(U),\lambda^U_V)$. Δηλαδή, έχουμε μεταθετικά τετράγωνα:
+
+\begin{figure}[H]
+    \centering
+\begin{tikzcd}
+    S(U) \arrow[d, "\rho^U_V"'] \arrow[r, "f_U"] & T(U) \arrow[d, "\lambda^U_V"] \\
+    S(V) \arrow[r, "f_V"]                        & T(V)                         
+    \end{tikzcd}
+\end{figure}
+
+$ $\newline
+Για κάθε $x \in X:$ 
+$$(f_U : S(U)\rightarrow T(U))_{U \in \openx}$$ είναι ένας μορφισμός επαγωγικών συστημάτων, τα οποία έχουν όρια $\So_x, \mathcal{T}_x$. Συνεπώς, υπάρχει μοναδικός μορφισμός μεταξύ των ορίων
+
+$$f_x : \So_x \rightarrow \mathcal{T}_x$$ που κάνει μεταθετικά τα τετράγωνα:
+
+\begin{figure}[H]
+    \centering
+    \begin{tikzcd}
+        S(U) \arrow[d, "\rho^U_x"'] \arrow[r, "f_U"] & T(U) \arrow[d, "\lambda^U_x"] \\
+        \So_x \arrow[r, "f_x"]                       & \mathcal{T}_x                
+        \end{tikzcd}
+\end{figure}
+
+$ $\newline
+Θέτουμε: 
+$$\tilde{f} = \bigcup\limits_{x \in X}f_x: \So\longrightarrow \mathcal{T}$$
+\vspace*{0.3cm}
+
+\begin{prop}
+    Η $\tilde{f}:\So\rightarrow \mathcal{T}$ είναι μορφισμός δραγμάτων.
+\end{prop}
+\vspace*{0.1cm}
+\begin{lemma}Για κάθε $U \in \tau_X$ και για κάθε  $ s \in S(U)$, αν θεωρήσουμε $t = f_U(s)$ ισχύει ότι:
+
+    $$\tilde{t} = \tilde{f} \circ \tilde{s}$$
+\end{lemma}
+
+\begin{proof} (του λήμματος.)
+
+    $$\tilde{s}:U \longrightarrow \So$$
+    $$\tilde{t}: U \longrightarrow \mathcal{T}$$
+
+    \begin{figure}[H]
+        \centering
+        \begin{tikzcd}
+            \So \arrow[rr, "\tilde{f}"] &                                                               & \mathcal{T} \\
+                                        & U\subseteq X \arrow[lu, "\tilde{s}"] \arrow[ru, "\tilde{t}"'] &            
+            \end{tikzcd}
+    \end{figure}
+
+    $ $\newline
+    Για κάθε $x \in U$, θέλουμε να υπολογίσουμε το $\tilde{f}\circ\tilde{s}(x)$. Από την μεταθετικότητα στα προηγούμενα τετράγωνα, ισχύει ότι:
+
+    $$\tilde{t}(x) = [t]_x = \lambda^U_x(t) = \lambda^U_x \circ f_U(s) = f_x \circ \rho^U_x (s) = $$
+    $$ = \tilde{f}\left([s]_x\right) = \tilde{f}\circ \tilde{s}(x)$$
+\end{proof}
+
+%wraio shmeio edw sto dhlos
+$ $\newline
+Ουσιαστικά, εδώ φαίνεται ότι οι $\tilde{s},\tilde{\sigma}$ είναι (συνεχείς) τομές των δραγμάτων που κατασκευάσαμε. Το λήμμα μας προδίδει ότι $\tilde{f}$ είναι μορφισμός, αφού μεταφέρει τις τομές σε τομές. Υπάρχει ωστόσο το λεπτό σημείο, ότι δεν ξέρουμε αν εξαντλούμε όλες τις τομές έτσι ώστε να επικαλεστούμε τον πρόταση/χαρακτηρισμό των μορφισμών (μάθημα 3). 
+
+\begin{proof} (της πρότασης.)
+
+    $ $\newline
+    $(1)$ Κάνει μεταθετικό το τρίγωνο:
+    
+    \begin{figure}[H]
+        \centering
+        \begin{tikzcd}
+            \So \arrow[rd, "\pi"'] \arrow[rr, "\tilde{f}"] &   & \mathcal{T} \arrow[ld, "\mathfrak{p}"] \\
+                                                           & X &                                       
+            \end{tikzcd}
+    \end{figure}
+
+    $ $\newline
+    εφόσον, αν $z \in \So$ τότε από το πρώτο λήμμα γράφουμε $z = \tilde{s}(x)$ για $x \in U$ με $ U \in \tau_x$ και $s \in S(U)$. Τότε: 
+    $$\mathfrak{p} \circ \tilde{f}(z) = \mathfrak{p}\circ \tilde{f} \circ \tilde{s}(x) = \mathfrak{p} \circ \tilde{t}(x)$$ όπου $t = f_U(s)=x=\pi(z)$ και $\tilde{t}(x) \in \mathcal{T}_x$. Ισοδύναμα, η $\tilde{f}$ διατηρεί τα νήματα εφόσον είναι η διακεκριμένη ένωση των $f_x$.
+    
+    $ $\newline
+    $(2)$ Η $\tilde{f}$ είναι συνεχής:
+    Έστω $z = \tilde{s}(x) \in \So$ (από το λήμμα $(1)$). Έστω $B$ βασική περιοχή του $\tilde{f}(z)$. Το $B$ γράφεται ως:
+    $$B = \tilde{\sigma}(V), \quad V\in \openx, \quad \sigma \in T(V)$$
+
+    $ $\newline
+    Θέτουμε $ t = f_U(s) \in T(U)$.
+
+    $ $\newline
+    Άρα $\tilde{f} (z) =\tilde{f}\circ \tilde{s} (x) \in \tilde{\sigma}(V)$ και ταυτόχρονα $\tilde{f}(z) = \tilde{t}(x) \in \tilde{t}(V)$. Άρα από το δεύτερο λήμμα, υπάρχει $W \in \openx$ με $W\subseteq U\cap V$ για το οποίο:
+    $$\tilde{t}|_W = \tilde{\sigma}|_W$$ όμως από ορισμό $\tilde{t}$ έχουμε:
+    $$\tilde{f}\circ\tilde{s}|_W = \tilde{\sigma}|_W \implies $$
+    $$\tilde{f} \circ \widetilde{\rho^U_W (s)} |_W = \tilde{\sigma}|_W \implies $$
+    $$\tilde{f}\left(\widetilde{\rho^U_W(s)}(W)\right) = \tilde{\sigma}(W) \subseteq \tilde{\sigma}(V) = B$$
+    με $\widetilde{\rho^U_W(s)}(W)$ ένα βασικό σύνολο της τοπολογίας $\tau_{\So}$, άρα και ανοιχτό και μέσα από την $f$ πέφτει μέσα στην εικόνα που θέλουμε.
+\end{proof}
+
+\vspace*{0.3cm}
+\begin{theorem} Το ζεύγος $(F_1,F_2): \mathcal{P}\mathcal{S}h_X \longrightarrow \So h_X:$
+    $$F_1\big((S(U),\rho^U_V)\big) = \So$$
+    $$F_2 \big((f_U:S(U)\rightarrow T(U))_{U \in \tau_X}\big) = \tilde{f}$$ είναι συναλλοίωτος συναρτητής.
+\end{theorem}
+\begin{proof} Είναι προφανές, αρκεί να δείξουμε ότι μεταφέρει την ταυτοτική στην ταυτοτική και την σύνθεση στην σύνθεση.
+\end{proof}

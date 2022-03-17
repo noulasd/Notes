@@ -1,0 +1,156 @@
+\vspace{0.3cm}
+
+Έχουμε βρει τρόπο από τα προδράγματα να φτιάχνουμε δράγματα μέσω του επαγωγικού ορίου, καθώς και αντίστροφα από τα δράγματα να φτιάχνουμε προδράγματα κάνοντας τα προδράγματα τομών. Αν κάνουμε διαδοχικά αυτές τις διαδικασίες φτάνουμε πάλι στο αρχικό αντικείμενο? Για να απαντήσουμε χρειαζόμαστε κάποιες βοηθητικές έννοιες.
+
+
+\begin{defn} Ένα προδράγμα συνόλων $\presheaf$ λέγεται \underline{πλήρες}, αν για κάθε $U\in \tau_X$ και για κάθε ανοιχτή κάλυψη $(U_a)_{a \in A}$ του $U$ ισχύουν οι συνθήκες:
+    \begin{enumerate}
+        \item Αν $s,t \in S(U)$ έτσι ώστε:
+        $$\rho^U_{U_a} (s) = \rho^U_{U_a}(t) \quad \forall a \in A \implies s = t$$
+
+        \item Για τα $s_a \in S(U_a)$ για κάθε $a \in A$ ισχύει:
+        $$\rho^{U_a}_{U_a \cap U_b} (s_a) = \rho^{U_b}_{U_a \cap U_b} (s_b) \quad \forall a,b \in A: \quad U_a \cap U_b \neq \varnothing \implies$$
+        $$\text{Υπάρχει } s \in S(U): \quad \rho^U_{U_a}(s) = s_a$$ Πολύ συχνά ισχύει μόνο το $(1)$ και τότε το προδράγμα λέγεται μονοπροδράγμα.
+    \end{enumerate}
+\end{defn}
+
+
+\begin{example}
+\end{example}
+\begin{enumerate}
+    \item Έστω $(X,\tau_X)$ τοπολογικός χώρος και $\left(\mathcal{C}(U),\rho^U_V\right)$ το προδράγμα των συνεχών συναρτήσεων με τους συνήθεις περιορισμούς. Είναι προφανές ότι είναι πλήρες.
+    \item Τα προδράγματα των διαφορίσιμων, ολόμορφων, αναλυτικών?
+    \item Το προδράγμα $(B(U),r^U_V))$ με συνήθεις περιορισμούς, όπου
+    $$B(U) = \{f: U \rightarrow \mathbb{R} \quad f \text{ φραγμένη}\}$$ είναι προδράγμα αλλά όχι πλήρες. Αν ενώσουμε φραγμένες συναρτήσεις δεν παίρνουμε φραγμένη απαραίτητα. Είναι όμως μονοπροδράγμα.
+
+    \item Έστω $\Sheaf$ δράγμα, τότε το:
+    $$\left(\So (U),r^U_V\right)$$ όπου $r^U_V$ είναι οι συνήθεις περιορισμοί και $\So (U)$ είναι οι τομές πάνω από το $U \in \tau_X$, είναι πλήρες προδράγμα (ως συναρτησιακό).
+
+\end{enumerate}
+
+$ $\newline
+Έστω $ S \equiv (S(U),\rho^U_V)$ ένα προδράγμα και μέσω του συναρτητή δραγματοποίησης $\mathbb{S}$ παίρνουμε ένα $\Sheaf$, στο οποίο εφαρμόζουμε τον συναρτητή τομής $\Gamma$ και φτάνουμε σε ένα $(\So (U), r^U_V)$. Θα είναι το αρχικό προδράγμα $S$ ισόμορφο με το τελικό $\Gamma \mathbb{S} (S)$?
+
+\begin{lemma} Υπάρχει (φυσικός) μορφισμός προδραγμάτων:
+    $$\rho : S \longrightarrow \Gamma \mathbb{S}(S)$$
+    \begin{figure}[H]
+        \centering
+        \begin{tikzcd}
+            S(U) \arrow[d, "\rho^U_V"'] \arrow[r, "\rho_U"] & \So (U) \arrow[d, "r^U_V"] \\
+            S(V) \arrow[r, "\rho_V"']                       & \So (V)                   
+            \end{tikzcd}
+    \end{figure}
+
+\end{lemma}
+
+$ $\newline
+Τον οποίο έχουμε ήδη κατασκευάσει προηγουμένως. Για κάθε $U \in \tau_X$:
+$$\rho_U: S(U) \longrightarrow \So (U)$$
+$$\rho_U (s) = \tilde{s}$$
+
+$ $\newline
+Το διάγραμμα είναι μεταθετικό, εφόσον για κάθε $s \in S(U)$:
+$$\rho_V \circ \rho^U_V (s) = \widetilde{\rho^U_V(s)} = \tilde{s}|_V = r^U_V ( \tilde{s}) = r^U_V \circ \rho_U (s)$$
+
+
+\begin{remark}
+    Τα $S \equiv (S(U), \rho^U_V)$ και $(\So (U),\rho^U_V)$ είναι ισόμορφα $\impliedby$ Για κάθε $U \in \tau_X$ η $\rho_U$ είναι 1-1 και επί. (Ισχύει και το ευθύ αλλά δεν είναι άμεσο.)
+
+    $ $\newline
+    Ένας μορφισμός προδραγμάτων λέγεται 1-1 (αντ. επί), αν όλες οι απεικονίσεις είναι 1-1 (αντ. επί) και ισομορφισμός αν όλες οι απεικονίσεις είναι 1-1 και επί. Αυτό σημαίνει ότι όλες οι απεικονίσεις γυρίζουν προς τα πίσω ενώ διατηρούν την μεταθετικότητα των τετραγώνων.
+\end{remark}
+
+
+\begin{theorem} Ο μορφισμός προδραγμάτων
+    $$\left(\rho_U : S(U) \longrightarrow \So (U), \quad \rho_U (s) = \tilde{s} \right)_{U \in \tau_X}$$ είναι ισομορφισμός $\iff$ κάθε $\rho_U$ είναι 1-1 και επί $\iff$ το αρχικό προδράγμα $(S(U),\rho^U_V)$ είναι πλήρες.
+\end{theorem}
+
+
+\begin{proof} Η πρώτη ισοδυναμία είναι ορισμός. Η απόδειξη θα γίνει σε δύο βήματα. Το πρώτο είναι ότι το 1-1 $\implies$ μονοπροδράγμα.
+    \begin{enumerate}
+        \item Δείχνουμε ότι $\rho_U$ 1-1 για κάθε $U \in \tau_X \iff (S(U),\rho^U_V)$ μονοπροδράγμα.
+        
+        $ $\newline
+        $(\implies)$ Έστω ότι όλα τα $\rho_U$ είναι 1-1. Θα δείξουμε ότι το $S$ είναι μονοπροδράγμα. Παίρνουμε ένα τυχαίο $U \in \tau_X$ και $(U_a)_{a \in A}$ ανοιχτό κάλυμμα του $U$. Έστω $s,t \in S(U)$ με
+        $$\rho^U_{U_a} (s) = \rho^U_{U_a} (t)$$ για κάθε $a \in A$. Τότε, για κάθε $a \in A$ και $x \in U_a$ έχουμε:
+        $$\tilde{s}(x) = [s]_x = \rho^U_x(s) = \rho^{U_a}_x \circ \rho^U_{U_a} (s) = \rho^{U_a}_x \circ \rho^U_{U_a} (t) = \rho^U_t = [t]_x = \tilde{t}(x)$$ αφού $\tilde{s},\tilde{t}$ είναι τομές που ορίζονται στο $U \rightarrow \So$, καθώς και το παρακάτω τρίγωνο είναι μεταθετικό:
+
+        \begin{figure}[H]
+            \centering
+            \begin{tikzcd}
+                S(U) \arrow[dd, "\rho^U_{U_a}"'] \arrow[rd, "\rho^U_x"] &     \\
+                                                                        & \So \\
+                S(U_a) \arrow[ru, "\rho^{U_a}_x"']                      &    
+                \end{tikzcd}
+        \end{figure}
+
+        $ $\newline
+        Άρα για τα $\tilde{s},\tilde{t} \in \So (U)$ ισχύει:
+        $$\tilde{s}|_{U_a} = \tilde{t}|_{U_a} \quad \forall a \in A$$ δηλαδή, ικανοποιείται η υπόθεση της $(1)$ για τα $\tilde{s},\tilde{t} \in \So (U)$ και την κάλυψη $(U_a)$ του $U$. Επειδή $(\So (U),r^U_V)$ είναι πλήρες, έπεται ότι $\tilde{s} = \tilde{t}$. Δηλαδή, $\rho_U(s) = \rho_U(t)$ και $\rho_U$ 1-1, συνεπώς $s=t$.
+        
+        $ $\newline
+        ($\impliedby$) Αν $S$ μονοπροδράγμα, τότε κάθε $\rho_U$ 1-1. Πράγματι, έστω $U \in \tau_X$ και $s,t \in S(U)$ με
+        $$\rho_U (s) = \rho_U (t) \implies $$
+        $$\tilde{s} = \tilde{t} \in \So (U) \implies $$
+        $$\tilde{s} (x) = \tilde{t}(x) \quad \forall x \in U \implies $$
+        $$[s]_x = [t]_x $$ δηλαδή υπάρχει $U_x \in \openx$:
+        $$\rho^U_{U_x} (s)  = \rho^U_{U_x}(t)$$ και με τα $U_x$ έχουμε μια ανοιχτή κάλυψη του $U$ καθώς και ισχύει η υπόθεση του μονοπροδράγματος, άρα παίρνουμε $s=t$ και άρα η $\rho_U$ είναι 1-1.
+
+        \item
+        $ $\newline
+        Θα περίμενε κανείς ότι εφόσον το 1-1 είναι ισοδύναμο με την συνθήκη $(1)$, τότε και το επί θα ήταν με την συνθήκη $(2)$. Ωστόσο, δεν είναι έτσι, όπως θα δούμε χρειάζεται και το 1-1 και το επί για την συνθήκη $(2)$.
+
+        $ $\newline
+        ($\implies$) Έστω κάθε $\rho_U$ 1-1 και επί. Θα δείξουμε ότι ισχύει η συνθήκη $(2)$. Έστω $U \in \tau_X$, μια ανοιχτή κάλυψη $(U_a)_{a \in A}$ του $U$ και
+        $$s_a \in S(U_a) \quad \forall a \in A$$
+        $$\rho^{U_a}_{U_a\cap U_b} (s_a) = \rho^{U_b}_{U_a \cap U_b} (s_b) \in S(U_a \cap U_b)$$ Θα δείξουμε ότι υπάρχει $s \in S(U)$ με $\rho^U_{U_a}(s) = s_a$. Έχουμε:
+
+        $$\widetilde{\rho^{U_a}_{U_a \cap U_b} (s_a)} = \widetilde{\rho^{U_a}_{U_a \cap U_b} (s_b)} \implies $$
+        $$\tilde{s_a}|_{U_a\cap U_b} = \tilde{s_b} |_{U_a \cap U_b}$$
+
+        $ $\newline
+        Έχουμε τώρα τα $(U_a)_{a\in A}$ και $\tilde{s_a} \in \So (U_a)$, δηλαδή έχουμε μεταφέρει την κατάσταση από το αρχικό προδράγμα στο προδράγμα των τομών. Το δεύτερο είναι πλήρες, δηλαδή ισχύει για αυτό η ιδιότητα $(2)$ και άρα υπάρχει μια τομή $xi \in \So (U)$ τέτοια ώστε, ο (συνήθης) περιορισμός της στο $U_a$ να δίνει την τομή στο $a$.
+
+        $$\xi |_{U_a} = \tilde{s}_a$$
+
+        $ $\newline
+        Επιπλέον έχουμε υποθέσει ότι οι $\rho_U$ είναι επί:
+        $$ \rho_U \longrightarrow \So (U) \ni \xi  \implies $$
+        $$ \text{Υπάρχει } \sigma \in S(U): \quad \rho_U (\sigma) = \xi $$
+        $$\tilde{\sigma} = \xi$$
+
+        $ $\newline
+        Θα δείξουμε ότι $\rho^U_{U_a}(\sigma) = s_a$. Πράγματι:
+
+        $$\widetilde{\rho^U_{U_a}(\sigma)} = \tilde{\sigma}|_{U_a} = \xi|_{U_a} = \tilde{s_a} \implies $$
+        $$ \rho_{U_a} \left( \rho^U_{U_a} ( \sigma)\right) = \rho_{U_a} (s_a)$$ και εφόσον όλες οι $\rho_{U_a}$ είναι 1-1 έχουμε:
+
+        $$\rho^U_{U_a}(\sigma) = s_a$$
+
+        $ $\newline
+        ($\impliedby$) Έστω $S$ πλήρες. Θα δείξουμε ότι κάθε $\rho_U$ είναι επί. Έστω $U \in \tau_X$ και $\xi \in \So (U)$. Θα βρούμε $s \in S(U)$ έτσι ώστε να ισχύει $\xi = \tilde{s}$.
+
+        $ $\newline
+        Για κάθε $x \in U$ ξέρουμε ότι $\xi (x) \in \So_x$, άρα από τον ορισμό του επαγωγικού ορίου υπάρχουν $U_x \in \openx$ και $\sigma_x \in S(U_x)$ τέτοια ώστε:
+        $$\xi (x) = [\sigma_x]_x = \tilde{\sigma_x} (x) \implies $$
+        $$\text{Υπάρχει } V_x \subseteq U \cap U_x, \quad V_x \in \openx :$$
+        $$\xi |_{V_x} = \tilde{\sigma_x} |_{V_x}$$
+
+        $ $\newline
+        Θέτουμε $s_x := \rho^{U_x}_{V_x} (\sigma_x) \in S(V_x)$ και σχηματίζουμε τις οικογένειες $(V_x)_{x \in U}$ μαζί με $\left(s_x \in S(V_x)\right)_{x \in U}$. Ισχυριζόμαστε ότι αυτά ικανοποιούν την υπόθεση της συνθήκης $(2)$. 
+
+        $ $\newline
+        Έστω $V_x \cap V_y \neq \varnothing$. Θα δείξουμε ότι:
+        $$\rho^{V_x}_{V_x \cap V_y} (s_x) = \rho^{V_y}_{V_x \cap V_y} (s_y)$$ και συμβολίζουμε τα δύο μέλη της ζητούμενης ισότητας με $t_x$ και $t_y$ αντίστοιχα. Παρατηρούμε ότι, για κάθε $z \in V_x \cap V_y$ έχουμε:
+
+        $$\tilde{s}_x (z) = \tilde{\sigma_x}(z) = \xi (z) = \tilde{\sigma_y}(z) = \tilde{s_y}(z)$$ άρα αφού οι δύο τομές συμπίπτουν στο ίδιο σημείο, υπάρχει $W_z \subseteq V_x \cap V_y$ με:
+        $$\rho^{V_x}_{W_z} (s_x) = \rho^{V_y}_{W_z}(s_y) \implies $$
+        $$\rho^{V_x \cap V_y}_{W_z} \circ \rho ^{V_x}_{V_x\cap V_y} (s_x) = \rho^{V_x \cap V_y}_{W_z} \circ \rho ^{V_y}_{V_x\cap V_y} (s_y) \implies  $$
+        $$\rho^{V_x \cap V_y}_{W_z} (t_x) = \rho^{V_x \cap V_y}_{W_z} (t_y) $$ οπότε η οικογένεια $(W_z)$ είναι ανοιχτή κάλυψη του $V_x \cap V_y$ και $t_x,t_y \in S(V_x \cap V_y)$ με ίσους περιορισμούς στο $W_z$. Άρα από την συνθήκη $(1)$ έχουμε $t_x = t_y$. Άρα οι οικογένειες $(V_x),(s_x)$ ικανοποιούν την $(2)$. Μαζί με την υπόθεση ότι το $S$ είναι πλήρες έχουμε ότι υπάρχει $s \in S(U)$ τέτοιο ώστε:
+        $$\rho^U_{V_x}(s) = s_x$$ Τότε, για κάθε $x \in U$ ισχύει:
+        $$\tilde{s}(x) = \tilde{s_x} (x) = \tilde{\sigma_x}(x) = \xi (x)$$ δηλαδή, πράγματι έχουμε $\tilde{s} = \rho_U(s) = \xi$ και άρα $\rho_U$ επί.
+    \end{enumerate}
+\end{proof}
+
+$ $\newline
+Αν ξεκινήσουμε λοιπόν από ένα προδράγμα και φτιάξουμε το δράγμα και πάμε μετά στο προδράγμα των τομών, τότε το πρώτο και το τελευταίο είναι ισόμορφα προδράγματα αν και μόνο αν είχαμε ξεκινήσει από πλήρες προδράγμα. Άρα γενικά αυτή η διαδικασία δεν γυρίζει πίσω στο αρχικό προδράγμα, αλλά φτιάχνει κάτι πιο πλούσιο.
