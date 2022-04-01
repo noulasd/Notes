@@ -1,0 +1,208 @@
+
+$ $\newline
+Αν ξεκινήσουμε με ένα προδράγμα $\presheaf$ στο οποίο εφαρμόσουμε τον συναρτητή δραγματοποίησης παίρνουμε ένα δράγμα $\Sheaf$, στο οποίο εφαρμόζουμε τον συναρτητή τομή και φτάνουμε σε ένα προδράγμα $(\Gamma(U,\So),\rho^U_V)$. Αυτό δεν είναι απαραίτητα ισόμορφο με το αρχικό.
+
+\begin{prop}
+Το $\presheaf$ είναι ισόμορφο με το $(\Gamma(U,\So),\rho^U_V)$ 
+$$\iff\forall U\in \tau_X: \rho_U : S(U) \rightarrow \So(U)$$ η φυσική απεικόνιση (φυσικός μετασχηματισμός) είναι 1-1 και επί $\iff (S(U),\rho^U_V)$ πλήρες.
+\end{prop}
+
+$ $\newline
+Μπορούμε να κάνουμε την διαδικασία αλλιώς, ξεκινώντας από ένα δράγμα.
+$$\Sheaf \curly \presheaf \curly (\tilde{\So},\tilde{\pi},X)$$
+
+\begin{theorem}
+   Τα $\Sheaf$ και $(\tilde{\So},\tilde{\pi},X)$ είναι ισόμορφα.
+\end{theorem}
+
+\begin{proof}
+    Από το πλήρες προδράγμα των τομών $(\Gamma(U,\So),\rho^U_V)$, για κάθε $x \in X$ παίρνουμε το επαγωγικό σύστημα $(\Gamma(U,\So),\rho^U_V)_{V\subseteq U \in \openx}$ που έχει όριο το $\tilde{\So}_x$. 
+    
+    $$\tilde{\So}_x = \bigsqcup\limits_{U\in\openx}\Gamma(U,\So) \Big/ \sim_x$$ όπου $s,\sigma \in \bigsqcup \Gamma(U,\So) \implies s\in \Gamma(U,\So), \sigma \in \Gamma(V,\So)$, $U,V \in \openx$ με 
+    $$s \sim_x \sigma \iff \exists W \in \openx$$ με $W\subseteq U\cap V:$
+    $$\rho^U_V (s) = \rho^V_W (\sigma) \iff s|_W = \sigma |_W \iff s(x) = \sigma(x) $$ από το λήμμα της τρίτης διάλεξης που από ισότητα σε σημείο είχαμε ισότητα σε περιοχή.
+
+    $ $\newline
+    Για κάθε $U \in \openx$ ονομάζουμε:
+    $$r_U: \Gamma(U,\So) \longrightarrow \tilde{\So}_x:$$
+    $$\rho_U (s) = [s]_x$$ και ζητάμε ομοιομορφισμό $R:\So \rightarrow \tilde{\So}$ που κάνει το τρίγωνο μεταθετικό:
+
+    \begin{figure}[H]
+        \centering
+        \begin{tikzcd}
+            \So \arrow[rr, "R"] \arrow[rd, "\pi"'] &   & \tilde{\So} \arrow[ld, "\tilde{\pi}"] \\
+                                                   & X &                                      
+            \end{tikzcd}
+    \end{figure}
+
+    $ $\newline
+    Έστω $z \in \So$, τότε υπάρχει $x = \pi(z) \in X$ με $ U \in \openx$ και $s \in \So(U) = \Gamma(U,\So)$ με $s(x) = z$.
+
+    $ $\newline
+    Θέτουμε $R(z) = [s]_x \in \tilde{\So}_x$ και είναι καλά ορισμένη απεικόνιση, εφόσον αν $z = \sigma(x)$ με  $ \sigma \in \Gamma(V,\So), V\in\openx$ τότε $s(x) = \sigma(x) = z $ και άρα υπάρχει $W \subseteq U\cap V, W \in \openx$ έτσι ώστε:
+    $$s|_W = \sigma|_W \iff $$
+    $$ s \sim_x \sigma \iff $$
+    $$[s]_x = [\sigma]_x$$
+
+    $ $\newline
+    $R$ 1-1: Έστω $z,w \in \So$, τότε $z = s(x)$ για κάποιο $x = \pi(z)$ με $ U \in \openx, s \in \Gamma(U,\So)$ και όμοια $w=\sigma(y)$ και $ y=\pi(w)$ με $ V \in \mathcal{N}^0_y, \sigma \in \Gamma(V,\So)$.
+
+    $ $\newline
+    Αν $R(z) = R(w) \implies [s]_x = [\sigma]_y$ ανήκουν σε διαφορετικά νήματα και άρα $x=y$. (Για $x\neq y, \tilde{\So}_x \cap \tilde{\So}_y = \varnothing$). Άρα $[s]_x = [\sigma]_x$, συνεπώς υπάρχει $W$ κατά τα γνωστά με:
+    $$s|_W = \sigma|_W \implies z = s(x) = \sigma(x) = w  \quad (w \in W)$$
+
+
+    $ $\newline
+    $R$ επί: Έστω $\xi \in \tilde{\So} \implies \xi = [ s]_x$ με $ s \in \Gamma(U,\So)$, από ορισμό $\xi = R(s(x) = z)$
+    
+    
+    $$\tilde{\pi} \circ R(z) = \tilde{\pi} ([s]_x) = x$$ και 
+    $$\pi(z) = \pi(s(x)) = x \implies $$
+    $$\tilde{\pi}\circ R = \pi$$
+
+    $ $\newline
+    Το ότι η $R$ είναι ομοιομορφισμός είναι προφανές διότι μεταφέρει τα βασικά της $\tau_{\So}$ στα βασικά της $\tau_{\tilde{\So}}$ όπου αυτά είναι οι εικόνες των τομών.
+\end{proof}
+
+\section*{Προδράγματα με αλγεβρική δομή}
+
+\begin{defn}[Προδράγμα Ομάδων]
+Ένα προδράγμα ομάδων πάνω από τον χώρο $(X,\tau_X)$ είναι ένα προδράγμα συνόλων $\presheaf$ έτσι ώστε:
+
+$ $\newline
+$(1)$ Για κάθε $U\in \tau_X$, το $S(U)$ είναι ομάδα και για κάθε $V\subseteq U \in \tau_X$ η απεικόνιση $\rho^U_V: S(U) \rightarrow S(V)$ είναι μορφισμός ομάδων.
+
+%sofistike
+
+$ $\newline
+$(2)$ Αν $S\equiv (S(U),\rho^U_V), T\equiv (T(U),\phi^U_V)$ είναι προδράγματα ομάδων ένας μορφισμός προδραγμάτων ομάδων $f:S\rightarrow T$ είναι μια οικογένεια
+$$(f_U:S(U)\rightarrow T(U))$$ που είναι μορφισμός προδραγμάτων συνόλων, δηλαδή κάνει τα τετράγωνα μεταθετικά:
+
+\begin{figure}[H]
+    \centering
+    \begin{tikzcd}
+        S(U) \arrow[rr, "f_U"] \arrow[d, "\rho^U_V"'] &  & T(U) \arrow[d, "\phi^U_V"] \\
+        S(V) \arrow[rr, "f_V"]                        &  & T(V)                      
+        \end{tikzcd}
+\end{figure}
+
+$ $\newline
+και επιπλέον κάθε $f_U$ είναι μορφισμός ομάδων.
+
+\end{defn}
+
+
+$ $\newline
+Ερώτηση: Η δομή της ομάδας περνάει στην δραγματοποίηση?
+
+
+\begin{theorem} Έστω $(G_{\lambda},\rho^{\lambda_1}_{\lambda_2})_{\lambda_1 \leq \lambda_2 \in \Lambda}$ ένα επαγωγικό σύστημα ομάδων, έτσι το $(\Lambda,\leq)$  είναι κατευθυνόμενο σύνολο, άρα υπάρχει το επαγωγικό όριο $(G,\rho_{\lambda})$ και αυτό δέχεται δομή ομάδας στο $G$:
+
+    $ $\newline
+    $(1)$ Κάθε $\rho_{\lambda}: G_{\lambda} \rightarrow G$ είναι μορφισμός ομάδας.
+
+    $ $\newline
+    $(2)$ Αν $(G_{\lambda},\rho^{\lambda_1}_{\lambda_2})_{\lambda_1 \leq \lambda_2 \in \Lambda}$ και $(H_{\lambda},\phi^{\lambda_1}_{\lambda_2})_{\lambda_1 \leq \lambda_2 \in \Lambda}$ είναι επαγωγικά συστήματα ομάδων με $(\Lambda,\leq)$  κατευθυνόμενο και 
+    $$(f_{\lambda}:G_{\lambda} \rightarrow H_{\lambda})_{\lambda \in \Lambda}$$ μορφισμός επαγωγικών συστημάτων ομάδων, τότε η επαγόμενη απεικόνιση $f:G\rightarrow H$ είναι μορφισμός ομάδων.
+\end{theorem}
+
+\begin{proof}
+    Στο $\sqcup_{\lambda \in \Lambda} G_{\lambda}$ θεωρώ για $x \in G_{\lambda_1}, y \in G_{\lambda_2} $  την σχέση $x\sim y \iff$ υπάρχει $\lambda \geq \lambda_1,\lambda_2:$
+    $$\rho^{\lambda_1}_{\lambda}(x) = \rho^{\lambda_2}_{\lambda}(y)$$
+
+
+    $$G = \bigsqcup\limits_{\lambda\in \Lambda} G_{\lambda} \Big/ \sim$$
+
+    $ $\newline
+    Έστω $[x] = \rho_{\lambda_1}(x)$ και $[y] =\rho_{\lambda_2}(y) \in G$, όπου $x \in G_{\lambda_1}, y \in G_{\lambda_2}$. Αν $\lambda_1\leq \lambda_2$ τότε το τρίγωνο είναι μεταθετικό:
+
+    \begin{figure}[H]
+        \centering
+        \begin{tikzcd}
+            G_{\lambda_1} \arrow[rd, "\rho^{\lambda_1}_{\lambda_2}"', bend right] \arrow[rr, "\rho_{\lambda_1}", bend left] &                                                           & G \\
+                                                                                                                            & G_{\lambda_2} \arrow[ru, "\rho_{\lambda_2}"', bend right] &  
+            \end{tikzcd}
+    \end{figure}
+
+    $ $\newline
+    δηλαδή $[x] = [\rho^{\lambda_1}_{\lambda_2} (x) ]$.
+
+    $ $\newline
+    Ξεκινήσαμε με $[x],[y] \in G$, δηλαδή $x \in G_{\lambda_1}, y \in G_{\lambda_2}$ και υπάρχει $\lambda \geq \lambda_1, \lambda_2$ και μπορούμε να πετάξουμε τα $x,y$ στην ομάδα $G_{\lambda}$:
+    
+    \begin{figure}[H]
+        \centering
+        \begin{tikzcd}
+            x\in G_{\lambda_1} \arrow[rd, bend left]   &             \\
+                                                       & G_{\lambda} \\
+            y \in G_{\lambda_2} \arrow[ru, bend right] &            
+            \end{tikzcd}
+    \end{figure}
+
+    $ $\newline
+    Οπότε παίρνουμε τα $\rho^{\lambda_1}_{\lambda}(x), \rho^{\lambda_2}_{\lambda}(y) \in G_{\lambda}$ μέσα στην ομάδα, άρα υπάρχει το γινόμενό τους
+    $$\rho^{\lambda_1}_{\lambda}(x) \cdot \rho^{\lambda_2}_{\lambda} (y) \in G_{\lambda} \implies$$
+    $$\rho_{\lambda}(\rho^{\lambda_1}_{\lambda}(x) \cdot \rho^{\lambda_2}_{\lambda} (y)) = [\rho^{\lambda_1}_{\lambda}(x) \cdot \rho^{\lambda_2}_{\lambda} (y)] \in G$$
+
+    $ $\newline
+    θέτουμε το τελευταίο με $[x]\cdot [y]$.
+    
+    $ $\newline
+    Η πράξη $[x]\cdot [y]$ δεν εξαρτάται από τους αντιπροσώπους $x,y$, δηλαδή είναι καλά ορισμένη. Αν $[x] = [x^{\prime}]$ και $[y]=[y^{\prime}]$ τότε θα πρέπει $[x]\cdot [y] = [x^{\prime}] \cdot [y^{\prime}]$.
+
+    $ $\newline
+    Πράγματι, αν $x \in G_{\lambda_1}, x^{\prime} \in G_{\lambda^{\prime}_1},y \in G_{\lambda_2}, y^{\prime} \in G_{\lambda^{\prime}_2}$
+    
+    $$[x] = [x^{\prime}] \iff \exists \mu_1 \geq \lambda_1, \lambda^{\prime}_1: \quad \rho^{\lambda_1}_{\mu_1}(x) = \rho^{\lambda^{\prime}}_{\mu_1} (x^{\prime})$$
+
+    \begin{figure}[H]
+        \centering
+        \begin{tikzcd}
+            x \in G_{\lambda_1}                   & \lambda_1 \arrow[rr] \arrow[rrdd]            &  & \lambda \arrow[rrddd, bend left]                                        &  &   \\
+                                                  &                                              &  &                                                                         &  &   \\
+            y\in G_{\lambda_2}                    & \lambda_2 \arrow[rrdd] \arrow[rruu]          &  & \mu_1 \arrow[rrd, "{x,x^{\prime}  \text{ ίδια εικόνα}}", bend left]    &  &   \\
+                                                  &                                              &  &                                                                         &  & \nu \\
+            x^{\prime} \in G_{\lambda^{\prime}_1} & \lambda^{\prime}_1 \arrow[rrdd] \arrow[rruu] &  & \mu_2 \arrow[rru, "{y,y^{\prime} \text{ ίδια εικόνα}}"', bend right] &  &   \\
+                                                  &                                              &  &                                                                         &  &   \\
+            y^{\prime} \in G_{\lambda^{\prime}_2} & \lambda^{\prime}_2 \arrow[rr] \arrow[rruu]   &  & \lambda^{\prime} \arrow[rruuu, bend right]                              &  &  
+            \end{tikzcd}
+    \end{figure}
+
+    $ $\newline
+    $[y]=[y^{\prime}] \iff \exists \mu_2 \geq \lambda_2,\lambda^{\prime}_2:$
+    $$\rho^{\lambda_2}_{\mu_2}(y) = \rho^{\lambda^{\prime}_2}_{\mu_2}(y^{\prime})$$
+
+    $ $\newline
+    Υπάρχει $\lambda \geq \lambda_1,\lambda_2$:
+    $$[x]\cdot[y] = [\rho^{\lambda_1}_{\lambda}(x) \cdot \rho^{\lambda_2}_{\lambda}(y)]$$
+
+    $ $\newline
+    Υπάρχει $\lambda^{\prime} \geq \lambda^{\prime}_1,\lambda^{\prime}_2:$
+    $$\rho^{\lambda^{\prime}_1}_{\lambda^{\prime}}(x^{\prime}) \cdot \rho^{\lambda^{\prime}_2}_{\lambda^{\prime}} (y^{\prime})$$
+
+    $ $\newline
+    Θέλουμε να δούμε αν είναι ίσα. Υπάρχει $\nu \geq \lambda,\lambda^{\prime},\mu_1,\mu_2$ με 
+    $$\rho^{\lambda}_{\nu} ( \rho^{\lambda_1}_{\lambda} \cdot \rho^{\lambda_2}_{\lambda}(y)) = $$
+    $$\rho^{\lambda}_{\nu} \cdot \rho^{\lambda_1}_{\lambda} (x) \cdot \rho^{\lambda}_{\nu}\circ \rho^{\lambda_2}_{\lambda}(y) = $$
+    $$\rho^{\lambda_1}_{\nu}(x) \cdot \rho^{\lambda_2}_{\nu}(y) = $$
+    $$\rho^{\mu_1}_{\nu}\circ \rho^{\lambda_1}_{\mu_1}(x) \cdot \rho^{\mu_2}_{\nu}\circ \rho^{\lambda_2}_{\mu_2} (y) = $$
+    $$\rho^{\mu_1}_{\nu} \circ \rho^{\lambda^{\prime}_1}_{\mu_1}(x^{\prime}) \cdot \rho^{\mu_2}_{\nu} \circ \rho^{\lambda^{\prime}_2}_{\mu_2} (y^{\prime}) = $$
+    $$\rho^{\lambda^{\prime}_1}_{\nu} (x^{\prime}) \cdot \rho^{\lambda^{\prime}_2}_{\nu}(y^{\prime}) = $$
+    $$\rho^{\lambda^{\prime}}_{\nu}\circ \rho^{\lambda^{\prime}_1}_{\lambda^{\prime}} (x^{\prime}) \cdot \rho^{\lambda^{\prime}}_{\nu} \circ \rho^{\lambda^{\prime}_2}_{\lambda^{\prime}} (y^{\prime}) = $$
+    $$\rho^{\lambda^{\prime}}_{\nu} ( \rho^{\lambda^{\prime}_1}_{\lambda^{\prime}} \cdot \rho^{\lambda^{\prime}_2}_{\lambda^{\prime}}(y^{\prime}))$$
+
+    $ $\newline
+    Για κάθε $\lambda \in \Lambda:$
+    $$\rho_{\lambda}: G_{\lambda} \rightarrow G$$
+    $$x \mapsto [x] $$ είναι μορφισμός ομάδων. Πράγματι, έστω $x,y \in G_{\lambda}$
+
+    $ $\newline
+    Θέλουμε να ισχύει $\rho_{\lambda}(xy) = \rho_{\lambda}(x) \cdot \rho_{\lambda}(y)$.
+
+    $$\rho_{\lambda}(x)\cdot \rho_{\lambda}(y) = [x]\cdot [y] = [xy] = \rho_{\lambda} (xy)$$
+    %δήλος παρά 10
+
+
+\end{proof}
+
+
