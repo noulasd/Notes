@@ -1,0 +1,130 @@
+\vspace*{0.3cm}
+
+\begin{theorem} $(1)$ Αν $(G_{\el}, \rho^{\el_1}_{\el_2})_{\el_1 \leq \el_2 \in \Lambda}, \left((\Lambda,\leq) \text{ κατευθυνόμενο }\right)$ επαγωγικό σύστημα ομάδων, τότε υπάρχει το όριο $(G,\rho_{\el})$ με $G$ ομάδα και $\rho_{\el}:G_{\el}\rightarrow G$ μορφισμός ομάδων για κάθε $\el \in \Lambda$.
+    
+    $ $\newline
+    $(2)$ Αν έχουμε δύο επαγωγικά συστήματα ομάδων $(G_{\el},\rho^{\el_1}_{\el_2}), (H_{\el},\phi^{\el_1}_{\el_2})$ με όρια $(G,\rho_{\el}), (H,\phi_{\el})$ και $(f_{\el}:G_{\el}\rightarrow H_{\el})_{\el \in \Lambda}$ μορφισμός επαγωγικών συστημάτων ομάδων, τότε η επαγόμενη $f:G \rightarrow H$  είναι μορφισμός ομάδων.
+\end{theorem}
+
+
+\begin{proof}
+    $(1)$ Ως συνήθως θεωρούμε την διακεκριμένη ένωση:
+    $$\bigsqcup\limits_{\el \in \eL} G_{\el}$$ και ορίζουμε την σχέση ισοδυναμίας: αν $x,y \in \sqcup G_{\el}$ τότε υπάρχουν δείκτες $\el_1,\el_2 \in \eL$ με $x \in G_{\el_1}, y \in G_{\el_2}$ με
+    $$x\sim y \iff \exists \ \el \geq \el_1 \el_2: \quad \rho^{\el_1}_{\el} (x) = \rho^{\el_2}_{\el}(y)$$ Για κάθε $\el \in \eL$ και για κάθε $x \in G_{\el}$ έχουμε ότι $x \sim \rho^{\el}_{\mu}(x)$ για κάθε $\mu \geq \lambda$. Ως γνωστόν, η $G = \sqcup G_{\el} \big/ $ είναι το επαγωγικό όριο του συστήματος. Θα βάλουμε δομή ομάδας.
+    
+    
+    $ $\newline
+    Έστω $[x],[y] \in G$. Τότε υπάρχουν δείκτες $\el_1,\el_2$ με $x \in G_{\el_1}, y \in G_{\el_2}$. Υπάρχει $\el \geq \el_1,\el_2$ με $\rho^{\el_1}_{\el}(x), \rho^{\el_2}_{\el}(y) \in G_{\el}$ άρα και το γινόμενο θα ανήκει στην ομάδα
+    $$\rho^{\el_1}(x) \cdot \rho^{\el_2}_{\el}(y) \in G$$
+    δηλαδή έχουμε την σχέση:
+    $$\rho_{\el}\left(\rho^{\el_1}(x) \cdot \rho^{\el_2}_{\el}(y)\right) = [\rho^{\el_1}(x) \cdot \rho^{\el_2}_{\el}(y)]$$ Η πράξη $[x][y]$ είναι καλά ορισμένη και είναι πράξη ομάδας με ουδέτερο στοιχείο το $[e_{\el}]$ για κάθε $\el \in \eL, (e_{\el_1}\sim e_{\el_2}, \forall \ \el_1, \el_2)$ και $[x]^{-1}= [x^{-1}]$. Πρέπει να δείξουμε ότι η $\rho_{\el}:G_{\el}\rightarrow G$ με $\rho_{\el}(x) = [x]$ είναι μορφισμός ομάδων. Πράγματι:
+    $$\rho_{\el}(xy) = [xy] = [\rho^{\el_1}(x) \cdot \rho^{\el_2}_{\el}(y)] \defeq [x]\cdot [y] = \rho_{\el}(x) \cdot \rho_{\el}(y)$$
+    
+    $ $\newline
+    $(2)$
+
+    \begin{figure}[H]
+        \centering
+        \begin{tikzcd}
+            G_{\el_1} \arrow[rr, "f_{\el_1}"] \arrow[d, "\rho^{\el_1}_{\el_2}"] \arrow[dd, "\rho_{\el_1}"', bend right] &  & H_{\el_1} \arrow[d, "\phi^{\el_1}_{\el_2}"'] \arrow[dd, "\phi_{\el_1}", bend left] \\
+            G_{\el_2} \arrow[rr, "f_{\el_2}"] \arrow[d, "\rho_{\el_2}"]                                                 &  & H_{\el_2} \arrow[d, "\phi_{\el_2}"']                                               \\
+            G \arrow[rr, "f", dashed]                                                                                   &  & H                                                                                 
+            \end{tikzcd}
+    \end{figure}
+
+    Έχουμε δείξει ότι στα επαγωγικά συστήματα συνόλων την ύπαρξη μοναδικής $f : G\longrightarrow H$ που κάνει μεταθετικά τα τετράγωνα. Αν $[x] \in G$ τότε $x \in G_{\el}\implies f_{\el}(x) \in H_{\el} \implies [f_{\el}(x)] \in H$, δηλαδή $\phi_{\el}(f_{\el}(x)) =[f_{\el}(x)] \in H$.
+
+    $ $\newline
+    Ορίζουμε $f([x]) = \phi_{\el}(f_{\el}(x)) = [f_{\el}(x)]$ και θα δείξουμε ότι είναι μορφισμός ομάδων.
+
+    \begin{figure}[H]
+        \centering
+        \begin{tikzcd}
+            G_{\el_1} \arrow[rr, "f_{\el_1}"] \arrow[dd]             &  & H_{\el_1} \arrow[dd]             &                                                                       &  &                                              \\
+                                                                     &  &                                  & G_{\el_2} \arrow[llld, "\rho^{\el_2}_{\el}"'] \arrow[rr, "f_{\el_2}"] &  & H_{\el_2} \arrow[llld, "\phi^{\el_2}_{\el}"] \\
+            G_{\el} \arrow[rr, "f_{\el_2}"'] \arrow[d, "\rho_{\el}"] &  & H_{\el} \arrow[d, "\phi_{\el}"'] &                                                                       &  &                                              \\
+            G \arrow[rr, "f", dashed]                                &  & H                                &                                                                       &  &                                             
+            \end{tikzcd}
+    \end{figure}
+
+    Έστω $x \in G_{\el_1}, y \in G_{\el_2}$. Υπάρχει $\el \geq \el_1,\el_2$ με $z:=\rho^{\el_1}(x) \cdot \rho^{\el_2}_{\el}(y) \in G_{\el}$. Τότε:
+    \begin{align*}
+        f([x][y]) &= f([z]) = [f_{\el}(z)] = \phi_{\el}(f_{\el}(z)) = \phi_{\el} \circ (z) = \\
+         &= \phi_{\el} \circ f_{\el} \circ \rho^{\el_1}_{\el}(x) \cdot \phi_{\el} \circ f_{\el} \circ \rho^{\el_2}_{\el}(y) = \\
+         &= [f_{\el} \circ \rho^{\el_1}_{\el}(x)] \cdot [f_{\el} \circ \rho^{\el_2}_{\el}(y)] = \\
+         &= [\phi^{\el_1}_{\el}(f_{\el_1}(x))]\cdot [\phi^{\el_2}_{\el}(f_{\el_2}(y))] = \\
+         &= \left(\phi_{\el}\circ \phi^{\el_1}_{\el} (f_{\el_1}(x))\right) \cdot \left(\phi_{\el}\circ \phi^{\el_2}_{\el} (f_{\el_2}(y))\right) = \\
+         &= \phi_{\el_1}(f_{\el_1}(x)) \cdot \phi_{\el_2}(f_{\el_2}(y)) = \\
+         &= [f_{\el_1}(x)]\cdot [f_{\el_2}(y)] = \\
+         &= f([x])\cdot f([y])
+    \end{align*}
+
+\end{proof}
+
+$ $\newline
+Ανάλογα αποτελέσματα θα έχουμε για προδράγματα δακτυλίων, διανυσματικών χώρων πάνω από το $F$, αλγεβρών και προτύπων.
+
+
+$ $\newline
+Έστω $R\equiv (R(U),\rho^U_V)_{V\subseteq U \in \tau_X}$ προδράγμα δακτυλίων. Ένα $R$-πρότυπο είναι ένα προδράγμα (συνόλων) $M = (M(U),\el^U_V)$ έτσι ώστε για κάθε $U \in \tau_X$ το $M(U)$ είναι $R(U)$-πρότυπο και για κάθε $V\subseteq U$ η απεικόνιση $\el^U_V:M(U)\longrightarrow M(V)$ είναι $\rho^U_V$-μορφισμός προτύπων. Δηλαδή:
+\begin{enumerate}
+    \item $\el^U_V$ προσθετική: $\el^U_V (x+y) = \el^U_V (x) + \el^U_V (y)$ για κάθε $x,y \in M(U)$.
+    \item Αν $x \in M(U), r \in R(U)$ τότε $rx \in M(U)$ και $\el^U_V (rx) = \rho^U_V(r) \el^U_V(x) \in M(V)$, όπου $\rho^U_V(r) \in R(V), \el^U_V (x) \in M(V)$.
+\end{enumerate}
+
+$ $\newline
+Παραδείγματα:
+
+\begin{enumerate}
+    \item Αν $(X,\tau_X)$ είναι τοπολογικός χώρος τότε το $(\mathcal{C}(U),r^U_V)$ είναι προδράγμα αλγεβρών.
+    \item Αν $(M,\tau_M)$ είναι διαφορική πολλαπλότητα, το $(C^{\infty}(U),\rho^U_V)$ είναι προδράγμα αλγεβρών και το $(\mathcal{X}(U),\el^U_V)$ είναι προδράγμα των διανυσματικών πεδίων της $M$. Κάθε $\mathcal{X}(U)$ είναι $C^{\infty}$-πρότυπο (γενικά οι τομές διανυσματικών δεσμών είναι $\mathcal{C}$ ή $C^{\infty}$-πρότυπα.)
+\end{enumerate}
+
+
+$ $\newline
+Αν έχουμε ένα προδράγμα ομάδων $(G(U),\rho^U_V)$ τότε ξέρουμε ότι για κάθε $x \in X$ υπάρχει το όριο του επαγωγικού συστήματος ομάδων $((G(U),\rho^U_V)_{V\subseteq U \in \openx}$. Τα νήματα $G_x$ έχουν δομή ομάδας όπου $G$ είναι το αντίστοιχο δράγμα. Δεν έχουμε ωστόσο μια πράξη ομάδας $G\times G\rightarrow G$ αλλά μόνο 
+$$*_x : G_x \times G_x \rightarrow G_X \curly \sqcup *_x \bigsqcup\limits_{x \in X} G_x \times G_x \rightarrow \bigsqcup\limits_{x \in X}G_x = G$$
+
+\noindent Αυτή η παρατήρηση μας οδηγεί στον επόμενο ορισμό:
+
+\begin{defn}[Νηματικό Γινόμενο]
+    Έστω δύο δράγματα $\Sheaf, (\mathcal{T},p,X)$. Ορίζουμε το νηματικό τους γινόμενο να είναι το σύνολο:
+    $$\So \times_X \mathcal{T} = \big\{ (s,t) \in \So \times \mathcal{T}\mid \quad \pi(s) = p(t)\big\} = \bigcup\limits_{x \in X} \left(\So_x \times \mathcal{T}_x \right) \subseteq \So \times \mathcal{T}$$ και το νηματικό γινόμενο γίνεται τοπολογικός χώρος που κληρονομεί την σχετική τοπολογία από την τοπολογία γινόμενο του $\So \times \mathcal{T}$. Επιπλέον, έχουμε μια καλά ορισμένη προβολή στον χώρο βάσης:
+    $$\Pi :\So \times_X \mathcal{T} \longrightarrow X$$
+    $$\Pi(s,t) = \pi (s) = p(t) \in X$$
+\end{defn}
+
+\begin{prop}
+    Το $(\So \times_X \mathcal{T},\Pi,X)$ είναι δράγμα (γινόμενο στην κατηγορία δραγμάτων)
+\end{prop}
+
+\begin{proof} $ $
+    
+    \begin{figure}[H]
+        \centering
+        \begin{tikzcd}
+            \So \times_X \mathcal{T} \arrow[rrdd]             & \subseteq & \So \times \mathcal{T} \arrow[d, "p_{\So} = \text{συνεχής και ανοιχτή}"] \\
+                                                              &           & \So \arrow[d, "\pi = \text{ συνεχής και ανοιχτή}"]                       \\
+                                                              &           & X                                                                        \\
+            {(s,t)} \arrow[rr, "p_{\So}"] \arrow[rrd, "\Pi"'] &           & {p_{\So}(t,s) = s} \arrow[d, "\pi"]                                      \\
+                                                              &           & X                                                                       
+            \end{tikzcd}
+    \end{figure}
+\noindent Άρα $\Pi = \pi \circ p_{\So} = p \circ p_{\mathcal{T}} = $συνεχής και ανοιχτή. Δηλαδή το παρακάτω τετράγωνο είναι μεταθετικό και μένει να δείξουμε ότι η $\Pi$ είναι τοπικός ομοιομορφισμός.
+\begin{figure}[H]
+    \centering
+    \begin{tikzcd}
+        \So \times_X \mathcal{T} \arrow[rr, "p_{\So}"] \arrow[d, "p_{\mathcal{T}}"'] \arrow[rrd, "\Pi"] &  & \So \arrow[d, "\pi"] \\
+        \mathcal{T} \arrow[rr, "p"']                                                                    &  & X                   
+        \end{tikzcd}
+\end{figure}
+
+\noindent Έστω $(s,t) \in \So \times_X \mathcal{T}$, τότε για κάποιο $x \in X$ έχουμε $s \in \So_x, t \in \mathcal{T}_x$. Άρα εφόσον $\pi,p$ είναι τοπικοί ομοιομορφισμοί έχουμε ότι υπάρχουν $U\subseteq \So$ ανοιχτό με $s \in U, \pi|_U:U\rightarrow \pi(U) \subseteq X$ ανοιχτό με $\pi_U$ ομοιομορφισμό αντίστοιχα $V\subseteq \mathcal{T}$ ανοιχτό με $t \in V$ και $p_V:V\rightarrow p(V)$ ομοιομορφισμό. Θέτουμε $W := p(V)\cap \pi(U) \in \openx$ και μικραίνοντας κατάλληλα τα αρχικά $U,V$ παίρνουμε 
+$$\pi|_U :U\longrightarrow W, \quad p|_V:V\longrightarrow W$$ ομοιομορφισμούς. Το $U\times V\subseteq \So\times \mathcal{T}$ είναι ανοιχτό στην τοπολογία γινόμενο και άρα
+$$A = \left(U\times V\right) \cap (\So \times_X \mathcal{T})$$ είναι ανοιχτό του $\So \times_X \mathcal{T}$. Θα δείξουμε ότι $\Pi|_A \rightarrow W$ 1-1 και επί.
+
+\renewcommand{\qedsymbol}{}
+\end{proof}
+
+
+

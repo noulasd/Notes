@@ -1,0 +1,106 @@
+\vspace*{0.3cm}
+
+\begin{proof} (συνέχεια)
+
+    $ $\newline
+    Έστω $(s_1,t_1),(s_2,t_2) \in A$, τότε $\Pi(s_1,t_1) = \Pi(s_2,t_2) \implies \pi(s_1) = \pi(s_2) = p(t_1) = p(t_2) = x \in W$ άρα $s_1,s_2 \in U, t_1,t_2 \in V$. Αφού $\pi|_U$ είναι 1-1 έχουμε $s_1 = s_2$. Ομοίως, $p|_V$ είναι 1-1 και άρα $t_1 = t_2$. Άρα $\Pi$ 1-1.
+
+    $ $\newline
+    Έστω $x \in W = \pi (U) = p(V) \implies \exists s \in U: \pi(s) = x$ και υπάρχει $t\in V: p(t) = x$. Άρα $(s,t) \in \So\times_X \mathcal{T}$ και $(s,t) \in U\times V$. Άρα $(s,t) \in A$, δηλαδή $\Pi$ επί.
+\end{proof}
+
+$ $\newline
+Τομές του $\So \times_X \mathcal{T}$:
+$$X \supseteq U \overset{a}{\longrightarrow} \So \times_X \mathcal{T}$$ θέλουμε $a$ να είναι συνεχής με
+$$\Pi \circ a = id_U \implies $$
+$$\Pi(a(x))=x \quad \forall \ x \in U \implies $$
+$$a(x) \in \So_x \times \mathcal{T}_x \quad \forall \ x \in U$$
+
+\begin{figure}[H]
+    \centering
+    \begin{tikzcd}
+        \So \times_X \mathcal{T} \arrow[rr, "p_{\So}"]                        &  & \So \arrow[lld, "\pi", shift left] \\
+        X\supseteq U \arrow[u, "a"] \arrow[rru, "p_{\So}\circ a", shift left] &  &                                   
+        \end{tikzcd}
+\end{figure}
+
+\noindent $p_{\So}\circ a$ συνεχής και $\pi \circ p_{\So}\circ a = \Pi \circ a = id_U$, άρα $p_{\So} \circ a \in \So (U), p_{\mathcal{T}}\circ a \in \mathcal{T}(U)$. Δηλαδή,
+$$a \in \Gamma(U,\So \times_X \mathcal{T}) \iff a = (a_1,a_2), a_1 \in \Gamma(U,\So),a_2 \in \Gamma(U,\mathcal{T})$$ πράγματι, ισχύει και αντίστροφα εφόσον αν $s \in \Gamma(U,\So), t \in \Gamma(U,\mathcal{T})$ τότε το $a = (s,t): U \rightarrow \So \times_X \mathcal{T}$ είναι τομή.
+
+$ $\newline
+Έστω $S\equiv (S(U),\rho^U_V), T\equiv (T(U),\el^U_V)$ προδράγματα συνόλων πάνω από το $X$. Τότε το $(S(U)\times T(U),\rho^U_V \times \el^U_V)_{V\subseteq U \in \tau_X}$ είναι προδράγμα συνόλων. Πράγματι:
+
+\begin{enumerate}
+    \item Για κάθε $U \in \tau_X$ έχουμε $\rho^U_U \times \el^U_U : S(U)\times T(U) \rightarrow S(U) \times T(U) = id_{S(U)} \times id_{T(U)} = id_{S(U)\times T(U)}$.
+    \item Για κάθε $W \subseteq V \subseteq U \in \tau_X$ έχουμε μεταθετικότητα:
+    \begin{figure}[H]
+        \centering
+        \begin{tikzcd}
+            S(U) \times T(U) \arrow[rr, "\rho^U_V\times \el^U_V"] \arrow[rd, "\rho^U_W\times\el^U_W"'] &                 & S(V) \times T(V) \arrow[ld, "\rho^V_W \times \el^V_W"] \\
+                                                                                                       & S(W)\times T(W) &                                                       
+            \end{tikzcd}
+    \end{figure}
+    \noindent Για κάθε $U\in \tau_X$ θεωρούμε την συνήθη προβολή:
+    $$p_{SU}:S(U)\times T(U)\longrightarrow S(U)$$
+    $$(s,t) \longmapsto s$$ Η $(p_{SU}:S(U)\times T(U)\rightarrow S(U))_{U\in\tau_X}$ είναι μορφισμός προδραγμάτων. Πράγματι έχουμε μεταθετικότητα στο τετράγωνο:
+
+    \begin{figure}[H]
+        \centering
+        \begin{tikzcd}
+            S(U)\times T(U) \arrow[rr, "p_{SU}"] \arrow[d, "\rho^U_V\times \el^U_V"'] &  & S(U) \arrow[d, "\rho^U_V"] \\
+            S(V) \times T(V) \arrow[rr, "p_SV"]                                       &  & S(V)                       \\
+                                                                                      &  &                            \\
+            {(s,t)} \arrow[rr, "p_{SU}"] \arrow[d, "\rho^U_V\times \el^U_V"']         &  & s \arrow[d, "\rho^U_V"]    \\
+            {(\rho^U_V(s),\el^U_V(t))} \arrow[rr, "p_{SV}"']                          &  & \rho^U_V (s)              
+            \end{tikzcd}
+    \end{figure}
+
+    \noindent Ομοίως η $(p_{TU}:S(U)\times T(U)\rightarrow T(U))_{U\in \tau_X}$ είναι μορφισμός προδραγμάτων
+\end{enumerate}
+
+
+
+\begin{prop} $S\equiv (S(U),\rho^U_V)\curly \Sheaf, T\equiv(T(U),\el^U_V) \curly (\mathcal{T},p,X)$ και $S\times T \equiv P\curly (\mathcal{P},\Pi,X)$. Τότε τα $\So\times_X \mathcal{T}, \mathcal{P}$ έχουν ισόμορφα νήματα, δηλαδή για κάθε $x \in X$ έχουμε $\mathcal{P}_x \simeq \So_x \times \mathcal{T}_x$.
+\end{prop}
+
+\begin{proof}
+    Έστω $\xi \in \mathcal{P}_x \implies \xi = [(s,t)]_x$ όπου $(s,t) \in S(U)\times T(U)$ για κάποιο $U\in\openx$. Τότε $s \in S(U),t \in T(U), U \in \openx \implies \exists \ [s]_x \in \So_x, [t]_x \in \mathcal{T}_x$. Θέτουμε:
+    $$\Phi_x : \mathcal{P}_x \longrightarrow \So_x \times \mathcal{T}_x$$
+    $$\xi \longmapsto ([s]_x,[t]_x)$$ όπου $\xi = [(s,t)]_x$.
+
+    $ $\newline
+    $(1)$ Η $\Phi_x$ είναι καλά ορισμένη: Έστω $\mathcal{P}_x \ni [(s,t)]_x = [(s^{\prime},t^{\prime})]_x$. πρέπει να δείξουμε ότι $[s]_x = [s^{\prime}]_x, [t]_x = [t^{\prime}]_x$.
+    $$[(s,t)]_x = [(s^{\prime},t^{\prime})]_x \iff (s,t) \sim_x (s^{\prime},t^{\prime})$$ Έστω ότι $(s,t) \in S(U)\times T(U), (s^{\prime},t^{\prime}) \in S(V)\times T(V)$ με $U,V \in \openx$. Υπάρχει $W \in \openx$ με $W\subseteq U\cap V$ και 
+    $$\left(\rho^U_W \times \el^U_W\right)(s,t) = \left(\rho^V_W \times \el^V_W \right)(s^{\prime},t^{\prime}) \iff$$
+    $$\rho^U_W(s) = \rho^V_W(s^{\prime}) \quad \text{ και } \quad\el^U_W(t) = \el^V_W (t^{\prime}) \iff$$
+    $$s\sim_x s^{\prime} \quad \text{ και } \quad t\sim_x t^{\prime} \iff$$
+    $$[s]_x = [s^{\prime}]_x \quad \text{ και } \quad [t]_x = [t^{\prime}]_x$$
+
+    \noindent $(2)$ Η $\Phi_x$ είναι 1-1: Έστω $\xi_1 = [(s_1,t_1)]_x, \xi_2 = [(s_2,t_2)]_x, (s_i,t_i) \in S(U_i)\times T(U_i)$ με $U_i \in \openx$ για $i=1,2$. Αν έχουμε:
+    $$\Phi_x(\xi_1) = \Phi_x(\xi_2) \implies $$
+    $$([s_1]_x,[t_1]_x) = ([s_2]_x, [t_2]_x) \implies$$
+    $$s_1 \sim_x s_2 \quad \text{ και } \quad t_1 \sim_x t_2 \implies$$
+    $$\exists \ V_1 \subseteq U_1\cap U_2: \quad \rho^{U_1}_{V_1} (s_1) = \rho^{U_2}_{V_2}(s_2) \quad \text{ και }$$
+    $$\exists \ V_2 \subseteq U_1\cap U_2: \quad \el^{U_1}_{V_1}(t_1) = \el^{U_2}_{V_2}(t_2)$$ και άρα για $V = V_1\cap V_2$ έχουμε:
+    $$\rho^{V_1}_V \left(\rho^{U_1}_{V_1}(s_1)\right) = \rho^{V_1}_V\left(\rho^{U_2}_{V_1}(s_2)\right) \implies \rho^{U_1}_V(s_1) = \rho^{U_2}_V(s_2)$$
+    $$\el^{V_2}_V \left(\rho^{U_1}_{V_2}(t_1)\right) = \el^{V_2}_V\left(\el^{U_2}_{V_2}(t_2)\right) \implies \el^{U_1}_V(t_1) = \el^{U_2}_V(t_2)$$
+    $$\left(\rho^{U_1}_V \times \el^{U_1}_V\right)(s_1,t_1) = \left(\rho^{U_2}_V \times \el^{U_2}_V \right)(s_2,t_2) \implies (s_1,t_1) \sim_x (s_2,t_2) \implies \xi_1 = \xi_2$$
+
+
+    \noindent $(3)$ Η $\Phi$ είναι επί: Αν $([s]_x, [t]_x) \in \So_x \times \mathcal{T}_x$ τότε $s \in S(U), t \in T(V)$ με $U,V \in \openx$. Για $W=U\cap V$ έχουμε:
+    $$\left(\rho^U_W(s),\el^V_W(t)\right) \in S(W)\times T(W)$$
+    $$\left[\left(\rho^U_W(s), \el^V_W(t)\right)\right]_x \in \mathcal{P}_x$$ και
+
+    $$\Phi_x\left( \left[ \left(\rho^U_W(s), \el^V_W(t)\right) \right] \right) = \left( [\rho^U_W(s)]_x , [\el^V_W(t)]_x\right) = ([s]_x,[t]_x)$$
+
+    \vspace*{0.3cm}
+    \noindent Έστω $\Phi = \cup \Phi_x : \mathcal{P}\longrightarrow \So \times \mathcal{T}$. Θα δείξουμε ότι είναι ισομορφισμός δραγμάτων. Για να δείξουμε ότι είναι ομοιομορφισμός αρκεί να δείξουμε ότι μεταφέρει τις εικόνες των τομών του $\mathcal{P}$ στις εικόνες των τομών του $\So \times_X \mathcal{T}$.
+
+    $ $\newline
+    Βάση τοπολογίας του $\mathcal{P}$: τα $\widetilde{(s,t)}(U)$ για κάθε $U\in\tau_X$ και για κάθε $(s,t) \in S(U)\times T(U)$ όπου:
+    $$\widetilde{(s,t)}(U) = \big\{ \widetilde{(s,t)}(x)| \quad x \in U \big\} = \big\{ [(s,t)]_x| \quad x \in U\big\}$$
+    $$\Phi \left(\widetilde{(s,t)}(U)\right) =\big\{ \Phi \left([s,t]_x\right)| \quad x \in U \big\} = \big\{ ([s]_x, [t]_x)| \quad x \in U\big\} = $$
+    $$= \big\{ \left(\tilde{s}(x), \tilde{t}(x)\right)| \quad x \in U\big\} $$ Το οποίο είναι εικόνα τομής του $\So \times_X \mathcal{T} $.
+
+
+\end{proof}
