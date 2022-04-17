@@ -1,0 +1,180 @@
+\vspace*{0.3cm}
+
+%\tl{Pull-back} (αντίστροφη εικόνα) του $\So$ μέσω της $f$:
+%$$(f^*(\So),p_X,X)$$ οπου
+%$$f^*(\So) = \{(x,s) \in X \times \So: \quad f(x) = \pi(s)\} = X \times_Y \So \subseteq X \times \So$$
+
+%φιγ2
+
+%$$g: \So \longrightarrow \mathcal{T}$$ μορφισμός στην $\So h_Y$ τότε μπορούμε να την μεταφέρουμε σε έναν μορφισμό:
+
+%ορίζοντας:
+%$$f^*(g): f^*(\So) \longrightarrow f^*(\mathcal{T})$$
+%$$(x,s) \longmapsto (x,g(s))$$ μορφισμός δραγμάτων
+
+
+%$$f^* \So h_Y \longrightarrow \So h_X$$ είναι συναλλοίωτος συναρτητής.
+
+%ιδιότητες:
+%(1)
+%$$a:U \longrightarrow f^*(\So)$$ τομή, όπου $U\subseteq X$  ανοιχτό. Έχουμε ότι για κάθε $x \in U$
+%$$a(x) \in f^*(\So)\subseteq X\times \So$$
+%$$\implies a(x) = (a_1(x), a_2(x)) \in X \times \So$$
+
+%(2)
+%Επειδή $a$ τομή τότε:
+%$$p_X \circ a = id_U \implies p_X \circ a(x) = x$$ 
+%όμως 
+%$$p_X(a_1(x),a_2(x))=a_1(x) = x \implies$$
+%$$a=(id_U,a_2)$$ με $a_2:U\rightarrow \So$ συνεχή.
+
+
+%(3) Το $a(x) \in f^*(\So)$ αφού $(x,a_2(x))$ και άρα $f(x) = \pi(a_2(x))$.
+
+%φιγ3
+
+%άρα και $\pi \circ a_2 = f$.
+
+
+%Κάθε συνεχή $a:U \rightarrow \So$ με $\pi\circ a = f$ λέγεται τομή του $\So$ κατά μήκος της $f$.
+
+$ $\newline
+Συμβολίζουμε με 
+$$\Gamma_f (U,\So)=\{a:U \longrightarrow \So \text{ συνεχής }: \quad \pi\circ a =f \}$$
+για $U\subseteq X$ ανοιχτό και αυτά σχηματίζουν ένα πλήρες προδράγμα με τους συνήθεις περιορισμούς:
+
+$$(\Gamma_f(U,\So),r^U_{U^{\prime}})$$
+%(ουσιαστικά η $a$ μέσα στο σύνολο είναι η $a_2$)
+
+\noindent Για κάθε $U\in \tau_X$ η αεπικόνιση: 
+$$\phi_U : \Gamma (U,f^*(\So))\longrightarrow \Gamma_f(U,\So) $$
+$$a = (id,a_2) \longmapsto a_2$$ είναι 1-1 και επί καθώς και:
+
+$$\left(\phi_U: \Gamma (U,f^*(\So))\longrightarrow \Gamma_f(U,\So)\right)_{U \in \tau_X}$$ είναι (ισο-)μορφισμός (πλήρων) προδραγμάτων.
+
+$ $\newline
+Δηλαδή, η δραγματοποίηση αυτού του προδράγματος είναι ακριβώς το \tl{pullback}:
+$$\mathbb{S}\left(\Gamma_f(U,\So)\right) \equiv f^*(\So)$$
+
+$ $\newline
+Έστω $(x,s) \in f^*(\So)$, ξέρουμε ότι όλα τα σημεία του δράγματος μπορούμε να τα πάρουμε ως εικόνες τομών. Ποια είναι η τομή? Για για το $s \in \So_{f(x)}$, έχουμε $\pi(s) = f(x)$ και υπάρχει $V \in \openx$ και $\sigma \in \Gamma(V,\So)$ με $\sigma(f(x)) = s$.
+
+\begin{figure}[H]
+    \centering
+    \begin{tikzcd}
+        &  & \So                               \\
+        &  &                                   \\
+X \supseteq f^{-1}(V) \arrow[rr, "f"] \arrow[rruu, "a_2 = \sigma \circ f"] &  & V\subseteq Y \arrow[uu, "\sigma"]
+\end{tikzcd}
+\end{figure}
+
+\noindent και $\pi\circ a_2 = \pi \circ \sigma \circ f = id_V \circ f = f$. Άρα για κάθε $\sigma \in \So(V)$ έχουμε ότι $\sigma \circ f \in \Gamma_f(f^{-1}(V),\So)$.
+
+
+$$a_2 = \sigma \circ f : U = f^{-1}(V) \longrightarrow \So$$ η οποία επάγει:
+$$a = (id_{f^{-1}(V)},\sigma \circ f) \in \Gamma(f^{-1}(V), f^*(\So))$$
+$$a(x) = (x,\sigma\circ f(x)) = (x,s)$$
+
+
+\noindent Πώς σχετίζονται οι $\Gamma(U,f^*(\So))$ με $\Gamma (V,\So)$?
+
+$ $\newline
+Αν $U \in \tau_X$ και $x \in U$ θεωρούμε μια τομή $a \in \Gamma(U,f^*(\So))$, δηλαδή $a = (id_U,a_2)$ με $a_2 \in \Gamma_f (U,\So)$.
+
+$$a(x) = (x,a_2(x)=s ) \in \{x\} \times \So_{f(x)} = f^*(\So)_{x}$$ και $s = \sigma(x)$ για $\sigma \in \Gamma(V,\So)$ με $f(x) \in V\subseteq Y$ ανοιχτό. Άρα
+
+$$b = (id,\sigma \circ f) \in \Gamma(f^{-1}(V),f^*(\So))$$ και αν εφαρμόσουμε τις τομές στο $x$:
+
+$$a(x) = b(x) = (x,s) \implies$$
+$$\exists \ W \subseteq U \cap f^{-1}(V): \quad a\mid_W = b\mid_W$$
+
+%δήλος διαφορική γεωμετρία
+
+
+$ $\newline
+Έστω $f:X \rightarrow Y$ συνεχής, τότε:
+\begin{figure}[H]
+    \centering
+    \begin{tikzcd}
+        \So h_X \arrow[rr, "f_*", shift left] &  & \So h_Y \arrow[ll, "f^*", shift left]
+        \end{tikzcd}
+\end{figure}
+
+
+%Α,Β mathcal να τα κάνω
+$ $\newline
+Ερώτηση: $\mathcal{A} \in \So h_X \curly f_*(A) \in \So h_Y \curly f^*(f_*(A)) \in \So h_X$. Ισχύει ότι είναι ισόμορφο το τελικό με το αρχικό?
+$$\mathcal A \simeq f^*(f_*(\mathcal A))?$$ ή ανάποδα?
+
+$ $\newline
+Αν $\mathcal B \in \So h_Y \curly f^*(\mathcal B) \in \So h_X \curly f_*(f^*(\mathcal B)) \in \So h_Y$
+
+$$\mathcal B \simeq f_*(f^*( \mathcal B)) ?$$ Η απάντηση είναι όχι και στα δύο. Ωστόσο σχετίζονται ισχυρά η τελική εικόνα με το αρχικό.
+
+\begin{figure}[H]
+    \centering
+    \begin{tikzcd}
+        f^*(\mathcal{B}) \arrow[d] &  & \mathcal{B} \arrow[rd] &   & f_*\left(f^*(\mathcal{B})\right) \arrow[ll, "?"', dashed] \arrow[ld] \\
+        X \arrow[rrr, "f"']        &  &                        & Y &                                                                     
+        \end{tikzcd}
+\end{figure}
+
+$ $\newline
+Θα συσχετίσουμε τα $\mathcal{B},f_*(f^*(B))$ συσχετίζοντας αντί αυτών τα πλήρη προδράγματα των τομών τους:
+
+
+$$(\mathcal{B}(V),r^V_{V^{\prime}})$$
+$$(f_*(f^*(\mathcal{B}))(V), r^V_{V^{\prime}})$$ και τα δύο με τους συνήθεις περιορισμούς.
+
+$$f_*(f^*(\mathcal B))(V) \defeq f^*(\mathcal B)(f^{-1}(V)) \equiv \Gamma_f(f^{-1}(V),\mathcal B)$$ όπου η πρώτη ισότητα είναι ο ορισμός του \tl{pushout}.
+%1h = orismos pushout
+
+$ $\newline
+Θα θέλαμε μια αντιστοίχιση $\phi_f : \mathcal B \rightarrow f_* f^* \mathcal B$. Ισοδύναμα θέλουμε μορφισμό προδραγμάτων:
+$$(\phi^f_{\mathcal{B}V}: \mathcal B(V)\rightarrow f_* f^* (\mathcal B)(V))_{V \in \tau_Y} $$
+
+
+\noindent Πράγματι, έστω $V \in \tau_X$
+
+
+\begin{figure}[H]
+    \centering
+    \begin{tikzcd}
+        &  & \mathcal B                         \\
+        &  &                                    \\
+X \supseteq f^{-1}(V) \arrow[rr, "f"'] \arrow[rruu, dashed] &  & V\subseteq Y \arrow[uu, "\sigma"']
+\end{tikzcd}
+\end{figure}
+$$\sigma \in \mathcal{B}(V) \longmapsto \sigma \circ f \in \Gamma_f(f^{-1}(V),\mathcal{B}) \equiv f_* f^*(\mathcal{B})(V)$$ άρα έτσι έχουμε έναν φυσιολογικό τρόπο να πάρουμε μια αντιστοίχιση:
+$$\phi^f_{\mathcal{B}V} : \mathcal{B}(V) \longrightarrow \Gamma_f(f^{-1}(V),\mathcal{B}) \equiv f_* f^*(\mathcal{B})(V)$$
+%δήλος παρά 20
+
+\noindent Λειτουργεί σαν μορφισμός προδραγμάτων? Για $V^{\prime}\subseteq V$ πρέπει να έχουμε τα μεταθετικά τετράγωνα:
+
+\begin{figure}[H]
+    \centering
+    \begin{tikzcd}
+        \mathcal{B}(V) \arrow[rr, "\phi^f_{\mathcal{B}V}"] \arrow[d, "r^V_{V^{\prime}}"'] &  & {\Gamma_f(f^{-1}(V),\mathcal{B})} \arrow[d, "r^{f^{-1}(V)}_{f^{-1}(V^{\prime})}"] \\
+        \mathcal{B}(V^{\prime}) \arrow[rr, "\phi^f_{\mathcal{B}V^{\prime}}"']             &  & {\Gamma_f(f^{-1}(V^{\prime}),\mathcal{B})}                                       
+        \end{tikzcd}
+\end{figure}
+
+\noindent Πράγματι είναι μεταθετικά αφού:
+\begin{figure}[H]
+    \centering
+    \begin{tikzcd}
+        s \arrow[rr, maps to] \arrow[d, maps to] &  & s\circ f \arrow[d, maps to]                              \\
+        s\mid_{V^{\prime}} \arrow[rr, maps to]   &  & s\mid_{V^{\prime}} \circ f = (s\circ f)\mid_{V^{\prime}}
+        \end{tikzcd}
+\end{figure}
+
+$ $\newline
+Άρα υπάρχει μορφισμός (πλήρων) προδραγμάτων τομών:
+$$(\phi^f_{\mathcal BV}: \longrightarrow f_* f^* (\mathcal B)(V))_{V \in \tau_Y}$$ από τον οποίο παίρνουμε έναν μορφισμό δραγμάτων:
+
+$$\phi^f_{\mathcal B}: \mathcal B \longrightarrow f_* f^* (\mathcal B)$$
+
+\noindent Η οικογένεια $(\phi^f_B)_V$ είναι ένας φυσικός μετασχηματισμός μεταξύ των συναρτητών: $id \longrightarrow f_* f^*$.
+%δήλος ένα πρώτο βήμα...
+
+

@@ -1,0 +1,205 @@
+\vspace*{0.3cm}
+
+
+\noindent Είδαμε ότι αν έχουμε ένα προδράγμα $S \equiv (S(U),\rho^U_V)$ πάνω από τον $X$ και μια συνεχή $f:X \rightarrow Y$ παίρνουμε το προδράγμα
+$$f_*(S) \equiv (f_*(S)(V),r^V_{V^{\prime}}) \defeq \left(S(f^{-1}(V)), \rho^{f^{-1}(V)}_{f^{-1}(V^{\prime})}\right)$$ πάνω από τον $Y$. Ουσιαστικά πρόκειται για το ίδιο προδράγμα, μόνο που έχουμε αλλάξει το σύνολο δεικτών. Τα σύνολα και οι απεικονίσεις είναι ακριβώς τα ίδια, απλά έχουμε διώξει όσα δεν μπορούμε να τα πετύχουμε σαν αντίστροφη εικόνα της $f$.
+
+$ $\newline
+Επιπλέον είδαμε ότι αν έχουμε έναν μορφισμό προδραγμάτων $g: S \rightarrow T$ πάνω από το $X$, δηλαδή $g \equiv (g_U: S(U)\rightarrow T(U))_{U \in \tau_X}$ τότε ορίσαμε τον μορφισμό προδραγμάτων:
+
+$$f_*(g) : f_*(S) \longrightarrow f_*(T)$$
+$$f_*(g) \equiv \left( f_*(g)_V: f_*(S)(V) \longrightarrow f_*(T)(V)\right)_{V\in\tau_Y}$$
+$$\defeq \left(g_{f^{-1}(V)}: S(f^{-1}(V)) \longrightarrow T(f^{-1}(V))\right)_{V \in \tau_Y}$$
+
+\noindent Έχουμε δείξει ότι:
+$$f_*(id_S) = id_{f_*(S)}$$
+$$f_*(h\circ g) = f_*(h) \circ f_*(g)$$
+
+\noindent Δηλαδή, έχουμε έναν συναλλοίωτο συναρτητή
+$$f_* : \mathcal{P}\So h_X \longrightarrow \mathcal{P}\So h_Y$$
+
+\noindent
+Άσκηση: Έστω $f:X \rightarrow Y$ και $g:Y \rightarrow Z$ συνεχείς.
+\begin{figure}[H]
+    \centering
+    \begin{tikzcd}
+        \mathcal{P}\mathcal{S}h_X \arrow[rr, "f_*"] \arrow[rrrr, "(g\circ f)_*"', bend right=49] \arrow[rrrr, "g_* \circ f_*", bend right] &  & \mathcal{PS}h_Y \arrow[rr, "g_*"] &  & \mathcal{PS}h_Z
+        \end{tikzcd}
+\end{figure}
+\noindent Να δείξετε ότι $(g\circ f)_* = g_* \circ f_*$.
+
+
+$ $\newline
+Έχουμε λοιπόν έναν τρόπο τα προδράγματα πάνω από τον $X$ να τα στέλνουμε στον $Y$, τι γίνεται όμως με τα δράγματα? Κάθε φορά που πάμε να κατασκευάσουμε ένα δράγμα ουσιαστικά φτιάχνουμε τα νήματά του και βάζαμε μια τοπολογία ώστε να ενώσουμε τα νήματα με διακεκριμένη ένωση.
+
+\begin{figure}[H]
+    \centering
+    \begin{tikzcd}
+        \So \arrow[d, "\pi"'] &  & f_*(\So) \arrow[d] \\
+        X \arrow[rr, "f"]     &  & Y                 
+        \end{tikzcd}
+\end{figure}
+\noindent Τι θα μποορούσαν να είναι τα νήματα $f_*(\So)_y$ για τα $y \in Y$? Αυτή η προσέγγιση είναι δύσκολη καθώς προκύπτουν προβλήματα όταν η $f$ δεν είναι 1-1, επί και ακόμα και να είναι μπορεί να υπάρχει πρόβλημα με την τοπολογία.  Εφόσον έχουμε δείξει ότι από προδράγματα παίρνουμε δράγματα και αντίστροφα θα δουλέψουμε έτσι. Αν συμβολίζουμε με $\mathcal{C}o\mathcal{PS}h_X$ τα πλήρη προδράγματα πάνω από τον $X$ τότε:
+
+\begin{figure}[H]
+    \centering
+    \begin{tikzcd}
+        \mathcal{S}h_X \arrow[rr, "\Gamma"] \arrow[rrrrrr, "f_*"', bend right] &  & \mathcal{C}o\mathcal{PS}h_X \arrow[rr, "f_*"] &  & \mathcal{C}o\mathcal{PS}h_Y \arrow[rr, "\mathbb{S}"] &  & \mathcal{S}h_Y
+        \end{tikzcd}
+\end{figure}
+%\noindent Άσκηση: Όντως ο συναρτητής $f_*$ πάει τα πλήρη προδράγματα σε πλήρη.
+
+$ $\newline
+Ουσιαστικά ο $f_* : \So h_X \longrightarrow \So h_Y$ περνά μέσα από τα προδράγματα των τομών. Ωστόσο, αυτό είναι δύσχρηστο καθώς στην τελική εικόνα, στο δράγμα που θα πάρουμε με τον συναρτητή δραγματοποίησης $\mathbb{S}$, δεν έχουμε τρόπο να περιγράψουμε τα νήματα του τελικού δράγματος μέσω των νημάτων του αρχικού.
+
+$ $\newline
+Άσκηση: \begin{enumerate} 
+    \item Ποια είναι τα νήματα του $(\mathbb{S} \circ f_* \circ \Gamma)(\So) \in \So h_Y$ για τυχαίο $\So \in \So h_X$?
+ \item Να δείξετε ότι $S \in \mathcal{PS}h_X$ πλήρες $\implies f_* (S) \in \mathcal{PS}h_Y$ πλήρες.
+\item Να δείξετε ότι ο συναρτητής $f_*$ διατηρεί την αλγεβρική δομή των προδραγμάτων.
+\end{enumerate}
+
+$ $\newline
+Θα κάνουμε ωστόσο την διαδικασία ανάποδα μέσω αντίστροφης εικόνας.
+
+\begin{defn}[\tl{Pullback}]
+    Έστω $(\So,\pi,Y)$ δράγμα πάνω από τον $Y$ και $f:X \rightarrow Y$ συνεχής. Θεωρούμε το $X \times \So$ με την τοπολογία γινόμενο και θεωρούμε 
+    $$f^*(\So) \defeq X \times_Y \So = \{ (x,s) \in X \times \So \mid \quad f(x) = \pi(s)\} \subseteq X \times \So $$ που εφοδιάζεται με την σχετική τοπολογία. Καθώς $f^*(\So) \subseteq X \times \So$ μπορούμε να το προβάλουμε στο $X$ με την πρώτη προβολή $p_X$.
+\end{defn}
+\begin{figure}[H]
+    \centering
+    \begin{tikzcd}
+        f^*(\So) \arrow[d, "p_X"'] \arrow[rr, "p_{\So}", dashed] &  & \So \arrow[d, "\pi"] \\
+        X \arrow[rr, "f"]                                        &  & Y                   
+        \end{tikzcd}
+\end{figure}
+
+\begin{prop} Το $(f^*(\So),p_X, X)$ είναι δράγμα πάνω από το $X$.
+\end{prop}
+
+\begin{proof}$ $
+
+    $ $\newline
+    Αρκεί να δείξουμε ότι η $p_X$ είναι τοπικός ομοιομορφισμός. Έστω $(x,s) \in f^*(\So)$, τότε $f(x) = \pi(s)$. Δηλαδή, $s \in \So_{f(x)}$. Έχουμε $s \in \So$ το οποίο είναι δράγμα και άρα υπάρχουν:
+    $$A \in \mathcal{N}^0_s, \quad A \subseteq \So $$
+    $$V \in \mathcal{N}^0_{f(x)}, \quad V \subseteq Y$$ με 
+    $$\pi \mid_A : A \longrightarrow V \subseteq Y$$ να είναι ομοιομορφισμός. Άρα $U = f^{-1}(V) \subseteq X$ ανοιχτό και $x \in U$. Συνεπώς, το $U\times A$ είναι ανοιχτό (βασικό) του $X \times \So$.
+    $$B = (U\times A) \cap f^*(\So)$$ ανοιχτό στην σχετική τοπολογία. Θα δείξουμε ότι έχουμε τον ομοιομορφισμό:
+
+    $$p_X \mid_B : B \longrightarrow U$$
+
+    \noindent Το ότι η $p_X\mid_B$ είναι συνεχής το ξέρουμε αφού είναι περιορισμός συνεχούς σε έναν υπόχωρο που έχει σχετική τοπολογία.
+
+    $ $\newline
+    1-1: Έστω $(x^{\prime},s^{\prime}), (x^{\prime\prime},s^{\prime\prime}) \in B$ με $p_X (x^{\prime},s^{\prime}) = p_X (x^{\prime\prime},s^{\prime\prime}) \implies x^{\prime} = x^{\prime\prime}$.
+    $$(x^{\prime},s^{\prime}), (x^{\prime\prime},s^{\prime\prime}) \in f^*(\So) \implies f(x^{\prime}) = \pi(s^{\prime}) = f(x^{\prime\prime}) = \pi(s^{\prime\prime})$$ και $s^{\prime},s^{\prime\prime} \in A$ με $\pi\mid_A$ ομοιομορφισμό, άρα $s^{\prime} = s^{\prime\prime}$.
+
+    $ $\newline
+    Επί: Έστω $x^{\prime} \in U=f^{-1}(V)$, δηλαδή $f(x^{\prime}) \in V$. Αφού $\pi\mid_A:A\rightarrow V$ ομοιομορφισμός υπάρχει $s^{\prime} \in A \subseteq \So$ με $\pi(s^{\prime}) = f(x^{\prime})$. Έχουμε $(x^{\prime},s^{\prime}) \in f^*(\So)$ με $x^{\prime} \in U, s^{\prime} \in A$, άρα $(x^{\prime},s^{\prime}) \in U \times A$. Συνεπώς $(x^{\prime},s^{\prime}) \in B$ και $p_X(x^{\prime},s^{\prime}) = x^{\prime}$.
+    
+    $ $\newline
+    Μένει να δείξουμε ότι $p_X\mid_B$ ανοιχτή. (Άσκηση.)
+\end{proof}
+\vspace*{0.3cm}
+
+\begin{remark}
+    Η παραπάνω απόδειξη είναι όμοια με την απόδειξη ότι το νηματικό γινόμενο είναι δράγμα. Με την διαφορά ότι σε εκείνη την απόδειξη δείξαμε την αμφισυνέχεια ως σύνθεση δύο ανοιχτών και συνεχών απεικονίσεων, δύο προβολών. Εδώ με την τυχαία $f$ δεν δουλεύει το ίδιο επιχείρημα αφού δεν ξέρουμε αν είναι ανοιχτή. Άρα πρέπει να δουλέψουμε με τα ανοιχτά σύνολα για την $p_X\mid_B$.
+\end{remark}
+
+
+$ $\newline
+Έχουμε τρόπο να μεταφέρουμε δράγματα πάνω από τον $Y$ στον $X$, θέλουμε να τα μεταφέρουμε με συναρτητές, δηλαδή να μεταφέρουμε και τους μορφισμούς. Αν έχουμε $(\So,\pi,Y), (\mathcal{T},p,Y) \in \So h_Y$ και $g:\So \rightarrow \mathcal{T}$ μορφισμός δραγμάτων. Δηλαδή, $g$ συνεχής και το παρακάτω διάγραμμα είναι μεταθετικό:
+\begin{figure}[H]
+    \centering
+    \begin{tikzcd}
+        \So \arrow[rr, "g"] \arrow[rd, "\pi"'] &   & \mathcal{T} \arrow[ld, "p"] \\
+                                               & Y &                            
+        \end{tikzcd}
+\end{figure}
+\noindent Ζητάμε απεικόνιση $f^*(g): f^*(\So) \rightarrow f^*(\mathcal{T})$ που να είναι μορφισμός δραγμάτων, δηλαδή να είναι και το κάτω αριστερό τρίγωνο μεταθετικό:
+\begin{figure}[H]
+    \centering
+    \begin{tikzcd}
+        f^*(\So) \arrow[rr, dashed] \arrow[rd, "p_X"'] &                     & f^*(\mathcal{T}) \arrow[ld, "p_X"] &  & \So \arrow[rd, "\pi"'] \arrow[rr, "g"] &   & \mathcal{T} \arrow[ld, "p"] \\
+                                                       & X \arrow[rrrr, "f"] &                                    &  &                                        & Y &                            
+        \end{tikzcd}
+\end{figure}
+
+\noindent Η ζητούμενη απεικόνιση είναι η $(x,s)\longmapsto (x,g(s))$ αφού οι μορφισμοί διατηρούν τα νήματα και έτσι πρέπει να κρατήσουμε το σημείο στήριξης $x \in X$ σταθερό, καθώς και το φυσιολογικό που θέλουμε να πάμε ένα στοιχείο του $\So$ σε ένα στοιχείο του $\mathcal{T}$ και θα το κάνουμε μέσω του μορφισμού $g$.
+
+\begin{enumerate}
+    \item Η απεικόνιση είναι καλά ορισμένη:
+    $$f^*(g): f^*(\So) \longrightarrow f^*(\mathcal{T})$$
+    $$f^*(g)(x,s) = (x,g(s))$$
+
+    \noindent
+    Πράγματι, αν $(x,s) \in f^*(\So)$, δηλαδή αν $f(x) = \pi(s)$ τότε $f^*(g)(x,s) = (x,g(s)) \in f^*(\mathcal{T})$ διότι $f(x) = \pi (s) = p(g(s))$ λόγω μεταθετικότητας, άρα $f(x) = p(g(s))$ και έτσι είναι καλά ορισμένη.
+
+    \item Η $f^*(g)$ είναι συνεχής ως ζεύγος συνεχών σε τοπολογικό υπόχωρο.
+    
+    \item Το τρίγωνο είναι μεταθετικό:
+    
+    \begin{figure}[H]
+        \centering
+        \begin{tikzcd}
+            f^*(\So) \arrow[rr, "f^*(g)"] \arrow[rd, "p_X"'] &   & f^*(\mathcal{T}) \arrow[ld, "p_X"] \\
+                                                             & X &                                   
+            \end{tikzcd}
+    \end{figure}
+
+    $$p_X \circ f^*(g)(x,s) = p_X (x,g(s)) = x = p_X (x,s)$$ δηλαδή
+    $$p_X \circ f^*(g) = p_X$$
+    για τις αντίστοιχες προβολές (με κατάχρηση συμβολισμού) άρα έχουμε μεταθετικότητα.
+\end{enumerate}
+
+$ $\newline
+Διαπιστώνουμε ότι:
+$$f^*:\So h_Y \longrightarrow \So h_X$$ είναι ένας συναλλοίωτος συναρτητής. Πώς δρα στα προδράγματα? Πώς συνθέτονται αυτοί;
+
+\begin{figure}[H]
+    \centering
+    \begin{tikzcd}
+        \mathcal{PS}h_Y \arrow[rr, "\mathbb{S}"] &  & \So h_Y \arrow[rr, "f^*"] &  & \So h_X \arrow[rr, "\Gamma"] &  & \mathcal{C}o\mathcal{PS} h_X
+        \end{tikzcd}
+\end{figure}
+
+\noindent Η σύνθεση $\Gamma \circ f^* \circ \mathbb{S}$ είναι ο αντίστοιχος συναρτητής για τα προδράγματα που πάλι θα συμβολίζουμε με $f^*$.
+
+$ $\newline
+Αν έχουμε $f:X\rightarrow Y$ και $g:Y\rightarrow Z$ συνεχείς, είναι και η $g\circ f$ συνεχής και έχουμε το διάγραμμα:
+
+\begin{figure}[H]
+    \centering
+    \begin{tikzcd}
+        \So h_Z \arrow[rr, "g^*"] \arrow[rrrr, "(g\circ f)^*"', bend right] \arrow[rrrr, "f^* \circ g^*", bend left] &  & \So h_Y \arrow[rr, "f^*"] &  & \So h_X
+        \end{tikzcd}
+\end{figure}
+
+\noindent Ισχύει τετριμμένα ότι $(g \circ f)^* = f^* \circ g^*$. Παρατηρείστε ότι στο \tl{pushout} η σειρά μένει ίδια ενώ στο \tl{pullback} αντιστρέφεται.
+
+$ $\newline
+Για να προσεγγίσουμε το \tl{pullback} ενός δράγματος είναι να φτιάξουμε το προδράγμα των τομών και να προσπαθήσουμε να γυρίσουμε πίσω τις τομές σε τομές του \tl{pullback}. Πώς συνδέονται οι τομές του $\So$ με του $f^*(\So)$?
+
+$ $\newline
+Έστω $U \subseteq X$ ανοιχτό και θεωρούμε:
+$$a: U \longrightarrow f^*(\So)$$ (συνεχής) τομή, δηλαδή $p_X \circ a = id_U$. Αν $x \in U$ τότε $a(x) \in f^*(\So) \subseteq X \times \So$. Δηλαδή:
+$$a(x) = (a_1(x), a_2(x))$$ με $a_1(x) \in X, a_2(x) \in \So$.
+
+$$p_X(a(x)) = p_X (a_1(x),a_2(x)) = a_1(x)$$ και λόγω τομής πρέπει το $p_X \circ a$ να είναι η ταυτοτική. Συνεπώς:
+$$p_X \circ a(x) = x$$ και έχουμε:
+$$a(x) = (x, a_2(x)) \in f^*(\So) \implies $$
+$$f(x) = \pi (a_2(x)) \implies $$
+$$a_2(x) \in \So_{f(x)}$$ Η τομή που θέλουμε είναι η
+$$f^*(\So)_x = \{(x,s)| \quad s \in \So_{f(x)}\} = \{x\} \times \So_{f(x)}$$ Δηλαδή έχουμε μεταθετικό τρίγωνο:
+
+\begin{figure}[H]
+    \centering
+    \begin{tikzcd}
+        &  & \So \arrow[dd, "\pi"] \\
+        &  &                       \\
+X \supseteq U \arrow[rruu, "a_2"] \arrow[rr, "f"] &  & Y                    
+\end{tikzcd}
+\end{figure}
+
+\noindent
+Την ίδια κατάσταση συναντάμε στην διαφορική γεωμετρία των πολλαπλοτήτων, στα διανυσματικά πεδία κατά μήκος της $f$. Η $a_2$ λέγεται τομή κατά μήκος της $f$.

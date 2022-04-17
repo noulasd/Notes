@@ -1,0 +1,175 @@
+\vspace*{0.3cm}
+
+\noindent Έστω $(G(U),\rho^U_V)$ προδράγμα ομάδων. Γνωρίζουμε ότι για κάθε $x \in X$ το $\mathcal{G}_x$ εφοδιάζεται με δομή ομάδας. Τι ισχύει για το επαγόμενο δράγμα πάνω από το $X$?
+$$\mathcal{G} = \bigsqcup\limits_{x \in X}\mathcal{G}_x$$ Για $V\subseteq U \in \tau_X$ έχουμε το τετράγωνο με τις πράξεις:
+
+\begin{figure}[H]
+    \centering
+    \begin{tikzcd}
+        G(U)\times G(U) \arrow[rr, "*_U"] \arrow[d, "\rho^U_V \times \rho^U_V"'] &  & G(U) \arrow[d, "\rho^U_V"] \\
+        G(V)\times G(V) \arrow[rr, "*_V"]                                        &  & G(V)                      
+        \end{tikzcd}
+\end{figure}
+
+\noindent Το οποίο είναι μεταθετικό. Πράγματι:
+
+\begin{figure}[H]
+    \centering
+    \begin{tikzcd}
+        {(x,y)} \arrow[rr, maps to] \arrow[d, maps to]    &  & x*_U y \arrow[d, maps to]                        \\
+        {(\rho^U_V(x), \rho^U_V (y))} \arrow[rr, maps to] &  & \rho^U_V(x) *_V \rho^U_V (y) = \rho^U_V (x*_U y)
+        \end{tikzcd}
+\end{figure}
+
+\noindent Η ισότητα ισχύει εφόσον η $\rho^U_V$ είναι μορφισμός ομάδων, από τον ορισμό του προδράγματος ομάδων. Από την ιδιότητα του μορφισμού ομάδων για τις $\rho^U_V$ έχουμε ότι όλα τα τετράγωνα σαν το παραπάνω για τα $U \in \tau_X$ είναι μεταθετικά, δηλαδή έχουμε έναν μορφισμό προδραγμάτων:
+
+$$\left(*_U: G(U)\times G(U) \rightarrow G(U)\right)_{U\in\tau_X}$$ Συνεπώς για κάθε $x \in X$ υπάρχει η αντίστοιχη πράξη ομάδας στα νήματα:
+
+$$*_x : \mathcal{G} \times \mathcal{G} \longrightarrow \mathcal{G}_x$$ και έτσι παίρνουμε έναν μορφισμό δραγμάτων:
+
+$$* = \bigsqcup\limits_{x \in X}*_x : \bigsqcup \limits_{x \in X} \mathcal{G}_x \times \mathcal{G}_x \longrightarrow \bigsqcup\limits_{x \in X} \mathcal{G}_x$$
+
+\noindent Εφαρμογή:
+
+$ $\newline
+Έστω $R = (R(U),\rho^U_V)$ προδράγμα δακτυλίων. Έστω $M$ ενα $R$-πρότυπο, δηλαδή ένα $R(U)$-πρότυπο για κάθε $U \in \tau_X$.
+$$M = (M(U),\lambda^U_V)$$ Για κάθε $U \in \tau_X$ το $M(U)$ είναι $R(U)$-πρότυπο και για κάθε $V\subseteq U \in \tau_X$ οι απεικονίσεις περιορισμού
+$$\el^U_V: M(U) \longrightarrow M(V)$$ είναι $\rho^U_V$-μορφισμοί προτύπων, δηλαδή:
+
+$$\el^U_V (x+y) = \el^U_V (x) + \el^U_V(y)$$
+$$\el^U_V (rx) = \rho^U_V (r) \cdot \el^U_V(x),$$
+$$ \forall \ x \in M(U), \ \forall \ r \in R(U)$$ Για κάθε $x \in X$ περνώντας στα όρια έχουμε τον δακτύλιο $\mathcal{R}_x$ και το $\mathcal{M}_x$ να είναι $\mathcal{R}_x$-πρότυπο και 
+$$\mathcal{R} \times_X M \longrightarrow M$$ να είναι συνεχής σαν μορφισμός δραγμάτων, αφού παίρνει ένα $(r,x)$ το οποίο ανήκει και στο $\mathcal{R}_x \times \mathcal{M}_x$ και το απεικονίζει στο $rx \in \mathcal{M}_x$.
+
+
+$ $\newline
+Ερώτηση: Αν έχουμε έναν μορφισμό δραγμάτων $f:\So \rightarrow \mathcal{T}$, είναι το $Mor(\So,\mathcal{T})$ δράγμα?
+$ $\newline
+Αν πάμε να απαντήσουμε μέσω προδραγμάτων θα αποτύχουμε, έστω $S\equiv \presheaf, T \equiv (T(U),\el^U_V)$. Μπορεί να είναι το $Mor(S,T)$ προδράγμα? Αν είναι συνόλων θα πρέπει να ορίζεται το $M(S,T)(U) = M(S(U),T(U)) \ni f$ και με περιορισμούς $s^U_V$ και να έχουμε μεταθετικά τα τετράγωνα:
+
+\begin{figure}[H]
+    \centering
+    \begin{tikzcd}
+        S(U) \arrow[rr, "f"] \arrow[d, "\rho^U_V"'] &  & T(U) \arrow[d, "\el^U_V"] \\
+        S(V) \arrow[rr, "?"']                       &  & T(V)                     
+        \end{tikzcd}
+\end{figure}
+
+\noindent Για να είναι μεταθετικό το τετράγωνο θα θέλαμε η $\rho^U_V$ να αντιστρέφεται, το οποίο γίνεται μόνο στο σταθερό δράγμα.
+
+$ $\newline
+Αν προσπαθήσουμνε με δράγμα $\Sheaf$, έχουμε ότι για κάθε $U \in \tau_X$ το $(\pi^{-1}(U), \pi|_{\pi^{-1}(U)}, U)$ είναι δράγμα πάνω από το $U$ με $\pi^{-1}$ ανοιχτό υποσύνολο του $\So$. Ομοίως για ένα δεύτερο δράγμα $(\mathcal{T},p, X)$ έχουμε το δράγμα περιορισμό $(p^{-1}(U),p|_{p^{-1}(U)},U)$ του $\mathcal{T}$ πάνω από το $U$.
+
+\begin{figure}[H]
+    \centering
+    \begin{tikzcd}
+        \So  \arrow[rrrr, "f", bend left] \arrow[rrdd, "\pi"', bend right] & \supseteq \pi^{-1}(U) \arrow[rr, "f\mid_{\pi^{-1}(U)}"] \arrow[rdd, "\pi\mid_{\pi^{-1}(U)}"] & {} \arrow[l] &  p^{-1}(U) \subseteq \arrow[ldd, "p\mid_{p^{-1}(U)}"] &  \mathcal{T} \arrow[lldd, "p", bend left] \\
+                                                                                    &                                                                                    &              &                                            &                                                    \\
+                                                                                    &                                                                                    & U            &                                            &                                                   
+        \end{tikzcd}
+\end{figure}
+
+\noindent Θεωρούμε το πλήρες προδράγμα $(Mor(\So\mid_U, \mathcal{T}\mid_U), \rho^U_V)$ με τους σύνηθες περιορισμούς. Έτσι παράγεται δράγμα πάνω από το $Mor(\So, \mathcal{T})$ το οποίο ονομάζεται το δράγμα των σπερμάτων των μορφισμών από το $\So$ στο $\mathcal{T}$.
+
+\pagebreak
+\section*{Αλλαγή Χώρου Βάσης}
+
+\vspace*{0.3cm}
+Αν $S \equiv \presheaf$ προδράγμα πάνω από το $X$ και $f: X \rightarrow Y$ συνεχής, όπου $Y$ τοπολογικός χώρος, τότε θέτουμε για κάθε $V \in \tau_Y$
+$$f_* (S)(V) \defeq S(f^{-1}(V))$$ και για κάθε $V^{\prime} \subseteq V \in \tau_Y$ πρέπει να φτιάξουμε τις απεικονίσεις περιορισμών:
+
+$$\rho^V_{V^{\prime}}: f_*(S)(V) = S(f^{-1}(V)) \longrightarrow f_*(S)(V^{\prime}) = S(f^{-1}(V^{\prime}))$$ Έχουμε για κάθε $V^{\prime} \subseteq V$ ότι $f^{-1}(V^{\prime}) \subseteq f^{-1}(V)$ και άρα υπάρχει απεικόνιση:
+
+$$\rho^{f^{-1}(V)}_{f^{-1}(V^{\prime})}: S(f^{-1}(V)) \longrightarrow S(f^{-1}(V^{\prime}))$$ Άρα ονομάζουμε $r^V_{V^{\prime}} := \rho^{f^{-1}(V)}_{f^{-1}(V^{\prime})}$ και τότε το 
+$$\left(f_*(S)(V),r^V_{V^{\prime}}\right)_{V^{\prime}\subseteq V \in \tau_Y}$$ είναι προδράγμα συνόλων πάνω από το $Y$.
+
+$ $\newline
+Πράγματι, για κάθε $V \in \tau_Y$:
+$$r^V_V = \rho^{f^{-1}(V)}_{f^{-1}(V)} = id_{f^{-1}(V)} = id_{S(f^{-1}(V))} = id_{f_*(S)(V)}$$ και αν $V^{\prime\prime} \subseteq V^{\prime}\subseteq V \in \tau_Y$ τότε για να ισχύει η σύνθεση:
+$$r^{V^{\prime}}_{V^{\prime\prime}} \circ r^V_{V^{\prime}} = r^V_{V^{\prime\prime}}$$ δηλαδή να είναι μεταθετικό το διάγραμμα:
+
+\begin{figure}[H]
+    \centering
+    \begin{tikzcd}
+        f_*(S)(V) \arrow[rr, "r^V_{V^{\prime}}"] \arrow[rrd, "r^V_{V^{\prime\prime}}"'] &  & f_*(S)(V^{\prime}) \arrow[d, "r^{V^{\prime}}_{V^{\prime\prime}}"] \\
+                                                                                        &  & f_*(S)(V^{\prime\prime})                                         
+        \end{tikzcd}
+\end{figure}
+
+\noindent Το οποίο είναι το παρακάτω διάγραμμα, που γνωρίζουμε ότι είναι μεταθετικό, απλά γραμμένο αλλιώς:
+
+\begin{figure}[H]
+    \centering
+    \begin{tikzcd}
+        S(f^{-1}(V)) \arrow[rr, "\rho^{f^{-1}(V)}_{f^{-1}(V^{\prime})}"] \arrow[rrd, "\rho^{f^{-1}(V)}_{f^{-1}(V^{\prime\prime})}"'] &  & S(f^{-1}(V^{\prime})) \arrow[d, "\rho^{f^{-1}(V\prime)}_{f^{-1}(V^{\prime\prime})}"] \\
+                                                                                                                                     &  & S(f^{-1}(V^{\prime\prime}))                                                         
+        \end{tikzcd}
+\end{figure}
+
+\noindent Το προδράγμα που ορίσαμε μέσω της $f$ ονομάζεται \tl{push-out} ή αλλιώς προδράγμα εικόνα μέσω της $f$.
+
+$ $\newline
+Άσκηση: Αν το $S$ είναι πλήρες προδράγμα τότε και το \tl{push-out} $f_*(S)$ είναι πλήρες.
+
+$ $\newline
+Πώς αλληλεπιδρά μια συνεχής $f:X\rightarrow Y$ με έναν μορφισμό προδραγμάτων $(g_U:S(U)\rightarrow T(U))_{U \in \tau_X}$? Θέτουμε $f_*(g)_V = g_{f^{-1}(V)} : S(f^{-1}(V)) \rightarrow T(f^{-1}(V))$ και έτσι έχουμε μορφισμό προδραγμάτων:
+
+$$\left(f_*(g)_V: f_*(S)(V) \longrightarrow f*(T)(V)\right)_{V\in\tau_Y}$$ και είναι πράγματι μορφισμός προδραγμάτων αφού ουσιαστικά είναι το προδράγμα που ξεκινήσαμε με λιγότερα ανοιχτά σύνολα, αυτά που είναι προεικόνες τις $f$. Δηλαδή όλα τα τετράγωνα:
+
+\begin{figure}[H]
+    \centering
+    \begin{tikzcd}
+        f_*(S)(V) \arrow[rr, "f_*(g)_V"] \arrow[d, "r^V_{V^{\prime}}"'] &  & f_*(T)(V) \arrow[d, "\el^V_{V^{\prime}}"] \\
+        f*(S)(V^{\prime}) \arrow[rr, "f_*(g)_{V^{\prime}}"']            &  & f_*(T)(V^{\prime})                       
+        \end{tikzcd}
+\end{figure}
+
+\noindent Είναι μεταθετικά, εφόσον είναι ακριβώς τα μεταθετικά τετράγωνα: ($g$ μορφισμός προδραγμάτων.)
+
+\begin{figure}[H]
+    \centering
+    \begin{tikzcd}
+        S(f^{-1}(V)) \arrow[rr, "g_{f^{-1}(V)}"] \arrow[d, "r^{f^{-1}(V)}_{f^{-1}(V^{\prime})}"'] &  & T(f^{-1}(V)) \arrow[d, "\el^{f^{-1}(V)}_{f^{-1}(V^{\prime})}"] \\
+        S(f^{-1}(V^{\prime})) \arrow[rr, "g_{f^{-1}(V^{\prime})}"']                               &  & T(f^{-1}(V^{\prime}))                                         
+        \end{tikzcd}
+\end{figure}
+
+
+$$\begin{matrix} \mathcal{P}\So h_X \ni \So & \curly & f_*(\So) \in \mathcal{P}\So h_Y\\
+    \downarrow & & \downarrow \\
+    \mathcal{T} & \curly & f_*(\mathcal{T}) 
+\end{matrix}$$
+
+\noindent Η παραπάνω αντιστοιχία είναι συναλλοίωτος συναρτητής. Πράγματι:
+$$id_{\So} : \So \longrightarrow \So $$
+$$\left(id_{S(U)}: S(U) \longrightarrow S(U) \right)_{U \in \tau_X}$$ είναι ο ταυτοτικός μορφισμός προδραγμάτων.
+
+$$f_*(id_{\So}): f_*(\So) \longrightarrow f_*(\So)$$
+\begin{align*}
+&= \left( f_*(id_{\So}) : f_*(\So)(V) \longrightarrow f_*(\So)(V)\right)_{V \in \tau_Y} \\
+&= \left(id_{S(f^{-1}(V))} : S(f^{-1}(V)) \longrightarrow S(f^{-1}(V)) \right)_{V \in \tau_Y} \\
+&= id_{f_*(\So)}
+\end{align*}
+
+$ $\newline
+Άρα δείξαμε την πρώτη ιδιότητα του συναρτητή. Για την σύνθεση:
+
+\begin{figure}[H]
+    \centering
+    \begin{tikzcd}
+        \So \arrow[rr, "(g_U)"] \arrow[d] \arrow[rrrr, "(h_U \circ g_U)", bend left] &  & \mathcal{T} \arrow[rr, "(h_U)"] \arrow[d] &  & \mathcal{P} \arrow[d] \\
+        f_*(\So) \arrow[rr, "f_*(g)"] \arrow[rrrr, "f_*(h\circ g)"', bend right]     &  & f_*(\mathcal{T}) \arrow[rr, "f_*(h)"]     &  & f_*(\mathcal{P})     
+        \end{tikzcd}
+\end{figure}
+
+$ $\newline
+Θέλουμε να δείξουμε ότι $f_*(h\circ g) = f_*(h) \circ f_*(g)$. Ισοδύναμα:
+$$ \iff (f_*(h\circ g))_V = f_* (h)_V \circ f_*(g)_V $$
+$$\iff (h\circ g)_{f^{-1}(V)} = h_{f^{-1}(V)} \circ g_{f^{-1}(V)}$$ όπου η τελευταία ισότητα ισχύει από ορισμό της σύνθεσης μορφισμών προδραγμάτων.
+
+$ $\newline
+Άρα πράγματι έχουμε τον συναλλοίωτο συναρτητή:
+$$f_* : \mathcal{P}\So h_X \longrightarrow \mathcal{P}\So h_Y$$ και ένα ερώτημα είναι πώς συνθέτονται τέτοιοι συναρτητές? Θα δείξουμε ότι:
+$$\So \longrightarrow X \xrightarrow[]{f} Y \xrightarrow[]{g} Z $$
+$$(g\circ f)_* (\So) = g_* \left(f_* (\So)\right) \quad \forall \ \So $$ και αν $(g\circ f)_*(h) = g_*(f_*(h))$ για κάθε $h$ μορφισμό προδραγμάτων, τότε
+$$(g\circ f)_* = g_* \circ f_* $$
