@@ -1,0 +1,257 @@
+\vspace*{0.3cm}
+
+$ $\newline
+Έχουμε την εξής κατάσταση:
+
+\begin{figure}[H]
+    \centering
+    \begin{tikzcd}
+        f^*(\mathcal B) \arrow[d] &  & \mathcal{B} \arrow[d, "\pi"'] \arrow[r, "?", dashed] & f_*f^*(\mathcal{B}) \arrow[ld] \\
+        X \arrow[rr, "f"]         &  & Y                                                    &                               
+        \end{tikzcd}
+\end{figure}
+\noindent Συνδέονται κάπως τα $\mathcal{B}$ και $f_*f^*(\mathcal{B})$? Ισοδύναμα συνδέονται τα προδράγματα των τομών τους ή κάποια προδράγματα που τα παράγουν? Τα προδράγματα των τομών είναι πλήρη και άρα σε ένα προς ένα και επί αντιστοιχία με τα δράγματα. Εφόσον έχουμε τα δράγματα $\mathcal B, f_*f^*(\mathcal{B})$ η ύπαρξη μορφισμού δραγμάτων $\mathcal{B} \longrightarrow f_*f^*(\mathcal{B})$ είναι ισοδύναμη με την ύπαρξη μορφισμού προδραγμάτων:
+$$(\mathcal{B}(V) \longrightarrow f_*f^*(\mathcal{B}(V)))_{V\in \tau_Y}$$
+
+$ $\newline
+Τι είναι το $f_*\left(f^*(\mathcal{B})\right)(V)$? Ως \tl{pushout}:
+$$ f_*\left(f^*(\mathcal{B})\right)(V) = f^*(\mathcal{B}) \left(f^{-1}(V))\right)  = \Gamma_f (f^{-1}(V), \mathcal B)$$
+
+
+\noindent Άρα ψάχνουμε μια οικογένεια απεικονίσεων:
+$$\mathcal B (V) \longrightarrow \Gamma_f (f^{-1}(V),\mathcal{B})$$
+
+\begin{figure}[H]
+    \centering
+    \begin{tikzcd}
+        &  & \mathcal{B}                        \\
+        &  &                                    \\
+X\supseteq f^{-1}(V) \arrow[rr, "f"'] \arrow[rruu, "\sigma \circ f"] &  & V\subseteq Y \arrow[uu, "\sigma"']
+\end{tikzcd}
+\end{figure}
+
+\noindent Άρα ορίζουμε:
+
+$$(\phi_V : \mathcal B (V) \longrightarrow \Gamma_f (f^{-1}(V),\mathcal{B}))_{V \in \tau_Y}$$
+$$\phi_V (b) = b\circ f$$ και έτσι ορίζουμε την $\phi$ που συνδέει τα δράγματα που θέλουμε μέσω του αντίστοιχου μορφισμού προδραγμάτων:
+
+\begin{figure}[H]
+    \centering
+    \begin{tikzcd}
+        f^*(\mathcal B) \arrow[d] &  & \mathcal{B} \arrow[d, "\pi"'] \arrow[r, "\phi"] & f_*f^*(\mathcal{B}) \arrow[ld] \\
+        X \arrow[rr, "f"]         &  & Y                                                    &                               
+        \end{tikzcd}
+\end{figure}
+
+\noindent Η $(\phi_V)_{V\in\tau_Y}$ είναι πράγματι μορφισμός προδραγμάτων, διότι κάθε τετράγωνο της μορφής:
+
+\begin{figure}[H]
+    \centering
+    \begin{tikzcd}
+        \mathcal{B}(V) \arrow[rr, "\phi_V"] \arrow[d, "r^V_{V^{\prime}}"] &  & {\Gamma_f (f^{-1}(V),\mathcal{B})} \arrow[d, "l^V_{V^{\prime}}"] \\
+        \mathcal{B} (V^{\prime}) \arrow[rr, "\phi_{V^{\prime}}"']         &  & {\Gamma_f (f^{-1}(V^{\prime}),\mathcal{B})}                     
+        \end{tikzcd}
+\end{figure}
+
+\noindent Είναι μεταθετικό εφόσον:
+$$\mathcal{B}(V)\ni b \ \longmapsto \ \phi_V(b) = b \circ f \ \longmapsto \  l^V_{V^{\prime}}(b\circ f) = b\circ f\mid_{f^{-1}(V)}$$
+$$\mathcal{B}(V)\ni b \ \longmapsto r^V_{V^{\prime}}(b) = b\mid_{V^{\prime}} \ \longmapsto \ \phi_{V^{\prime}}(b\mid_{V^{\prime}}) = b\mid_{V^{\prime}} \circ f$$ και σαφώς οι τελικές εικόνες είναι ίσες.
+%διόρθωση $\phi_{\mathcal{B} V}$ επειδή τις ορίσαμε συγκεκριμένα για το δράγμα B
+
+$ $\newline
+Επειδή τα παραπάνω τα κάναμε για συγκεκριμένο δράγμα $\mathcal{B}$, η $\phi$ εξαρτάται από αυτό και θα γράφουμε $\phi_{\mathcal{B}}$ (και $\phi_{\mathcal{B}V}$ στον μορφισμό προδραγμάτων). Ουσιαστικά για κάθε $\mathcal{B} \in \So h_Y$ υπάρχει 
+$$\phi_{\mathcal{B}} : \mathcal{B} \longrightarrow f_*(f^*(\mathcal{B}))$$
+
+
+\noindent Είναι η οικογένεια $(\phi_{\mathcal B})_{\mathcal B \in \So h_Y}$ φυσικός μετασχηματισμός μεταξύ των συναρτητών $I$ και $f_*f^*$? Είμαστε στην εξής κατάσταση:
+
+\begin{figure}[H]
+    \centering
+    \begin{tikzcd}
+        \mathcal{B} \arrow[rrrdd] \arrow[rr, "g"] &                    & \mathcal{T} \arrow[rdd] &   & f_*f^*(\mathcal{B}) \arrow[ldd] \arrow[rr, "f_*f^*(g)"] &  & f_*f^*(\mathcal{T}) \arrow[llldd] \\
+                                                  &                    &                         &   &                                                         &  &                                   \\
+                                                  & X \arrow[rr, "f"'] &                         & Y &                                                         &  &                                  
+        \end{tikzcd}
+\end{figure}
+
+\noindent Για να είναι φυσικός μετασχηματισμός θα πρέπει για κάθε $\mathcal{B},\mathcal{T} \in \So h_Y$ και για κάθε μορφισμό δραγμάτων $g:\mathcal{B}\rightarrow \mathcal{T}$ τα παρακάτω τετράγωνα να είναι μεταθετικά:
+
+\begin{figure}[H]
+    \centering
+    \begin{tikzcd}
+        \mathcal{B} \arrow[rr, "\phi_{\mathcal{B}}"] \arrow[d, "g"'] &  & f_*f^*(\mathcal{B}) \arrow[d, "f_*f^*(g)"] \\
+        \mathcal{T} \arrow[rr, "\phi_{\mathcal{T}}"']                &  & f_*f^*(\mathcal{T})                       
+        \end{tikzcd}
+\end{figure}
+
+
+\noindent Ισοδύναμα τα παραπάνω τετράγωνα είναι μεταθετικά αν για κάθε $V \in \tau_Y$ είναι μεταθετικά τα τετράγωνα:
+
+\begin{figure}[H]
+    \centering
+    \begin{tikzcd}
+        \mathcal{B}(V) \arrow[rr, "\phi_{\mathcal{B}V}"] \arrow[d, "g_V"'] &  & {f_*f^*(\mathcal{B})(V)\equiv \Gamma_f(f^{-1}(V),\mathcal{B})} \arrow[d, "f_*f^*(g)_V", shift right=15] \\
+        \mathcal{T} \arrow[rr, "\phi_{\mathcal{T}V}"']                     &  & {f_*f^*(\mathcal{T})(V)\equiv \Gamma_f(f^{-1}(V),\mathcal{T})}                                        
+        \end{tikzcd}
+\end{figure}
+\noindent Το οποίο ισχύει εφόσον από την μία κατεύθυνση:
+$$\mathcal{B}(V) \ni b \ \longmapsto g_V(b) = g\circ b \ \longmapsto \phi_{\mathcal{T}V} (g\circ b) = g\circ b \circ f$$ που τις αρχικές τομές τις συνθέτουμε με τον μορφισμό $g$ για να έιναι τομές του $\mathcal{T}$ και μετά κατά μήκος της $f$. Για την άλλη κατεύθυνση, από τους ορισμούς \tl{pullback} και \tl{pushout}:
+
+$$\mathcal{B}(V) \ni b \ \longmapsto \phi_{\mathcal{B}V}(b) = b\circ f \ \longmapsto \ f_*f^*(g)_V(b\circ f) = g\circ b \circ f$$
+
+$$f_*(f^*(g))_V \equiv f^*(g)_{f^{-1}(V)}: f^*(B)(V) \longrightarrow f^*(\mathcal{T})(V)$$ δηλαδή συνδέει τα
+$$\mathcal{B}(f^{-1}(V)) \rightarrow \mathcal{T} (f^{-1}(V))$$ συνθέτοντας με $g$, άρα τα παραπάνω τετράγωνα είναι μεταθετικά.
+
+
+$ $\newline
+Άρα βρήκαμε φυσικό μετασχηματισμό:
+
+$$\phi: I \longrightarrow f_*f^*$$
+
+
+\noindent Για την ανάποδη διαδικασία, αν $\mathcal A, f^* f_*(\mathcal A)  \in \So h_X$ αυτά πώς σχετίζονται?
+
+
+\begin{figure}[H]
+    \centering
+    \begin{tikzcd}
+        f^*f_*(\mathcal{A}) \arrow[rd] \arrow[rr, "?", dashed] &               & \mathcal{A} \arrow[ld] &  & f_*(\mathcal{A}) \arrow[d] \\
+                                                               & X \arrow[rrr] &                        &  & Y                         
+        \end{tikzcd}
+\end{figure}
+
+$ $\newline
+Αν $V \subseteq Y$ ανοιχτό, έχουμε:
+$$f_*(\mathcal A)(V) \defeq \mathcal A(f^{-1}(V)) \ni a : f^{-1}(V) \longrightarrow \mathcal{A}$$ δηλαδή υπάρχουν οι τιμές $a(x) \in \mathcal{A}_x$, όμως $a(x) = [a]_x$ ως προς την σχέση $\sim_x$.
+
+$ $\newline
+αν $\mathcal A \equiv (\mathcal A(U),\rho^U_{U^{\prime}})$ τότε ξέρουμε
+
+$$[a]_X = \rho^U_x (a) \in \mathcal{A}_x$$ από την άλλη πλευρά, το $f_*(\mathcal{A})$ είναι ένα προδράγμα πάνω από το $Y$: (παρόλο που οι περιορισμοί εξακολουθούν να είναι οι $\rho$ θα τους συμβολίζουμε με $r$ για να ξεχωρίζουμε την οπτική γωνία που βλέπουμε το προδράγμα.)
+
+$$f_*(\mathcal{A}) \equiv (f_*(\mathcal{A}(V)), r^V_{V^{\prime}}) := (B,r^V_{V^{\prime}})$$ για τα $V \in \mathcal{N}_y^0$ με $ y = f(x)$ και αν
+
+
+$$b \in f_*(A)(V), \quad b^{\prime} \in f_*(A)(V^{\prime})$$ όπου $V,V^{\prime} \in \mathcal{N}^0_{y=f(x)}$ και ορίζουμε:
+$$b\sim_y b^{\prime} \iff \exists \ W \in \mathcal{N}^0_y,\quad  W \subseteq V \cap V^{\prime}:$$
+$$r^V_W(b) = r^{V^{\prime}}_W(b^{\prime}) \implies $$
+$$r^V_y(b) = r^{V^{\prime}}_y (b^{\prime}) \implies $$
+$$\tilde{b}(y) = \tilde{b^{\prime}} (y)$$
+
+
+\noindent Για να τα ξεχωρίζουμε, για κάθε $a \in \mathcal A(f^{-1}(V))$ θα γράφουμε $\tilde{a}$ όταν το θεωρώ σαν στοιχείο του $f_* (\mathcal A)(V)$
+
+%dhlos prin to break
+$ $\newline
+Θέλουμε να συσχετίσουμε τα $f^*(f_*(\mathcal A))(U)$ και $\mathcal A(U)$. Το πρώτο ως \tl{pullback} ενός δράγματος είναι:
+$$f^*(f_*(\mathcal A))(U) = \Gamma_f(U,f_*(\mathcal{A})) = ?$$ Θα πάμε μέσα από τα δράγματα
+
+$$f^*(f_*(\mathcal{A})) \ni (x,\xi)$$ όπου $\xi \in f_*(\mathcal{A})_{f(x)}$, άρα υπάρχει τομή $\tilde{a}$ στο $f_*(\mathcal{A})(V) = \mathcal{A}(f^{-1}(V))$ (όπου $a \in\mathcal{A}(f^{-1}(V))$ με άλλη δομή) που εφαρμοσμένη στο $f(x)$ δίνει $\xi$, δηλαδή:
+$$\tilde{a}(f(x)) = \xi$$ με $\tilde{a}$ για να θυμόμαστε ότι φτιάχνουμε επαγωγικά όρια ως προς τον $Y$. Δηλαδή:
+
+$$r^V_{f(x)}(\tilde{a}) = \tilde{a}(f(x)) = \xi$$
+
+$$f_*(\mathcal A) \ni \tilde{a} \equiv a \in \mathcal{A}(f^{-1}(V))$$
+
+$$y = f(x) \in V \implies x \in f^{-1}(V)$$
+
+\noindent Η $a$ ως τομή $X\supseteq f^{-1}(V) \longrightarrow \mathcal{A}$ έχει τιμή στο νήμα $a(x) \in \mathcal{A}_x$ και είναι:
+$$a(x) = \rho^U_x (a) = [a]_x$$
+
+\noindent Ουσιαστικά το ίδιο $a$ έχει δύο επαγωγικά όρια ανάλογα σε ποιο προδράγμα το βλέπουμε, πάνω από τον $Y$ έχουμε την τιμή $\xi = \tilde{a}(x)$ ενώ πάνω από τον $X$ την τιμή $a(x)$.
+
+$ $\newline
+Ορίζουμε:
+$$\psi_{\mathcal A}(x,\xi) = a(x) = \rho^{f^{-1}(V)}_x(a)$$ όπου $r^V_{f(x)}=\xi$.
+
+
+$ $\newline
+Επειδή ξεκινήσαμε με ένα σημείο και πήραμε τομή που περνάει από αυτό, και ορίσαμε την εικόνα της $\psi_{\mathcal A}$ χρησιμοποιώντας αυτήν την τομή. Πρέπει να δείξουμε ότι είναι ανεξάρτητη της τομής γιατί θα μπορούσαμε να βρούμε άλλη τομή που να περνάει από το ίδιο σημείο, οπότε θέλουμε να μην αλλάζει η εικόνα.
+
+$ $\newline
+$(1)$ Η $\psi_A$ είναι ανεξάρτητη της $a \equiv \tilde{a}$. Έστω 
+$$ \mathcal{A}(f^{-1}(V^{\prime})) \ni a^{\prime} \equiv \tilde{a}^{\prime} \in f_*(\mathcal A)(V)$$ με 
+$$r^{V^{\prime}}_{f(x)}(\tilde{a}^{\prime}) = \xi = r^V_{f(x)}(\tilde{a}) \implies \tilde{a} \sim_{f(x)} \tilde{a}^{\prime}$$ δηλαδή υπάρχει $W \in \mathcal{N}^0_{f(x)}, \ W \subseteq V\cap V^{\prime}$ με 
+
+%δήλος W in ?
+\begin{align*}
+r^V_W (\tilde{a}) &= r^{V^{\prime}}_W (\tilde{a^{\prime}}) \implies \\
+\rho^{f^{-1}(V)}_{f^{-1}(W)} (a) &= \rho^{f^{-1}(V^{\prime})}_{f^{-1}(W)} (a^{\prime}) \implies \\
+\rho^{f^{-1}(V)}_z (a) &= \rho^{f^{-1}}_x (V^{\prime})(a^{\prime}) \quad \forall \ z \in f^{-1}(W) \implies \\
+\rho^{f^{-1}(V)}_x (a) &= \rho^{f^{-1}(V^{\prime})}_x (a^{\prime}) \quad \forall \ z \in f^{-1}(W) \implies \\
+a(x) &= a^{\prime}(x)
+\end{align*}
+
+
+\noindent $(2)$ Η $\psi$ είναι μορφισμός δραγμάτων:
+αφού κάνει μεταθετικό το τρίγωνο:
+
+
+\begin{figure}[H]
+    \centering
+    \begin{tikzcd}
+        f^*f_*(\mathcal{A}) \arrow[rd] \arrow[rr, "\psi_{\mathcal{A}}"] &               & \mathcal{A} \arrow[ld] &  & f_*(\mathcal{A}) \arrow[d] \\
+                                                               & X \arrow[rrr] &                        &  & Y                         
+        \end{tikzcd}
+\end{figure}
+
+
+
+\noindent και για κάθε $(x,\xi)$ βρίσκουμε τομή $(id, \tilde{a} \circ f)$ με τιμή στο $x$ το $(x,\xi)$, που μέσω της $\psi_{\mathcal{A}}$ μεταφέρεται στην τομή $a \in \mathcal{A}(f^{-1}(V))$ και άρα έχουμε μορφισμό δραγμάτων από την ισοδύναμη συνθήκη που μεταφέρουμε τομές σε τομές.
+
+$ $\newline
+Όμοια με πριν, κάνουμε την ερώτηση αν είναι η οικογένεια
+$$(\psi_{\mathcal{A}}: f^*f_* (\mathcal{A}) \longrightarrow \mathcal{A})_{A \in \So h_X}$$ φυσικός μετασχηματισμός μεταξύ των $f^*f_*$ και $I$?
+
+$$\psi: f^*f_* \longrightarrow I$$
+
+\noindent Για να απαντήσουμε στο ερώτημα, για κάθε $\mathcal{A},\So \in \So h_X$ και για κάθε μορφισμό δραγμάτων $g:\mathcal{A}\rightarrow \So$, αν έχουμε τις εικόνες των $f^*f_*$ και $I$ στο διάγραμμα:
+
+\begin{figure}[H]
+    \centering
+    \begin{tikzcd}
+        f^*f_*(\mathcal{A}) \arrow[rr, "f^*f_*(g)"] \arrow[rrrdd] &  & f^*f_*(\So) \arrow[rdd] &   & \mathcal{A} \arrow[rr, "g"] \arrow[ldd] &  & \So \arrow[llldd] \\
+                                                                  &  &                         &   &                                         &  &                   \\
+                                                                  &  &                         & X &                                         &  &                  
+        \end{tikzcd}
+\end{figure}
+\noindent τότε θα πρέπει τα παρακάτω τετράγωνα να είναι μεταθετικά:
+
+\begin{figure}[H]
+    \centering
+    \begin{tikzcd}
+        f^*f_*(\mathcal{A}) \arrow[rr, "\psi_{\mathcal{A}}"] \arrow[d, "f^*(f_*(g))"] &  & \mathcal{A} \arrow[d, "g"] \\
+        f^*f_*(\So) \arrow[rr, "\psi_{\mathcal{S}}"']                               &  & \So                       
+        \end{tikzcd}
+\end{figure}
+
+\noindent όπου έχουμε ταυτίσει:
+$$A \equiv (A(U),\rho^U_V)$$
+$$f_*(A) \equiv (f_*(A)(V),r^V_{V^{\prime}})$$
+$$\So \equiv (\So (U),\el^U_{U^{\prime}})$$
+$$f_*(\So) \equiv (f_*(\So)(V), l^V_{V^{\prime}})$$
+
+\noindent και έχουμε μεταθετικό τετράγωνο:
+
+\begin{figure}[H]
+    \centering
+    \begin{tikzcd}
+        f_*(\mathcal{A})(V) \arrow[rr, "f_*(g)_V"] \arrow[d, "r^V_{f(x)}"'] &  & f_*(\So)(V) \arrow[d, "l^V_{f(x)}"] \\
+        f_*(\mathcal A)_{f(x)} \arrow[rr, "f_*(g)"']                        &  & f_*(\So)_{f(x)}                    
+        \end{tikzcd}
+\end{figure}
+
+\noindent και άρα:
+
+$$f_*(g)(\xi) = r^V_{f(x)}(\tilde{a})$$
+
+$$(x,f_*(g)(\xi)) = (x,f_*(g)\circ r^V_{f(x)}(\tilde{a})) =  (x,l^V_{f(x)}\circ f_*(g)_V(\tilde{a})) =  (x,l^V_{f(x)}\circ g_{f^{-1}(V)}(a))$$ όπου γνωρίζουμε το τελευταίο καθώς και την εικόνα του μέσω της $\psi_{\So}$. Άρα πράγματι το ζητούμενο τετράγωνο είναι μεταθετικό εφόσον:
+
+\begin{figure}[H]
+    \centering
+    \begin{tikzcd}
+        {(x,\xi)} \arrow[dd, maps to] \arrow[rrr, maps to]                          &  &  & a(x) \arrow[dd, maps to] \\
+                                                                                    &  &  &                          \\
+        {(x,f_*(g)(\xi))=(x,l^V_{f(x)} (f_*(g)_V (\tilde{a})))} \arrow[rrr, maps to] &  &  & g\circ a(x)             
+        \end{tikzcd}
+\end{figure}
