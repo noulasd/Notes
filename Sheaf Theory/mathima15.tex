@@ -1,0 +1,153 @@
+\vspace*{0.3cm}
+
+$ $\newline
+Έστω $(X,\tau_X)$ τοπολογικός χώρος, για κάθε $U \in \tau_X$ θέτουμε:
+$$C(U) = \{f:U\longrightarrow \mathbb{R}  \ \text{ συνεχής }\}$$ Αν έχουμε $U^{\prime} \subseteq U$ ανοιχτά τότε έχουμε τους συνήθεις περιορισμούς απεικονίσεων:
+
+$$r^U_{U^{\prime}}:C(U)\longrightarrow C(U^{\prime})$$
+$$f \longmapsto r^U_{U^{\prime}} (f) = f|_{U^{\prime}}$$ Άρα έχουμε το ζεύγος οικογενειών $(C(U),r^U_{U^{\prime}})_{U^{\prime} \subseteq U \in \tau_X}$ που για $U^{\prime\prime} \subseteq U^{\prime} \subseteq U$  ικανοποιεί:
+
+\begin{figure}[H]
+    \centering
+    \begin{tikzcd}
+        C(U) \arrow[rr, "r^{U}_{U^{\prime}}"] \arrow[rrd, "r^{U}_{U^{\prime\prime}}"'] &  & C(U^{\prime}) \arrow[d, "r^{U^{\prime}}_{U^{\prime\prime}}"] \\
+                                                                                       &  & C(U^{\prime\prime})                                         
+    \end{tikzcd}
+\end{figure}
+$$ r^{U^{\prime}}_{U^{\prime\prime}} \circ r^{U}_{U^{\prime}} =  r^{U}_{U^{\prime\prime}}$$ Δηλαδή είναι προδράγμα συνόλων πάνω από το $X$. Θα εξετάσουμε αν είναι πλήρες. Έστω $U \in \tau_X$ και $\{U_i\}_{i \in I}$ ανοιχτό κάλυμμα, δηλαδή $U_i \in \tau_X$ για κάθε $i \in I$ και $U = \cup_{i \in I} U_i$.
+
+$ $\newline
+$(1)$ Αν $f,g \in C(U):$
+$$\rho^U_{U_i}(f) = \rho^U_{U_i}(g) \quad \forall \ i \in I \implies $$
+$$f,g:U\longrightarrow \mathbb{R}$$
+$$f|_{U_i} = g|_{U_i} \quad \forall \ i \in I \implies $$
+$$f = g$$
+
+\noindent $(2)$ Αν έχουμε $f_i \in C(U_i)$ με 
+$$r^{U_i}_{U_i \cap U_j} (f_i) = r^{U_j}_{U_i \cap U_j} (f_j), \quad \forall \ i,j \implies $$
+
+$$f_i:U_i \longrightarrow \mathbb{R}$$ συνεχείς με $f_i|_{U_i \cap U_j} = f_j|_{U_i\cap U_j}$. Παίρνουμε ότι για κάθε $x \in U$ υπάρχει δείκτης $i \in I$ με $x \in U_i$. Θέτουμε $f(x) = f_i(x)$. Έπεται ότι η $f$ είναι καλά ορισμένη αφού αν $x \in U_i \cap U_j$ τότε $f_i(x) = f_j(x) =:f(x)$ και $f$ συνεχής. Άρα υπάρχει στοιχείο $f \in C(U)$ με
+$$f|_{U_i} = f_i$$ Δηλαδή
+$$r^U_{U_i}(f) = f_i$$ άρα το προδράγμα είναι πλήρες. Μας δίνει ένα δράγμα, για $x \in X$:
+$$\bigcup\limits_{U \in \openx} C(U)$$ εδώ συνήθως παίρνουμε διακεκριμένη ένωση, αλλά σε αυτή την περίπτωση αυτά θα είναι αναγκαστικά ξένα αφού διαφορετικά πεδία ορισμού $U \in \openx$ θα καθορίζουν τελείως διαφορετικές συναρτήσεις μέσα στα $C(U)$. Βάζουμε την σχέση ισοδυναμίας:
+
+$$f,g \in \bigcup\limits_{U \in \openx} C(U) \implies \exists \ U,U^{\prime} \in \openx: \quad f\in C(U), \ g\in C(U^{\prime})$$ θέτουμε
+$$f\sim_x g \iff \exists \ U^{\prime\prime} \subseteq U \cap U^{\prime}, \quad U^{\prime\prime} \in \openx $$
+$$r^U_{U^{\prime\prime}} (f) = r^{U^{\prime}}_{U^{\prime\prime}}(g)$$ Δηλαδή
+$$f|_{U^{\prime\prime}} = g|_{U^{\prime\prime}}$$
+
+$$\mathcal{C}_x = \bigcup\limits_{U \in \openx} C(U) \Bigg/ \sim_x $$ και ονομάζουμε 
+$$\mathcal{C} \equiv (\mathcal{C} = \bigcup\limits_{U \in \openx} \mathcal{C}_x, \pi , X)$$ το δράγμα αυτό ονομάζεται δράγμα των σπερμάτων (\tl{germs}) των τοπικά ορισμένων συνεχών συναρτήσεων στο $X$. Πώς είναι τα στοιχεία του?
+
+$$ \mathcal{C} \supseteq \mathcal{C}_x \ni [f]_x, \quad f: U_0 \longrightarrow \mathbb{R} \ \text{ συνεχής }, U_0 \in \openx $$
+$$[f]_x = \{g : U \longrightarrow \mathbb{R} \ \text{ συνεχής }, U \in \openx, \ \text{ με } \ g|_{U^{\prime}} = f|_{U^{\prime}} \ \text{ για κάποιο } U^{\prime} \in \openx, \ U^{\prime} \subseteq U_0\cap U \}$$
+
+\vspace*{0.3cm}
+\begin{remark} Για κάθε $U\in\tau_X$ το $C(U)$ έχει αλγεβρική δομή:
+    $$f,g \in C(U) \longrightarrow f+g \in C(U)$$
+    $$f \in C(U), \ \lambda \in \mathbb{R} \implies \lambda \cdot f \in C(U)$$
+    $$f,g \in C(U) \implies f\cdot g \in C(U)$$ Με τα δύο πρώτα έχουμε δομή $\mathbb{R}$-διανυσματικού χώρου και αν το $U$ έχει πολλά σημεία θα είναι απειροδιάστατος. Με το πρώτο και το τρίτο έχουμε δομή δακτυλίου. Συνεπώς όλα μαζί μας δίνουν μία $\mathbb{R}$-άλγεβρα.
+
+    $$\forall \ U \in \tau_X \implies (C(U),+, \cdot_{\mathbb{R}, \cdot}) \ \text{ άλγεβρα }$$
+    και μάλιστα ο πολλαπλασιασμός είναι μεταθετικός, δηλαδή η άλγεβρα είναι μεταθετική, όχι σαν τους πίνακες. Επίσης, έχει ως μονάδα στον πολλαπλασιασμό την σταθερή συνάρτηση. Καθώς έχουμε δείξει ότι η δομή μεταφέρεται στα δράγματα με τα επαγωγικά όρια παίρνουμε ότι:
+    $$\mathcal{C} \ \text{ δράγμα μεταθετικών αλγεβρών με μονάδα }$$
+\end{remark}
+
+
+$ $\newline
+Έστω $(X,\tau_X), (Y,\tau_Y)$ τοπολογικοί χώροι και $f:X\rightarrow Y$ συνεχής. Συμβολίζουμε με $\mathcal{C}_X, \mathcal{C}_Y$ τα δράγματα των τοπικά συνεχών απεικονίσεων πάνω από το $X$ και αντίστοιχα $Y$. Μας δίνει η $f$ έναν τρόπο να τα συνδέουμε αυτά? πιο συγκεκριμένα, συνδέει τα \tl{germs} των συνεχών τοπικά ορισμένων συναρτήσεων στο $X$ με αυτών στο $Y$?
+
+\begin{figure}[H]
+    \centering
+    \begin{tikzcd}
+        \mathcal{C}_X \arrow[d] \arrow[rr, "?", dashed] &  & \mathcal{C}_Y \arrow[d] \\
+        X \arrow[rr, "f"']                              &  & Y                      
+        \end{tikzcd}
+\end{figure}
+
+\noindent Αν πάμε να το δούμε κατευθείαν στα προδράγματα, αν $X\supseteq U \xrightarrow[]{g} \mathbb{R}$ συνεχής και μέσω της $f$ παίρνουμε $Y \supseteq f(U)$. Η $g$ δίνει ένα \tl{germ} για κάθε σημείο $x \in U$ αλλά δεν μπορούμε να αποφανθούμε για τα \tl{germs} της $f(U)\rightarrow \mathbb{R}$. Πιο φυσιολογικό είναι να δουλέψουμε ως εξής:
+
+\begin{figure}[H]
+    \centering
+    \begin{tikzcd}
+        X\supseteq f^{-1}(V) \arrow[rr, "f"] \arrow[rrdd, "g\circ f"'] &  & V\subseteq Y \arrow[dd, "g"] \\
+                                                                       &  &                              \\
+                                                                       &  & \mathbb{R}                  
+        \end{tikzcd}
+\end{figure}
+
+\noindent Για κάθε $V\in \tau_Y$ και για κάθε $g \in C_Y (V)$:
+$$g\circ f|_{f^{-1}(V)} \in C_X(f^{-1}(V))$$ άρα για καθε $V\in \tau_Y$ μπορούμε να βρούμε μια απεικόνιση:
+$$f_V : C_Y(V) \longrightarrow C_X(f^{-1}(V)) $$
+$$f_V(g) = g\circ f|_{f^{-1}(V)}$$ Παρατηρούμε ότι για $V^{\prime} \subseteq V$:
+
+\begin{figure}[H]
+    \centering
+    \begin{tikzcd}
+        C_Y(V) \arrow[dd, "r^V_{V^{\prime}}"'] \arrow[rr, "f_V"] &  & C_X(f^{-1}(V)) \arrow[dd, "r^{f^{-1}(V)}_{f^{-1}(V^{\prime})}"] \\
+                                                                 &  &                                                                 \\
+        C_Y(V^{\prime}) \arrow[rr, "f_{V^{\prime}}"']            &  & C_X(f^{-1}(V^{\prime}))                                        
+        \end{tikzcd}
+\end{figure}
+
+\noindent Το τετράγωνο είναι μεταθετικό, εφόσον:
+
+\begin{figure}[H]
+    \centering
+    \begin{tikzcd}
+        g \arrow[rr, maps to] \arrow[dd, maps to] &  & g\circ f|_{f^{-1}(V)} \arrow[dd] \\
+                                                  &  &                                  \\
+        g|_{V^{\prime}} \arrow[rr, maps to]       &  & g\circ f|_{f^{-1}(V^{\prime})}  
+        \end{tikzcd}
+\end{figure}
+
+\noindent Με αυτή την παρατήρηση έχουμε τον μορφισμό προδραγμάτων:
+
+$$(f_V: C_Y(V) \longrightarrow C_X(f^{-1}(V)))$$ με $$C_X(f^{-1}(V)) = f_*(C_X)(V)$$ Συνεπώς, υπάρχει ο επαγόμενος μορφισμός δραγμάτων:
+
+$$\hat{f} : \mathcal{C}_Y \longrightarrow f_*(\mathcal{C}_X) $$ Άρα για να απαντήσουμε στην αρχική ερώτηση για το πώς συνδέουμε τα $\mathcal{C}_X, \mathcal{C}_Y$ η σύνδεση είναι η:
+
+\begin{figure}[H]
+    \centering
+    \begin{tikzcd}
+        \mathcal{C}_X \arrow[dd] &  & \mathcal{C}_Y \arrow[dd] \arrow[rr, "\hat{f}"] &  & f_*(\mathcal{C}_X) \arrow[lldd] \\
+                                 &  &                                                &  &                                 \\
+        X \arrow[rr, "f"']       &  & Y                                              &  &                                
+        \end{tikzcd}
+\end{figure}
+
+\noindent Θα αναφερόμαστε σε αυτό ως μια πρώτη ανάγνωση της κατάστασης και πάμε να ξαναδούμε τα πράγματα με άλλο μάτι. Σαν δεύτερη ανάγνωση, έστω $x \in X, f(x) \in Y$ και το νήμα $\mathcal{C}_{Y, f(x)}$ με το στοιχείο $[g]_{f(x)}$. Έχουμε ότι υπάρχει:
+$$V \in \mathcal{N}^0_{f(x)}, \quad g:V\longrightarrow \mathbb{R} \ \text{ συνεχής }$$
+
+$$g \circ f|_{f^{-1}(V)} : f^{-1}(V) \longrightarrow \mathbb{R}, \quad x \in f^{-1}(V) \subseteq X$$ άρα ορίζεται:
+$$[g\circ f]_x \in \mathcal{C}_{X,x} \subseteq \mathcal{C}_X $$ Έτσι, αν βλέπουμε και το σημείο $x$ μαζί έχουμε:
+$$\forall (x, [g]_{f(x)}) \in f^*(\mathcal{C}_Y)$$ και άρα για κάθε $x \in X$ ορίζεται απεικόνιση νημάτων:
+
+$$f_x : f^*(\mathcal{C}_Y)_x \longrightarrow \mathcal{C}_{X,x}$$ έτσι υπάρχει μορφισμός δραγμάτων:
+
+$$\tilde{f}= \cup f_x: f^*(\mathcal{C}_Y) \longrightarrow \mathcal{C}_X$$ δηλαδή έχουμε την σύνδεση όπως φαίνεται στο διάγραμμα:
+
+
+\begin{figure}[H]
+    \centering
+    \begin{tikzcd}
+        f^*(\mathcal{C}_Y) \arrow[rr, "\tilde{f}"] \arrow[rrdd] &  & \mathcal{C}_X \arrow[dd] &  & \mathcal{C}_Y \arrow[dd] \\
+                                                                &  &                          &  &                          \\
+                                                                &  & X \arrow[rr, "f"]        &  & Y                       
+        \end{tikzcd}
+\end{figure}
+
+\noindent Έχουμε και μια τρίτη ανάγνωση της κατάστασης, αν στα προηγούμενα δεν πάμε στο ζεύγος $(x,[g]_{f(x)})$ και κρατήσουμε ότι:
+$$\forall \ x \in X \quad \forall  \ [g]_{f(x)} \in \mathcal{C}_{Y,f(x)}$$ βρίσκουμε
+$$[g\circ f]_x \in \mathcal{C}_X$$ και ονομάσουμε αυτήν την απεικόνιση με $\overline{f}$, αν συμβολίσουμε με $\mathcal{C}_Y|_{f(X)}$ το υποσύνολο του $\mathcal{C}$ που κρατάμε ότι είναι πάνω από την εικόνα, τότε έχουμε την εξής κατάσταση:
+
+\begin{figure}[H]
+    \centering
+    \begin{tikzcd}
+        \mathcal{C}_X \arrow[dd] &  & \mathcal{C}_Y|_{f(x)} \subseteq \mathcal{C}_Y \arrow[dd, shift left=7] \arrow[ll, "\overline{f}"] \\
+                                 &  &                                                                                                   \\
+        X \arrow[rr, "f"']       &  & f(X)\subseteq Y                                                                                  
+        \end{tikzcd}
+\end{figure}
+
+\noindent Ωστόσο, οι τρεις προσεγγίσεις όπως θα δούμε δεν είναι τρία διαφορετικά πράγματα αλλά η ίδια κατασκευή. Ουσιαστικά η καθεμία από τις $\hat{f},\tilde{f}, \overline{f}$ περνάει στις άλλες με αμφιμονοσήμαντο τρόπο μέσω των φυσικών μετασχηματισμών από τις προηγούμενες διαλέξεις.
