@@ -1,0 +1,162 @@
+\vspace*{0.3cm}
+\noindent Στα δράγματα αν έχουμε $f:X\longrightarrow Y$ συνεχής βλέπουμε σαν $\mathcal{C} = \So h_Y$ και $\mathcal{D}=\So h_X$ και έχουμε τους συναρτητές:
+$$F=f^* : \So h_Y \longrightarrow \So h_X$$
+$$G=f_* : \So h_X \longrightarrow \So h_Y$$ και έχουμε αποδείξει ότι για κάθε δράγμα $\mathcal{A} \in \So h_X, \mathcal{B} \in \So h_Y$ υπάρχει φυσικός ισομορφισμός (δηλ. αν κρατήσουμε σταθερό το ένα αντικείμενο της μια κατηγορίας και για την άλλη κατηγορία τα αντικείμενα τρέχουν έχουμε φυσικό μετασχηματισμό)
+$$\Phi_{\mathcal{B}\mathcal{A}} : Mor(f^*(\mathcal{B}), \mathcal{A}) \longrightarrow Mor(\mathcal{B},f_*(\mathcal{A}))$$
+
+\begin{figure}[H]
+    \centering
+    \begin{tikzcd}
+        f^*(\mathcal{B}) \arrow[rrd] \arrow[rr, "g"] &  & \mathcal{A} \arrow[d] &  & \mathcal{B} \arrow[d] \arrow[rr, "\Phi(g)"] &  & f_*(\mathcal{A}) \arrow[lld] \\
+                                                     &  & X \arrow[rr, "f"']    &  & Y                                           &  &                             
+        \end{tikzcd}
+\end{figure}
+
+\noindent Γνωρίζουμε επίσης ότι υπάρχει ζεύγος φυσικών μετασχηματισμών:
+$$\phi_{\mathcal{B}} : \mathcal{B} \longrightarrow f_*f^*(\mathcal{B}) \quad \forall \ \mathcal{B} \in \So h_Y$$
+$$\psi_{\mathcal A}: f^*f_*(\mathcal A) \longrightarrow \mathcal A \quad \forall \ \mathcal A \in \So h_X$$
+
+\begin{figure}[H]
+    \centering
+    \begin{tikzcd}
+        f^*(\mathcal B) \arrow[rr, "g"]                                                                                              &  & \mathcal A       \\
+        f_*f^*(\mathcal B) \arrow[rr, "f_*(g)"]                                                                                      &  & f_*(\mathcal{A}) \\
+        \mathcal{B} \arrow[u, "\phi_{\mathcal{B}}"] \arrow[rru, "\Phi_{\mathcal B \mathcal A}(g) = f_*(g) \circ \phi_{\mathcal B}"'] &  &                 
+        \end{tikzcd}
+\end{figure}
+
+\noindent Έχουμε το αποτέλεσμα ότι οι $\phi_{\mathcal{B}}, \psi_{\mathcal{A}}$ είναι προσαρτημένοι ο ένας στον άλλον με βάση το ακόλουθο θεώρημα από την θεωρία κατηγοριών.
+
+\vspace*{0.3cm}
+\begin{theorem} Έστω $F: \mathcal{C} \longrightarrow \mathcal{D}$ και $G : \mathcal{D}\longrightarrow \mathcal{C}$ δύο συναρτητές. Τα ακόλουθα είναι ισοδύναμα:
+    \begin{enumerate}
+        \item $F$ είναι αριστερά προσαρτημένος στον $G$.
+        \item Υπάρχουν φυσικοί μετασχηματισμοί: 
+        $$\phi: I_{\mathcal{C}} \longrightarrow GF$$
+        $$\psi : FG\longrightarrow I_{\mathcal{D}}$$ που κάνουν μεταθετικά τα τρίγωνα:
+    \end{enumerate}
+\end{theorem}
+\begin{figure}[H]
+    \centering
+    \begin{tikzcd}
+        G \arrow[rr, "1"] \arrow[rd, "\phi G"'] &                          & G & F \arrow[rd, "F\phi"] \arrow[rr, "1"] &                           & F \\
+                                                & GFG \arrow[ru, "G\psi"'] &   &                                       & FGF \arrow[ru, "\psi F"'] &  
+        \end{tikzcd}
+\end{figure}
+
+\vspace*{0.3cm}
+\noindent \textbf{Ερμηνεία των τριγώνων:}
+
+$ $\newline
+Για κάθε $D \in \mathcal{D}$ το τρίγωνο είναι μεταθετικό:
+\begin{figure}[H]
+    \centering
+    \begin{tikzcd}
+        G(D) \arrow[rr, "id_{G(D)}"] \arrow[rd, "\phi_{G(D)}"'] &                               & G(D) &                            & D \\
+                                                                & GFG(D) \arrow[ru, "G\psi_D"'] &      & FG(D) \arrow[ru, "\psi_D"] &  
+        \end{tikzcd}
+\end{figure}
+
+$ $\newline
+Αντίστοιχα, για κάθε $C \in \mathcal{C}$ το τρίγωνο είναι μεταθετικό:
+\begin{figure}[H] 
+    \centering
+    \begin{tikzcd}
+        C \arrow[rd, "\phi_C"'] &       & F(C) \arrow[rr, "id_{F(C)}"] \arrow[rd, "F \phi_C"'] &                                   & F(C) \\
+                                & GF(C) &                                                      & FGF(C) \arrow[ru, "\psi_{F(C)}"'] &     
+        \end{tikzcd}
+\end{figure}
+
+$ $\newline
+Άρα σύμφωνα με το θεώρημα, στα δράγματα έχουμε ότι $f^*$ αριστερά προσαρτημένος στον $f_*$ αν και μόνο αν υπάρχει ζεύγος φυσικών μετασχηματισμών:
+$$\phi : I_{\So h_Y} \longrightarrow f_*f^*$$
+$$\psi: f^*f_* \longrightarrow I_{\So h_X}$$ που για κάθε $\mathcal{A} \in \So h_X$ και για κάθε $\mathcal{B} \in \So h_Y$ κάνουν τα τρίγωνα μεταθετικά:
+
+\begin{figure}[H]
+    \centering
+    \begin{tikzcd}
+        f_*(\mathcal{A}) \arrow[rd, "\phi_{f_*(\mathcal{A})}"'] \arrow[rr, "id_{f_*(\mathcal{A})}"] &                                                               & f_*(\mathcal{A}) &  & f^*(\mathcal{B}) \arrow[rd, "f^*(\phi_{\mathcal{B}})"'] \arrow[rr, "id_{f^*(\mathcal{B})}"] &                                                               & f^*(\mathcal{B}) \\
+                                                                                                    & f_*f^*f_*(\mathcal{A}) \arrow[ru, "f_*(\psi_{\mathcal{A}})"'] &                  &  &                                                                                             & f^*f_*f^*(\mathcal{B}) \arrow[ru, "\psi_{f^*(\mathcal{B})}"'] &                 
+        \end{tikzcd}
+\end{figure}
+
+$ $\newline
+Τα οποία ισχύουν, αφού έχουμε δείξει στα προηγούμενα μαθήματα ότι:
+$$\left(\phi_{f_*(\mathcal{A})} \right)^{-1} = f_*(\psi_{\mathcal{A}})$$
+$$\left(f^*(\phi_{\mathcal{B}})\right)^{-1} = \psi_{f^*(\mathcal{B})}$$ και άρα πράγματι ο $f^*$ είναι αριστερά προσαρτημένος στον $f_*$.
+
+$ $\newline
+Άλλο παράδειγμα:
+\begin{figure}[H]
+    \centering
+    \begin{tikzcd}
+        \So h_X  \arrow[rr, "\Gamma", shift left=2] &  & \mathcal{C}o\mathcal{P}\So h_X \arrow[ll, "\mathbb{S}", shift left]
+        \end{tikzcd}
+\end{figure}
+\noindent Είναι ο $\Gamma$ αριστερά προσαρτημένος στον $\mathbb{S}$? Αρκεί να δείξουμε μια από τις δύο συνθήκες του θεωρήματος, δηλαδή είτε:
+$$1) \quad \forall \ \mathcal{A} \in \So h_X, \ \forall \ P \equiv (P(U),\rho^U_V) \in \mathcal{C}o\mathcal{PS}h_X$$ υπάρχει φυσικός ισομορφισμός:
+$$\Phi_{\mathcal{A}P}: Mor(\Gamma(\mathcal{A}),P) \longrightarrow Mor(\mathcal{A},\mathbb{S}(P))$$ ή 
+
+$ $\newline
+$2)$ υπάρχει ζεύγος φυσικών μετασχηματισμών:
+$$\phi_{\mathcal{A}} \longrightarrow \mathbb{S}\circ \Gamma(\mathcal{A}), \quad \Gamma(\mathcal{A}) \text{ πλήρες }$$
+$$\psi_{P}: \Gamma \circ \mathbb{S}(P) \longrightarrow P$$ που κάνουν μεταθετικά τα αντίστοιχα τρίγωνα. Θα δείξουμε ότι ισχύει η πρώτη. Έστω
+$$f\equiv (f_U: \mathcal{A}(U) = \Gamma(U,\mathcal{A})\longrightarrow P(U))_{U\in\tau_X} \in Mor(\Gamma(\mathcal{A}),P)$$
+
+$$\Phi(f) = \tilde{f}:\mathcal{A} \longrightarrow \mathbb{S}(P) := \mathcal{P}$$
+\begin{figure}[H]
+    \centering
+    \begin{tikzcd}
+        A \arrow[rr, "\tilde{f}"] \arrow[rd] &   & \mathcal{P} \arrow[ld] \\
+                                             & X &                       
+        \end{tikzcd}
+\end{figure}
+
+\noindent Έστω $a \in \mathcal{A}$, τότε βρίσκεται σε κάποιο νήμα $a \in \mathcal{A}_x$ για κάποιο $x \in X$. Συνεπώς, ξέρουμε από τα πρώτα μαθήματα ότι υπάρχει περιοχή $U \in \openx$ όπου έχουμε το στοιχείο $a$ σαν εικόνα τομής, δηλαδή $\alpha (x) = a$ για $\alpha \in \mathcal{A}(U)$. Άρα έχουμε $f_U(\alpha) \in P(U)$ (από πληρότητα?).
+
+$$\exists \rho^U_x (f_U(\alpha)) \in \mathcal{P}_x$$ αν το δούμε στο όριο για την δραγματοποίηση. Θέτουμε:
+$$\tilde{f}(a) = \rho^U_x(f_U(\alpha))$$ και η $\tilde{f}$ κάνει μεταθετικό το παραπάνω τρίγωνο αφού διατηρεί τα νήματα, είναι όμως συνεχής? Αρκεί να δείξουμε ότι για κάθε $U \in \tau_X$ και για κάθε $\alpha \in \mathcal{A}(U)$ έχουμε:
+$$\tilde{f}\circ \alpha \in \mathcal{P}(U)$$ Έστω $x \in U$, το $a$ βρίσκεται στο νήμα $\mathcal{A}_x$, επιπλέον θέτουμε $f_U(a)=p \in P(U)$ και άρα:
+
+$$(\tilde{f}\circ \alpha)(x) = \tilde{f} (\alpha(x)) = \tilde{f}(a) = \rho^U_x(f_U(a)) = [f_U(a)]_x = [p]_x = \tilde{p}(x)$$ που είναι τομή του $\mathcal{P}$. Ισχυριζόμαστε ότι $\Phi_{\mathcal{A}P}$ είναι 1-1 και επί.
+
+$ $\newline
+Για το 1-1, έστω $f\equiv(f_U), g\equiv (g_U) \in Mor(\Gamma(\mathcal{A}),P)$, με $\Phi(f) = \Phi(g) \iff \tilde{f} = \tilde{g}$. Θέλουμε $f=g \iff f_U = g_U$ για κάθε $U \in \tau_X$. Έστω $U \in \tau_X$, θα δείξουμε ότι:
+$$f_U = g_U :\mathcal{A}(U) \longrightarrow P(U)$$ δηλαδή, θα δείξουμε ότι:
+$$f_U(\alpha) = g_U(\alpha)$$ για κάθε τομή $\alpha \in \mathcal{A}(U)$. Από την υπόθεση έχουμε ότι $\tilde{f} = \tilde{g}$, δηλαδή για κάθε $x \in U$ έχουμε:
+$$\tilde{f}(\alpha(x)) = \tilde{g}(\alpha(x)), \quad \alpha(x) = a \in \mathcal{A}_x \implies $$
+$$\rho^U_x(f_U(\alpha)) = \rho^U_x(g_U(\alpha)) \implies $$
+$$[f_U(\alpha)]_x = [g_U(\alpha)]_x $$
+$$f_U(\alpha) \sim_x g_U(\alpha) \iff $$
+$$\exists \ U_x \in \openx, \quad U_x \subseteq U:$$
+$$\rho^U_{U_x}(f_U(\alpha)) = \rho^U_{U_x}(g_U(\alpha)) \quad \forall \ x \in U$$ δηλαδή έχουμε $(U_x)$ μια ανοιχτή κάλυψη του $U$ και εφόσον το προδράγμα είναι πλήρες από υπόθεση, από την ιδιότητα του μονοπροδράγματος παίρνουμε:
+$$f_U(\alpha) = g_U(\alpha) \implies f_U = g_U$$ και άρα $f\equiv (f_U) = (g_U) \equiv g$.
+
+
+$ $\newline
+Για το επί: Έστω $g:\mathcal{A}\longrightarrow \mathbb{S}(P)=\mathcal{P}$ μορφισμός δραγμάτων. Ζητάμε $f\equiv(f_U:\mathcal{A}(U)\longrightarrow P(U))_{U\in\tau_X}$ με 
+$$\Phi_{\mathcal{A}P}(f)=g $$ δηλαδή, $\tilde{f} = g$.
+
+$$g: \mathcal{A} \longrightarrow \mathcal{P} \text{ μορφισμός δραγμάτων } \implies $$
+$$(g_U: \mathcal{A}(U) \longrightarrow \mathcal{P}(U))_{U \in \tau_X} \text{ μορρφισμός προδραγμάτων}$$ με $g_U = \Gamma(g)_U$(?)
+
+$ $\newline
+Υπενθυμίζουμε, για κάθε προδράγμα $(S(U),\rho^U_V)$ υπάρχει μορφισμός προδραγμάτων στις τομές:
+$$\rho_U: S(U)\longrightarrow \So (U)$$
+$$s\longmapsto \rho_U(s) = \tilde{s}$$ με $\tilde{s}(x) = [s]_x = \rho^U_x(s)$ για κάθε $x \in U$. Επιπλέον, $(\rho_U)$ είναι ισομορφισμός αν και μόνο αν το προδράγμα $S$ είναι πλήρες. Εδώ έχουμε $P$ πλήρες και άρα:
+
+\begin{figure}[H]
+    \centering
+    \begin{tikzcd}
+        \mathcal{A}(U) \arrow[rrdd, "\rho_U^{-1}\circ g_U = f_U"'] \arrow[rr] &  & \mathcal{P}(U) \arrow[dd, "\rho_U^{-1}"] \\
+                                                                              &  &                                          \\
+                                                                              &  & P(U)                                    
+        \end{tikzcd}
+\end{figure}
+
+\noindent Ισχυριζόμαστε ότι $\tilde{f} = \Phi_{\mathcal{A}P}(f) = g$. $\tilde{f}(x) = \alpha(x)$ για τομή $\alpha \in \mathcal{A}(U)$. Εξ ορισμού έχουμε:
+$$\tilde{f}(\alpha) = \rho^U_x(f_U(\alpha)) = \rho^U_x(\rho^{-1}_U\circ g_U(\alpha)) = \rho^U_x\circ \rho^{-1}_U(g \circ \alpha)$$ όπου θέτουμε $g\circ \alpha :=\tilde{p}$ τομή του $\mathcal{P}$ αφού σύνθεση μορφισμού με τομή μας δίνει τομή του δεύτερου δράγματος. Λόγω πληρότητας:
+
+$$\tilde{p} = \rho_U(\mathfrak{p})$$ με $\mathfrak{p} \in P(U)$ και άρα
+
+$$\rho^U_x\circ \rho^{-1}_U(g \circ \alpha) = \rho^U_x \circ \rho^{-1}_U (\tilde{p}) = \rho^U_x(\mathfrak{p}) = \tilde{p}(x) = g \circ \alpha(x) = g(\alpha)$$

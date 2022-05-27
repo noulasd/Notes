@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2020.10.13)  17 APR 2022 18:14
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2020.10.13)  27 MAY 2022 15:01
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1021,24 +1021,20 @@ Overfull \hbox (1.34267pt too wide) in paragraph at lines 60--62
 \LGR/cmr/m/n/10 An pro-spa-j sou-mne me drˆg-ma $\OT1/cmr/m/n/10 (\OMS/cmsy/m/n/10 S\OML/cmm/m/it/10 ; ^^Y; X\OT1/cmr/m/n/10 )$\LGR/cmr/m/n/10 , èqou-me ìti gia kˆje $\OML/cmm/m/it/10 U \OMS/cmsy/m/n/10 2 \OML/cmm/m/it/10 ^^\[]$ \LGR/cmr/m/n/10 to $\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 ^^Y[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 U\OT1/cmr/m/n/10 )\OML/cmm/m/it/10 ; ^^Y\OMS/cmsy/m/n/10 j[]\OML/cmm/m/it/10 ; U\OT1/cmr/m/n/10 )$
  []
 
-[43] [44] [45]) [46] (c:/Users/dimit/Desktop/TeX/Notes/Sheaf Theory/mathima12.tex [47] [48] [49] [50]) [51] (c:/Users/dimit/Desktop/TeX/Notes/Sheaf Theory/mathima13.tex [52] [53]) [54] (c:/Users/dimit/Desktop/TeX/Notes/Sheaf Theory/mathima14.tex
-
-LaTeX Warning: Command \textBeta invalid in math mode on input line 43.
-
-[55]) [56] (c:/Users/dimit/Desktop/TeX/Notes/Sheaf Theory/main.aux) ) 
+[43] [44] [45]) [46] (c:/Users/dimit/Desktop/TeX/Notes/Sheaf Theory/mathima12.tex [47] [48] [49] [50]) [51] (c:/Users/dimit/Desktop/TeX/Notes/Sheaf Theory/mathima13.tex [52] [53]) [54] (c:/Users/dimit/Desktop/TeX/Notes/Sheaf Theory/mathima14.tex [55] [56] [57] [58]) [59] [60] (c:/Users/dimit/Desktop/TeX/Notes/Sheaf Theory/mathima15.tex [61] [62] [63]) [64] [65] (c:/Users/dimit/Desktop/TeX/Notes/Sheaf Theory/mathima16.tex [66] [67] [68] [69]) [70] (c:/Users/dimit/Desktop/TeX/Notes/Sheaf Theory/mathima17.tex [71] [72] [73]) [74] (c:/Users/dimit/Desktop/TeX/Notes/Sheaf Theory/mathima18.tex [75] [76] [77]) [78] (c:/Users/dimit/Desktop/TeX/Notes/Sheaf Theory/mathima19.tex [79] [80] [81]) [82] (c:/Users/dimit/Desktop/TeX/Notes/Sheaf Theory/mathima20.tex [83] [84]) [85] (c:/Users/dimit/Desktop/TeX/Notes/Sheaf Theory/main.aux) ) 
 Here is how much of TeX's memory you used:
- 21552 strings out of 479917
- 439724 string characters out of 5886664
- 699063 words of memory out of 5000000
- 37715 multiletter control sequences out of 15000+600000
- 555242 words of font info for 80 fonts, out of 8000000 for 9000
+ 23978 strings out of 479917
+ 502999 string characters out of 5886664
+ 743620 words of memory out of 5000000
+ 40122 multiletter control sequences out of 15000+600000
+ 555928 words of font info for 81 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  111i,17n,112p,1437b,1198s stack positions out of 5000i,500n,10000p,200000b,80000s
-{c:/texlive/2020/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}<c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/euler/eufm10.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/euler/eufm7.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/cbfonts/grmi1000.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/cbfonts/grmn0500.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/cbfonts/grmn0700.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/cbfonts/grmn1000.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/cbfonts/grmn2074.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/cbfonts/grxn1000.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/cbfonts/grxn1440.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb>
-Output written on "c:/Users/dimit/Desktop/TeX/Notes/Sheaf Theory/main.pdf" (56 pages, 1119490 bytes).
+{c:/texlive/2020/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}<c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/euler/eufm10.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/euler/eufm7.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/cbfonts/grmi1000.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/cbfonts/grmn0500.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/cbfonts/grmn0700.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/cbfonts/grmn1000.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/cbfonts/grmn2074.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/cbfonts/grxn1000.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/cbfonts/grxn1440.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfti1000.pfb>
+Output written on "c:/Users/dimit/Desktop/TeX/Notes/Sheaf Theory/main.pdf" (85 pages, 1241672 bytes).
 PDF statistics:
- 309 PDF objects out of 1000 (max. 8388607)
- 212 compressed objects within 3 object streams
+ 406 PDF objects out of 1000 (max. 8388607)
+ 279 compressed objects within 3 object streams
  0 named destinations out of 1000 (max. 500000)
  63 words of extra memory for PDF output out of 10000 (max. 10000000)
 

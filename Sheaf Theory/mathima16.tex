@@ -1,0 +1,235 @@
+\vspace*{0.1cm} 
+
+\noindent Έστω $(X,\tau_X),(Y,\tau_Y)$ τοπολογικοί χώροι.
+
+\begin{figure}[H]
+    \centering
+    \begin{tikzcd}
+        \mathcal{C}_X \arrow[d] &  & \mathcal{C}_Y \arrow[d] \\
+        X \arrow[rr]            &  & Y                      
+        \end{tikzcd}
+\end{figure}
+\noindent Όπου $\mathcal{C}_X $ είναι το δράγμα που παράγεται από το (πλήρες) προδράγμα $(C_X(U),r^U_{U^{\prime}})_{U^{\prime}\subseteq U \in \tau_X}$:
+$$C_X(U) = \{h:U\longrightarrow \mathbb{R} \text{ συνεχείς }\}$$ με απεικονίσεις τους συνήθεις περιορισμούς. Ένας φυσιολογικός τρόπος να τα συνδέσουμε αυτά είναι:
+\begin{figure}[H]
+    \centering
+    \begin{tikzcd}
+        X \supseteq f^{-1}(V) \arrow[rd] \arrow[r, "f"] & Y\supseteq V \arrow[d, "h"] \\
+                                                        & \mathbb{R}                 
+        \end{tikzcd}
+\end{figure}
+
+$$f_V: C_Y(V) \longrightarrow C_X(f^{-1}(V))$$ δηλαδή υπάρχει οικογένεια απεικονίσεων:
+$$(f_V: C_Y(V) \longrightarrow C_X(f^{-1}(V)) = f_*(C_X)(V))_{V\in \tau_Y}$$ δηλαδή το $(f_V)$ είναι μορφισμός προδραγμάτων $C_Y \longrightarrow f_*(C_X)$. Άρα ορίζεται μορφισμός δραγμάτων $\tilde{f}$:
+
+$$\tilde{f}:\mathcal{C}_Y \longrightarrow f_*(\mathcal{C}_X)$$ και έτσι κάναμε την εξής σύνδεση στο αρχικό πρόβλημα:
+
+\begin{figure}[H]
+    \centering
+    \begin{tikzcd}
+        \mathcal{C}_X \arrow[d] &  & \mathcal{C}_Y \arrow[d] \arrow[r, "\tilde{f}"] & f_*(\mathcal{C}_X) \arrow[ld] \\
+        X \arrow[rr]            &  & Y                                              &                              
+        \end{tikzcd}
+\end{figure}
+
+\noindent Αν το δούμε αλλιώς:
+$$f^{-1}(V) \subseteq X \overset{f}{\longrightarrow} V \subseteq Y \overset{h}{\longrightarrow} \mathbb{R}$$
+
+\noindent Για κάθε $x \in f^{-1}(V)$ και $h \in C_Y(V)$ το $[h]_{f(x)}$ είναι μέσα στο νήμα  $\mathcal{C}_{Y,f(x)}$. Ισοδύναμα:
+$$(x,[h]_{f(x)}) \in f^*(\mathcal{C}_Y)_x$$ στο νήμα του \tl{pullback}.
+
+$ $\newline
+Κατασκευάζουμε το $[h\circ f]_x \in \mathcal{C}_{X,x}$ και έτσι έχουμε απεικόνιση:
+$$\hat{f} : f^*(\mathcal{C}_Y) \longrightarrow X$$ άρα γυρνώντας στο αρχικό πρόβλημα έχουμε:
+
+\begin{figure}[H]
+    \centering
+    \begin{tikzcd}
+        f^*(\mathcal{C}_Y) \arrow[rd] \arrow[r, "\hat f"] & \mathcal{C}_X \arrow[d] &  & \mathcal{C}_Y \arrow[d] \\
+                                                          & X \arrow[rr]            &  & Y                      
+        \end{tikzcd}
+\end{figure}
+
+\noindent Εναλλακτικά, για κάθε $x \in X$ υπάρχει απεικόνιση νημάτων
+(θα θέλαμε να τις κολλήσουμε και να πάρουμε απεικόνιση αλλά μπορεί δύο $x_1, x_2$ να έχουν ίδια εικόνα)
+$$\overline{f}_x : \mathcal{C}_{Y,f(x)} \longrightarrow \mathcal{C}_{X,x}$$ και άρα και οικογένεια
+$$(\overline{f}_x : \mathcal{C}_{Y,f(x)} \longrightarrow \mathcal{C}_{X,x})_{x \in X}$$ (όχι απεικόνιση)
+\begin{figure}[H]
+    \centering
+    \begin{tikzcd}
+        \mathcal{C}_X \arrow[d] &  & \mathcal{C}_Y \arrow[d] \arrow[ll, "(\overline{f}_x)_{x\in X}", dashed] \\
+        X \arrow[rr]            &  & Y                                                                      
+        \end{tikzcd}
+\end{figure}
+\noindent Θα ασχοληθούμε κυρίως με τις δύο πρώτες προσεγγίσεις.
+
+$ $\newline
+Έστω $f:X\longrightarrow Y$ συνεχής και $\mathcal A\in \So h_X, \mathcal B \in \So h_Y$.
+
+\begin{defn} Ένας μορφισμός μεταξύ των $\mathcal A$ και $\mathcal B$ πάνω από την $f$ είναι ένας μορφισμός δραγμάτων:
+    
+    $$\text{ 1η κατάσταση: } g : \mathcal{B} \longrightarrow f_*(\mathcal{A})$$
+    \begin{figure}[H]
+        \centering
+        \begin{tikzcd}
+            \mathcal{A} \arrow[d] &  & \mathcal{B} \arrow[d] \arrow[r, "g"] & f_*(\mathcal{A}) \arrow[ld] \\
+            X \arrow[rr, "f"]     &  & Y                                    &                            
+            \end{tikzcd}
+    \end{figure}
+
+    
+    $$\text{ 2η κατάσταση: } g: f^*(\mathcal B)\longrightarrow \mathcal A$$
+
+    \begin{figure}[H]
+        \centering
+        \begin{tikzcd}
+            f^*(B) \arrow[r, "g"] \arrow[rd] & \mathcal{A} \arrow[d] &  & \mathcal{B} \arrow[d] \\
+                                             & X \arrow[rr, "f"]     &  & Y                    
+            \end{tikzcd}
+    \end{figure}
+\end{defn}
+\noindent Ουσιαστικά και στις δύο περιπτώσεις ξεκινάμε από το $\mathcal B$ και πάμε στο $\mathcal{A}$. Θα δείξουμε ότι οι ορισμοί είναι ισοδύναμοι.
+
+\begin{theorem} Έστω $f:X\longrightarrow Y$ συνεχής. Για κάθε $\mathcal{A} \in \So h_X$ και $\mathcal B \in \So h_Y$ υπάρχει αμφιμονοσήμαντη αντιστοιχία:
+    $$\Phi: Mor(f^*(\mathcal{B}),\mathcal{A}) \longrightarrow Mor(\mathcal{B},f_*(\mathcal{A}))$$
+\end{theorem}
+
+$ $\newline
+Υπενθύμιση (1): για $f:X\longrightarrow Y$ συνεχής υπάρχει φυσικός μετασχηματισμός $\phi^f : I\longrightarrow f_*f^*$ για τους συναρτητές $I,f_*f^* : \So h_Y\longrightarrow \So h_Y$. Επιπλέον, για κάθε $\mathcal B \in \So h_Y$ έχουμε:
+$$\phi^f_{\mathcal B} : \mathcal{B} \longrightarrow f_*f^*(\mathcal{B})$$ έτσι ώστε για κάθε $V\in \tau_Y$:
+$$\phi^f_{\mathcal{B}V} : \mathcal{B}(V) \longrightarrow f_*f^*(\mathcal{B})(V) = f^*(\mathcal{B}(f^{-1}(V))) = \Gamma_f(f^{-1}(V),\mathcal{B})$$ (Η πρώτη ισότητα ως \tl{pushout} και η δεύτερη ως \tl{pullback})
+
+$ $\newline
+Αν $\beta : V\subseteq Y\longrightarrow \mathcal{B}$ τομή, τότε έχουμε $\phi^f_{\mathcal{B}V}(\beta) = \beta \circ f$
+
+\begin{figure}[H]
+    \centering
+    \begin{tikzcd}
+        & \mathcal{B}                      \\
+f^{-1}(V) \arrow[ru, "\beta\circ f"] \arrow[r, "f"'] & V\subseteq Y \arrow[u, "\beta"']
+\end{tikzcd}
+\end{figure}
+
+\noindent Εφόσον $\phi^f$ είναι φυσικός μετασχηματισμός, έχουμε για κάθε $\mathcal{B},\mathcal{T} \in \So h_Y$ και για κάθε μορφισμό δραγμάτων $g:\mathcal{B}\longrightarrow \mathcal{T}$ τα μεταθετικά τετράγωνα:
+
+\begin{figure}[H]
+    \centering
+    \begin{tikzcd}
+        \mathcal{B} \arrow[rr, "\phi^f_{\mathcal B}"] \arrow[d, "g"'] &  & f_* f^*(\mathcal{B}) \arrow[d, "f_*f^*(g)"] \\
+        \mathcal{T} \arrow[rr, "\phi^f_{\mathcal{T}}"']               &  & f_* f^*(\mathcal{T})                       
+        \end{tikzcd}
+\end{figure}
+
+$ $\newline
+Υπενθύμιση (2): Έχουμε φυσικό μετασχηματισμό $\psi^f:f^*f_* \rightarrow I$ για τους συναρτητές $f^*f_*, I : \So h_X \longrightarrow \So h_X$, όπου για $\mathcal{A} \in \So h_X$:
+$$\psi^f_{\mathcal{A}}: f^*f_*(\mathcal{A})\longrightarrow \mathcal{A}$$
+$$(x,a)\in f^*(f_*(\mathcal{A}))_x \implies a \in f_*(\mathcal{A})_{f(x)}$$ Προέρχεεται από $a \in f_*(\mathcal{A})(V) = A(f^{-1}(V))$ με $V \in \mathcal{N}^0_{f(x)}$ 
+
+$ $\newline
+Άρα το $(x,a)$ προέρχεται (από το όριο) της $a \circ f$. Δηλαδή:
+$$\psi^f_{\mathcal{A}}(x,a) = [a]_x$$
+
+$ $\newline
+Οι διαδικασίες είναι ανάποδες η μία της άλλης. Η μία συνθέτει με $f$ ενώ η άλλη διώχνει την $f$, χωρίς να είναι η μία αντίστροφη της άλλης αφού δεν συμπίπτουν τα πεδία ορισμού και τιμών. Το ότι η $\psi^f$ είναι φυσικός μετασχηματισμός έπεται ότι για κάθε $\mathcal{A},\So \in \So h_X$ και για κάθε μορφισμό δραγμάτων $g:\mathcal{A}\longrightarrow \So$ έχουμε μεταθετικό τετράγωνο:
+
+\begin{figure}[H]
+    \centering
+    \begin{tikzcd}
+        f^*f_*(\mathcal{A}) \arrow[rr, "\psi^f_{\mathcal{A}}"] \arrow[d, "f^*f_*(g)"'] &  & \mathcal{A} \arrow[d, "g"] \\
+        f^*f_*(\So) \arrow[rr, "\psi^f_{\So}"']                                        &  & \So                       
+        \end{tikzcd}
+\end{figure}
+
+\begin{lemma} Έστω $f:X\longrightarrow Y$ συνεχής, $\mathcal{A} \in \So h_X$ και $\mathcal{B} = f_*(\mathcal{A})\in \So h_Y$. Τότε:
+    $$\phi^f_{\mathcal{B}} = \phi^f_{f_*(A)} \ \text{ ισομορφισμός }$$ και
+    $$\left(\phi^f_{f_*(\mathcal A)} \right)^{-1} = f_*(\psi^f_{\mathcal{A}})$$
+\end{lemma}
+
+\begin{proof}
+
+    \begin{figure}[H]
+        \centering
+        \begin{tikzcd}
+            f^*f_*(\mathcal{A}) \arrow[rd] \arrow[rr, "\psi^f_{\mathcal{A}}"]         &   & \mathcal{A} \arrow[ld]                                              &  &                                     \\
+                                                                                      & X &                                                                     &  &                                     \\
+            f_*f^*f_*(\mathcal{A}) \arrow[rd] \arrow[rr, "f_*(\psi^f_{\mathcal{A}})"] &   & f_*(\mathcal{A}) \arrow[ld] \arrow[rr, "\phi^f_{f_*(\mathcal{A})}"] &  & f_*f^*f_*(\mathcal{A}) \arrow[llld] \\
+                                                                                      & Y &                                                                     &  &                                    
+            \end{tikzcd}
+    \end{figure}
+    \noindent Αρκεί να δείξω ότι $$f_*(\psi^f_{\mathcal{A}}) \circ \phi^f_{f_*(\mathcal{A})} = id_{f_*(\mathcal{A})}$$ και 
+    $$\phi^f_{f_*(\mathcal{A})} \circ f_*(\psi^f_{\mathcal{A}}) = id_{f_*f^*f_*}$$
+
+
+    \begin{align*}
+        f_*(\psi^f_{\mathcal{A}})_V \circ \phi^f_{f_*(\mathcal{A})V}(a) & =  f_*(\psi^f_{\mathcal{A}})_V (a\circ f) \\
+        &= \psi^f_{\mathcal{A}f^{-1}(V)}(a\circ f) \\
+        &= a 
+    \end{align*}
+
+    \noindent Για το δεύτερο:
+    $$f_*f^*f_*(\mathcal{A})(V) = f^*f_*(\mathcal{A})(f^{-1}(V)) = \Gamma_f(f^{-1}(V),f_*(\mathcal{A}))$$ το οποίο περιέχει στοιχεία $\beta \circ f$:
+
+    \begin{align*}
+        [\phi^f_{f_*(\mathcal{A})} \circ f_*(\psi^f_{\mathcal{A}})]_V (\beta\circ f) & = \phi^f_{f_*(\mathcal{A})V} \circ \psi^f_{\mathcal{A}f^{-1}(V)} (\beta \circ f) \\
+        & = \phi^f_{f_*(\mathcal{A})V} (\beta) = \beta \circ f
+    \end{align*}
+\end{proof}
+
+\begin{lemma} Έστω $f:X\longrightarrow Y$ συνεχής, $\mathcal{B} \in \So h_Y$ και $A = f^*(\mathcal{B}) \in \So h_X$. Τότε:
+    $$\psi^f_{\mathcal{A}} = \psi^f_{f^*(\mathcal{B})} \text{ αντιστρέψιμος }$$ και 
+    $$\left(\psi^f_{f^*(\mathcal{B})}\right)^{-1} = f^*(\phi^f_{\mathcal{B}})$$
+\end{lemma}
+
+\begin{proof}
+    \begin{figure}[H]
+        \centering
+        \begin{tikzcd}
+            f^*f_*(\mathcal{A})  \arrow[rr, "\psi^f_{\mathcal{A}}"]       &  & \mathcal{A}                                             \\
+            f^*f_*f^*(\mathcal{B}) \arrow[rr, "\psi^f_{f^*(\mathcal B)}"] &  & f^*(\mathcal{B}) \arrow[d, "f^*(\phi^f_{\mathcal{B}})"] \\
+                                                                          &  & f^*f_*f^*(\mathcal{B})                                 
+            \end{tikzcd}
+    \end{figure}
+
+    $$(x,b) \in f^*(\mathcal{B}) \ b \in \mathcal{B}_{f(x)}$$ δηλαδή 
+    $$(x,b) \in f^*(\mathcal{B})_x$$ με $b = [\beta]_{f(x)}$
+
+    \begin{align*}
+        f^*(\phi^f_{\mathcal{B}})(x,b) &= (x,\phi^f_{\mathcal{B}}(b)) \\
+        &= (x, [\phi^f_{\mathcal{B}}(\beta)]_{f(x)}) \\
+        &= (x, [\beta \circ f]_{f(x)})  \implies \\
+        \\
+        \psi^f_{f^*(\mathcal{B})} \circ f^*(\phi^f_{\mathcal{B}})(x,b) &= \psi^f_{f^*(\mathcal{B})}(x,[\beta\circ f]_{f(x)}) \\
+        &= (x,[\beta]_{f(x)}) \\
+        &= (x,b)
+    \end{align*}
+
+    \noindent Ανάποδα: Αν $(x,c) \in f^*f_*f^*(\mathcal{B})$ τότε
+    $$c \in f_*f^*(\mathcal{B})_{f(x)} \implies c = [\gamma]_{f(x)}$$ με $\gamma \in f_*f^*(\mathcal{B})(V)$ για $V \in \mathcal{N}^0_{f(x)}$, συνεπώς:
+    $$\gamma \in f_*(\mathcal{B})(f^{-1}(V)) = \Gamma_f (f^{-1}(V),\mathcal{B}) \implies $$
+    $$\gamma = \gamma_1 \circ f \ \gamma_1 \in \mathcal B(V)$$ Άρα:
+
+    \begin{align*}
+        f^*(\phi^f_{\mathcal{B}})\circ \psi^f_{f^*(\mathcal{B})} (x,c) & = f^*(\phi^f_{\mathcal{B}})(x,[\gamma_1]) \\
+        &= (x,\phi^f_{\mathcal{B}}([\gamma_1])) \\
+        &= (x,[\gamma_1 \circ f]_{f(x)}) \\
+        &= (x,c)
+    \end{align*}
+\end{proof}
+
+\noindent Γυρνάμε στο θεώρημα:
+\begin{theorem} Έστω $f:X\rightarrow Y$ συνεχής, $\mathcal{A} \in \So h_X$ και $\mathcal{B} \in \So h_Y$. Τότε υπάρχει ισομορφισμός:
+    $$\Phi: Mor(f^*(\mathcal{B},\mathcal{A})) \longrightarrow Mor(\mathcal{B},f_*(\mathcal{A}))$$
+\end{theorem}
+
+\begin{figure}[H]\
+    \centering
+    % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRADMA9AKgAoAdfgFs6OABYBjRsABCAXwCUIOaXSZc+QigCM5KrUYs2gkeKkNgAQTnLVIDNjwEiAZj3V6zVohAnRk6XlbNUdNIl1tfU8jHwANYPt1Jy1kN0iPQ28QAE0Ehw1nFAAmUiKozON+LCE0Bix4PKSwlDIXcq9K0wCLIJUQgpSStoyOn3YAfW4uPj8zQMVG0MLkABZSYYNRjkmBYX9zKwW5fRgoAHMGlFB2ACcIISQyEBwIJF1NmJAxBNv7x+oXkgXH0OHcHoh3oDEMC7L9wW5nq9EGsPll2D8wUgSoikCsQXCkAA2AFIgDsI0+gjQYiwnAmwFm3Vkchs+MxiHJOMQAA4KWidmIlMc5EA
+\begin{tikzcd}
+    f^*(\mathcal{B}) \arrow[r, "h"] \arrow[rd]     & \mathcal{A} \arrow[d] &                                          & \mathcal{B} \arrow[d] &                  \\
+                                                   & X \arrow[rr, "f"]     &                                          & Y                     &                  \\
+                                                   &                       & \implies                                 &                       &                  \\
+    \mathcal{B} \arrow[rr, "\phi^f_{\mathcal{B}}"] &                       & f_*f^*(\mathcal{B}) \arrow[rr, "f_*(h)"] &                       & f_*(\mathcal{A})
+    \end{tikzcd}
+\end{figure}
+\noindent Οπότε θέτουμε:
+$$\Phi(h) = f_*(h)\circ \phi^f_{\mathcal{B}}$$ Απόδειξη στην επόμενη διάλεξη.

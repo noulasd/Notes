@@ -1,0 +1,114 @@
+\vspace*{0.3cm}
+
+$(3)$: Έστω $X= [0,1]$ με την σχετική τοπολογία. Θεωρούμε το ζεύγος $(Q(U),\rho^U_V)_{V\subseteq U \in \tau_X}$ με
+$$Q(U)=\begin{cases}
+\Z, & 1 \in U \\
+\{0\}, & 1 \not\in U
+\end{cases}$$
+$$\rho^U_V = \begin{cases}
+    id_{\Z}, & 1 \in V \\
+    0, & 1 \not\in V
+\end{cases}$$
+
+$ $\newline
+$1)$ Προδράγμα
+
+$1a)$ Έστω $U\in \tau_X$. Αν $1\in U \implies \rho^U_U = id_{\mathbb{Z}} = id_{Q(U)}$. Αν $1\not\in U \implies \rho^U_U = 0 = id_{ \{ 0 \}}$.
+
+$1b)$ Για κάθε $W\subseteq V \subseteq U$, αν $1 \in W$ τότε η σχέση $\rho^U_V \circ \rho^V_W = \rho^U_W$ ισχύει ως $id_{\mathbb{Z}} \circ id_{\mathbb{Z}} = id_{\mathbb{Z}}$. Αν $1 \not\in W$ ισχύει ως $\rho^U_V \circ 0 = 0$.
+
+$ $\newline
+$2)$ Πλήρες?
+
+$2a)$ Έστω $U = \bigcup\limits_{i\in I} U_i$ με $U_i,U \in \tau_X$ για κάθε $i \in I$. Για $s,t \in Q(U)$, αν έχουμε $\rho^U_{U_i}(s) = \rho^U_{U_i}(t)$ για κάθε $i$, θα πρέπει $s=t$. Αν $1 \not \in U$ τότε $s,t \in Q(U) = \{0\} \implies s=t=0$. Αν $1 \in U$, τότε υπάρχει δείκτης $i \in I$ με $1 \in U_i$ και έτσι $Q(U) = Q(U_i) = \mathbb{Z}$ και 
+$$\rho^U_{U_i}(s) = \rho^U_{U_i}(t) \implies id(s) = id(t) \implies s=t$$ άρα είναι μονοπροδράγμα.
+
+$2b)$ Έστω $s_i \in Q(U_i)$ για κάθε $i,j$ με $\rho^{U_i}_{U_i\cap U_j}(s) = \rho^{U_j}_{U_i\cap U_j}(t)$ για τα $U_i \cap U_j \neq \varnothing$. Ζητάμε $s \in Q(U)$ με $\rho^U_{U_i}(s) = s_i$ για κάθε $i \in I$. Αν $1 \not\in U$ τότε $1\not\in U_i$ για κάθε $i$ και άρα $Q(U) = Q(U_i) = \{0\}$, δηλαδή $s_i = 0$ για κάθε $i$ και άρα για το $s=0 \in Q(U)$ ισχύει το ζητούμενο.
+
+$ $\newline
+Αν $1 \in U$ τότε υπάρχει $I_1 \subseteq I$ μη κενό υποσύνολο τέτοιο ώστε $1 \in U_i \forall \ i \in I_1$. Αν $i,j \in I_1$ τότε:
+$$\rho^{U_i}_{U_i\cap U_j}(s_i) = \rho^{U_j}_{U_i\cap U_j}(s_j) \implies id(s_i) = id(s_j) \implies s_i = s_j$$ άρα υπάρχει $s \in \mathbb{Z}$ με $s_i = s$ για κάθε $i \in I_1$ και αφού ισχύει ότι $s_j = 0$ για κάθε $j\not \in I_1$ παίρνουμε το ζητούμενο για αυτό το $s$. Δηλαδή, το προδράγμα είναι πλήρες.
+
+$ $\newline
+Υπενθύμιση: Εφόσον έχουμε πληρότητα το δράγμα που θα φτιάξουμε θα έχει τα σύνολα τομών του σε 1-1 και επί αντιστοιχία με τα σύνολα $Q(U)$.
+
+$ $\newline
+$3)$ Δράγμα:
+
+\noindent Έστω $x \in X=[0,1]$. Για $x \neq 1$ υπάρχει $U \in \openx$ με $1 \not \in U$ και άρα $Q(U) = \{0\}$ και $X \in \openx \implies Q(X) = \mathbb{Z}$. Άρα
+$$s,t \in \bigsqcup\limits_{U \in \openx} Q(U) \supseteq \mathbb{Z}$$
+
+$$s \in Q(U), \ t \in Q(V)$$
+$$s\sim_x t \iff \exists \ W \in \openx, \ W \subseteq U\cap V:$$
+$$\rho^U_W(s) = \rho^V_W (t)$$ μικραίνω την ανοιχτή περιοχή να μην περιέχει το $1$, άρα $1 \not \in W$ και η σχέση ισχύει πάντα ως $0=0$, δηλαδή έχουμε μοναδική κλάση ισοδυναμίας και άρα:
+$$\mathcal{Q}_x = \{0\}, x\neq 1$$ Αν $x=1$ τότε κάθε ανοιχτή περιοχή θα περιέχει το $1$ δηλαδή $Q(U) = \mathbb{Z}$ για κάθε $U\in\openx$.Για $s,t \in \sqcup Q(U)$ με $s \in Q(U), t \in Q(V)$ έχουμε:
+$$s\sim_1 t \iff \exists W \in\openx, W \subseteq U\cap V:$$
+$$\rho^U_W(s) = \rho^U_W(t) \implies id(s) = id(t) \implies s=t$$ άρα η σχέση ισοδυναμίας είναι η ισότητα και:
+$$\mathcal{Q}_1 = \mathbb{Z}$$
+
+$$\mathcal{Q} = \bigcup\limits_{x \in X}\mathcal{Q}_x$$ και η τοπολογία του $\mathcal{Q}$ έχει βάση τα $\tilde{s}(U)$ όπου $U\in\tau_X$ με $s\in Q(U)$. Αν $U\not \ni 1$ τότε $Q(U) = \{0\}$ και άρα:
+$$\tilde{0}: U \longrightarrow \mathcal{Q}$$
+$$\tilde{0}(x) = \rho^U_x(0) = [0]_x = 0 \in \mathcal{Q}_x$$ και αν $1\in U$ τότε $Q(U) = \mathbb{Z} \ni s$:
+$$\tilde{s}: U \longrightarrow \mathcal{Q}$$
+$$\tilde{s}(x) = \rho^U_x(s) = [s]_x = \begin{cases} 0, & x\neq 1 \\ s, & x=1 \end{cases}$$ άρα τα $(1-\varepsilon, 1)\cup\{a\}$ είναι ανοιχτά για κάθε $a \in \mathbb{Z}$.
+
+
+
+\pagebreak
+
+\vspace*{0.3cm}
+\noindent Έστω $\mathcal C, \mathcal D$ κατηγορίες και συναρτητές $F: \mathcal C \rightarrow \mathcal D$ και $G: \mathcal D \rightarrow \mathcal C$. Θα θέλαμε υπό μια έννοια $G=F^{-1}$ με $F$ 1-1, επί μεταξύ κλάσεων, οπότε θα είχαμε {\em ισόμορφες} κατηγορίες.
+
+\begin{defn}
+    Οι $F,G$ λέγονται προσαρτημένοι συναρτητές (\tl{adjoint}) με $F$ προσαρτημένος αριστερά του $G$ αν για κάθε $C \in \mathcal C$ και $D \in \mathcal D$ υπάρχει ισομορφισμός:
+    $$\Phi_{CD} \in Mor_{\mathcal D}(F(C),D) \longrightarrow Mor_{\mathcal C}(C,G(D))$$ που είναι φυσικός μετασχηματισμός για κάθε ένα από τα $C,D$.
+\end{defn}
+\noindent Ποιών συναρτητών? Υπενθύμιση: υπάρχει $\Phi: Mor(f^*(\mathcal{B}),\mathcal{A}) \rightarrow Mor(\mathcal{B},f_*(\mathcal{A}))$.
+
+
+
+$ $\newline
+Έστω $D \in \mathcal D$ σταθερό, για κάθε $C \in \mathcal C$ υπάρχει σύνολο $Mor_{\mathcal D}(F(C),D) \in \So et$ το οποίο ονομάζουμε ως $H(C)$. Άρα αν έχουμε $f:C_1\rightarrow C_2$ στην $\mathcal C$ και $g :F(C_2) \rightarrow D$ με $g \in Mor_{\mathcal D}(F(C_2),D) = H(C_2)$ θα έχουμε $g\circ F(f) \in Mor_{\mathcal D}(F(C_1),D) = H(C_1)$, δηλαδή έχουμε απεικόνιση:
+$$H(f): H(C_2) \longrightarrow H(C_1)$$
+$$g\longmapsto g\circ F(f)$$ και άρα έχουμε τον ανταλλοίωτο συναρτητή $H:\mathcal{C} \rightarrow \So et$.
+
+
+$ $\newline
+Όμοια για $D\in \mathcal D$ σταθερό και για κάθε $C \in \mathcal C$ υπάρχει το σύνολο $Mor_{\mathcal C}(C,G(D)) \in \So et$ το οποίο ονομάζουμε $K(C)$. Αν έχουμε στην $\mathcal{C}$:
+$$C_1 \overset{f}{\longrightarrow }C_2 \overset{g}{\longrightarrow} G(D)$$ με $g \in Mor(C_2,G(D)) = K(C)$, τότε 
+$$g\circ f :C_1 \longrightarrow G(D)$$ δηλαδή $g\circ f \in Mor_{\mathcal{C}}(C_1,G(D)) = K(C_1)$. Ονομάζουμε:
+
+$$K(f):K(C_2)\longrightarrow K(C_1)$$
+$$g\longmapsto K(f)(g) = g\circ f$$ καθώς $F$ αριστερά \tl{adjoint} του $G$ υπάρχει:
+$$\Phi_{CD} : Mor(F(C),D) \longrightarrow Mor(C,G(D))$$ άρα αν $f:C_1\longrightarrow C_2$ έχουμε μεταθετικό διάγραμμα:
+
+\begin{figure}[H]
+    \centering
+    \begin{tikzcd}
+        H(C_1) \arrow[rr, "\Phi_{C_1D}"]                     &  & K(C_1)                     \\
+                                                             &  &                            \\
+        H(C_2) \arrow[rr, "\Phi_{C_2 D}"] \arrow[uu, "H(f)"] &  & K(C_2) \arrow[uu, "K(f)"']
+        \end{tikzcd}
+\end{figure}
+\noindent Δηλαδή για $D \in \mathcal{D}$ σταθερό, η οικογένεια $(\Phi_{CD})_{C\in\mathcal{C}}$ είναι φυσικός μετασχηματισμός των συναρτητών $H,K$.
+
+$ $\newline
+Αν τώρα κρατήσουμε σταθερό ένα $C \in \mathcal{C}$ τότε για κάθε $D\in \mathcal{D}$ ορίζουμε συναρτητή:
+$$L:\mathcal{D} \longrightarrow \mathcal{S} et$$
+$$L(D):= Mor(F(C),D)$$ και για $f:D_1\rightarrow D_2$ και $g \in Mor(F(C),D_1) = L(D_1)$ έχουμε $f\circ g \in Mor(F(C),D_2) = L(D_2)$:
+
+$$L(f): L(D_1) \longrightarrow L(D_2)$$
+$$g\longmapsto L(f)(g) = f\circ g$$ και σε αυτή τη περίπτωση η φορά διατηρείται, δηλαδή ο συναρτητής είναι συναλλοίωτος. Ορίζουμε ομοίως:
+
+$$M:\mathcal{D} \longrightarrow \So et$$
+$$M(D):= Mor(C,G(D))$$ και αν έχουμε $f:D_1\longrightarrow D_2$ και $g \in Mor(C,G(D_1)) = M(D_1)$ τότε έχουμε $G(f)\circ g \in Mor(C,G(D_2)) = M(D_2)$ και άρα το $M:\mathcal{D} \longrightarrow \So et$ είναι συναλλοίωτος συναρτητής. Έχουμε το μεταθετικό διάγραμμα:
+
+\begin{figure}[H]
+    \centering
+    \begin{tikzcd}
+        L(D_1) \arrow[rr, "\Phi_{CD_1}"] \arrow[dd, "L(f)"'] &  & M(D_1) \arrow[dd, "M(f)"] \\
+                                                             &  &                           \\
+        L(D_2) \arrow[rr, "\Phi_{CD_2}"]                     &  & M(D_2)                   
+        \end{tikzcd}
+    \end{figure}
+\noindent Δηλαδή, η οικογένεια $(\Phi_{CD})_{D \in \mathcal{D}}$ είναι φυσικός μετασχηματισμός των συναρτητών $L,M$.

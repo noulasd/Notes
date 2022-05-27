@@ -1,0 +1,142 @@
+\vspace*{0.3cm}
+\begin{theorem}
+    Έστω $f:X\longrightarrow Y$ συνεχής και $\mathcal{A} \in \So h_X, \mathcal{B} \in \So h_Y$. Τότε υπάρχει ισομορφισμός:
+    $$\Phi: Mor(f^*(\mathcal{B}),\mathcal{A}) \longrightarrow Mor(\mathcal{B},f_*(\mathcal{A}))$$ 
+\end{theorem}
+\noindent Λέμε ισομορφισμός και όχι μόνο αμφιμονοσήμαντη απεικόνιση γιατί θα διατηρείται η όποια αλγεβρική δομή έχουμε.
+
+\begin{proof}
+    Έστω $h \in Mor(f^*(\mathcal{B}),\mathcal{A})$. Θέτουμε $\Phi(h) = f_*(h)\circ \phi^f_{\mathcal{B}} \in Mor(\mathcal{B},f_*(\mathcal{A}))$ καλά ορισμένη.
+
+    $ $\newline
+    $\Phi$ 1-1:
+
+    \noindent Έστω $\Phi(h_1) = \Phi(h_2)$ τότε:
+    \begin{align*}
+        f_*(h_1) \circ \phi^f_{\mathcal{B}} &= f_*(h_2) \circ \phi^f_{\mathcal{B}} \\
+        f^*f_*(h_1)\circ f^*(\phi^f_{\mathcal{B}}) &=  f^*f_*(h_2)\circ f^*(\phi^f_{\mathcal{B}}) \\
+        \psi^f_{\mathcal{A}} \circ  f^*f_*(h_1)\circ f^*(\phi^f_{\mathcal{B}}) &=  \psi^f_{\mathcal{A} }\circ f^*f_*(h_2)\circ f^*(\phi^f_{\mathcal{B}}) \\
+        h_1 \circ \psi^f_{f_*(B)} \circ f^*(\phi^f_{\mathcal{B}}) &= h_2 \circ \psi^f_{f_*(B)} \circ f^*(\phi^f_{\mathcal{B}}) \\
+        h_1 &= h_2
+    \end{align*}
+    από τις υπενθυμίσεις για τους φυσικούς μετασχηματισμούς της προηγούμενης διάλεξης.
+
+    $ $\newline
+    $\Phi$ επί:
+
+    \noindent Έστω $g:\mathcal{B}\longrightarrow f_*(\mathcal{A})$ τότε
+    $$f^*(\mathcal{B}) \overset{f^*(g)}{\longrightarrow} f^*f_*(\mathcal{A}) \overset{\psi^f_{\mathcal{A}}}{\longrightarrow} \mathcal{A}$$ Θέτουμε $h = \psi^f_{\mathcal{A}} \circ f^*(g) \in Mor(f^*(\mathcal{B}),\mathcal{A})$. Θα δείξουμε ότι $\Phi(h) = g$.
+    
+    \begin{align*}
+        \Phi(h) = f_*(h)\circ \phi^f_{\mathcal{B}} &= \\
+        f_*(\psi^f_{\mathcal{A}} \circ f^*(g))\circ \phi^f_{\mathcal{B}} &= \\
+        f_*(\psi^f_{\mathcal{A}})\circ f_*f^*(g) \circ \phi^f_{\mathcal{B}} &= \\
+        f_*(\psi^f_{\mathcal{A}})\circ \phi^f_{f_*(\mathcal{A})} \circ g &= \\
+         = g &
+    \end{align*}
+    \noindent αφού αυτά είναι αντίστροφα από λήμμα της προηγούμενης διάλεξης.
+\end{proof}
+\pagebreak
+$ $\newline
+{\em Παραδείγματα}: Να εξετάσετε αν είναι προδράγματα, πλήρη και να υπολογίσετε το επαγόμενο δράγμα.
+
+$ $\newline
+$(1)$ Σταθερό προδράγμα. Έστω $(X,\tau_X)$ τοπολογικός χώρος και $A\neq \varnothing$ σύνολο. Θεωρούμε το ζεύγος $(A(U),\rho^U_V)_{V\subseteq U \in \tau_X}$ με
+$$A(U)=A, \quad \forall \ U \in \tau_X$$
+$$\rho^U_V = id_A, \quad \forall \  V\subseteq U \in \tau_X$$
+
+\noindent $1)$ Προδράγμα:
+
+$1a)$ Για κάθε $U \in \tau_X: \ \rho^U_U = id_{A(U)}$.
+
+$1b)$ Για $W\subseteq V \subseteq U \in \tau_X$: Η σχέση $\rho^V_W \circ \rho^U_V = \rho^U_W$ ισχύει ως $id_A \circ id_A = id_A$
+
+$ $\newline
+$2)$ Πλήρες?  Έστω $U = \bigcup\limits_{i\in I} U_i$
+
+$2a)$ Αν $s,t \in A(U)$ με $\rho^U_{U_i}(s) = \rho^U_{U_i}(t)$ για κάθε $i \in I$ τότε $id(s) = id(t) \implies s=t$. Άρα είναι μονοπροδράγμα.
+
+$2b)$ Έστω $s_i \in A(U_i) = A$ τέτοια ώστε:
+$$\rho^{U_i}_{U_i\cap U_j}(s_i) = \rho^{U_j}_{U_i\cap U_j} (s_j) \quad \forall \ i,j \in I \text{ με } U_i\cap U_j \neq \varnothing$$ Θα πρέπει να υπάρχει $s\in A=A(U)$ με
+$$\rho^U_{U_i}(s) = s_i \iff s=s_i$$ Δεν ισχύει, μπορούμε να πάρουμε ως ανοιχτά δύο ξένα $U_1, U_2$ και $U  := U_1 \cup U_2$. Αν λοιπόν το $A$ δεν είναι μονοσύνολο και υπάρχουν διακεκριμένα $s_1 \in A(U_1) = A = A(U_2) \ni s_2$ τότε δεν υπάρχει $s\in A(U)$ αφού θα πρέπει $s_1 = s = s_2$.
+
+$ $\newline
+$3)$ Δράγμα:
+
+Έστω $x \in X$ και $U,V \in \openx$ (δηλαδή αυτά τέμνονται) και $s \in A(U), t\in A(V)$ με την σχέση ισοδυναμίας:
+$$s\sim_x t \iff \exists W \in \openx, \ W\subseteq U\cap V \text{ με }$$
+$$\rho^U_W(s) = \rho^V_W(t) \implies s=t$$ Δηλαδή, για κάθε $s\in A(U)$ έχουμε τις κλάσεις $[s]_x  = \{s\}$ και άρα ταυτίζουμε το νήμα $\mathcal{A}_x \equiv A$ (στοιχειώδης θεωρία συνόλων). Το δράγμα θα είναι:
+
+$$\mathcal{A} = \bigsqcup\limits_{x \in X} \mathcal{A}_x \equiv X\times A$$ και με τι τοπολογία? Ξέρουμε ότι έχει βάση από τα σύνολα $\tilde{s}(U)$ για κάθε $U\in\tau_X$ και για κάθε $s \in A(U)$.
+
+$$\tilde{s} : U \longrightarrow \mathcal{A}$$
+$$\tilde{s}(x) = \rho^U_x(s) = [s]_x = s$$ δηλαδή $\tilde{s}(U) = U \times \{s\}$. 
+
+$ $\newline
+Ένα σχόλιο για την πληρότητα:
+
+$ $\newline
+Αν έχουμε $s_1 \in A(U_1)$ και $s_2 \in A(U_2)$ με $s_1 \neq s_2$ τα $\tilde{s}_1 (U_1), \tilde{s}_2 (U_2)$ ειναι ανοιχτά υποσύνολα του $\mathcal{A}$ αφού είναι βασικά. Αν ορίσουμε:
+$$\tilde{s} = \tilde{s}_1 \cup \tilde{s}_2 : U=U_1\cup U_2 \longrightarrow \mathcal{A}$$ αυτή είναι μια (συνεχής) τομή του $\mathcal{A}$. Αν το προδράγμα ήταν πλήρες αυτή η τομή θα προερχόταν από στοιχείο του προδράγματος, αλλά η $\tilde{s}$ δεν προέρχεται από $s \in A(U)$.
+
+$ $\newline
+{\em Ερώτηση}: Αν το $A$ είναι το προδράγμα πάνω από το $X$ όπως προηγουμένως και έχουμε $Z \overset{g}{\longrightarrow}X \overset{f}{\longrightarrow} Y$ συνεχείς τότε ισχύει ότι $f_*(A)$ θα είναι το σταθερό προδράγμα? Επιπλέον για το $\mathcal{A}$ σταθερό δράγμα θα ισχύει ότι το $f^*(\mathcal{A})$ είναι σταθερό? ($f,g $?)
+
+\vspace*{0.3cm}
+$ $\newline
+$(2)$ Έστω $X= [0,1]$ με την σχετική τοπολογία. Θεωρούμε το ζεύγος $(P(U),\rho^U_V)_{V\subseteq U \in \tau_X}$ με
+    $$P(U)=\begin{cases}
+    \{0\}, & U \neq X \\
+    \Z, & U = X
+    \end{cases}$$
+    $$\rho^U_V = \begin{cases}
+        id_{\Z}, & U =V = X \\
+        0, & \text{ αλλιώς }
+    \end{cases}$$
+
+\noindent $1)$ Προδράγμα:
+
+$1a)$ $$\rho^U_U  = \begin{cases}
+    \rho^X_X = id_{\mathbb{Z}} = id_{P(X)}, & U=X \\
+    0 = id_{P(U)}, & U\neq X
+\end{cases} \quad = id_{P(U)}$$
+
+$1b)$ $W\subseteq V\subseteq U \in \tau_X$. Θέλουμε να ισχύει $\rho^V_W \circ \rho^U_V = \rho^U_W$. Αν $W=X$ ισχύει η σχέση ως $id_{\mathbb{Z}} \circ id_{\mathbb{Z}} = id_{\mathbb{Z}}$. Αν $W\neq X$ πάλι ισχύει ως $0 \circ \rho^U_V = 0$.
+
+$ $\newline
+$2)$ Πλήρες?
+
+$2a)$ Έστω $U = \bigcup\limits_{i\in I} U_i$ και $s,t \in P(U)$ με 
+$$\rho^U_{U_i} (s) = \rho^U_{U_i}(t)$$ για κάθε $i$. Ισχύει ότι $s=t$?
+
+Αν $U\neq X$ τότε $s,t \in \{0\} \implies s=t=0$. Αν $U=X$ τότε αν υπάρχει $U_i = X$ έχουμε:
+$$\rho^U_{U_i}(s) = \rho^U_{U_i}(t) \implies$$
+$$id(s) = id(t) \implies s=t$$
+
+Αν $U_i \neq X$ για κάθε $i \in I$ τότε:
+$$\rho^U_{U_i} = 0$$ και άρα $\rho^U_{U_i}(s) = \rho^U_{U_i}(t) = 0$ για κάθε $s,t \in \mathbb{Z}$ συνεπώς δεν είναι μονοπροδράγμα άρα ούτε πλήρες.
+
+$2b)$ Έστω $s_i \in P(U_i)$ τέτοια ώστε:
+$$\rho^U_{U_i} (s_i) = \rho^{U_j}_{U_i\cap U_j}(s_j)$$ για κάθε $i,j$ με $U_i\cap U_j \neq \varnothing$.
+
+Αν $U\neq X$ τότε $s_i = 0$ για κάθε $i$ αφού και τα $U_i \neq X$. Συνεπώς υπάρχει $s = 0 \in P(U)$ με $\rho^U_{U_i}(s) = s_i$.
+
+Αν $U = X$ και αν υπάρχει $U_i = X$ τότε για όλα τα $s_i \in P(U_i)$ με $U_i = X$ έχουμε:
+$$\rho^{U_i}_{U_i \cap U_j} (s_i) = \rho^{U_j}_{U_i\cap U_j}(s_j) \implies $$
+$$id(s_i) = id(s_j) = s \in \mathbb{Z}$$ δηλαδή $s \in \mathbb{Z} = P(U)$ με 
+$$\rho^U_{U_i}(s) = \begin{cases}
+    s = s_i & U_i = X \\
+    0 = s_i \in P(U_i) = \{0\} & U_i \neq X
+\end{cases}$$ Αν για κάθε $i \in I$ έχουμε $U_i\neq X$ τότε $s_i = 0$ για κάθε $i$, δηλαδή οποιοδήποτε $s \in \mathbb{Z} = P(U)$ μας δίνει $\rho^U_{U_i}(s) = 0 = s_i$.
+
+$ $\newline
+$3)$ Δράγμα:
+
+Για τα $s\in P(U), t \in P(V)$ με $U,V\in\openx$ για κάποιο $x \in X$ ορίζουμε την σχέση ισοδυναμίας:
+$$s \sim_x t \iff \exists W \in \openx, W \subseteq U\cap V:$$
+$$\rho^U_W(s) = \rho^U_W(t)$$ πάντα υπάρχει περιοχή $W \neq X$ και άρα η σχέση μας δίνει $0=0$, δηλαδή όλα τα στοιχεία είναι ισοδύναμα.
+
+Συνεπώς, για κάθε $x \in X$ υπάρχει μοναδική κλάση $[s]_x$ στο νήμα $\mathcal{P}_x$, δηλαδή $\mathcal{P}_x = \{0\}$. Άρα το δράγμα είναι το $\mathcal{P}=X\times \{0\}$ και η τοπολογία είναι αυτή που παίρνει από τον $X$.
+
+
+

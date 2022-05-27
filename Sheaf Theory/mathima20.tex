@@ -1,0 +1,115 @@
+\vspace*{0.3cm}
+
+Έστω $\mathcal{E},\mathcal{F}$ δράγματα $\mathbb{R}$-διανυσματικών χώρων και $f:\mathcal{E}\longrightarrow \mathcal{F}$ μορφισμός δραγμάτων διανυσματικών χώρων, δηλαδή είναι μορφισμός δραγμάτων και για κάθε $x \in X$:
+$$f_x : \mathcal{E}_x \longrightarrow \mathcal{F}_x \quad \mathbb{R}-\text{γραμμική}$$
+
+$$\mathcal{K}= \ker f:= \bigsqcup\limits_{x \in X}\ker f \subseteq \mathcal{E}$$ Αν $\pi, \mathfrak{p}$ είναι οι προβολές στον $X$ των $\mathcal{E},\mathcal{F}$ αντίστοιχα, τότε δίνουμε στο $\mathcal{K}$ την σχετική τοπολογία και έχουμε προβολή:
+$$\pi|_{\mathcal{K}} : \mathcal{K} \longrightarrow X$$ ισχύει ότι $\pi|_{\mathcal{K}}$ είναι τοπικός ομοιμορφισμός? Αν ναι έχουμε φτιάξει νέο δράγμα.
+
+$ $\newline
+Αν αντίστοιχα στα προδράγματα έχουμε $E\equiv (E(U),\rho^U_V), F\equiv(F(U),\lambda^U_V)$ προδράγματα $\mathbb{R}$-διανυσματικών χώρων και
+$$f\equiv (f_U: E(U)\longrightarrow F(U))_{U \in \tau_X}$$ ένας μορφισμός προδραγμάτων, τότε για κάθε $U\in\tau_X$ υπάρχει ο αντίστοιχος πυρήνας που είναι διανσυματικός υπόχωρος:
+$$\ker f_U \leq E(U)$$ και η ερώτηση εδώ είναι περιορίζοντας τον συνήθη περιορισμό $\rho^U_V|_{\ker f_U}$ μπορούμε να φτιάξουμε προδράγμα? Ισχύει δηλαδή ότι $\rho^U_V(\ker f_U) \subseteq \ker f_V$ για κάθε $V\subseteq U$? Θέτουμε $\rho^U_V := \rho^U_V|_{\ker f_U}$.
+
+\begin{figure}[H]
+    \centering
+    \begin{tikzcd}
+        \ker f_U \arrow[rr, "i_U", hook] \arrow[d, "r^U_V"'] &  & E(U) \arrow[d, "\rho^U_V"] \arrow[rr, "f_U"] &  & F(U) \arrow[d, "\lambda^U_V"] \\
+        \ker f_V \arrow[rr, "i_V", hook]                     &  & E(V) \arrow[rr, "f_V"']                      &  & F(V)                         
+        \end{tikzcd}
+\end{figure}
+
+\noindent Έστω $u \in \ker f_U$, ισχύει ότι $\rho^U_V(u) \in \ker f_V$? Αυτό είναι ισοδύναμο με $f_V(\rho^U_V(u)) = 0$ και από μεταθετικότητα του διαγράμματος ισοδύναμα $\lambda^U_V(f_U(u)) =0$ το οποίο προφανώς ισχύει αφού $u \in \ker f_U$.
+
+$ $\newline
+\underline{Συμπεράσματα}:
+
+$$(\ker f_U, r^U_V) \quad \text{ προδράγμα δ.χ.}$$ και $$(i_U: \ker f_U\longrightarrow E(U))_{U \in \tau_X}$$ είναι μορφισμός προδραγμάτων διανυσματικών χώρων.
+
+
+$ $\newline
+Με τις ίδιες υποθέσεις στα προδράγματα, μπορούμε να κάνουμε το αντίστοιχο στις εικόνες, δηλαδή για κάθε $U \in \tau_X$ έχουμε:
+$$f(E(U))\leq F(U)$$ γραμμικός υπόχωρος. Θέτουμε $\ell^U_V := \lambda^U_V |_{f_U(E(U))}$ και έχουμε μεταθετικό διάγραμμα:
+
+
+\begin{figure}[H]
+    \centering
+    \begin{tikzcd}
+        E(U) \arrow[d, "\rho^U_V"'] \arrow[rr, "f_U"] &  & f_U(E(U))\subseteq F(U) \arrow[d, "\ell^U_V"', shift right=6] \arrow[d, "\lambda^U_V", shift left=10] \\
+        E(V) \arrow[rr, "f_V"]                        &  & f_V(E(V)) \subseteq F(V)                                                                            
+        \end{tikzcd}
+\end{figure}
+
+
+$ $\newline
+Είναι $\ell^U_V (f_U(E(U))) \subseteq f_V(E(V))$. Έστω $w \in f_U(E(U))$ τότε υπάρχει $u \in E(U)$ με $f_U(u) = w$. Είναι $\ell^U_V(w) = \lambda^U_V(w) \in f_V(E(V))$ και από μεταθετικότητα διαγράμματος:
+$$\lambda^U_V(w) = \lambda^U_V(f_U(u)) = f_V(\rho^U_V(u)) \in f_V(E(V))$$ Άρα αντίστοιχα έχουμε προδράγμα διανυσματικών χώρων 
+$$(f_U(E(U)), \ell^U_V)$$ και μορφισμό προδραγμάτων διανυσματικών χώρων
+$$(i_U: f_U(E(U))\longrightarrow F(U))_{U\in\tau_X}$$
+
+\vspace*{0.3cm}
+\noindent Γυρνώντας στα δράγματα, το $\pi|_{\mathcal{K}}$ είναι τοπικός ομοιομορφισμός αν και μόνο αν για κάθε $u \in \mathcal{K}$ υπάρχει $V$ ανοιχτό στο $\mathcal{E}$ και $U$ ανοιχτό στο $X$ με $\pi(u)=x \in U$ έτσι ώστε η απεικόνιση:
+$$\pi|_{V\cap \mathcal{K}}: V\cap \mathcal{K}\longrightarrow U$$ να είναι ομοιομορφισμός. Ισοδύναμα να υπάρχει $U\in\openx$ και $s\in \Gamma(U,\mathcal{E})$ με $s(x) = u$ και $s(U)\subseteq \mathcal{K}$.
+
+$ $\newline
+\underline{Γνωστό}: Αν $u \in \mathcal{K} \subseteq \mathcal{E}$ τότε υπάρχει $U\in \openx, \ x= \pi(u), s \in \Gamma(U,\mathcal{E})$ με $s(x) = u$.
+
+$ $\newline
+\underline{Γνωστό}: $f\circ s:U\longrightarrow \mathcal{F}$ (συνεχής) τομή του $\mathcal{F}$ αφού οι μορφισμοί δραγμάτων μεταφέρουν τομές σε τομές. Δηλαδή, $f\circ s \in \Gamma(U,\mathcal{F})$ και
+$$(f \circ s)(x) = f(U)  = 0_x \in \mathcal{F}_x$$ Θέλουμε $f\circ s(y) = 0_y$ για κάθε $y \in U$ για να είναι $s \in \Gamma(U,\mathcal{K})$. Θέτουμε:
+
+$$\omega: U \longrightarrow \mathcal{F}$$
+$$\omega(x) = 0_x \in \mathcal{F}_x$$ είναι τομή? είναι συνεχής?
+
+$ $\newline
+Έστω τυχαία $\sigma \in \Gamma(U,\mathcal{F})$, οι πράξεις στον διανυσματικό χώρο είναι συνεχείς και άρα:
+$$-\sigma = (-1) \cdot \sigma $$ συνεχής τομή. Συνεπώς:
+$$\sigma + (-\sigma) = \omega$$ συνεχής τομή. Έχουμε δηλαδή δύο τομές που ταυτίζονται σε ένα σημείο, άρα και σε μια περιοχή:
+
+$$f\circ s(x) = \omega(x) \implies$$
+$$\exists \ V \in \openx, V\subseteq U \quad f\circ s|_V = \omega|_V \implies $$
+
+$$f(s(y)) = 0_y \quad \forall \ y \in V \implies s|_V(V)\subseteq \mathcal{K}$$ και άρα έχουμε το δράγμα διανυσματικών χώρων:
+$$(\mathcal{K},\pi|_{\mathcal{K}}, X)$$ και τον μορφισμό δραγμάτων διανυσματικών χώρων:
+$$i:\mathcal{K}\longrightarrow \mathcal{E}$$
+
+\vspace*{0.3cm}
+$ $\newline
+Όμοια στις εικόνες, αν έχουμε μορφισμό δραγμάτων διανσυματικών χώρων $f:(\mathcal{E},\pi,X)\longrightarrow (\mathcal{F},\mathfrak{p},X)$ και δώσουμε την σχετική τοπολογία στο $f(\mathcal{E})\subseteq \mathcal{F}$ είναι τότε ο $\mathfrak{p}|_{f(\mathcal{E})}$ τοπικός ομοιομορφισμός?
+
+$ $\newline
+Έστω $w \in f(\mathcal{E}) \implies \exists \ u \in \mathcal{E}_x$ με $f_x(u) = w$. Υπάρχει περιοχή $U \in \openx$ και τομή $s \in \Gamma(U,\mathcal{E}): s(x) = u$. Άρα έχουμε:
+
+$$f(s(x)) = w$$ και 
+$$f\circ s \in \Gamma(U,\mathcal{F})$$ με $f \circ s (U)\subseteq f(\mathcal{E})$.
+
+\vspace*{0.3cm}
+$ $\newline
+Στους διανυσματικούς χώρους κάθε γραμμική $f:E\longrightarrow F$ επάγει μια σύντομη ( ή βραχεία) ακριβή ακολουθία:
+\begin{figure}[H]
+    \centering
+    \begin{tikzcd}
+        0 \arrow[r] & \ker f \arrow[r, "i"] & E \arrow[r, "f"] & f(E) \arrow[r] & 0
+        \end{tikzcd}
+\end{figure}
+\noindent και μια λιγότερο σύντομη:
+\begin{figure}[H]
+    \centering
+    \begin{tikzcd}
+        0 \arrow[r] & \ker f \arrow[r, "i"] & E \arrow[r, "f"] & F \arrow[r] & F/f(E) \arrow[r] & 0
+        \end{tikzcd}
+\end{figure}
+
+$ $\newline
+\textbf{Ερωτήματα:}
+\begin{enumerate}
+    \item Ένας μορφισμός προδραγμάτων διανυσματικών χώρων $(f_U:E(U)\longrightarrow F(U))_{U \in \tau_X}$ ορίζει την σύντομη ακριβή ακολουθία?
+    \item Όμοια ορίζει την αντίστοιχη λιγότερο σύντομη?
+    \item Ένας μορφισμός δραγμάτων $f:\mathcal{E}\longrightarrow \mathcal{F}$ ορίζει την σύντομη ακριβή ακολουθία?
+    \item Όμοια ορίζει την αντίστοιχη λιγότερο σύντομη? (πρέπει να οριστεί έννοια του πηλίκου ως $\bigsqcup\limits_{x\in X} \mathcal{F}_x/f_x(\mathcal{E}_x)$ και ποια τοπολογία το κάνει δράγμα?)
+    \item Αν έχουμε μια σύντομη ακριβή ακολουθία δραγμάτων και εφαρμόσουμε τον συναρτητή τομή $\Gamma$ παίρνουμε σύντομη ακριβή ακολουθία στα προδράγματα?
+    \item Ανάποδα, αν έχουμε μια σύντομη ακριβή ακολουθία προδραγμάτων και εφαρμόσουμε τον συναρτητή δραγματοποίησης $\mathbb{S}$ παίρνουμε σύντομη ακριβή ακολουθία στα δράγματα?
+\end{enumerate}
+
+$ $\newline
+\textbf{Καλό Καλοκαίρι!} 
