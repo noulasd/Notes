@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2020.10.13)  8 AUG 2022 10:44
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2020.10.13)  8 AUG 2022 14:02
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1226,93 +1226,93 @@ Package pdftex.def Info: C:/Users/dimit/Desktop/TeX/EC/drm.png  used on input li
 <C:/Users/dimit/Desktop/TeX/EC/sign_pic.png, id=108, 499.8675pt x 238.491pt>
 File: C:/Users/dimit/Desktop/TeX/EC/sign_pic.png Graphic file (type png)
 <use C:/Users/dimit/Desktop/TeX/EC/sign_pic.png>
-Package pdftex.def Info: C:/Users/dimit/Desktop/TeX/EC/sign_pic.png  used on input line 601.
+Package pdftex.def Info: C:/Users/dimit/Desktop/TeX/EC/sign_pic.png  used on input line 617.
 (pdftex.def)             Requested size: 398.3386pt x 190.05795pt.
  [19]
 <C:/Users/dimit/Desktop/TeX/EC/pubkey_rec_pic.png, id=114, 510.10574pt x 152.36925pt>
 File: C:/Users/dimit/Desktop/TeX/EC/pubkey_rec_pic.png Graphic file (type png)
 <use C:/Users/dimit/Desktop/TeX/EC/pubkey_rec_pic.png>
-Package pdftex.def Info: C:/Users/dimit/Desktop/TeX/EC/pubkey_rec_pic.png  used on input line 632.
+Package pdftex.def Info: C:/Users/dimit/Desktop/TeX/EC/pubkey_rec_pic.png  used on input line 657.
 (pdftex.def)             Requested size: 398.3386pt x 118.9847pt.
- [20 <c:/Users/dimit/Desktop/TeX/EC/sign_pic.png> <c:/Users/dimit/Desktop/TeX/EC/pubkey_rec_pic.png>]
+ [20 <c:/Users/dimit/Desktop/TeX/EC/sign_pic.png>]
 <C:/Users/dimit/Desktop/TeX/EC/extended_pic.png, id=118, 534.798pt x 183.084pt>
 File: C:/Users/dimit/Desktop/TeX/EC/extended_pic.png Graphic file (type png)
 <use C:/Users/dimit/Desktop/TeX/EC/extended_pic.png>
-Package pdftex.def Info: C:/Users/dimit/Desktop/TeX/EC/extended_pic.png  used on input line 667.
+Package pdftex.def Info: C:/Users/dimit/Desktop/TeX/EC/extended_pic.png  used on input line 694.
 (pdftex.def)             Requested size: 398.3386pt x 136.3712pt.
- [21 <c:/Users/dimit/Desktop/TeX/EC/extended_pic.png>] [22]
-<C:/Users/dimit/Desktop/TeX/EC/PH_baby.png, id=125, 413.29407pt x 255.95625pt>
+ [21 <c:/Users/dimit/Desktop/TeX/EC/pubkey_rec_pic.png>] [22 <c:/Users/dimit/Desktop/TeX/EC/extended_pic.png>] [23]
+<C:/Users/dimit/Desktop/TeX/EC/PH_baby.png, id=128, 413.29407pt x 255.95625pt>
 File: C:/Users/dimit/Desktop/TeX/EC/PH_baby.png Graphic file (type png)
 <use C:/Users/dimit/Desktop/TeX/EC/PH_baby.png>
-Package pdftex.def Info: C:/Users/dimit/Desktop/TeX/EC/PH_baby.png  used on input line 725.
+Package pdftex.def Info: C:/Users/dimit/Desktop/TeX/EC/PH_baby.png  used on input line 763.
 (pdftex.def)             Requested size: 278.83578pt x 172.6888pt.
-<C:/Users/dimit/Desktop/TeX/EC/PH_big.png, id=126, 413.29407pt x 228.855pt>
+<C:/Users/dimit/Desktop/TeX/EC/PH_big.png, id=129, 413.29407pt x 228.855pt>
 File: C:/Users/dimit/Desktop/TeX/EC/PH_big.png Graphic file (type png)
 <use C:/Users/dimit/Desktop/TeX/EC/PH_big.png>
-Package pdftex.def Info: C:/Users/dimit/Desktop/TeX/EC/PH_big.png  used on input line 726.
+Package pdftex.def Info: C:/Users/dimit/Desktop/TeX/EC/PH_big.png  used on input line 764.
 (pdftex.def)             Requested size: 278.83578pt x 154.4041pt.
- [23 <c:/Users/dimit/Desktop/TeX/EC/PH_baby.png> <c:/Users/dimit/Desktop/TeX/EC/PH_big.png>] [24] [25] [26] [27]
-<C:/Users/dimit/Desktop/TeX/EC/google1.png, id=143, 404.26031pt x 173.14688pt>
+ [24] [25 <c:/Users/dimit/Desktop/TeX/EC/PH_baby.png> <c:/Users/dimit/Desktop/TeX/EC/PH_big.png>] [26] [27] [28] [29]
+<C:/Users/dimit/Desktop/TeX/EC/google1.png, id=149, 404.26031pt x 173.14688pt>
 File: C:/Users/dimit/Desktop/TeX/EC/google1.png Graphic file (type png)
 <use C:/Users/dimit/Desktop/TeX/EC/google1.png>
-Package pdftex.def Info: C:/Users/dimit/Desktop/TeX/EC/google1.png  used on input line 852.
+Package pdftex.def Info: C:/Users/dimit/Desktop/TeX/EC/google1.png  used on input line 913.
 (pdftex.def)             Requested size: 318.67209pt x 136.49127pt.
-<C:/Users/dimit/Desktop/TeX/EC/google2.png, id=144, 453.19313pt x 438.13687pt>
+<C:/Users/dimit/Desktop/TeX/EC/google2.png, id=150, 453.19313pt x 438.13687pt>
 File: C:/Users/dimit/Desktop/TeX/EC/google2.png Graphic file (type png)
 <use C:/Users/dimit/Desktop/TeX/EC/google2.png>
-Package pdftex.def Info: C:/Users/dimit/Desktop/TeX/EC/google2.png  used on input line 853.
+Package pdftex.def Info: C:/Users/dimit/Desktop/TeX/EC/google2.png  used on input line 914.
 (pdftex.def)             Requested size: 318.67209pt x 308.08427pt.
-<C:/Users/dimit/Desktop/TeX/EC/google3.png, id=145, 668.4975pt x 199.49532pt>
+<C:/Users/dimit/Desktop/TeX/EC/google3.png, id=151, 668.4975pt x 199.49532pt>
 File: C:/Users/dimit/Desktop/TeX/EC/google3.png Graphic file (type png)
 <use C:/Users/dimit/Desktop/TeX/EC/google3.png>
-Package pdftex.def Info: C:/Users/dimit/Desktop/TeX/EC/google3.png  used on input line 858.
+Package pdftex.def Info: C:/Users/dimit/Desktop/TeX/EC/google3.png  used on input line 919.
 (pdftex.def)             Requested size: 318.67209pt x 95.10217pt.
- [28 <c:/Users/dimit/Desktop/TeX/EC/google1.png> <c:/Users/dimit/Desktop/TeX/EC/google2.png> <c:/Users/dimit/Desktop/TeX/EC/google3.png>]
-<C:/Users/dimit/Desktop/TeX/EC/curves1.png, id=149, 711.8595pt x 449.88075pt>
+ [30 <c:/Users/dimit/Desktop/TeX/EC/google1.png> <c:/Users/dimit/Desktop/TeX/EC/google2.png> <c:/Users/dimit/Desktop/TeX/EC/google3.png>] [31]
+<C:/Users/dimit/Desktop/TeX/EC/curves1.png, id=159, 711.8595pt x 449.88075pt>
 File: C:/Users/dimit/Desktop/TeX/EC/curves1.png Graphic file (type png)
 <use C:/Users/dimit/Desktop/TeX/EC/curves1.png>
-Package pdftex.def Info: C:/Users/dimit/Desktop/TeX/EC/curves1.png  used on input line 893.
+Package pdftex.def Info: C:/Users/dimit/Desktop/TeX/EC/curves1.png  used on input line 960.
 (pdftex.def)             Requested size: 398.3386pt x 251.74615pt.
-<C:/Users/dimit/Desktop/TeX/EC/curves2.png, id=150, 711.8595pt x 525.76425pt>
+<C:/Users/dimit/Desktop/TeX/EC/curves2.png, id=160, 711.8595pt x 525.76425pt>
 File: C:/Users/dimit/Desktop/TeX/EC/curves2.png Graphic file (type png)
 <use C:/Users/dimit/Desktop/TeX/EC/curves2.png>
-Package pdftex.def Info: C:/Users/dimit/Desktop/TeX/EC/curves2.png  used on input line 894.
+Package pdftex.def Info: C:/Users/dimit/Desktop/TeX/EC/curves2.png  used on input line 961.
 (pdftex.def)             Requested size: 398.3386pt x 294.20935pt.
-<C:/Users/dimit/Desktop/TeX/EC/curves3.png, id=151, 560.0925pt x 473.97075pt>
+<C:/Users/dimit/Desktop/TeX/EC/curves3.png, id=161, 560.0925pt x 473.97075pt>
 File: C:/Users/dimit/Desktop/TeX/EC/curves3.png Graphic file (type png)
 <use C:/Users/dimit/Desktop/TeX/EC/curves3.png>
-Package pdftex.def Info: C:/Users/dimit/Desktop/TeX/EC/curves3.png  used on input line 899.
+Package pdftex.def Info: C:/Users/dimit/Desktop/TeX/EC/curves3.png  used on input line 966.
 (pdftex.def)             Requested size: 398.3386pt x 337.10016pt.
- [29] [30 <c:/Users/dimit/Desktop/TeX/EC/curves1.png> <c:/Users/dimit/Desktop/TeX/EC/curves2.png>] [31 <c:/Users/dimit/Desktop/TeX/EC/curves3.png>] [32] [33] [34] [35] [36]
-Underfull \hbox (badness 3646) in paragraph at lines 1079--1080
+ [32 <c:/Users/dimit/Desktop/TeX/EC/curves1.png> <c:/Users/dimit/Desktop/TeX/EC/curves2.png>] [33 <c:/Users/dimit/Desktop/TeX/EC/curves3.png>] [34] [35] [36] [37] [38]
+Underfull \hbox (badness 3646) in paragraph at lines 1184--1185
 []\T1/cmr/m/n/10 S. Nakov, 2018, Prac-ti-cal Cryp-tog-ra-phy for De-vel-op-ers, Soft-ware Uni-ver-sity,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1091--1092
+Underfull \hbox (badness 10000) in paragraph at lines 1196--1197
 []\T1/cmr/m/n/10 P. Novot-ney, Weak Curves In El-lip-tic Curve Cryp-tog-ra-phy, 2010.
  []
 
 
-Underfull \hbox (badness 4013) in paragraph at lines 1113--1114
+Underfull \hbox (badness 4013) in paragraph at lines 1218--1219
 []\T1/cmr/m/n/10 ISARA Cor-po-ra-tion, Isogeny-Based Cryp-tog-ra-phy Tu-to-rial, Au-gust 1, 2019,
  []
 
 *********************************************************************
-[37] (c:/Users/dimit/Desktop/TeX/EC/main_ec.aux) ) 
+[39] (c:/Users/dimit/Desktop/TeX/EC/main_ec.aux) ) 
 Here is how much of TeX's memory you used:
  24641 strings out of 479917
  459887 string characters out of 5886664
- 967568 words of memory out of 5000000
+ 968568 words of memory out of 5000000
  40706 multiletter control sequences out of 15000+600000
  566356 words of font info for 84 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  111i,28n,112p,1960b,1698s stack positions out of 5000i,500n,10000p,200000b,80000s
 {c:/texlive/2020/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}{c:/texlive/2020/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}<c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/cbfonts/grmi1000.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/cbfonts/grmn0900.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/cbfonts/grmn1000.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/cbfonts/grmn2074.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/cbfonts/grxn0900.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/cbfonts/grxn1000.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/cbfonts/grxn1200.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/cbfonts/grxn1440.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfbx0900.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfbx1000.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfrm0900.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfti1000.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sftt1000.pfb>
-Output written on c:/Users/dimit/Desktop/TeX/EC/main_ec.pdf (37 pages, 1703319 bytes).
+Output written on c:/Users/dimit/Desktop/TeX/EC/main_ec.pdf (39 pages, 1708072 bytes).
 PDF statistics:
- 287 PDF objects out of 1000 (max. 8388607)
- 191 compressed objects within 2 object streams
+ 293 PDF objects out of 1000 (max. 8388607)
+ 195 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  103 words of extra memory for PDF output out of 10000 (max. 10000000)
 

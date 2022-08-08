@@ -64,7 +64,7 @@ try:
 except:
  _st_.goboom(262)
 _st_.blockend()
-_st_.current_tex_line = 702
+_st_.current_tex_line = 736
 _st_.blockbegin()
 try:
  def PohligHellman(P,Q):
@@ -86,6 +86,6 @@ try:
  ....:             conjList[-1]=conjList[-1]+zList[i]*(facTuple[0]^i)
  ....:     return crt(conjList,rootList)
 except:
- _st_.goboom(721)
+ _st_.goboom(755)
 _st_.blockend()
 _st_.endofdoc()
