@@ -1,0 +1,98 @@
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{amssymb}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage[greek,english]{babel}
+\usepackage{alphabeta}
+\usepackage[utf8]{inputenc}
+\usepackage{mathtools}
+\usepackage{blindtext}
+\usepackage[T1]{fontenc}
+\usepackage{titlesec}
+\usepackage{sectsty}
+\usepackage{verbatim}
+\usepackage{multirow}
+\chapternumberfont{\tiny} 
+\chaptertitlefont{\Huge}
+%ελληνικοι χαρακτηρες σε μαθ pdf utf-8
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{tikz-cd}
+%\usepackage{hyperref}
+\usepackage{xcolor}
+\usepackage{framed}%frames
+\usepackage{float}
+\usepackage{array}
+\usepackage{pbox}
+\usepackage{caption}
+%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{tikz}
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{sagetex}
+%%%%%%%%περιθώρια%%%%%%%%%%%%
+\usepackage[a4paper,margin=3.5cm]{geometry}
+
+\usepackage{graphicx,import}
+
+\usepackage[n, % o r lambda
+advantage,
+operators,
+sets,
+adversary,
+landau,
+probability,
+notions,
+logic,
+ff,
+mm,
+primitives,
+events,
+complexity,
+oracles,
+asymptotics,
+keys ]{cryptocode}
+
+\newtheorem*{theorem}{Θεώρημα}
+\newtheorem*{lemma}{Λήμμα}
+\newtheorem*{example}{Παράδειγμα}
+\newtheorem*{defn}{Ορισμός}
+\newtheorem*{prop}{Πρόταση}
+\newtheorem{cor}{Πόρισμα}
+\newtheorem*{remark}{Παρατήρηση}
+
+\newcommand {\tl}{\textlatin}
+%%%%%%%%%αριθμηση%%%%%%%%%%%%%%
+\renewcommand{\theenumi}{\arabic{enumi}}
+\renewcommand{\labelenumi}{{\rm(\theenumi)}}
+\renewcommand{\labelenumii}{\roman{enumii}) }
+%%%%%%%%%%%% New theorems %%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\Co}{\mathbb{C}}
+\newcommand{\So}{\mathcal{S}}
+\newcommand{\C}{\mathcal{C}}
+
+\newcommand{\Sheaf}{(\So, \pi, X)}
+\usepackage{listings}
+\usepackage{color}
+
+\newcommand{\el}{\lambda}
+\newcommand{\eL}{\Lambda}
+\newcommand{\presheaf}{(S(U),\rho^U_V)_{V\subseteq U\in \tau_X}}
+\newcommand{\ds}{(A_{\lambda},\phi^{\lambda_1}_{\lambda_2})}
+\newcommand{\dsb}{(B_{\lambda},\psi^{\lambda_1}_{\lambda_2})}
+\newcommand{\dlimit}{(A,\phi_{\lambda})}
+\newcommand{\openx}{\mathcal{N}^0_x}
+
+\newcommand{\curly}{\mathrel{\leadsto}}
+
+\newcommand{\defeq}{\mathrel{\stackrel{\makebox[0pt]{\mbox{\normalfont\tiny \text{ορσ}}}}{=}}}
+
+\newcommand{\incfig}[1]{%
+    \fontsize{12pt}{12pt}\selectfont %χρησιμοποιώ height 600 width 300 pixels
+    \def\svgwidth{2in}
+    \import{./figures/}{#1.pdf_tex}
+}
